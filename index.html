@@ -9,7 +9,7 @@
 <meta property="og:title" content="小伍手札">
 <meta property="og:url" content="http://blog.gorendo.org/index.html">
 <meta property="og:site_name" content="小伍手札">
-<meta property="og:locale" content="zh">
+<meta property="og:locale" content="en">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="小伍手札">
   
@@ -53,9 +53,9 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Søk"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://blog.gorendo.org"></form>
@@ -66,12 +66,16 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-php-mac-atom-visual-studio-code-php.html" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2017/08/13/hello-world/" class="article-date">
-  <time datetime="2017-08-12T17:00:29.000Z" itemprop="datePublished">2017-08-13</time>
+    <a href="/2016/10/php-mac-atom-visual-studio-code-php.html/" class="article-date">
+  <time datetime="2016-10-26T02:24:00.000Z" itemprop="datePublished">2016-10-26</time>
 </a>
     
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/PHP/">PHP</a>
+  </div>
+
   </div>
   <div class="article-inner">
     
@@ -80,7 +84,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/08/13/hello-world/">Hello World</a>
+      <a class="article-title" href="/2016/10/php-mac-atom-visual-studio-code-php.html/">[php] 在 Mac 用ATOM / Visual Studio Code 為 php debug</a>
     </h1>
   
 
@@ -88,20 +92,553 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+        <p>依php版本安裝 xdebug</p>
+<pre>brew install homebrew/php/phpXX-xdebug
+</pre>
+在 /usr/local/etc/php/{x.y}/conf.d/ext-xdebug.ini) 內加上
+<pre>xdebug.remote_enable=1
+xdebug.remote_host=127.0.0.1
+xdebug.remote_connect_back=1    # Not safe for production servers
+xdebug.remote_port=9000
+xdebug.remote_handler=dbgp
+xdebug.remote_mode=req
+xdebug.remote_autostart=true
+</pre>
+
+<ul>
+<li>ATOM<br>安裝 php-debug package<br><a href="https://atom.io/packages/php-debug" target="_blank" rel="external">https://atom.io/packages/php-debug</a></li>
+</ul>
+<p>用 Atom 打開 php 檔案後插入中斷點，接著選功能表 Packages &gt; PHP-Debug &gt; Toggle Debugging(ctrl + option + D)<br>執行到中斷行就可以了</p>
+<ul>
+<li>VS Code<br>安裝 PHP Debug<br><a href="https://marketplace.visualstudio.com/items?itemName=felixfbecker.php-debug" target="_blank" rel="external">https://marketplace.visualstudio.com/items?itemName=felixfbecker.php-debug</a></li>
+</ul>
+<p>用&nbsp;VS Code&nbsp;打開 php 檔案後插入中斷點，接著在畫面左邊選擇debug圖示<br>執行到中斷行就可以了</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blog.gorendo.org/2017/08/13/hello-world/" data-id="cj6a53ony00001bxuy2tspx0a" class="article-share-link">Share</a>
+      <a data-url="http://blog.gorendo.org/2016/10/php-mac-atom-visual-studio-code-php.html/" data-id="cj6ag8hi20035i5xuftlp2h6c" class="article-share-link">Partager</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ATOM/">ATOM</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PHP/">PHP</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-mac-xxx.html" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/12/mac-xxx.html/" class="article-date">
+  <time datetime="2015-12-01T03:27:00.000Z" itemprop="datePublished">2015-12-01</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Mac/">Mac</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/12/mac-xxx.html/">[Mac] 解決 您要讓應用程式 XXX 接受傳入的網路連接嗎 一直跳出</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>方法1： 先關掉該app 設定→防火牆→進階→允許名單找到該app移掉 再打開app 同意  方法2： 開啟終端機輸入 (可以先輸入codesign -v 後把app檔拉到終端機畫面會自動產生路徑) <pre><br>codesign -v /Applications/xxx.app<br></pre>如果會有/Applications/xxx.app: a sealed resource is missing or invalid 就是得把app檔刪掉重新安裝</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://blog.gorendo.org/2015/12/mac-xxx.html/" data-id="cj6ag8hho002ci5xu435w26q3" class="article-share-link">Partager</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mac/">Mac</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-php-e5-af-a6-e4-bd-9ccallback" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/10/php-e5-af-a6-e4-bd-9ccallback/" class="article-date">
+  <time datetime="2015-10-20T07:44:00.000Z" itemprop="datePublished">2015-10-20</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/PHP/">PHP</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/10/php-e5-af-a6-e4-bd-9ccallback/">[php] 實作callback</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>用名稱呼 </p>
+<pre>function run1($callback)
+{
+ $callback('123');
+}
+
+function funA($val)
+{
+ echo 'funA:'.$val;
+}
+
+run1('by run1');//funA:by run1
+
+</pre>用物件傳(推薦) 
+<pre>class ClassB
+{
+ public function funB($val){
+  echo 'ClassB:funB:'.$val;
+ }
+}
+
+function run2(ClassB $callable){
+ $callable->funB('by run2');
+}
+
+run2(new ClassB());//ClassB:funB:by run2
+</pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://blog.gorendo.org/2015/10/php-e5-af-a6-e4-bd-9ccallback/" data-id="cj6ag8hi4003ci5xuu39fi40b" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-android-setclicklistener-in-custom-view.html" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/06/android-setclicklistener-in-custom-view.html/" class="article-date">
+  <time datetime="2015-06-25T07:21:00.000Z" itemprop="datePublished">2015-06-25</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Android/">Android</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/06/android-setclicklistener-in-custom-view.html/">[Android] setClickListener in custom view</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>直接設 setClickListener 沒反應<br>要加上</p>
+<pre>    private OnClickListener listener;
+
+    @Override
+    public boolean dispatchTouchEvent(MotionEvent event) {
+        if(event.getAction() == MotionEvent.ACTION_UP) {
+            if(listener != null) listener.onClick(this);
+        }
+        return super.dispatchTouchEvent(event);
+    }
+
+    @Override
+    public boolean dispatchKeyEvent(KeyEvent event) {
+        if(event.getAction() == KeyEvent.ACTION_UP &amp;&amp; (event.getKeyCode() == KeyEvent.KEYCODE_DPAD_CENTER || event.getKeyCode() == KeyEvent.KEYCODE_ENTER)) {
+            if(listener != null) listener.onClick(this);
+        }
+        return super.dispatchKeyEvent(event);
+    }
+
+    @Override
+    public void setOnClickListener(OnClickListener listener) {
+        this.listener = listener;
+    }
+</pre>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://blog.gorendo.org/2015/06/android-setclicklistener-in-custom-view.html/" data-id="cj6ag8hmv00d6i5xuguypv05q" class="article-share-link">Partager</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-e8-a7-a3-e6-b1-ba-errorexecution-failed-for-task-predexdebug-com-android-ide-common-process-processexception-org-gradle-process-internal-execexception-process-command-finished-with-non-zero" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/06/e8-a7-a3-e6-b1-ba-errorexecution-failed-for-task-predexdebug-com-android-ide-common-process-processexception-org-gradle-process-internal-execexception-process-command-finished-with-non-zero/" class="article-date">
+  <time datetime="2015-06-04T03:43:00.000Z" itemprop="datePublished">2015-06-04</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Android/">Android</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/06/e8-a7-a3-e6-b1-ba-errorexecution-failed-for-task-predexdebug-com-android-ide-common-process-processexception-org-gradle-process-internal-execexception-process-command-finished-with-non-zero/">解決 Error:Execution failed for task &#39;preDexDebug&#39;. &gt; com.android.ide.common.process.ProcessException: org.gradle.process.internal.ExecException: Process &#39;command  finished with non-zero exit value 1</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>解決 Error:Execution failed for task ‘preDexDebug’. &gt; com.android.ide.common.process.ProcessException: org.gradle.process.internal.ExecException: Process ‘command &nbsp;finished with non-zero exit value 1</p>
+<ul>
+<li><p>檢查 用到的 jar libs 內是不是有重復到的元件<br>support v4 之類的最容易衝到</p>
+</li>
+<li><p>檢查 做jar時的jdk是不是夠高<br>有些像&lt;&gt; &nbsp;catch中直接 catch(InterruptedException | InterruptedException e)<br>要用到jdk 1.7</p>
+</li>
+<li><p>檢查 做jar時的jdk是不是太高jar用1.8<br>project 只用1.7時<br>考慮jar重包成1.7以下或project升級成1.8以上</p>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://blog.gorendo.org/2015/06/e8-a7-a3-e6-b1-ba-errorexecution-failed-for-task-predexdebug-com-android-ide-common-process-processexception-org-gradle-process-internal-execexception-process-command-finished-with-non-zero/" data-id="cj6ag8hgn000ti5xul9w4k0ti" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-android-wiperefreshlayout.html" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/05/android-wiperefreshlayout.html/" class="article-date">
+  <time datetime="2015-05-15T02:56:00.000Z" itemprop="datePublished">2015-05-15</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Android/">Android</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/05/android-wiperefreshlayout.html/">[Android] 下拉更新 SwipeRefreshLayout</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="Layout-Xml"><a href="#Layout-Xml" class="headerlink" title="Layout Xml"></a>Layout Xml</h3><pre>
+                &#x3C;android.support.v4.widget.SwipeRefreshLayout
+                    android:id=&#x22;@+id/laySwipe&#x22;
+                    android:layout_width=&#x22;match_parent&#x22;
+                    android:layout_height=&#x22;match_parent&#x22; &#x3E;
+
+                        &#x3C;ListView
+                            ... /&#x3E;
+                &#x3C;/android.support.v4.widget.SwipeRefreshLayout&#x3E;
+</pre>
+
+<h3 id="Java-Code"><a href="#Java-Code" class="headerlink" title="Java Code"></a>Java Code</h3><pre>
+OnRefreshListener onSwipeToRefresh = new OnRefreshListener() {
+        @Override
+        public void onRefresh() {
+            laySwipe.setRefreshing(true);
+            //dosomething
+            laySwipe.setRefreshing(false);
+        }
+    };
+
+((SwipeRefreshLayout)findViewById(R.id.laySwipe)).setOnRefreshListener(onSwipeToRefresh);
+
+</pre>
+
+<p>幫listview補上下面的code避免滑動衝突</p>
+<pre>
+
+    private OnScrollListener onListScroll = new OnScrollListener() {
+
+        @Override
+        public void onScrollStateChanged(AbsListView view, int scrollState) {
+
+        }
+
+        @Override
+        public void onScroll(AbsListView view, int firstVisibleItem,
+                int visibleItemCount, int totalItemCount) {
+            if (firstVisibleItem == 0) {
+                laySwipe.setEnabled(true);
+            }else{
+                laySwipe.setEnabled(false);
+            }
+        }
+    };
+</pre>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://blog.gorendo.org/2015/05/android-wiperefreshlayout.html/" data-id="cj6ag8hn100dji5xuw7pj9i6b" class="article-share-link">Partager</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-android-cant-create-handler-inside.html" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/04/android-cant-create-handler-inside.html/" class="article-date">
+  <time datetime="2015-04-21T04:20:00.000Z" itemprop="datePublished">2015-04-21</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Android/">Android</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/04/android-cant-create-handler-inside.html/">[Android] 處理 Can&#39;t create handler inside thread that has not called Looper.prepare()</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>因為 UI 操作不能在其它 thread 做<br>直接用 activity 提供的 runOnUiThread 做掉</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">runOnUiThread(new Runnable()&#123; public void run()&#123;</div><div class="line">    //原本會報錯的ui操作</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://blog.gorendo.org/2015/04/android-cant-create-handler-inside.html/" data-id="cj6ag8hn000dfi5xujd1thqu5" class="article-share-link">Partager</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-unity-ugui-4-6-eventsystem-e4-ba-8b-e4-bb-b6-e7-b3-bb-e7-b5-b1-e5-bf-ab-e9-80-9f-e4-b8-8a-e6-89-8b" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/08/unity-ugui-4-6-eventsystem-e4-ba-8b-e4-bb-b6-e7-b3-bb-e7-b5-b1-e5-bf-ab-e9-80-9f-e4-b8-8a-e6-89-8b/" class="article-date">
+  <time datetime="2014-08-21T09:49:00.000Z" itemprop="datePublished">2014-08-21</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Unity/">Unity</a>►<a class="article-category-link" href="/categories/Unity/遊戲開發/">遊戲開發</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/08/unity-ugui-4-6-eventsystem-e4-ba-8b-e4-bb-b6-e7-b3-bb-e7-b5-b1-e5-bf-ab-e9-80-9f-e4-b8-8a-e6-89-8b/">[Unity] uGUI (4.6) EventSystem 事件系統 快速上手</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>4.6 新進的 EventSystem 事件系統 可以用在 UI 事件外也可以用在普通的 GameObject<br>終於不用自已打射線偵測點擊了</p>
+<p>環境 4.6.0b17 因為才beta版所以變動的機率很大</p>
+<ul>
+<li><p>對 UI&nbsp;偵聽事件：<br>這邊先用 Image 試<br><a name="more"></a><br>加入 <strong>UI - Image</strong><br>加入 Image 之後應該會自動建立一個 <strong>EventSystem</strong> ( 如果沒有自已加 )<br>Image 之上的 Canvas 會自動掛 <strong>GraphicRaycaster</strong><br>Image 掛上 <strong>UI - Event Trigger</strong><br>寫個<br><code>public void onClick(){         Debug.Log (name + &quot; is Clicked!&quot;);     }</code><br>掛在 Image 身上<br>對 Event Trigger 按 Add New - PointerClick - 按右下的 +<br>把自身從 Hierarchy 拖進 None(Object) 右邊指定剛寫的 Function<br>try it !</p>
+</li>
+<li><p>對場景上的 GameObject 偵聽事件：場景上加入 <strong>UI - EventSystem</strong><br><strong>Main Camera</strong> 掛上 <strong>Physics Raycaster</strong> (或 <strong>Physics 2D Raycaster</strong> )<br>被點的 GameObject 掛上 <strong>Box Collider</strong> (或 <strong>Box Collider 2D</strong>)<br>被點的 GameObject 掛上 <strong>Event Trigger</strong><br>寫個<br><code>public void onClick(){         Debug.Log (name + &quot; is Clicked!&quot;);     }</code><br>掛在 被點的 GameObject 身上<br>對 Event Trigger 按 Add New - PointerClick - 按右下的 +<br>把自身從 Hierarchy 拖進 None(Object) 右邊指定剛寫的 Function<br>try it !</p>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://blog.gorendo.org/2014/08/unity-ugui-4-6-eventsystem-e4-ba-8b-e4-bb-b6-e7-b3-bb-e7-b5-b1-e5-bf-ab-e9-80-9f-e4-b8-8a-e6-89-8b/" data-id="cj6ag8hik0045i5xukx27ur5p" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-cocos2d-x-e5-9c-a8-mac-e4-b8-8a-e8-a8-ad-e7-bd-ae-cocos2d-x-cocos2d-x-3-x" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/06/cocos2d-x-e5-9c-a8-mac-e4-b8-8a-e8-a8-ad-e7-bd-ae-cocos2d-x-cocos2d-x-3-x/" class="article-date">
+  <time datetime="2014-06-22T17:45:00.000Z" itemprop="datePublished">2014-06-23</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Cocos2D/">Cocos2D</a>►<a class="article-category-link" href="/categories/Cocos2D/遊戲引擎/">遊戲引擎</a>►<a class="article-category-link" href="/categories/Cocos2D/遊戲引擎/遊戲開發/">遊戲開發</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/06/cocos2d-x-e5-9c-a8-mac-e4-b8-8a-e8-a8-ad-e7-bd-ae-cocos2d-x-cocos2d-x-3-x/">[Cocos2d-x] 在 Mac 上設置 Cocos2d-x (Cocos2d-x 3 .x)</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>環境 OSX 10.9 , Cocos2d-x 3.2</p>
+<p>下載Cocos2d-x <a href="http://cocos2d-x.org/download" target="_blank" rel="external">http://cocos2d-x.org/download</a><br><a name="more"></a><br>JAVA <a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html" target="_blank" rel="external">http://www.oracle.com/technetwork/java/javase/downloads/index.html</a><br>安裝 AndroidSDK+ADT(android) <a href="http://developer.android.com/sdk/index.html" target="_blank" rel="external">http://developer.android.com/sdk/index.html</a><br>SDK要用2.3.3 其它會報錯</p>
+<p>NDK <a href="http://developer.android.com/tools/sdk/ndk/index.html" target="_blank" rel="external">http://developer.android.com/tools/sdk/ndk/index.html</a></p>
+<p>安裝 Ant<br>終端機<br>$ ruby -e “$(curl -fsSL <a href="https://raw.github.com/Homebrew/homebrew/go/install" target="_blank" rel="external">https://raw.github.com/Homebrew/homebrew/go/install</a>)”<br>$ brew update<br>$ brew install ant</p>
+<p>設置cocos2d-x<br>終端機<br>到cocos2d-x 解開的目錄下<br>$ python setup.py<br>輸入android sdk, ndk, ant的目錄<br>$ source /Users/[osx user name]/.bash_profile</p>
+<p>建立Project</p>
+<p>$ cocos new MyGame -p com.your_company.mygame -l cpp -d NEW_PROJECTS_DIR<br>$ cd NEW_PROJECTS_DIR/MyGame</p>
+<p>就可以去目錄下開 xcode 專案來 run 了</p>
+<p>其它參考指令<br>Build and run new project for android<br>$ cocos run -p android -j 4</p>
+<p>Build and run new project for iOS<br>$ cocos run -p ios<br>Build and run new project for OSX<br>$ cocos run -p mac<br>Build and run new project for linux<br>if you never run cocos2d-x on linux, you need to install all dependences by the script in cocos2d/build/install-deps-linux.sh<br>$ cd cocos2d-x/build<br>$ ./install-deps-linux.sh<br>Then<br>$ cd NEW_PROJECTS_DIR/MyGame<br>$ cocos run -p linux<br>Run<br>$ bin/MyGame</p>
+<p>Build and run new project for win32<br>$ cocos run -p win32</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://blog.gorendo.org/2014/06/cocos2d-x-e5-9c-a8-mac-e4-b8-8a-e8-a8-ad-e7-bd-ae-cocos2d-x-cocos2d-x-3-x/" data-id="cj6ag8hg80006i5xuiao30b13" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-unity-assetbundle-shader-e9-81-ba-e5-a4-b1-e7-9a-84-e8-a7-a3-e6-b1-ba-e6-96-b9-e6-a1-88" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/04/unity-assetbundle-shader-e9-81-ba-e5-a4-b1-e7-9a-84-e8-a7-a3-e6-b1-ba-e6-96-b9-e6-a1-88/" class="article-date">
+  <time datetime="2014-04-29T01:54:00.000Z" itemprop="datePublished">2014-04-29</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Mobile-Dev/">Mobile Dev</a>►<a class="article-category-link" href="/categories/Mobile-Dev/OpenGL/">OpenGL</a>►<a class="article-category-link" href="/categories/Mobile-Dev/OpenGL/Unity/">Unity</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/04/unity-assetbundle-shader-e9-81-ba-e5-a4-b1-e7-9a-84-e8-a7-a3-e6-b1-ba-e6-96-b9-e6-a1-88/">[Unity] Assetbundle Shader 遺失的解決方案</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>物件打包成 AssetBundle 後有的物件上的材質的shader 會 lost 變一塊紫色</p>
+<pre>//assetbundle後shader會lost的處理
+gameObject.renderer.material.shader =  Shader.Find(gameObject.renderer.material.shader.name); 
+</pre>
+或是
+
+<pre>    using UnityEngine;
+    using System.Collections;
+    public class ApplyShader : MonoBehaviour 
+    {
+        private Material[] thisMaterial;
+        private string[] shaders;
+        void Start () {
+            thisMaterial = this.renderer.sharedMaterials;             
+            shaders =  new string[thisMaterial.Length];
+            for( int i = 0; i &lt; thisMaterial.Length; i++){
+                shaders[i] = thisMaterial[i].shader.name;
+            }    
+
+            for( int i = 0; i &lt; thisMaterial.Length; i++){
+                thisMaterial[i].shader = Shader.Find(shaders[i]);  
+            }
+        }
+    }
+</pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://blog.gorendo.org/2014/04/unity-assetbundle-shader-e9-81-ba-e5-a4-b1-e7-9a-84-e8-a7-a3-e6-b1-ba-e6-96-b9-e6-a1-88/" data-id="cj6ag8hih003wi5xusvevkkxu" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -112,23 +649,20 @@
 
   
 
+
+  <nav id="page-nav">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/2/">__('next') &raquo;</a>
+  </nav>
+
 </section>
         
           <aside id="sidebar">
   
     
-
-  
-    
-
-  
-    
-  
-    
   <div class="widget-wrap">
-    <h3 class="widget-title">Arkiv</h3>
+    <h3 class="widget-title">Catégories</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">August 2017</a></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/01-3-JAVA/">01-3 JAVA</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/02-軟體/">02 軟體</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Android/">Android</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/程式語言/">程式語言</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Android/遊戲引擎/">遊戲引擎</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/C/">C#</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/C/Visuel-Studio/">Visuel Studio</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/C-C/">C/C++</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/C-C/Cocos2D/">Cocos2D</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/C-C/Cocos2D/程式語言/">程式語言</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/C-C/Cocos2D/程式語言/遊戲引擎/">遊戲引擎</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/C-C/Cocos2D/程式語言/遊戲引擎/遊戲開發/">遊戲開發</a></li></ul></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/C-C/程式語言/">程式語言</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Cocos2D/">Cocos2D</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Cocos2D/遊戲引擎/">遊戲引擎</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Cocos2D/遊戲引擎/遊戲開發/">遊戲開發</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/DATABASE/">DATABASE</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Facebook/">Facebook</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Game-Engine/">Game Engine</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Game-Engine/HTML5/">HTML5</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Game-Engine/HTML5/遊戲引擎/">遊戲引擎</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/GameProgram/">GameProgram</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/GameProgram/Lua/">Lua</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/GameProgram/Lua/Mac/">Mac</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Google/">Google</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Google/Google-API/">Google API</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML5/">HTML5</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Javascript/">Javascript</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Javascript/WEB程式/">WEB程式</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Javascript/WEB程式/程式語言/">程式語言</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Mac/">Mac</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Mac/WEB程式/">WEB程式</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Mobile-Dev/">Mobile Dev</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Mobile-Dev/OpenGL/">OpenGL</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Mobile-Dev/OpenGL/Unity/">Unity</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/MySQL/">MySQL</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/MySQL/PHP/">PHP</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/MySQL/PHP/程式語言/">程式語言</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/PHP/">PHP</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/PHP/SEO/">SEO</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/PHP/SEO/套件/">套件</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/PHP/SEO/套件/程式語言/">程式語言</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/PHP/WEB程式/">WEB程式</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/PHP/WEB程式/程式語言/">程式語言</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/PHP/WEB程式/程式語言/網頁設計/">網頁設計</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/PHP/安全性/">安全性</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/PHP/安全性/程式語言/">程式語言</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/PHP/技巧/">技巧</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/PHP/技巧/程式語言/">程式語言</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/PHP/程式語言/">程式語言</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Regular-Expression/">Regular Expression</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Regular-Expression/程式語言/">程式語言</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Unity/">Unity</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Unity/技巧/">技巧</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Unity/技巧/遊戲引擎/">遊戲引擎</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Unity/技巧/遊戲引擎/遊戲開發/">遊戲開發</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Unity/技巧/遊戲引擎/遊戲開發/開發理論/">開發理論</a></li></ul></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Unity/遊戲開發/">遊戲開發</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/WEB程式/">WEB程式</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/WEB程式/網頁設計/">網頁設計</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/html/">html</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/html/PHP/">PHP</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/html/PHP/程式語言/">程式語言</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/html/WEB程式/">WEB程式</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/iOS開發/">iOS開發</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery/">jQuery</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery/PHP/">PHP</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery/PHP/WEB程式/">WEB程式</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery/PHP/WEB程式/程式語言/">程式語言</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery/PHP/WEB程式/程式語言/網頁設計/">網頁設計</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery/PHP/程式語言/">程式語言</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery/WEB程式/">WEB程式</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/專題週記/">專題週記</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/攝影/">攝影</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/敗家/">敗家</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/未分類/">未分類</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/程式語言/">程式語言</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/網頁設計/">網頁設計</a></li></ul>
     </div>
   </div>
 
@@ -136,12 +670,57 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Siste innlegg</h3>
+    <h3 class="widget-title">Mot-clés</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ATOM/">ATOM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android/">Android</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/">C#</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Game-Dev/">Game Dev</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Google-API/">Google API</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JAVA/">JAVA</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mac/">Mac</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OpenGL/">OpenGL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PHP/">PHP</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Nuage de mot-clés</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/ATOM/" style="font-size: 10px;">ATOM</a> <a href="/tags/Android/" style="font-size: 20px;">Android</a> <a href="/tags/C/" style="font-size: 10px;">C#</a> <a href="/tags/Game-Dev/" style="font-size: 15px;">Game Dev</a> <a href="/tags/Google-API/" style="font-size: 10px;">Google API</a> <a href="/tags/JAVA/" style="font-size: 10px;">JAVA</a> <a href="/tags/Mac/" style="font-size: 10px;">Mac</a> <a href="/tags/OpenGL/" style="font-size: 10px;">OpenGL</a> <a href="/tags/PHP/" style="font-size: 10px;">PHP</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">October 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">June 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08/">August 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">June 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04/">April 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03/">March 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/02/">February 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01/">January 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/09/">September 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/07/">July 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/04/">April 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/03/">March 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/02/">February 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/01/">January 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/11/">November 2011</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/10/">October 2011</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/09/">September 2011</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/08/">August 2011</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/07/">July 2011</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/06/">June 2011</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/05/">May 2011</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/04/">April 2011</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/03/">March 2011</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/02/">February 2011</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/01/">January 2011</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/07/">July 2010</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/05/">May 2010</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/08/">August 2009</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/03/">March 2009</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/02/">February 2009</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/10/">October 2008</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/09/">September 2008</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/08/">August 2008</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Articles récents</h3>
     <div class="widget">
       <ul>
         
           <li>
-            <a href="/2017/08/13/hello-world/">Hello World</a>
+            <a href="/2016/10/php-mac-atom-visual-studio-code-php.html/">[php] 在 Mac 用ATOM / Visual Studio Code 為 php debug</a>
+          </li>
+        
+          <li>
+            <a href="/2015/12/mac-xxx.html/">[Mac] 解決 您要讓應用程式 XXX 接受傳入的網路連接嗎 一直跳出</a>
+          </li>
+        
+          <li>
+            <a href="/2015/10/php-e5-af-a6-e4-bd-9ccallback/">[php] 實作callback</a>
+          </li>
+        
+          <li>
+            <a href="/2015/06/android-setclicklistener-in-custom-view.html/">[Android] setClickListener in custom view</a>
+          </li>
+        
+          <li>
+            <a href="/2015/06/e8-a7-a3-e6-b1-ba-errorexecution-failed-for-task-predexdebug-com-android-ide-common-process-processexception-org-gradle-process-internal-execexception-process-command-finished-with-non-zero/">解決 Error:Execution failed for task &#39;preDexDebug&#39;. &gt; com.android.ide.common.process.ProcessException: org.gradle.process.internal.ExecException: Process &#39;command  finished with non-zero exit value 1</a>
           </li>
         
       </ul>
@@ -157,7 +736,7 @@
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2017 gonex45<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>

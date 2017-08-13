@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>WINDOWS(7、XP) 降Ping手冊(改TcpAckFrequency和MTU) | 小伍手札</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="測試環境： XP SP2 / 7旗鑑版 如果改完網路出問題的話把所有東西調回預設…我改那麼多次是沒遇到啦… ============================== 第一部份 - 改TcpAckFrequency原理：TcpAckFrequency是指封包要堆積幾個才會丟到伺服器，預設是2，我們把他改成1個就丟: D  方法1 (Windows Vista/7無效)：在”開始”下打開“執行”，">
+<meta property="og:type" content="article">
+<meta property="og:title" content="WINDOWS(7、XP) 降Ping手冊(改TcpAckFrequency和MTU)">
+<meta property="og:url" content="http://blog.gorendo.org/2012/01/windows7-e3-80-81xp-e9-99-8dping-e6-89-8b-e5-86-8a-e6-94-b9tcpackfrequency-e5-92-8cmtu/index.html">
+<meta property="og:site_name" content="小伍手札">
+<meta property="og:description" content="測試環境： XP SP2 / 7旗鑑版 如果改完網路出問題的話把所有東西調回預設…我改那麼多次是沒遇到啦… ============================== 第一部份 - 改TcpAckFrequency原理：TcpAckFrequency是指封包要堆積幾個才會丟到伺服器，預設是2，我們把他改成1個就丟: D  方法1 (Windows Vista/7無效)：在”開始”下打開“執行”，">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2017-08-13T03:17:04.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="WINDOWS(7、XP) 降Ping手冊(改TcpAckFrequency和MTU)">
+<meta name="twitter:description" content="測試環境： XP SP2 / 7旗鑑版 如果改完網路出問題的話把所有東西調回預設…我改那麼多次是沒遇到啦… ============================== 第一部份 - 改TcpAckFrequency原理：TcpAckFrequency是指封包要堆積幾個才會丟到伺服器，預設是2，我們把他改成1個就丟: D  方法1 (Windows Vista/7無效)：在”開始”下打開“執行”，">
+  
+    <link rel="alternate" href="/atom.xml" title="小伍手札" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">小伍手札</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">某RD的開發筆記</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://blog.gorendo.org"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-windows7-e3-80-81xp-e9-99-8dping-e6-89-8b-e5-86-8a-e6-94-b9tcpackfrequency-e5-92-8cmtu" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2012/01/windows7-e3-80-81xp-e9-99-8dping-e6-89-8b-e5-86-8a-e6-94-b9tcpackfrequency-e5-92-8cmtu/" class="article-date">
+  <time datetime="2012-01-10T13:35:00.000Z" itemprop="datePublished">2012-01-10</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/02-軟體/">02 軟體</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      WINDOWS(7、XP) 降Ping手冊(改TcpAckFrequency和MTU)
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>測試環境： XP SP2 / 7旗鑑版</p>
+<p>如果改完網路出問題的話把所有東西調回預設…我改那麼多次是沒遇到啦…</p>
+<p>==============================</p>
+<h1 id="第一部份-改TcpAckFrequency"><a href="#第一部份-改TcpAckFrequency" class="headerlink" title="第一部份 - 改TcpAckFrequency"></a>第一部份 - 改TcpAckFrequency</h1><p>原理：TcpAckFrequency是指封包要堆積幾個才會丟到伺服器，預設是2，我們把他改成1個就丟: D</p>
+<p><a name="more"></a></p>
+<p>方法1 (Windows Vista/7無效)：<br>在”開始”下打開“執行”，輸入regedit，開啟註冊表。</p>
+<p>找到<br>HKEY_LOCAL_MACHINESYSTEMCurrentControlSetServicesTcpipParametersInterfaces<br>裡面會有很多網路介面，找到有你對外網路IP的介面上<br>(不知道的開執行打”cmd”後enter，在黑黑的畫面上打ipconfig可以看到對外ip(192開頭的是區網。不要用))</p>
+<p>在右邊的視窗點滑鼠右鍵，添加一個新的DWORD值，命名為TcpAckFrequency，然後右鍵點擊這個字串，選擇“改變”，把數值設為1。</p>
+<p>這部份可能有人會找不到…我是沒遇上<br>找到<br>HKEY_LOCAL_MACHINESOFTWAREMicrosoftMSMQParameters</p>
+<p>在右邊視窗點右鍵，添加新的DWORD值，命名為TCPNoDelay，然後右鍵點擊它，選擇“改變”，把值設為1。</p>
+<p>————XP用——————————————————-</p>
+<p>1. 下載:tuneapp-1.3.2.zip 並解開執行<br><a href="http://factory.sakura.ne.jp/tuneapp/" target="_blank" rel="external">http://factory.sakura.ne.jp/tuneapp/</a></p>
+<p>2. 點左邊TCP/IP，右上的選你的網卡名稱，不知道的在”連線”→”顯示所有連線”在”區域網路”上右鍵，最上面的”連線使用”裡就是。</p>
+<p>3. TCP遲延ACK 改1 ，最後點”設定反應”後重開機生效(不過後面還有東西要改…晚點重開)</p>
+<p>————WIN7用——————————————————-</p>
+<p>控制台=&gt; 程式與功能 =&gt; 開啟或關閉windows 功能 =&gt; MSMQ 伺服器 =&gt; 安裝</p>
+<p>存一個 1.reg 檔 內容如下(不含######</p>
+<p>#######################################################################<br>Windows Registry Editor Version 5.00</p>
+<p>[HKEY_LOCAL_MACHINESOFTWAREMicrosoftMSMQ]</p>
+<p>[HKEY_LOCAL_MACHINESOFTWAREMicrosoftMSMQParameters]<br>“TCPNoDelay”=dword:00000001</p>
+<p>[HKEY_LOCAL_MACHINESOFTWAREMicrosoftMSMQParametersOCMsetup]</p>
+<p>[HKEY_LOCAL_MACHINESOFTWAREMicrosoftMSMQParametersSecurity]<br>“SecureDSCommunication”=dword:00000000</p>
+<p>[HKEY_LOCAL_MACHINESOFTWAREMicrosoftMSMQParameterssetup]</p>
+<p>[HKEY_LOCAL_MACHINESOFTWAREMicrosoftMSMQSetup]</p>
+<p>#######################################################################</p>
+<p>開始→regedit<br>找到HKEY_LOCAL_MACHINESYSTEMCurrentControlSetServicesTcpipParameters Interfaces</p>
+<p>下面會列出許多NIC介面（名字類似{7DBA6DCA-FFE8-4002-A28F-4D2B57AE8383}），<br>找到有你對外網路IP的介面上<br>(不知道的開執行打”cmd”後enter，在黑黑的畫面上打ipconfig可以看到對外ip(192開頭的是區網。不要用))</p>
+<p>在右邊視窗點右鍵，添加新的DWORD值，<br>命名TcpAckFrequency，右鍵，修改，數值資料下面填1<br>最後重開機OK。</p>
+<p>(可能要裝方法3的修正檔…因為不像MTU能用網頁測數值所以沒實際的數字測出有沒有用)</p>
+<p>==============================</p>
+<h1 id="第二部份-改MTU"><a href="#第二部份-改MTU" class="headerlink" title="第二部份 - 改MTU"></a>第二部份 - 改MTU</h1><p>原理：<br>MTU是指資料要累積多少才會構成一個封包，預設是1500，也就是要1500資料量才會傳指令給伺服器，這邊我們改成576，576是IPv6的最小容忍值，另外有64的，那個是IPv4的。之前有設過忘記結果…PING值自已覺得不夠猛的可以試試…</p>
+<p>注意：<br>有經過路由器的可能會失效，因為封包設定可能會被路由器改過…有路由器的也別憺心，連到路由器上(如在IE打192.168.2.1之類…詳細請找出你可愛的說明書，裡面應該有調MTU的值，但電腦和路由都要設哦)</p>
+<p>————XP用——————————————————-<br>下載DRTCP021並執行<br><a href="http://www.dslreports.com/drtcp" target="_blank" rel="external">http://www.dslreports.com/drtcp</a><br>1. 左下角Adapter Settings選好你的網路卡<br>2. Dial Up (RAS) MTU 和 Adapter Settings裡的MTU都輸入576<br>3. Save並重開機</p>
+<p>————VISTA/7用——————————————————-</p>
+<p>1. 按開始後輸入”cmd”打開”命令提示字元”<br>→(我的有改過權限，不能改的話到<br>→:WindowsSystem32cmd.exe右鍵以管理員執行)</p>
+<p>2. 輸入”netsh interface ipv4 show subinterfaces” 看一下你的網路介面和MTU值</p>
+<p>#####################################################<br>MTU MediaSenseState 接收的位元組 傳送的位元組 介面</p>
+<hr>
+<p>4294967295 1 0 10244243 Loopback Pseudo-Interface 1<br>1500 1 621315590 44876968 寬頻連線<br>1500 1 2638134 12003126 區域連線</p>
+<p>#####################################################</p>
+<p>之後打 netsh interface ipv4 set subinterface “連結名” mtu=576 store=persistent<br>EX: netsh interface ipv4 set subinterface “寬頻連線” mtu=576 store=persistent</p>
+<p>不用重開機就有反應<br>網路怪怪的話弄回576/1500吧</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://blog.gorendo.org/2012/01/windows7-e3-80-81xp-e9-99-8dping-e6-89-8b-e5-86-8a-e6-94-b9tcpackfrequency-e5-92-8cmtu/" data-id="cj6ag8hiq004ei5xuhr9ilyeb" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2012/02/php-e5-90-84-e7-a8-ae-e9-a1-9egoogle-analytics-e7-b6-b2-e9-a0-81-e6-b5-81-e9-87-8f-e5-88-86-e6-9e-90-e3-80-81-e7-ab-99-e9-95-b7-e5-b7-a5-e5-85-b7-e5-a5-97-e4-bb-b6/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Récent</strong>
+      <div class="article-nav-title">
+        
+          [php]各種類Google Analytics網頁流量分析、站長工具套件
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2012/01/eclipse-svn-for-eclipse/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Ancien</strong>
+      <div class="article-nav-title">[eclipse] SVN for Eclipse</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Catégories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/01-3-JAVA/">01-3 JAVA</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/02-軟體/">02 軟體</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Android/">Android</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/程式語言/">程式語言</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Android/遊戲引擎/">遊戲引擎</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/C/">C#</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/C/Visuel-Studio/">Visuel Studio</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/C-C/">C/C++</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/C-C/Cocos2D/">Cocos2D</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/C-C/Cocos2D/程式語言/">程式語言</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/C-C/Cocos2D/程式語言/遊戲引擎/">遊戲引擎</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/C-C/Cocos2D/程式語言/遊戲引擎/遊戲開發/">遊戲開發</a></li></ul></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/C-C/程式語言/">程式語言</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Cocos2D/">Cocos2D</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Cocos2D/遊戲引擎/">遊戲引擎</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Cocos2D/遊戲引擎/遊戲開發/">遊戲開發</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/DATABASE/">DATABASE</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Facebook/">Facebook</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Game-Engine/">Game Engine</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Game-Engine/HTML5/">HTML5</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Game-Engine/HTML5/遊戲引擎/">遊戲引擎</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/GameProgram/">GameProgram</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/GameProgram/Lua/">Lua</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/GameProgram/Lua/Mac/">Mac</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Google/">Google</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Google/Google-API/">Google API</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML5/">HTML5</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Javascript/">Javascript</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Javascript/WEB程式/">WEB程式</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Javascript/WEB程式/程式語言/">程式語言</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Mac/">Mac</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Mac/WEB程式/">WEB程式</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Mobile-Dev/">Mobile Dev</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Mobile-Dev/OpenGL/">OpenGL</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Mobile-Dev/OpenGL/Unity/">Unity</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/MySQL/">MySQL</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/MySQL/PHP/">PHP</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/MySQL/PHP/程式語言/">程式語言</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/PHP/">PHP</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/PHP/SEO/">SEO</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/PHP/SEO/套件/">套件</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/PHP/SEO/套件/程式語言/">程式語言</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/PHP/WEB程式/">WEB程式</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/PHP/WEB程式/程式語言/">程式語言</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/PHP/WEB程式/程式語言/網頁設計/">網頁設計</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/PHP/安全性/">安全性</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/PHP/安全性/程式語言/">程式語言</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/PHP/技巧/">技巧</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/PHP/技巧/程式語言/">程式語言</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/PHP/程式語言/">程式語言</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Regular-Expression/">Regular Expression</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Regular-Expression/程式語言/">程式語言</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Unity/">Unity</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Unity/技巧/">技巧</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Unity/技巧/遊戲引擎/">遊戲引擎</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Unity/技巧/遊戲引擎/遊戲開發/">遊戲開發</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Unity/技巧/遊戲引擎/遊戲開發/開發理論/">開發理論</a></li></ul></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Unity/遊戲開發/">遊戲開發</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/WEB程式/">WEB程式</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/WEB程式/網頁設計/">網頁設計</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/html/">html</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/html/PHP/">PHP</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/html/PHP/程式語言/">程式語言</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/html/WEB程式/">WEB程式</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/iOS開發/">iOS開發</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery/">jQuery</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery/PHP/">PHP</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery/PHP/WEB程式/">WEB程式</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery/PHP/WEB程式/程式語言/">程式語言</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery/PHP/WEB程式/程式語言/網頁設計/">網頁設計</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery/PHP/程式語言/">程式語言</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery/WEB程式/">WEB程式</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/專題週記/">專題週記</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/攝影/">攝影</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/敗家/">敗家</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/未分類/">未分類</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/程式語言/">程式語言</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/網頁設計/">網頁設計</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Mot-clés</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ATOM/">ATOM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android/">Android</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/">C#</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Game-Dev/">Game Dev</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Google-API/">Google API</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JAVA/">JAVA</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mac/">Mac</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OpenGL/">OpenGL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PHP/">PHP</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Nuage de mot-clés</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/ATOM/" style="font-size: 10px;">ATOM</a> <a href="/tags/Android/" style="font-size: 20px;">Android</a> <a href="/tags/C/" style="font-size: 10px;">C#</a> <a href="/tags/Game-Dev/" style="font-size: 15px;">Game Dev</a> <a href="/tags/Google-API/" style="font-size: 10px;">Google API</a> <a href="/tags/JAVA/" style="font-size: 10px;">JAVA</a> <a href="/tags/Mac/" style="font-size: 10px;">Mac</a> <a href="/tags/OpenGL/" style="font-size: 10px;">OpenGL</a> <a href="/tags/PHP/" style="font-size: 10px;">PHP</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">October 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">June 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08/">August 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">June 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04/">April 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03/">March 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/02/">February 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01/">January 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/09/">September 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/07/">July 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/04/">April 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/03/">March 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/02/">February 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/01/">January 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/11/">November 2011</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/10/">October 2011</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/09/">September 2011</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/08/">August 2011</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/07/">July 2011</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/06/">June 2011</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/05/">May 2011</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/04/">April 2011</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/03/">March 2011</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/02/">February 2011</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/01/">January 2011</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/07/">July 2010</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/05/">May 2010</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/08/">August 2009</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/03/">March 2009</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/02/">February 2009</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/10/">October 2008</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/09/">September 2008</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/08/">August 2008</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Articles récents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2016/10/php-mac-atom-visual-studio-code-php.html/">[php] 在 Mac 用ATOM / Visual Studio Code 為 php debug</a>
+          </li>
+        
+          <li>
+            <a href="/2015/12/mac-xxx.html/">[Mac] 解決 您要讓應用程式 XXX 接受傳入的網路連接嗎 一直跳出</a>
+          </li>
+        
+          <li>
+            <a href="/2015/10/php-e5-af-a6-e4-bd-9ccallback/">[php] 實作callback</a>
+          </li>
+        
+          <li>
+            <a href="/2015/06/android-setclicklistener-in-custom-view.html/">[Android] setClickListener in custom view</a>
+          </li>
+        
+          <li>
+            <a href="/2015/06/e8-a7-a3-e6-b1-ba-errorexecution-failed-for-task-predexdebug-com-android-ide-common-process-processexception-org-gradle-process-internal-execexception-process-command-finished-with-non-zero/">解決 Error:Execution failed for task &#39;preDexDebug&#39;. &gt; com.android.ide.common.process.ProcessException: org.gradle.process.internal.ExecException: Process &#39;command  finished with non-zero exit value 1</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 gonex45<br>
+      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

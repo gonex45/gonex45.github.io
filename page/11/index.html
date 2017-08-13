@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>小伍手札</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="小伍手札">
+<meta property="og:url" content="http://blog.gorendo.org/page/11/index.html">
+<meta property="og:site_name" content="小伍手札">
+<meta property="og:locale" content="en">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="小伍手札">
+  
+    <link rel="alternate" href="/atom.xml" title="小伍手札" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">小伍手札</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">某RD的開發筆記</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://blog.gorendo.org"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-sun-e5-8e-9f-e5-bb-a0-e7-9a-84-e8-b3-87-e6-ba-90" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2008/08/sun-e5-8e-9f-e5-bb-a0-e7-9a-84-e8-b3-87-e6-ba-90/" class="article-date">
+  <time datetime="2008-08-19T21:45:00.000Z" itemprop="datePublished">2008-08-20</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/01-3-JAVA/">01-3 JAVA</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2008/08/sun-e5-8e-9f-e5-bb-a0-e7-9a-84-e8-b3-87-e6-ba-90/">SUN原廠的資源</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>慢慢收集…慢慢更新…</p>
+<p><a name="more"></a><br>教學文件下載(必看)<br><a href="javascript:void(0" target="_blank" rel="external">http://java.sun.com/docs/books/tutorial/information/download.html#egs</a>;/<em>1219153739454</em>/)</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://blog.gorendo.org/2008/08/sun-e5-8e-9f-e5-bb-a0-e7-9a-84-e8-b3-87-e6-ba-90/" data-id="cj6ag8hih003vi5xu4g4vv7pt" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-java-jnative" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2008/08/java-jnative/" class="article-date">
+  <time datetime="2008-08-11T15:52:00.000Z" itemprop="datePublished">2008-08-11</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/01-3-JAVA/">01-3 JAVA</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2008/08/java-jnative/">[Java] JNative</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a name="more"></a></p>
+<div><wbr>&nbsp;&nbsp;&nbsp; 網上最多的就是使用JNI調用dll的方法，試了試發現JNI和JNA方法對dll包的路徑都很嚴格，一般都是調用自己寫的dll檔案，要是調用已經寫好的就需要Java類的路徑和dll裡的路徑是一致的，不然能找到這個dll檔案也不能讀取裡面的內容，（我是這么理解的，因為我就沒成功，呵呵）只能自己再寫一個dll檔案調用你需要的那個已經有的檔案，然後在用java調用自己寫的這個dll檔案。<br>JAWIN和JNative是開源組件，使用這兩種方法可以直接調用寫好的dll檔案，Jawin 數據類型匹配相當敏感，它採用一種叫做”instruction string”的格式來傳遞參數，至今還沒學會。<br>我是使用JNative方法調用dll檔案。<br>需要下載一個JNative的壓縮包，<br><br>解壓獲得三個檔案，分別是︰JNativeCpp.dll，libJNativeCpp.so，JNative.jar 。<br><br>&nbsp;&nbsp;&nbsp; JNativeCpp.dll Windows下用的，拷到windows / system32目錄下；<br><br>&nbsp;&nbsp;&nbsp; libJNativeCpp.so Linux下的格式檔案；<br><br>&nbsp;&nbsp;&nbsp; JNative.jar　這是一個擴展包，將其copy到C:Javajre1.5.0lib下（我的目錄架構），系統會自動加載，也可以用eclipse直接加載。<br><br>方法︰</div><br><div><br><br><table border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse; border: medium none; height: 403px; margin-left: 5.4pt; width: 560px;"><tbody><tr style="height: 18.75pt;"><td style="vertical-align: top;"></td><td style="border: 1pt solid windowtext; height: 18.75pt; padding: 0cm 5.4pt; width: 135pt;" valign="top" width="180"><br><div align="center" style="text-align: center;"><strong>Class</strong></div><br></td><td style="border-color: windowtext windowtext windowtext -moz-use-text-color; border-style: solid solid solid none; border-width: 1pt 1pt 1pt medium; height: 18.75pt; padding: 0cm 5.4pt; width: 162pt;" valign="top" width="216"><br><div align="center" style="text-align: center;"><strong>作用</strong></div><br></td><td style="border-color: windowtext windowtext windowtext -moz-use-text-color; border-style: solid solid solid none; border-width: 1pt 1pt 1pt medium; height: 18.75pt; padding: 0cm 5.4pt; width: 207pt;" valign="top" width="276"><br><div align="center" style="text-align: center;"><strong>一般用到的方法<br>（**</strong><a href="http://jnative.free.fr/docs/" target="_blank" rel="external">参考Javadoc</a><strong>**）</strong></div><br></td></tr><tr style="height: 16.5pt;"><td style="vertical-align: top;"></td><td style="border-color: -moz-use-text-color; border-style: none solid solid; border-width: medium 1pt 1pt; height: 16.5pt; padding: 0cm 5.4pt; width: 135pt;" valign="top" width="180"><br><div>org.xvolks.jnative.Jnative</div><br></td><td style="border-color: -moz-use-text-color; border-style: none solid solid none; border-width: medium 1pt 1pt medium; height: 16.5pt; padding: 0cm 5.4pt; width: 162pt;" valign="top" width="216">裝載dll檔案，定位函數</td><td style="border-color: -moz-use-text-color; border-style: none solid solid none; border-width: medium 1pt 1pt medium; height: 16.5pt; padding: 0cm 5.4pt; width: 207pt;" valign="top" width="276"><br><div>JNative(),setParameter(),<span style="font-size: 10pt;"><br>setRetVal(),getRetVal() etc.</span></div><br></td></tr><tr style="height: 32.25pt;"><td style="vertical-align: top;"></td><td style="border-color: -moz-use-text-color; border-style: none solid solid; border-width: medium 1pt 1pt; height: 32.25pt; padding: 0cm 5.4pt; width: 135pt;" valign="top" width="180"><br><div>org.xvolks.jnative.pointers<br>.Pointer</div><br></td><td style="border-color: -moz-use-text-color; border-style: none solid solid none; border-width: medium 1pt 1pt medium; height: 32.25pt; padding: 0cm 5.4pt; width: 162pt;" valign="top" width="216">替代本地函數中的的指標，需要先申請一塊記憶體空間，才能創建</td><td style="border-color: -moz-use-text-color; border-style: none solid solid none; border-width: medium 1pt 1pt medium; height: 32.25pt; padding: 0cm 5.4pt; width: 207pt;" valign="top" width="276"><br><div>Pointer()，dispose()</div><br></td></tr><tr style="height: 32.25pt;"><td style="vertical-align: top;"></td><td style="border-color: -moz-use-text-color; border-style: none solid solid; border-width: medium 1pt 1pt; height: 32.25pt; padding: 0cm 5.4pt; width: 135pt;" valign="top" width="180"><br><div>org.xvolks.jnative.<br>pointers.memory.<br>MemoryBlockFactory</div><br></td><td style="border-color: -moz-use-text-color; border-style: none solid solid none; border-width: medium 1pt 1pt medium; height: 32.25pt; padding: 0cm 5.4pt; width: 162pt;" valign="top" width="216"><br><div>申請一塊記憶體空間</div><br></td><td style="border-color: -moz-use-text-color; border-style: none solid solid none; border-width: medium 1pt 1pt medium; height: 32.25pt; padding: 0cm 5.4pt; width: 207pt;" valign="top" width="276"><br><div>createMemoryBlock()</div><br></td></tr><tr style="height: 17.9pt;"><td style="vertical-align: top;"></td><td style="border-color: -moz-use-text-color; border-style: none solid solid; border-width: medium 1pt 1pt; height: 17.9pt; padding: 0cm 5.4pt; width: 135pt;" valign="top" width="180"><br><div>org.xvolks.jnative.<br>exceptions<br>.NativeException</div><br></td><td style="border-color: -moz-use-text-color; border-style: none solid solid none; border-width: medium 1pt 1pt medium; height: 17.9pt; padding: 0cm 5.4pt; width: 162pt;" valign="top" width="216"><br><div>拋出裝載，定位等方面的異常</div><br></td><td style="border-color: -moz-use-text-color; border-style: none solid solid none; border-width: medium 1pt 1pt medium; height: 17.9pt; padding: 0cm 5.4pt; width: 207pt;" valign="top" width="276"></td></tr><tr style="height: 17.9pt;"><td style="vertical-align: top;"></td><td style="border-color: -moz-use-text-color; border-style: none solid solid; border-width: medium 1pt 1pt; height: 17.9pt; padding: 0cm 5.4pt; width: 135pt;" valign="top" width="180"><br><div>org.xvolks.jnative.Type</div><br></td><td style="border-color: -moz-use-text-color; border-style: none solid solid none; border-width: medium 1pt 1pt medium; height: 17.9pt; padding: 0cm 5.4pt; width: 162pt;" valign="top" width="216"><br><div>&nbsp;列舉和管理Jnative需要的不同的數據類型</div><br></td><td style="border-color: -moz-use-text-color; border-style: none solid solid none; border-width: medium 1pt 1pt medium; height: 17.9pt; padding: 0cm 5.4pt; width: 207pt;" valign="top" width="276"></td></tr></tbody></table><br><div style="margin-left: 10.5pt;">具体参考API：<a href="http://jnative.free.fr/docs/" target="_blank" rel="external"><span style="font-family: 宋体;">http://jnative.free.fr/docs/</span></a></div><br>這個使用很簡單,參數設定也很自由<br><br>//首先加載dll和需要的方法<br><br>&nbsp; JNative messageBox = new JNative(“dll_name.dll”, “method_name”);<br><br>//返回值數據類型<br>&nbsp;&nbsp; messageBox.setRetVal(Type.INT);<br><br>//參數設定<br>&nbsp;&nbsp; messageBox.setParameter(0, Type.STRING,”piserver”);<br><br>//營運<br>&nbsp;&nbsp; messageBox.invoke();<br><div style="margin-left: 10.5pt;"><br></div><br><div style="margin-left: 10.5pt;"><span style="font-family: 宋体;">====================================</span></div><br><div style="margin-left: 10.5pt;"><a href="http://jnative.free.fr/docs/" target="_blank" rel="external"><span style="font-family: 宋体;">http://jnative.free.fr/docs/</span></a></div><br><div style="margin-left: 10.5pt;"><code>取得回傳值
+getRetVal()</code></div><br><div style="margin-left: 10.5pt;"><code>TYPE</code></div>
+
+<p><table border="1" cellpadding="3" cellspacing="0" summary=""><tbody><tr bgcolor="white"><td><code>**[DOUBLE](http://jnative.free.fr/docs/org/xvolks/jnative/Type.html#DOUBLE)**</code><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Used for <strong>in</strong> params of type double</td></tr><tr bgcolor="white"><td><code>**[FLOAT](http://jnative.free.fr/docs/org/xvolks/jnative/Type.html#FLOAT)**</code><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Used for <strong>in</strong> params of type float</td></tr><tr bgcolor="white"><td><code>**[INT](http://jnative.free.fr/docs/org/xvolks/jnative/Type.html#INT)**</code><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Used for <strong>in</strong> params of type bool, byte to long (32 bits)</td></tr><tr bgcolor="white"><td><code>**[LONG](http://jnative.free.fr/docs/org/xvolks/jnative/Type.html#LONG)**</code><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Used for <strong>in</strong> params of type int64 (64 bits)</td></tr><tr bgcolor="white"><td><code>**[PSTRUCT](http://jnative.free.fr/docs/org/xvolks/jnative/Type.html#PSTRUCT)**</code>  (指標)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Not use directly, use a Pointer(指標) object instead<br>This is used internaly for <strong>out</strong> parameters.</td></tr><tr bgcolor="white"><td><code>**[STRING](http://jnative.free.fr/docs/org/xvolks/jnative/Type.html#STRING)**</code><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Used for <strong>in</strong> params of type const char<em>, LPCSTR</em></td></tr><tr bgcolor="white"><td>`<em>*<a href="http://jnative.free.fr/docs/org/xvolks/jnative/Type.html#VOID" target="_blank" rel="external">VOID</a></em>`<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Used only for return values</td></tr></tbody></table></p>
+<div style="margin-left: 10.5pt;">&nbsp;<strong><strong><strong><strong><strong><strong><em>**</em></strong></strong></strong></strong></strong></strong></div><br><div style="margin-left: 10.5pt;">有指標時的用法</div><br><div style="margin-left: 10.5pt;"><strong><strong><strong><strong><strong><strong><strong>*</strong></strong></strong></strong></strong></strong></strong></div><br><div style="margin-left: 10.5pt;">假設dllName.dll裡有<br>FuntionName(string <em> str)<br>的方法</em></div><br><div style="margin-left: 10.5pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; JNative funDLL = new JNative(dllName.dll, “FuntionName”);<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; funDLL.setRetVal(Type.INT);<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //参数设置<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Pointer pointer1 = new Pointer( new HeapMemoryBlock(50));<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //設定要預用多少記憶體空間來放指標<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; pointer1.setStringAt(0 ,”指標初值”);<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //設定初值<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; System.out.println(pointer1.getAsString()); //會印出 指標初值 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; funDLL.setParameter(0, pointer1);<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //運行dllFuntion<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; funDLL.invoke();<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; System.out.println(pointer1.getAsString());<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //印出指標的值</div><br><div style="margin-left: 10.5pt;"><strong><strong><strong><strong><strong><strong><em>**</em></strong></strong></strong></strong></strong></strong></div>
+
+<p></p></div><p></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://blog.gorendo.org/2008/08/java-jnative/" data-id="cj6ag8hh7001qi5xuwn2qywny" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-java-jawin-e8-aa-bf-e7-94-a8-e6-9c-ac-e5-9c-b0dll" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2008/08/java-jawin-e8-aa-bf-e7-94-a8-e6-9c-ac-e5-9c-b0dll/" class="article-date">
+  <time datetime="2008-08-11T14:37:00.000Z" itemprop="datePublished">2008-08-11</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/01-3-JAVA/">01-3 JAVA</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2008/08/java-jawin-e8-aa-bf-e7-94-a8-e6-9c-ac-e5-9c-b0dll/">[Java] jawin 調用本地dll</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>最近做一個項目使用jawin調用本地的dll，給有關心得貼上來<br>步驟：<br>1.下載jawin：<a href="http://jawinproject.sourceforge.net/。" target="_blank" rel="external">http://jawinproject.sourceforge.net/。</a><br>2.將jawin.jar放於%JAVA_HOME%jrelibext下 。<br>3.將jawin.dll放於c win32下。</p>
+<p><a name="more"></a></p>
+<p>import org.jawin.funcptr;&nbsp;<br>import org.jawin.returnflags;&nbsp;<br>public class createppt {&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; public static void main(string[] args) {&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; try {&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; funcptr msgbox = new funcptr(“user32.dll”, “messageboxw”); //獲得函數指針<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; msgbox.invoke(0, “hello from a dll”, “from jawin”, 0, returnflags.fail_on_false);&nbsp;<br>/*1.&nbsp;&nbsp;&nbsp;&nbsp; 指令字符串。一個”XXX:Y:ZZZ”格式的字符串。其含義分別是傳入參數中的每個字節的數據類型意義、返回值的類型、需要從傳入指針中讀取的數據(inout類型參數)。比如： </p>
+<p>函數簽名int func(int, int, struct s<em>, char</em>); //其中struct s*調用完函數後需要讀出，struct s所占字節數為16。 </p>
+<p>其指令字符串為：IIP16G:I:L4L4n16L4。該字符串在解析返回值(字節數組)時，首先應該是返回類型I對應的4個字節，然後是inout類型的參數中n16對應的16個字節。 </p>
+<p>其中字符串的意義可以在Jawin提供的文件instructions.h中找到，或者在官方文檔(Jawin數據指令)中找到常用的一些指令字符串的意義。 </p>
+<p>2.&nbsp;&nbsp;&nbsp;&nbsp; 傳入參數的總字節大小。 </p>
+<p>3.&nbsp;&nbsp;&nbsp;&nbsp; 前面寫好的傳入參數的原始字節流。 </p>
+<p>4.&nbsp;&nbsp;&nbsp;&nbsp; 一個object數組。 </p>
+<p>5.&nbsp;&nbsp;&nbsp;&nbsp; ReturnFlags，用以根據C/C++返回值將C/C++的錯誤轉換為Java的異常並拋出。其中CHECK_NONE表示不檢查；CHECK_FALSE和 CHECK_WIN32分別表示返回0是FALSE和SUCCESS，根據是否出錯決定是否拋出異常；CHECK_HRESULT表示使用COM模型中的 HRESULT作為返回值，其錯誤碼可以配置。 </p>
+<p>*/<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } catch (exception e) {&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; e.printstacktrace();&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://blog.gorendo.org/2008/08/java-jawin-e8-aa-bf-e7-94-a8-e6-9c-ac-e5-9c-b0dll/" data-id="cj6ag8hh6001oi5xucr6mrjgp" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-java-e4-bd-bf-e7-94-a8jawin-e6-93-8d-e4-bd-9cword-e6-96-87-e6-aa-94-e7-9a-84java-e7-a8-8b-e5-bc-8f" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2008/08/java-e4-bd-bf-e7-94-a8jawin-e6-93-8d-e4-bd-9cword-e6-96-87-e6-aa-94-e7-9a-84java-e7-a8-8b-e5-bc-8f/" class="article-date">
+  <time datetime="2008-08-11T14:27:00.000Z" itemprop="datePublished">2008-08-11</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/01-3-JAVA/">01-3 JAVA</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2008/08/java-e4-bd-bf-e7-94-a8jawin-e6-93-8d-e4-bd-9cword-e6-96-87-e6-aa-94-e7-9a-84java-e7-a8-8b-e5-bc-8f/">[Java] 使用jawin操作Word文檔的Java程式</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a name="more"></a></p>
+<p><div></div></p>
+<p><div style="display: inline;"><strong>
+</strong><span>                      </span></div><br></p>
+<p><div><br></div></p>
+<p><div>/<em><br>&nbsp;<wbr></em> CreateWordDoc.java<br>&nbsp;<wbr><em><br>&nbsp;<wbr></em> 1.Create a new word document;</div></p>
+<p><div>&nbsp;<wbr>* 2.assign font name</div></p>
+<p><div>&nbsp;<wbr>* 3.assign font size</div></p>
+<p><div>&nbsp;<wbr>* 4.write&nbsp;<wbr>two sentences</div></p>
+<p><div>&nbsp;<wbr>* 5.save it</div></p>
+<p><div>&nbsp;<wbr>* 6.close it</div></p>
+<p><div>&nbsp;<wbr><em> 7.exit word.<br>&nbsp;<wbr></em><br>&nbsp;<wbr><em> @version&nbsp;<wbr>&nbsp;<wbr>&nbsp;<wbr>&nbsp;<wbr> vision: 1.0<br>&nbsp;<wbr></em> @author&nbsp;<wbr>&nbsp;<wbr>&nbsp;<wbr>&nbsp;<wbr>&nbsp;<wbr> <a href="mailto:howwa@sina.com" target="_blank" rel="external">howwa@sina.com</a></div></p>
+<p><div>&nbsp;<wbr><em> <a href="http://blog.sina.com.cn/u/1495389370" target="_blank" rel="external">http://blog.sina.com.cn/u/1495389370</a><br>&nbsp;<wbr></em>/</div></p>
+<p><div></div></p>
+<p><div></div></p>
+<p><div>import org.jawin.DispatchPtr;<br>import org.jawin.win32.Ole32;</div></p>
+<p><div></div><br></p>
+<p><div>public class CreateWordDoc {</div></p>
+<p><div>public static void main(String[] args) {<br>&nbsp;<wbr> try {<br>&nbsp;<wbr>&nbsp;<wbr>&nbsp;<wbr> Ole32.CoInitialize();<br>&nbsp;<wbr>&nbsp;<wbr>&nbsp;<wbr> //初始化<br>&nbsp;<wbr>&nbsp;<wbr>&nbsp;<wbr> DispatchPtr app = new DispatchPtr(“Word.Application”);<br>&nbsp;<wbr>&nbsp;<wbr>&nbsp;<wbr> //创建word对象<br>&nbsp;<wbr>&nbsp;<wbr>&nbsp;<wbr> app.put(“Visible”, true);<br>&nbsp;<wbr>&nbsp;<wbr>&nbsp;<wbr> //使word 可见<br>&nbsp;<wbr>&nbsp;<wbr>&nbsp;<wbr> DispatchPtr docs = (DispatchPtr)app.get(“Documents”);<br>&nbsp;<wbr>&nbsp;<wbr>&nbsp;<wbr> //取得document对象集合(Documents)<br>&nbsp;<wbr>&nbsp;<wbr>&nbsp;<wbr> DispatchPtr doc = (DispatchPtr) docs.invoke(“Add”);&nbsp;<wbr><br>&nbsp;<wbr>&nbsp;<wbr>&nbsp;<wbr> //新增一个文档<br>&nbsp;<wbr>&nbsp;<wbr>&nbsp;<wbr> app.invoke(“Activate”);<br>&nbsp;<wbr>&nbsp;<wbr>&nbsp;<wbr> //激活当前文档<br>&nbsp;<wbr>&nbsp;<wbr>&nbsp;<wbr> DispatchPtr objTextFont = (DispatchPtr)((DispatchPtr) doc.get(“Content”)).get(“Font”);<br>&nbsp;<wbr>&nbsp;<wbr>&nbsp;<wbr> //取得Font对象<br>&nbsp;<wbr>&nbsp;<wbr>&nbsp;<wbr> objTextFont.put(“Name”,”黑体”);<br>&nbsp;<wbr>&nbsp;<wbr>&nbsp;<wbr> //设置字体<br>&nbsp;<wbr>&nbsp;<wbr>&nbsp;<wbr> objTextFont.put(“Size”,”48”);<br>&nbsp;<wbr>&nbsp;<wbr>&nbsp;<wbr> //设置字号<br>&nbsp;<wbr>&nbsp;<wbr>&nbsp;<wbr> DispatchPtr docSelection = (DispatchPtr)app.get(“Selection”);<br>&nbsp;<wbr>&nbsp;<wbr>&nbsp;<wbr> //取得Selection对象<br>&nbsp;<wbr>&nbsp;<wbr>&nbsp;<wbr> docSelection.invoke(“TypeText”,”Jawwin test text!nJawin测试文本。”);<br>&nbsp;<wbr>&nbsp;<wbr>&nbsp;<wbr> //使用TypeText方法添加文本<br>&nbsp;<wbr>&nbsp;<wbr>&nbsp;<wbr> doc.invoke(“SaveAs”,”c:\jawintest.doc”);&nbsp;<wbr><br>&nbsp;<wbr>&nbsp;<wbr>&nbsp;<wbr> //保存文档(保存在C盘根目录下)<br>&nbsp;<wbr>&nbsp;<wbr>&nbsp;<wbr> //doc.invoke(“Close”);<br>&nbsp;<wbr>&nbsp;<wbr>&nbsp;<wbr> //关闭当前文档，去掉前面的注释符并重新编译后可生效<br>&nbsp;<wbr>&nbsp;<wbr>&nbsp;<wbr> //app.invoke(“Quit”);<br>&nbsp;<wbr>&nbsp;<wbr>&nbsp;<wbr> //退出Word，去掉前面的注释符并重新编译后可生效</div></p>
+<p><div>&nbsp;<wbr>&nbsp;<wbr>&nbsp;<wbr> Ole32.CoUninitialize();&nbsp;<wbr> //释放对象<br>} catch (Exception e) {<br>e.printStackTrace();<br>}<br>}</div><br>}</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://blog.gorendo.org/2008/08/java-e4-bd-bf-e7-94-a8jawin-e6-93-8d-e4-bd-9cword-e6-96-87-e6-aa-94-e7-9a-84java-e7-a8-8b-e5-bc-8f/" data-id="cj6ag8hh1001ii5xupdswags4" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-java-e9-97-9c-e6-96-bcjava-e8-aa-bf-e7-94-a8dll-e7-9a-84-e6-96-b9-e6-b3-95" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2008/08/java-e9-97-9c-e6-96-bcjava-e8-aa-bf-e7-94-a8dll-e7-9a-84-e6-96-b9-e6-b3-95/" class="article-date">
+  <time datetime="2008-08-08T16:07:00.000Z" itemprop="datePublished">2008-08-09</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/01-3-JAVA/">01-3 JAVA</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2008/08/java-e9-97-9c-e6-96-bcjava-e8-aa-bf-e7-94-a8dll-e7-9a-84-e6-96-b9-e6-b3-95/">[Java] 關於Java調用dll的方法</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <div><span style="font-size: x-small;"><span lang="EN-US" style="font-family: 新細明體;"><a href="http://java.chinaitlab.com/" target="_blank" rel="external">Java</a></span><span lang="ZH-CN" style="font-family: 新細明體;">语言本身具有跨平台性，如果通過</span><span lang="EN-US" style="font-family: 新細明體;"><a href="http://java.chinaitlab.com/" target="_blank" rel="external">Java</a></span><span lang="ZH-CN" style="font-family: 新細明體;">調用</span><span lang="EN-US" style="font-family: 新細明體;">DLL</span><span lang="ZH-CN" style="font-family: 新細明體;">的技术方便易用，使用</span><span lang="EN-US" style="font-family: 新細明體;">Java</span><span lang="ZH-CN" style="font-family: 新細明體;">開發前台界面可以更快速，也能帶来跨平台性。</span><span lang="EN-US" style="font-family: 新細明體;"> <o :p=""></o></span></span></div><br><div><span style="font-size: x-small;"><span lang="EN-US" style="font-family: 新細明體;">&nbsp;&nbsp;&nbsp; </span><span lang="EN-US" style="font-family: 新細明體;">Java</span><span style="font-family: 新細明體;">調用<span lang="EN-US">C/<a href="http://c.chinaitlab.com/" target="_blank" rel="external">C++</a></span>寫好的<span lang="EN-US">DLL</span>庫時，由於基本數據類型不同、使用字節序列可能有差異，所以在參數傳遞過程中容易出現問題。<span lang="EN-US"><o :p=""></o></span></span></span></div><br><span style="font-size: x-small;"><span lang="EN-US" style="font-family: 新細明體;">&nbsp;&nbsp;&nbsp; </span><span style="font-family: 新細明體;">使用<span lang="EN-US">Java</span>調用<span lang="EN-US">DLL</span>動態鏈接庫的方案通常有三種︰<span lang="EN-US">JNI, Jawin, Jacob. </span></span></span><br><br><a name="more"></a><br><br><link href="file:///C:DOCUME~1ADMINI~2.888LOCALS~1Tempmsohtml1 1clip_filelist.xml" rel="File-List"><o :smarttagtype="" downloadurl="" name="chsdate" namespaceuri="urn:schemas-microsoft-com:office:smarttags"></o><o :smarttagtype="" downloadurl="" name="chmetcnv" namespaceuri="urn:schemas-microsoft-com:office:smarttags"></o><br><div><span lang="EN-US"><o :p="">&nbsp;</o></span><span style="font-family: 新細明體;">其中</span><span lang="EN-US">JNI(Java Native Interface)</span><span style="font-family: 新細明體;">是</span><span lang="EN-US">Java</span><span style="font-family: 新細明體;">語言本身提供的調用本地已編譯的函數庫的方法，本身具有跨平台性，可以在不同的機器上調用不同的本地庫。</span><span lang="EN-US">Jawin</span><span style="font-family: 新細明體;">和</span><span lang="EN-US">Jacob</span><span style="font-family: 新細明體;">都是</span><span lang="EN-US">sourceforge.net</span><span style="font-family: 新細明體;">的开源项目，都是基于</span><span lang="EN-US">JNI</span><span style="font-family: 新細明體;">技术的依赖</span><span lang="EN-US">Windows</span><span style="font-family: 新細明體;">的实现，使得在</span><span lang="EN-US">Windows</span><span style="font-family: 新細明體;">平台下使用</span><span lang="EN-US">COM</span><span style="font-family: 新細明體;">和</span><span lang="EN-US">DLL</span><span style="font-family: 新細明體;">的更加方便。</span></div><br><div style="font-weight: bold;"><span style="font-size: large;">一、JNI</span></div>
+
+<h1 id=""><a href="#" class="headerlink" title=""></a><span style="font-size: large;"><span style="font-family: 新細明體;"></span></span><span lang="EN-US"><o :p=""></o></span></h1><div style="text-indent: 12pt;"><span lang="EN-US">sun</span><span style="font-family: 新細明體;">相關文檔︰</span><span lang="EN-US"><a href="javascript:void(0" target="_blank" rel="external">http://java.sun.com/j2se/<st1 :chsdate="" day="30" islunardate="False" isrocdate="False" month="12" w:st="on" year="1899">1.5.0</st1>/docs/guide/jni/spec/jniTOC.html</a>;/<em>1218204503577</em>/)<o :p=""></o></span></div><br><div style="text-indent: 12pt;"><span lang="EN-US">JNI</span><span style="font-family: 新細明體;">的完整例子</span> <span style="font-family: 新細明體;">︰</span><span lang="EN-US"><a href="javascript:void(0" target="_blank" rel="external">http://www.pconline.com.cn/pcedu/empolder/gj/java/0506/642328.html</a>;/<em>1218204881877</em>/)<o :p=""></o></span></div><br><div style="text-indent: 12pt;"><span lang="EN-US">JNI</span><span style="font-family: 新細明體;">的應用方案是基於</span><span lang="EN-US">Java</span><span style="font-family: 新細明體;">類和本地函數相映射的。其使用</span><span lang="EN-US">DLL</span><span style="font-family: 新細明體;">的步驟還是相對比較麻煩，不但涉及到</span><span lang="EN-US">Java</span><span style="font-family: 新細明體;">編程，還涉及到</span><span lang="EN-US">C/C++</span><span style="font-family: 新細明體;">編程。</span><span lang="EN-US"><o :p=""></o></span></div><br><div><span lang="EN-US">JNI</span><span style="font-family: 新細明體;">的使用步驟是︰</span><span lang="EN-US"><o :p=""></o></span></div><br><div style="text-indent: 12pt;"><span lang="EN-US">1.</span><span style="font-family: 新細明體;">編寫</span><span lang="EN-US">Java</span><span style="font-family: 新細明體;">類，用該類將</span><span lang="EN-US">DLL</span><span style="font-family: 新細明體;">對外提供的函數服務進行聲明，其中的</span><span lang="EN-US">Java</span><span style="font-family: 新細明體;">方法均聲明為</span><span lang="EN-US">native</span><span style="font-family: 新細明體;">，其方法簽名可以自定義，不用實現函數體。</span><span lang="EN-US"><o :p=""></o></span></div><br><div style="text-indent: 12pt;"><span lang="EN-US">2.</span><span style="font-family: 新細明體;">用</span><span lang="EN-US">Javah</span><span style="font-family: 新細明體;">工具將該</span><span lang="EN-US">Java</span><span style="font-family: 新細明體;">類生成對應的</span><span lang="EN-US">.h</span><span style="font-family: 新細明體;">頭文件。</span><span lang="EN-US"><o :p=""></o></span></div><br><div style="text-indent: 12pt;"><span lang="EN-US">3.</span><span style="font-family: 新細明體;">最重要的比較麻煩的一步︰編寫</span><span lang="EN-US">C/C++</span><span style="font-family: 新細明體;">代碼實現</span><span lang="EN-US">.h</span><span style="font-family: 新細明體;">頭文件中聲明的函數，該</span><span lang="EN-US">C/C++</span><span style="font-family: 新細明體;">代碼中包含</span><span lang="EN-US">jni.h</span><span style="font-family: 新細明體;">頭文件，並且編寫代碼時使用其中定義好的</span> <span style="font-family: 新細明體;">數據類型作為函數的輸入和返回數據類型進行編程。用這種方法實現數據類型轉換。例如數據類型︰</span><span lang="EN-US">boolean(java)&nbsp;&nbsp;&nbsp; jboolean(jni.h: typedef unsigned char jboolean)</span><span style="font-family: 新細明體;">，在自己編寫的</span><span lang="EN-US">C/C++</span><span style="font-family: 新細明體;">代碼中使用數據類型</span><span lang="EN-US">jboolean</span><span style="font-family: 新細明體;">映射</span><span lang="EN-US">Java</span><span style="font-family: 新細明體;">中的</span><span lang="EN-US">boolean</span><span style="font-family: 新細明體;">類型。在該步驟中，可以在</span><span lang="EN-US">C/C++</span><span style="font-family: 新細明體;">代碼</span> <span style="font-family: 新細明體;">中調用已經存在的</span><span lang="EN-US">DLL</span><span style="font-family: 新細明體;">庫。</span><span lang="EN-US"><o :p=""></o></span></div><br><div style="text-indent: 12pt;"><span lang="EN-US">4.</span><span style="font-family: 新細明體;">另外編寫的</span><span lang="EN-US">Java</span><span style="font-family: 新細明體;">代碼時就可以使用該</span><span lang="EN-US">Java</span><span style="font-family: 新細明體;">類了。</span><span lang="EN-US"><o :p=""></o></span></div><br><div style="text-indent: 12pt;"><span style="font-family: 新細明體;">在第</span><span lang="EN-US">3</span><span style="font-family: 新細明體;">步中，編寫</span><span lang="EN-US">C/C++</span><span style="font-family: 新細明體;">函數時，可以使用一個叫</span><span lang="EN-US">interface pointer</span><span style="font-family: 新細明體;">的</span><span lang="EN-US">env</span><span style="font-family: 新細明體;">指針來調用</span><span lang="EN-US">JNI</span><span style="font-family: 新細明體;">提供的一系列</span><span lang="EN-US">(</span><span style="font-family: 新細明體;">很多</span><span lang="EN-US">)</span><span style="font-family: 新細明體;">函數，用這些函數來訪問</span><span lang="EN-US">JVM</span><span style="font-family: 新細明體;">的對象和數據。</span><span lang="EN-US"><o :p=""></o></span></div><br><div style="text-indent: 12pt;"><span style="font-family: 新細明體;">使用</span><span lang="EN-US">JNI</span><span style="font-family: 新細明體;">的缺點︰使用比較麻煩，需要對已有的</span><span lang="EN-US">DLL</span><span style="font-family: 新細明體;">進行封裝，需要對</span><span lang="EN-US">C/C++</span><span style="font-family: 新細明體;">比較了解。</span><span lang="EN-US"><o :p=""></o></span></div><br><div style="text-indent: 12pt;"><span style="font-family: 新細明體;">使用</span><span lang="EN-US">JNI</span><span style="font-family: 新細明體;">的優點︰可以跨平台調用本地庫。</span></div><br><div style="text-indent: 12pt;"><span style="font-family: 新細明體;"></span><span lang="EN-US"><o :p=""></o></span></div><br><span style="font-size: large; font-weight: bold;">二、Jawin<span lang="EN-US"><o :p="">&nbsp;</o></span></span><br><div style="text-indent: 12pt;"><span style="font-family: 新細明體;">官方網站︰</span><span lang="EN-US"><a href="javascript:void(0" target="_blank" rel="external">http://jawinproject.sourceforge.net/</a>;/<em>1218204518239</em>/)<o :p=""></o></span></div><br><div style="text-indent: 12pt;"><span style="font-family: 新細明體;">官方文檔</span><span lang="EN-US">(Jawin</span><span style="font-family: 新細明體;">介紹</span><span lang="EN-US">): <a href="http://jawinproject.sourceforge.net/jawin.html" target="_blank" rel="external">http://jawinproject.sourceforge.net/jawin.html</a><o :p=""></o></span></div><br><div style="text-indent: 12pt;"><span style="font-family: 新細明體;">官方文檔</span><span lang="EN-US">(Jawin</span><span style="font-family: 新細明體;">使用</span><span lang="EN-US">DLL)</span><span style="font-family: 新細明體;">︰</span><span lang="EN-US"><a href="javascript:void(0" target="_blank" rel="external">http://jawinproject.sourceforge.net</a>;/<em>1218204524829</em>/)/jawinuserguide_dll.html<o :p=""></o></span></div><br><div style="text-indent: 12pt;"><span style="font-family: 新細明體;">官方文檔</span><span lang="EN-US">(Jawin</span><span style="font-family: 新細明體;">數據指令</span><span lang="EN-US">): <a href="http://jawinproject.sourceforge.net/instruction_docs.html" target="_blank" rel="external">http://jawinproject.sourceforge.net/instruction_docs.html</a><o :p=""></o></span></div><br><div style="text-indent: 12pt;"><span lang="EN-US">Jawin</span><span style="font-family: 新細明體;">的應用方案是基於函數調用時采用原始字節流傳遞數據的。就是在</span><span lang="EN-US">Java</span><span style="font-family: 新細明體;">中指明一個</span><span lang="EN-US">DLL</span><span style="font-family: 新細明體;">中的某個函數後，透過原始位元組流</span><span lang="EN-US">(</span><span style="font-family: 新細明體;">需要考慮參數數據類型所占的存儲位元組數及系統使用的位元組序列</span><span lang="EN-US">)</span><span style="font-family: 新細明體;">傳遞給該</span><span lang="EN-US">DLL</span><span style="font-family: 新細明體;">函數需要的參數，其返回值也是透過原始位元組流解析的模式獲得正確的值。</span><span lang="EN-US"><o :p=""></o></span></div><br><div><span lang="EN-US">Jawin</span><span style="font-family: 新細明體;">的使用步驟︰</span><span lang="EN-US"><o :p=""></o></span></div><br><div style="text-indent: 12pt;"><span lang="EN-US">1.</span><span style="font-family: 新細明體;">環境配置︰下载</span><span lang="EN-US">Jawin</span><span style="font-family: 新細明體;">；</span><span lang="EN-US">Jawin.dll</span><span style="font-family: 新細明體;">放入工程目錄下；</span><span lang="EN-US">Jawin.jar</span><span style="font-family: 新細明體;">相關</span><span lang="EN-US">jar</span><span style="font-family: 新細明體;">文件加入到運行庫中</span><span lang="EN-US">(LibPath</span><span style="font-family: 新細明體;">或者</span><span lang="EN-US">Eclipse</span><span style="font-family: 新細明體;">下配置工程的</span><span lang="EN-US">BuildPath-AddLibrary)</span><span style="font-family: 新細明體;">。</span><span lang="EN-US"><o :p=""></o></span></div><br><div style="text-indent: 12pt;"><span lang="EN-US">2.</span><span style="font-family: 新細明體;">獲得函數指針︰</span><span lang="EN-US">new FuncPtr(“DllFileName.DLL”, “dllFunctionName”);<o :p=""></o></span></div><br><div style="text-indent: 12pt;"><span lang="EN-US">3.</span><span style="font-family: 新細明體;">用</span><span lang="EN-US">LittleEndianOutputStream</span><span style="font-family: 新細明體;">將函數需要的參數寫入到一個原始字節流</span><span lang="EN-US">NakedByteStream</span><span style="font-family: 新細明體;">。</span><span lang="EN-US"><o :p=""></o></span></div><br><div style="text-indent: 12pt;"><span lang="EN-US">4.</span><span style="font-family: 新細明體;">最重要的一步︰調用</span><span lang="EN-US">FuncPtr.invoke()</span><span style="font-family: 新細明體;">。傳入參數比較複雜。</span><span lang="EN-US"><o :p=""></o></span></div><br><div style="text-indent: 12pt;"><span lang="EN-US">5.</span><span style="font-family: 新細明體;">解析上一步的返回值</span><span lang="EN-US">(</span><span style="font-family: 新細明體;">字節數組</span><span lang="EN-US">)</span><span style="font-family: 新細明體;">。</span><span lang="EN-US"><o :p=""></o></span></div><br><div style="margin-left: 48pt; text-indent: -24pt;"><span style="font-family: 新細明體;">第</span><span lang="EN-US">4</span><span style="font-family: 新細明體;">步中傳入的參數包括︰</span><span lang="EN-US"><o :p=""></o></span></div><br><div style="text-indent: 12pt;"><span lang="EN-US">1.</span><span style="font-family: 新細明體;">指令字符串。一個</span><span lang="EN-US">”XXX:Y:ZZZ”</span><span style="font-family: 新細明體;">格式的字元串。其含義分別是傳入參數中的每個位元組的數據類型意義、返回值的類型、需要從傳入指標中讀取的數據</span><span lang="EN-US">(inout</span><span style="font-family: 新細明體;">類型參數</span><span lang="EN-US">)</span><span style="font-family: 新細明體;">。比如︰</span><span lang="EN-US"><o :p=""></o></span></div><br><div style="text-indent: 12pt;"><span style="font-family: 新細明體;">函數簽名</span><span lang="EN-US">int func(int, int, struct s<em>, char</em>); //</span><span style="font-family: 新細明體;">其中</span><span lang="EN-US">struct s<em></em></span><span style="font-family: 新細明體;">調用完函數後需要讀出，</span><span lang="EN-US">struct s</span><span style="font-family: 新細明體;">所占字節數為</span><span lang="EN-US">16</span><span style="font-family: 新細明體;">。</span><span lang="EN-US"><o :p=""></o></span></div><br><div style="text-indent: 12pt;"><span style="font-family: 新細明體;">其指令字符串為︰</span><span lang="EN-US">IIP<st1 :chmetcnv="" hasspace="False" negative="False" numbertype="1" sourcevalue="16" tcsc="0" unitname="g" w:st="on">16G</st1>:I:L<st1 :chmetcnv="" hasspace="False" negative="False" numbertype="1" sourcevalue="4" tcsc="0" unitname="l" w:st="on">4L</st1>4n<st1 :chmetcnv="" hasspace="False" negative="False" numbertype="1" sourcevalue="16" tcsc="0" unitname="l" w:st="on">16L</st1>4</span><span style="font-family: 新細明體;">。該字元串在解析返回值</span><span lang="EN-US">(</span><span style="font-family: 新細明體;">位元組數組</span><span lang="EN-US">)</span><span style="font-family: 新細明體;">時，首先應該是返回類型</span><span lang="EN-US">I</span><span style="font-family: 新細明體;">對應的</span><span lang="EN-US">4</span><span style="font-family: 新細明體;">個位元組，然後是</span><span lang="EN-US">inout</span><span style="font-family: 新細明體;">類型的參數中</span><span lang="EN-US">n16</span><span style="font-family: 新細明體;">對應的</span><span lang="EN-US">16</span><span style="font-family: 新細明體;">個位元組。</span><span lang="EN-US"><o :p=""></o></span></div><br><div style="text-indent: 12pt;"><span style="font-family: 新細明體;">其中字符串的意義可以在</span><span lang="EN-US">Jawin</span><span style="font-family: 新細明體;">提供的文件</span><span lang="EN-US">instructions.h</span><span style="font-family: 新細明體;">中找到，或者在官方文檔</span><span lang="EN-US">(Jawin</span><span style="font-family: 新細明體;">數據指令</span><span lang="EN-US">)</span><span style="font-family: 新細明體;">中找到常用的一些指令字符串的意義。</span><span lang="EN-US"><o :p=""></o></span></div><br><div style="text-indent: 12pt;"><span lang="EN-US">2.</span><span style="font-family: 新細明體;">傳入參數的總字節大小。</span><span lang="EN-US"><o :p=""></o></span></div><br><div style="text-indent: 12pt;"><span lang="EN-US">3.</span><span style="font-family: 新細明體;">前面寫好的傳入參數的原始字節流。</span><span lang="EN-US"><o :p=""></o></span></div><br><div style="text-indent: 12pt;"><span lang="EN-US">4.</span><span style="font-family: 新細明體;">一個</span><span lang="EN-US">object</span><span style="font-family: 新細明體;">數組。</span><span lang="EN-US"><o :p=""></o></span></div><br><div style="text-indent: 12pt;"><span lang="EN-US">5.ReturnFlags</span><span style="font-family: 新細明體;">，用以根據</span><span lang="EN-US">C/C++</span><span style="font-family: 新細明體;">返回值將</span><span lang="EN-US">C/C++</span><span style="font-family: 新細明體;">的錯誤轉換為</span><span lang="EN-US">Java</span><span style="font-family: 新細明體;">的異常並拋出。其中</span><span lang="EN-US">CHECK_NONE</span><span style="font-family: 新細明體;">表示不檢</span> <span style="font-family: 新細明體;">查；</span><span lang="EN-US">CHECK_FALSE</span><span style="font-family: 新細明體;">和</span><span lang="EN-US">CHECK_WIN32</span><span style="font-family: 新細明體;">分別表示返回</span><span lang="EN-US">0</span><span style="font-family: 新細明體;">是</span><span lang="EN-US">FALSE</span><span style="font-family: 新細明體;">和</span><span lang="EN-US">SUCCESS</span><span style="font-family: 新細明體;">，根據是否出錯決定是否拋出異</span> <span style="font-family: 新細明體;">常；</span><span lang="EN-US">CHECK_HRESULT</span><span style="font-family: 新細明體;">表示使用</span><span lang="EN-US">COM</span><span style="font-family: 新細明體;">模型中的</span><span lang="EN-US">HRESULT</span><span style="font-family: 新細明體;">作為返回值，其錯誤碼可以配置。</span><span lang="EN-US"><o :p=""></o></span></div><br><div style="text-indent: 12pt;"><span style="font-family: 新細明體;">使用</span><span lang="EN-US">Jawin</span><span style="font-family: 新細明體;">的缺點︰不方便調試，幾乎所有的錯誤都拋出同樣的異常</span><span lang="EN-US">COMException</span><span style="font-family: 新細明體;">；需要對數據類型的轉換比較了解；不能跨平台，對</span><span lang="EN-US">Windows</span><span style="font-family: 新細明體;">的依賴性比較強。</span><span lang="EN-US"><o :p=""></o></span></div><br><div style="text-indent: 12pt;"><span style="font-family: 新細明體;">使用</span><span lang="EN-US">Jawin</span><span style="font-family: 新細明體;">的優點︰方便使用，不用進行</span><span lang="EN-US">C/C++</span><span style="font-family: 新細明體;">開發，不用對原始</span><span lang="EN-US">DLL</span><span style="font-family: 新細明體;">進行封裝就可以方便使用。</span></div><br><div style="text-indent: 12pt;"><span style="font-family: 新細明體;"></span><span lang="EN-US"><o :p=""></o></span></div><br><span style="font-weight: bold;"><span style="font-size: large;">三、Jacob</span></span><br><div style="margin-left: 72pt; text-indent: -24pt;"><span lang="EN-US"><span style="font-size: large; font-weight: bold;"><span style="font-family: 新細明體;"></span></span><o :p=""></o></span></div><br><div style="margin-left: 72pt; text-indent: -24pt;"><span style="font-family: 新細明體;">官方文檔︰</span><span lang="EN-US"><a href="javascript:void(0" target="_blank" rel="external">http://danadler.com/jacob/</a>;/1218204537653*/)<o :p=""></o></span></div><br><div style="text-indent: 12pt;"><span lang="EN-US">Jacob</span><span style="font-family: 新細明體;">是</span><span lang="EN-US">Java-Com Bridge</span><span style="font-family: 新細明體;">的縮寫，也可以用來調用</span><span lang="EN-US">DLL</span><span style="font-family: 新細明體;">。其底層也是使用</span><span lang="EN-US">JNI</span><span style="font-family: 新細明體;">實現，也具有</span><span lang="EN-US">Windows</span><span style="font-family: 新細明體;">的平台倚賴性，由於網上有人反映其易用性不如</span><span lang="EN-US">jawin</span><span style="font-family: 新細明體;">，所以沒有深入了解。</span><span lang="EN-US"><o :p=""></o></span></div><br><div><br></div>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://blog.gorendo.org/2008/08/java-e9-97-9c-e6-96-bcjava-e8-aa-bf-e7-94-a8dll-e7-9a-84-e6-96-b9-e6-b3-95/" data-id="cj6ag8hh5001mi5xubud6oqeb" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-java-e5-88-a9-e7-94-a8jawin-e5-ae-8c-e6-88-90-e8-aa-bf-e7-94-a8window-e4-b8-addll-e7-9a-84-e8-aa-bf-e7-94-a8-e8-bd-89-e8-bc-89" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2008/08/java-e5-88-a9-e7-94-a8jawin-e5-ae-8c-e6-88-90-e8-aa-bf-e7-94-a8window-e4-b8-addll-e7-9a-84-e8-aa-bf-e7-94-a8-e8-bd-89-e8-bc-89/" class="article-date">
+  <time datetime="2008-08-07T14:14:00.000Z" itemprop="datePublished">2008-08-07</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/01-3-JAVA/">01-3 JAVA</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2008/08/java-e5-88-a9-e7-94-a8jawin-e5-ae-8c-e6-88-90-e8-aa-bf-e7-94-a8window-e4-b8-addll-e7-9a-84-e8-aa-bf-e7-94-a8-e8-bd-89-e8-bc-89/">[Java] 利用jawin完成調用window中dll的調用[轉載]</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>由於項目的特殊需求，我們必須在程式調用window的dll。<br>開始我們用jni，後來由於調用的dll太多，而且很煩瑣。所以，我們決定用開源的jawin調用。<br>jawin 可以對dll中的方法進行調用，也可以調用com中的方法.內部還提供了一個工具，直接對 com組件匯出成 java的類，個人認為很方便。</p>
+<p><a name="more"></a><br>有三篇…待整理</p>
+<h1 id=""><a href="#" class="headerlink" title="========================================================"></a>========================================================</h1><p>========================================================<br>下面是我們作的一個測試，很順利便通過了。<br>1、下載jawin︰<a href="javascript:void(0" target="_blank" rel="external">http://jawinproject.sourceforge.net/</a>;/<em>1218107116443</em>/)。<br>2、配置︰<br>&nbsp;&nbsp;&nbsp; 》將jawin.jar放於%JAVA_HOME%jrelibext下 。<br>&nbsp;&nbsp;&nbsp; 》將jawin.dll放於c:winntsystem32下。否則將出現錯誤︰COMException : no jawin in java.library.path；<br>&nbsp;&nbsp;&nbsp; 也可將jawin.dll放於每個項目目錄下。</p>
+<p>&nbsp;&nbsp; 》至此在Editplus中調試Jawin/NJawin的例子，可以透過。 而在Eclipse中有時還會出上面的錯誤︰COMException : no jawin in java.library.path。<br>&nbsp;&nbsp; 》在Eclipse中，選單-&gt;window-&gt;preference-&gt;Java-&gt;installed JREs 將原來的remove,重新建一個指到你的java sdk目錄。<br>&nbsp;&nbsp; 》 ok了。<br>&nbsp;3、程式測試︰</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp; 》調用 dll，dll 的模式不需要匯出了,直接調用就可以了，下面是下載的包中提供的一個例子:<br>&nbsp;&nbsp;&nbsp;&nbsp; 》我在win2000下，測試透過。<br>/<em><br>&nbsp;</em> Created on Dec 22, 2005<br>&nbsp;<em><br>&nbsp;</em>/<br>import org.jawin.FuncPtr;</p>
+<p>import org.jawin.ReturnFlags;</p>
+<p>/<em>*<br>&nbsp;</em> @author gf&nbsp; mail to gf@163.com<br>&nbsp;<em><br>&nbsp;</em> TODO To change the template for this generated type comment go to<br>&nbsp;<em> Window - Preferences - Java - Code Style - Code Templates<br>&nbsp;</em>/<br>public class GfJawinTest {</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; public static void main(String[] args) {</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; try {</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; FuncPtr msgBox = new FuncPtr(“USER32.DLL”, “MessageBoxW”);</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; msgBox.invoke_I(0, “Hello From a DLL”, “From Jawin”, 0, ReturnFlags.CHECK_NONE);</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } catch (Exception e) {</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; e.printStackTrace();</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</p>
+<p>}<br>&nbsp;轉自︰<a href="http://www.blogjava.net/gf7/archive/2005/12/22/25041.html" target="_blank" rel="external">http://www.blogjava.net/gf7/archive/2005/12/22/25041.html</a></p>
+<h1 id="-1"><a href="#-1" class="headerlink" title="========================================================"></a>========================================================</h1><p>========================================================</p>
+<p>1.下載NJawin，將jawin.jar放於%JAVA_HOME%jrelibext下</p>
+<p>2.將jawin.dll放於c:winntsystem32下。否則將出現錯誤︰COMException : no jawin in java.library.path；</p>
+<p>&nbsp;&nbsp; 也可將jawin.dll放於每個項目目錄下。</p>
+<p>3.至此在Editplus中調試Jawin/NJawin的例子，可以通過。</p>
+<p>&nbsp; 而在Eclipse中有時還會出上面的錯誤︰COMException : no jawin in java.library.path。</p>
+<p>4.在Eclipse中，選單-&gt;window-&gt;preference-&gt;Java-&gt;installed JREs</p>
+<p>&nbsp; 將原來的remove,重新建一個指到你的java sdk目錄。<br>5. ok了。</p>
+<p>jawin下載: <a href="javascript:void(0" target="_blank" rel="external">Jawin</a>;/<em>1218107102504</em>/)<br>hinet:<a href="http://gonex45.myweb.hinet.net/jawin.zip" target="_blank" rel="external"> jawin.zip</a></p>
+<h1 id="-2"><a href="#-2" class="headerlink" title="========================================================"></a>========================================================</h1><p>========================================================</p>
+<div><br>今天老师和我聊起Java调用Win API的事，回来查了下，SUN官方提供的JNI调用时还要自己生成头文件，对已有的DLL再次进行封装。需要对C++非常熟悉，因为要写C++代码。不过还好还有另一种解决方案——Jawin。<br><br>官方网站：<span style="color: #333333;"><a href="http://jawinproject.sourceforge.net/" target="_blank" rel="external">http://jawinproject.sourceforge.net</a></span><br><br><span style="color: #333333;">把lib文件夹下的jawin.jar和jawin-stubs.jar放到%JAVA_HOME%</span><span style="color: black;">jrelibext 目录下<br> 把bin文件夹下的</span><span style="color: #333333;">jawin.dll放到%SystemRoot%System32 目录下</span><br><br><span style="color: #333333;">然后就可以运行demo下的Hellodll.java了：</span><br><br><span style="color: #333333;">/<em>
+ </em> HelloDll.java -<br> <em>
+ </em> This file is part of the Jawin Project: <a href="http://jawinproject.sourceforge.net/" target="_blank" rel="external">http://jawinproject.sourceforge.net/</a><br> <em> 
+ </em> Please consult the LICENSE file in the project root directory,<br> <em> or at the project site before using this software.
+ </em>/</span><br><br><span style="color: #333333;">/<em> $Id: HelloDll.java,v 1.3 2004/06/14 20:16:38 arosii_moa Exp $ </em>/</span><br><br><span style="color: #333333;">package demos;</span><br><br><span style="color: #333333;">import org.jawin.COMException;<br> import org.jawin.FuncPtr;<br> import org.jawin.ReturnFlags;</span><br><br><span style="color: #333333;">/<em>*
+ </em> Demo that uses the Win32 MessageBoxW API-method.<br> <em>
+ </em> @version&nbsp;&nbsp;&nbsp;&nbsp;  $Revision: 1.0 $<br> <em> @author&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  虫的传人, <a href="http://hi.baidu.com/" target="_blank" rel="external">http://hi.baidu.com/虫的传人/</a><br> </em></span><span style="color: #333333;">/<br> public class HelloDll {</span><br><br><span style="color: #333333;">public static void main(String[] args) throws Exception {<br> &nbsp;&nbsp;  FuncPtr msgBox = null;<br> &nbsp;&nbsp;  try {<br> &nbsp;&nbsp;&nbsp;  msgBox = new FuncPtr(“USER32.DLL”, “MessageBoxW”);<br> &nbsp;&nbsp;&nbsp;  msgBox.invoke_I(0, “Hello From a DLL”, “From Jawin”, 0, ReturnFlags.CHECK_FALSE);<br> &nbsp;&nbsp;  } catch (COMException e) {<br> &nbsp;&nbsp;&nbsp;  // handle exception<br> &nbsp;&nbsp;&nbsp;  e.printStackTrace();<br> &nbsp;&nbsp;&nbsp;  throw e;<br> &nbsp;&nbsp;  } finally {<br> &nbsp;&nbsp;&nbsp;  if (msgBox != null) {<br> &nbsp;&nbsp;&nbsp;&nbsp;  try {<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  msgBox.close();<br> &nbsp;&nbsp;&nbsp;&nbsp;  } catch (COMException e) {<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  // handle fatal exception<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  e.printStackTrace();<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  throw e;<br> &nbsp;&nbsp;&nbsp;&nbsp;  }<br> &nbsp;&nbsp;&nbsp;  }<br> &nbsp;&nbsp;  }<br> }<br> }<br> </span><br><br><span style="color: #333333;">调用自己写的dll：</span><br><br><span style="color: #333333;">import org.jawin.COMException;<br> import org.jawin.FuncPtr;<br> import org.jawin.ReturnFlags;</span><br><br><span style="color: #333333;">public class nativeDll {<br> public static void main(String[] args) throws Exception {<br> &nbsp;&nbsp;  int result1,result2;<br> &nbsp;&nbsp;  FuncPtr test1 = null;<br> &nbsp;&nbsp;  FuncPtr test2 = null;<br> &nbsp;&nbsp;  try {<br> &nbsp;&nbsp;&nbsp;  test1 = new FuncPtr(“demo.dll”, “test1”);<br> &nbsp;&nbsp;&nbsp;  test2 = new FuncPtr(“demo.dll”, “test2”);<br> &nbsp;&nbsp;&nbsp;  result1 = test1.invoke_I(5, 6, ReturnFlags.CHECK_NONE);<br> &nbsp;&nbsp;&nbsp;  result2 = test2.invoke_I(5, 6, ReturnFlags.CHECK_NONE);<br> &nbsp;&nbsp;&nbsp;  System.out.println(“5 plus 6 is “ + result1);<br> &nbsp;&nbsp;&nbsp;  System.out.println(“5 multiply 6 is “ + result2);<br> &nbsp;&nbsp;  } catch (COMException e) {<br> &nbsp;&nbsp;&nbsp;  e.printStackTrace();<br> &nbsp;&nbsp;  } finally {<br> &nbsp;&nbsp;&nbsp;  if (test1 != null) {<br> &nbsp;&nbsp;&nbsp;&nbsp;  try {<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  test1.close();<br> &nbsp;&nbsp;&nbsp;&nbsp;  } catch (COMException e) {<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  e.printStackTrace();<br> &nbsp;&nbsp;&nbsp;&nbsp;  }<br> &nbsp;&nbsp;&nbsp;  }<br> &nbsp;&nbsp;&nbsp;  if (test2 != null) {<br> &nbsp;&nbsp;&nbsp;&nbsp;  try {<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  test2.close();<br> &nbsp;&nbsp;&nbsp;&nbsp;  } catch (COMException e) {<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  e.printStackTrace();<br> &nbsp;&nbsp;&nbsp;&nbsp;  }<br> &nbsp;&nbsp;&nbsp;  }<br> &nbsp;&nbsp;  }<br> }<br> }</span><br><br><span style="color: #333333;">命令行运行：javac nativeDll.java<br> </span><span style="color: #333333;">java -classpath “.;%JAVA_HOME%jrelibextjawin.jar” nativeDll</span><br><br><span style="color: #333333;">注意，这里一定要加-classpath “.;%JAVA_HOME%jrelibextjawin.jar” 不然会提示</span><br><br><span style="color: #333333;">Exception in thread “main” java.lang.NoClassDefFoundError: org/jawin/COMExceptio<br> n<br> Caused by: java.lang.ClassNotFoundException: org.jawin.COMException<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  at java.net.URLClassLoader$1.run(Unknown Source)<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  at java.security.AccessController.doPrivileged(Native Method)<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  at java.net.URLClassLoader.findClass(Unknown Source)<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  at java.lang.ClassLoader.loadClass(Unknown Source)<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  at sun.misc.Launcher$AppClassLoader.loadClass(Unknown Source)<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  at java.lang.ClassLoader.loadClass(Unknown Source)<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  at java.lang.ClassLoader.loadClassInternal(Unknown Source)</span><br><br><span style="color: #333333;">特别注意”.;”，不加的话会提示</span><br><br><span style="color: #333333;">Exception in thread “main” java.lang.NoClassDefFoundError: nativeDll<br> Caused by: java.lang.ClassNotFoundException: nativeDll<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  at java.net.URLClassLoader$1.run(Unknown Source)<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  at java.security.AccessController.doPrivileged(Native Method)<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  at java.net.URLClassLoader.findClass(Unknown Source)<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  at java.lang.ClassLoader.loadClass(Unknown Source)<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  at sun.misc.Launcher$AppClassLoader.loadClass(Unknown Source)<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  at java.lang.ClassLoader.loadClass(Unknown Source)<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  at java.lang.ClassLoader.loadClassInternal(Unknown Source)</span><br><br></div>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://blog.gorendo.org/2008/08/java-e5-88-a9-e7-94-a8jawin-e5-ae-8c-e6-88-90-e8-aa-bf-e7-94-a8window-e4-b8-addll-e7-9a-84-e8-aa-bf-e7-94-a8-e8-bd-89-e8-bc-89/" data-id="cj6ag8hh3001ji5xuuje7mzll" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-cc-e8-bc-89-e5-85-a5dll-e4-b8-ad-e7-9a-84-e5-89-af-e7-a8-8b-e5-bc-8f-e8-bd-89-e8-b2-bc" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2008/08/cc-e8-bc-89-e5-85-a5dll-e4-b8-ad-e7-9a-84-e5-89-af-e7-a8-8b-e5-bc-8f-e8-bd-89-e8-b2-bc/" class="article-date">
+  <time datetime="2008-08-01T13:43:00.000Z" itemprop="datePublished">2008-08-01</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/C-C/">C/C++</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2008/08/cc-e8-bc-89-e5-85-a5dll-e4-b8-ad-e7-9a-84-e5-89-af-e7-a8-8b-e5-bc-8f-e8-bd-89-e8-b2-bc/">[C/C++] 載入DLL中的副程式[轉貼]</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>&nbsp;每個dll可以包含資源或者是程式 今天就介紹如何載入dll檔提供的副程式<br>首先 先介紹如何開啟dll檔</p>
+<p><a name="more"></a><br>&nbsp;範例如下</p>
+<p><table align="" border="1" cellpadding="1" cellspacing="1" style="height: 101px; width: 427px;"><tbody><tr><td><span style="font-size: x-small;"><span style="color: blue;">typedef</span> HDC (*GETDC_PROTO)(HWND);<br> GETDC_PROTO <em>GetDC</em> = (GETDC_PROTO)GetProcAddress(hMod,”GetDC”);<br><span style="color: grey;">// 以上載入GetDC副程式 載入成功後以下便可以使用</span><br> HDC dc = <em>GetDC</em>(NULL);</span> </td></tr></tbody></table><br>我們可以判斷 hMod 的值 如果不為NULL 則代表成功開啟<br>開啟之後 我們便可以載入程式了 本次示範載入GetDC() </p>
+<p>要取得一個副函式 只需要將那個副函式的module跟名稱傳進GetProcAddress()即可<br>在取得之前 我們要先宣告一個函式指標 這個函式指標的宣告要跟所要取得的函式一樣<br>我們可以先用typedef 來定義好指標型態 之後指標轉型便可以重複利用他<br>取得指標之後 便可以像使用副程式一樣使用他<br>不用之後 可以將dll檔釋放掉</p>
+<p><table align="" border="1" cellpadding="1" cellspacing="1" style="width: 200px;"><tbody><tr><td><span style="font-size: x-small;">AfxFreeLibrary(hMod);</span></td></tr></tbody></table><br>釋放掉之後 用GetProcAddress()所得到的指標便不能使用了<br>如果使用的話 便可能造成程式當掉</p>
+<p>來源：swwuyam在天空部落發表於22:54:25</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://blog.gorendo.org/2008/08/cc-e8-bc-89-e5-85-a5dll-e4-b8-ad-e7-9a-84-e5-89-af-e7-a8-8b-e5-bc-8f-e8-bd-89-e8-b2-bc/" data-id="cj6ag8hfy0000i5xub4mlw5vu" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+
+
+  <nav id="page-nav">
+    <a class="extend prev" rel="prev" href="/page/10/">&laquo; __('prev')</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="page-number" href="/page/10/">10</a><span class="page-number current">11</span>
+  </nav>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Catégories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/01-3-JAVA/">01-3 JAVA</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/02-軟體/">02 軟體</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Android/">Android</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/程式語言/">程式語言</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Android/遊戲引擎/">遊戲引擎</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/C/">C#</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/C/Visuel-Studio/">Visuel Studio</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/C-C/">C/C++</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/C-C/Cocos2D/">Cocos2D</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/C-C/Cocos2D/程式語言/">程式語言</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/C-C/Cocos2D/程式語言/遊戲引擎/">遊戲引擎</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/C-C/Cocos2D/程式語言/遊戲引擎/遊戲開發/">遊戲開發</a></li></ul></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/C-C/程式語言/">程式語言</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Cocos2D/">Cocos2D</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Cocos2D/遊戲引擎/">遊戲引擎</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Cocos2D/遊戲引擎/遊戲開發/">遊戲開發</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/DATABASE/">DATABASE</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Facebook/">Facebook</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Game-Engine/">Game Engine</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Game-Engine/HTML5/">HTML5</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Game-Engine/HTML5/遊戲引擎/">遊戲引擎</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/GameProgram/">GameProgram</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/GameProgram/Lua/">Lua</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/GameProgram/Lua/Mac/">Mac</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Google/">Google</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Google/Google-API/">Google API</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML5/">HTML5</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Javascript/">Javascript</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Javascript/WEB程式/">WEB程式</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Javascript/WEB程式/程式語言/">程式語言</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Mac/">Mac</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Mac/WEB程式/">WEB程式</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Mobile-Dev/">Mobile Dev</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Mobile-Dev/OpenGL/">OpenGL</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Mobile-Dev/OpenGL/Unity/">Unity</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/MySQL/">MySQL</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/MySQL/PHP/">PHP</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/MySQL/PHP/程式語言/">程式語言</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/PHP/">PHP</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/PHP/SEO/">SEO</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/PHP/SEO/套件/">套件</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/PHP/SEO/套件/程式語言/">程式語言</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/PHP/WEB程式/">WEB程式</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/PHP/WEB程式/程式語言/">程式語言</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/PHP/WEB程式/程式語言/網頁設計/">網頁設計</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/PHP/安全性/">安全性</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/PHP/安全性/程式語言/">程式語言</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/PHP/技巧/">技巧</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/PHP/技巧/程式語言/">程式語言</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/PHP/程式語言/">程式語言</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Regular-Expression/">Regular Expression</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Regular-Expression/程式語言/">程式語言</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Unity/">Unity</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Unity/技巧/">技巧</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Unity/技巧/遊戲引擎/">遊戲引擎</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Unity/技巧/遊戲引擎/遊戲開發/">遊戲開發</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Unity/技巧/遊戲引擎/遊戲開發/開發理論/">開發理論</a></li></ul></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Unity/遊戲開發/">遊戲開發</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/WEB程式/">WEB程式</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/WEB程式/網頁設計/">網頁設計</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/html/">html</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/html/PHP/">PHP</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/html/PHP/程式語言/">程式語言</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/html/WEB程式/">WEB程式</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/iOS開發/">iOS開發</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery/">jQuery</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery/PHP/">PHP</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery/PHP/WEB程式/">WEB程式</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery/PHP/WEB程式/程式語言/">程式語言</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery/PHP/WEB程式/程式語言/網頁設計/">網頁設計</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery/PHP/程式語言/">程式語言</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery/WEB程式/">WEB程式</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/專題週記/">專題週記</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/攝影/">攝影</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/敗家/">敗家</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/未分類/">未分類</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/程式語言/">程式語言</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/網頁設計/">網頁設計</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Mot-clés</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ATOM/">ATOM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android/">Android</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/">C#</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Game-Dev/">Game Dev</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Google-API/">Google API</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JAVA/">JAVA</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mac/">Mac</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OpenGL/">OpenGL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PHP/">PHP</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Nuage de mot-clés</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/ATOM/" style="font-size: 10px;">ATOM</a> <a href="/tags/Android/" style="font-size: 20px;">Android</a> <a href="/tags/C/" style="font-size: 10px;">C#</a> <a href="/tags/Game-Dev/" style="font-size: 15px;">Game Dev</a> <a href="/tags/Google-API/" style="font-size: 10px;">Google API</a> <a href="/tags/JAVA/" style="font-size: 10px;">JAVA</a> <a href="/tags/Mac/" style="font-size: 10px;">Mac</a> <a href="/tags/OpenGL/" style="font-size: 10px;">OpenGL</a> <a href="/tags/PHP/" style="font-size: 10px;">PHP</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">October 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">June 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08/">August 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">June 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04/">April 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03/">March 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/02/">February 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01/">January 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/09/">September 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/07/">July 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/04/">April 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/03/">March 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/02/">February 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/01/">January 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/11/">November 2011</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/10/">October 2011</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/09/">September 2011</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/08/">August 2011</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/07/">July 2011</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/06/">June 2011</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/05/">May 2011</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/04/">April 2011</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/03/">March 2011</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/02/">February 2011</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/01/">January 2011</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/07/">July 2010</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/05/">May 2010</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/08/">August 2009</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/03/">March 2009</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/02/">February 2009</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/10/">October 2008</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/09/">September 2008</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/08/">August 2008</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Articles récents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2016/10/php-mac-atom-visual-studio-code-php.html/">[php] 在 Mac 用ATOM / Visual Studio Code 為 php debug</a>
+          </li>
+        
+          <li>
+            <a href="/2015/12/mac-xxx.html/">[Mac] 解決 您要讓應用程式 XXX 接受傳入的網路連接嗎 一直跳出</a>
+          </li>
+        
+          <li>
+            <a href="/2015/10/php-e5-af-a6-e4-bd-9ccallback/">[php] 實作callback</a>
+          </li>
+        
+          <li>
+            <a href="/2015/06/android-setclicklistener-in-custom-view.html/">[Android] setClickListener in custom view</a>
+          </li>
+        
+          <li>
+            <a href="/2015/06/e8-a7-a3-e6-b1-ba-errorexecution-failed-for-task-predexdebug-com-android-ide-common-process-processexception-org-gradle-process-internal-execexception-process-command-finished-with-non-zero/">解決 Error:Execution failed for task &#39;preDexDebug&#39;. &gt; com.android.ide.common.process.ProcessException: org.gradle.process.internal.ExecException: Process &#39;command  finished with non-zero exit value 1</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 gonex45<br>
+      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

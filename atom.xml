@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.gorendo.org/"/>
-  <updated>2017-08-12T17:00:29.000Z</updated>
+  <updated>2017-08-13T06:35:47.000Z</updated>
   <id>http://blog.gorendo.org/</id>
   
   <author>
@@ -16,17 +16,453 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Hello World</title>
-    <link href="http://blog.gorendo.org/2017/08/13/hello-world/"/>
-    <id>http://blog.gorendo.org/2017/08/13/hello-world/</id>
-    <published>2017-08-12T17:00:29.000Z</published>
-    <updated>2017-08-12T17:00:29.000Z</updated>
+    <title>[php] 在 Mac 用ATOM / Visual Studio Code 為 php debug</title>
+    <link href="http://blog.gorendo.org/2016/10/php-mac-atom-visual-studio-code-php.html/"/>
+    <id>http://blog.gorendo.org/2016/10/php-mac-atom-visual-studio-code-php.html/</id>
+    <published>2016-10-26T02:24:00.000Z</published>
+    <updated>2017-08-13T06:35:47.000Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
+      &lt;p&gt;依php版本安裝 xdebug&lt;/p&gt;
+&lt;pre&gt;brew install homebrew/php/phpXX-xdebug
+&lt;/pre&gt;
+在 /usr/local/etc/php/{x.y}/conf.d/ext-xdebug.ini) 內加上
+&lt;pre&gt;xdebug.
     
     </summary>
+    
+      <category term="PHP" scheme="http://blog.gorendo.org/categories/PHP/"/>
+    
+    
+      <category term="ATOM" scheme="http://blog.gorendo.org/tags/ATOM/"/>
+    
+      <category term="PHP" scheme="http://blog.gorendo.org/tags/PHP/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>[Mac] 解決 您要讓應用程式 XXX 接受傳入的網路連接嗎 一直跳出</title>
+    <link href="http://blog.gorendo.org/2015/12/mac-xxx.html/"/>
+    <id>http://blog.gorendo.org/2015/12/mac-xxx.html/</id>
+    <published>2015-12-01T03:27:00.000Z</published>
+    <updated>2017-08-13T06:35:51.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;方法1： 先關掉該app 設定→防火牆→進階→允許名單找到該app移掉 再打開app 同意  方法2： 開啟終端機輸入 (可以先輸入codesign -v 後把app檔拉到終端機畫面會自動產生路徑) &lt;pre&gt;&lt;br&gt;codesign -v /Applications/xx
+    
+    </summary>
+    
+      <category term="Mac" scheme="http://blog.gorendo.org/categories/Mac/"/>
+    
+    
+      <category term="Mac" scheme="http://blog.gorendo.org/tags/Mac/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>[php] 實作callback</title>
+    <link href="http://blog.gorendo.org/2015/10/php-e5-af-a6-e4-bd-9ccallback/"/>
+    <id>http://blog.gorendo.org/2015/10/php-e5-af-a6-e4-bd-9ccallback/</id>
+    <published>2015-10-20T07:44:00.000Z</published>
+    <updated>2017-08-13T03:17:04.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;用名稱呼 &lt;/p&gt;
+&lt;pre&gt;function run1($callback)
+{
+ $callback(&#39;123&#39;);
+}
+
+function funA($val)
+{
+ echo &#39;funA:&#39;.$val;
+}
+
+run1(&#39;by run1&#39;);//funA:by ru
+    
+    </summary>
+    
+      <category term="PHP" scheme="http://blog.gorendo.org/categories/PHP/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>[Android] setClickListener in custom view</title>
+    <link href="http://blog.gorendo.org/2015/06/android-setclicklistener-in-custom-view.html/"/>
+    <id>http://blog.gorendo.org/2015/06/android-setclicklistener-in-custom-view.html/</id>
+    <published>2015-06-25T07:21:00.000Z</published>
+    <updated>2017-08-13T07:57:29.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;直接設 setClickListener 沒反應&lt;br&gt;要加上&lt;/p&gt;
+&lt;pre&gt;    private OnClickListener listener;
+
+    @Override
+    public boolean dispatchTouchEvent(Motio
+    
+    </summary>
+    
+      <category term="Android" scheme="http://blog.gorendo.org/categories/Android/"/>
+    
+    
+      <category term="Android" scheme="http://blog.gorendo.org/tags/Android/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>解決 Error:Execution failed for task &#39;preDexDebug&#39;. &gt; com.android.ide.common.process.ProcessException: org.gradle.process.internal.ExecException: Process &#39;command  finished with non-zero exit value 1</title>
+    <link href="http://blog.gorendo.org/2015/06/e8-a7-a3-e6-b1-ba-errorexecution-failed-for-task-predexdebug-com-android-ide-common-process-processexception-org-gradle-process-internal-execexception-process-command-finished-with-non-zero/"/>
+    <id>http://blog.gorendo.org/2015/06/e8-a7-a3-e6-b1-ba-errorexecution-failed-for-task-predexdebug-com-android-ide-common-process-processexception-org-gradle-process-internal-execexception-process-command-finished-with-non-zero/</id>
+    <published>2015-06-04T03:43:00.000Z</published>
+    <updated>2017-08-13T03:17:04.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;解決 Error:Execution failed for task ‘preDexDebug’. &amp;gt; com.android.ide.common.process.ProcessException: org.gradle.process.internal.ExecE
+    
+    </summary>
+    
+      <category term="Android" scheme="http://blog.gorendo.org/categories/Android/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>[Android] 下拉更新 SwipeRefreshLayout</title>
+    <link href="http://blog.gorendo.org/2015/05/android-wiperefreshlayout.html/"/>
+    <id>http://blog.gorendo.org/2015/05/android-wiperefreshlayout.html/</id>
+    <published>2015-05-15T02:56:00.000Z</published>
+    <updated>2017-08-13T08:00:12.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;Layout-Xml&quot;&gt;&lt;a href=&quot;#Layout-Xml&quot; class=&quot;headerlink&quot; title=&quot;Layout Xml&quot;&gt;&lt;/a&gt;Layout Xml&lt;/h3&gt;&lt;pre&gt;
+                &amp;#x3C;android.suppo
+    
+    </summary>
+    
+      <category term="Android" scheme="http://blog.gorendo.org/categories/Android/"/>
+    
+    
+      <category term="Android" scheme="http://blog.gorendo.org/tags/Android/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>[Android] 處理 Can&#39;t create handler inside thread that has not called Looper.prepare()</title>
+    <link href="http://blog.gorendo.org/2015/04/android-cant-create-handler-inside.html/"/>
+    <id>http://blog.gorendo.org/2015/04/android-cant-create-handler-inside.html/</id>
+    <published>2015-04-21T04:20:00.000Z</published>
+    <updated>2017-08-13T07:37:20.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;因為 UI 操作不能在其它 thread 做&lt;br&gt;直接用 activity 提供的 runOnUiThread 做掉&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div c
+    
+    </summary>
+    
+      <category term="Android" scheme="http://blog.gorendo.org/categories/Android/"/>
+    
+    
+      <category term="Android" scheme="http://blog.gorendo.org/tags/Android/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>[Unity] uGUI (4.6) EventSystem 事件系統 快速上手</title>
+    <link href="http://blog.gorendo.org/2014/08/unity-ugui-4-6-eventsystem-e4-ba-8b-e4-bb-b6-e7-b3-bb-e7-b5-b1-e5-bf-ab-e9-80-9f-e4-b8-8a-e6-89-8b/"/>
+    <id>http://blog.gorendo.org/2014/08/unity-ugui-4-6-eventsystem-e4-ba-8b-e4-bb-b6-e7-b3-bb-e7-b5-b1-e5-bf-ab-e9-80-9f-e4-b8-8a-e6-89-8b/</id>
+    <published>2014-08-21T09:49:00.000Z</published>
+    <updated>2017-08-13T03:17:04.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;4.6 新進的 EventSystem 事件系統 可以用在 UI 事件外也可以用在普通的 GameObject&lt;br&gt;終於不用自已打射線偵測點擊了&lt;/p&gt;
+&lt;p&gt;環境 4.6.0b17 因為才beta版所以變動的機率很大&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;對 UI&amp;nbsp;
+    
+    </summary>
+    
+      <category term="Unity" scheme="http://blog.gorendo.org/categories/Unity/"/>
+    
+      <category term="遊戲開發" scheme="http://blog.gorendo.org/categories/Unity/%E9%81%8A%E6%88%B2%E9%96%8B%E7%99%BC/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>[Cocos2d-x] 在 Mac 上設置 Cocos2d-x (Cocos2d-x 3 .x)</title>
+    <link href="http://blog.gorendo.org/2014/06/cocos2d-x-e5-9c-a8-mac-e4-b8-8a-e8-a8-ad-e7-bd-ae-cocos2d-x-cocos2d-x-3-x/"/>
+    <id>http://blog.gorendo.org/2014/06/cocos2d-x-e5-9c-a8-mac-e4-b8-8a-e8-a8-ad-e7-bd-ae-cocos2d-x-cocos2d-x-3-x/</id>
+    <published>2014-06-22T17:45:00.000Z</published>
+    <updated>2017-08-13T03:17:04.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;環境 OSX 10.9 , Cocos2d-x 3.2&lt;/p&gt;
+&lt;p&gt;下載Cocos2d-x &lt;a href=&quot;http://cocos2d-x.org/download&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://cocos2d-x.or
+    
+    </summary>
+    
+      <category term="Cocos2D" scheme="http://blog.gorendo.org/categories/Cocos2D/"/>
+    
+      <category term="遊戲引擎" scheme="http://blog.gorendo.org/categories/Cocos2D/%E9%81%8A%E6%88%B2%E5%BC%95%E6%93%8E/"/>
+    
+      <category term="遊戲開發" scheme="http://blog.gorendo.org/categories/Cocos2D/%E9%81%8A%E6%88%B2%E5%BC%95%E6%93%8E/%E9%81%8A%E6%88%B2%E9%96%8B%E7%99%BC/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>[Unity] Assetbundle Shader 遺失的解決方案</title>
+    <link href="http://blog.gorendo.org/2014/04/unity-assetbundle-shader-e9-81-ba-e5-a4-b1-e7-9a-84-e8-a7-a3-e6-b1-ba-e6-96-b9-e6-a1-88/"/>
+    <id>http://blog.gorendo.org/2014/04/unity-assetbundle-shader-e9-81-ba-e5-a4-b1-e7-9a-84-e8-a7-a3-e6-b1-ba-e6-96-b9-e6-a1-88/</id>
+    <published>2014-04-29T01:54:00.000Z</published>
+    <updated>2017-08-13T03:17:04.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;物件打包成 AssetBundle 後有的物件上的材質的shader 會 lost 變一塊紫色&lt;/p&gt;
+&lt;pre&gt;//assetbundle後shader會lost的處理
+gameObject.renderer.material.shader =  Shader.Find(
+    
+    </summary>
+    
+      <category term="Mobile Dev" scheme="http://blog.gorendo.org/categories/Mobile-Dev/"/>
+    
+      <category term="OpenGL" scheme="http://blog.gorendo.org/categories/Mobile-Dev/OpenGL/"/>
+    
+      <category term="Unity" scheme="http://blog.gorendo.org/categories/Mobile-Dev/OpenGL/Unity/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>[MAC]  在 MAC 上安裝 nginx</title>
+    <link href="http://blog.gorendo.org/2014/03/mac-e5-9c-a8-mac-e4-b8-8a-e5-ae-89-e8-a3-9d-nginx/"/>
+    <id>http://blog.gorendo.org/2014/03/mac-e5-9c-a8-mac-e4-b8-8a-e5-ae-89-e8-a3-9d-nginx/</id>
+    <published>2014-03-21T14:28:00.000Z</published>
+    <updated>2017-08-13T03:17:04.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;安裝 Homebrew &lt;/p&gt;
+&lt;pre&gt;ruby -e &quot;$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)&quot;
+&lt;/pre&gt;安裝 nginx 
+&lt;pre&gt;brew install nginx
+    
+    </summary>
+    
+      <category term="Mac" scheme="http://blog.gorendo.org/categories/Mac/"/>
+    
+      <category term="WEB程式" scheme="http://blog.gorendo.org/categories/Mac/WEB%E7%A8%8B%E5%BC%8F/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>[iOS開發] 在 Xcode5 點兩下檔案開在 Tab 不開新視窗</title>
+    <link href="http://blog.gorendo.org/2014/02/ios-e9-96-8b-e7-99-bc-e5-9c-a8-xcode5-e9-bb-9e-e5-85-a9-e4-b8-8b-e6-aa-94-e6-a1-88-e9-96-8b-e5-9c-a8-tab-e4-b8-8d-e9-96-8b-e6-96-b0-e8-a6-96-e7-aa-97/"/>
+    <id>http://blog.gorendo.org/2014/02/ios-e9-96-8b-e7-99-bc-e5-9c-a8-xcode5-e9-bb-9e-e5-85-a9-e4-b8-8b-e6-aa-94-e6-a1-88-e9-96-8b-e5-9c-a8-tab-e4-b8-8d-e9-96-8b-e6-96-b0-e8-a6-96-e7-aa-97/</id>
+    <published>2014-02-21T02:28:00.000Z</published>
+    <updated>2017-08-13T03:17:04.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;a href=&quot;http://localhost:32772/wp-content/uploads/2014/02/Navigation.png&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;&lt;img src=&quot;&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;
+    
+    </summary>
+    
+      <category term="iOS開發" scheme="http://blog.gorendo.org/categories/iOS%E9%96%8B%E7%99%BC/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>[iOS開發] UIImageView 加點擊範例</title>
+    <link href="http://blog.gorendo.org/2014/02/ios-e9-96-8b-e7-99-bc-uiimageview-e5-8a-a0-e9-bb-9e-e6-93-8a-e7-af-84-e4-be-8b/"/>
+    <id>http://blog.gorendo.org/2014/02/ios-e9-96-8b-e7-99-bc-uiimageview-e5-8a-a0-e9-bb-9e-e6-93-8a-e7-af-84-e4-be-8b/</id>
+    <published>2014-02-20T02:19:00.000Z</published>
+    <updated>2017-08-13T03:17:04.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;簡單的讓 UIImageView 變成 ImageButton  imgBtn.png 放在 Resources 資料夾 &lt;/p&gt;
+&lt;pre&gt;
+//生成 UIImage 並指定圖片
+UIImage *image = [UIImage imageNamed:@&quot;imgBtn.
+    
+    </summary>
+    
+      <category term="iOS開發" scheme="http://blog.gorendo.org/categories/iOS%E9%96%8B%E7%99%BC/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>[Mac] F8~F11 失效</title>
+    <link href="http://blog.gorendo.org/2014/02/mac-f8f11-e5-a4-b1-e6-95-88/"/>
+    <id>http://blog.gorendo.org/2014/02/mac-f8f11-e5-a4-b1-e6-95-88/</id>
+    <published>2014-02-19T04:20:00.000Z</published>
+    <updated>2017-08-13T03:17:04.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;最近工作時常常要按 f11 時按沒有&lt;/p&gt;
+&lt;p&gt;打開終端機&lt;/p&gt;
+&lt;pre&gt;
+killall Dock
+&lt;/pre&gt;
+    
+    </summary>
+    
+      <category term="Mac" scheme="http://blog.gorendo.org/categories/Mac/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>[Android] 開啟另一個Activity</title>
+    <link href="http://blog.gorendo.org/2014/02/android-activity.html/"/>
+    <id>http://blog.gorendo.org/2014/02/android-activity.html/</id>
+    <published>2014-02-16T04:37:00.000Z</published>
+    <updated>2017-08-13T08:00:45.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;開啟另一個Activity ( A 呼 B&lt;/p&gt;
+&lt;pre&gt;Intent intent = new Intent();
+intent.setClass(A.this, B.class);
+startActivity(intent);&lt;/pre&gt;
+不同 Activity 之
+    
+    </summary>
+    
+      <category term="Android" scheme="http://blog.gorendo.org/categories/Android/"/>
+    
+    
+      <category term="Android" scheme="http://blog.gorendo.org/tags/Android/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>[Cocos2D] 在文字旁加上黑邊 CCLabelTTF and CCSprite</title>
+    <link href="http://blog.gorendo.org/2014/02/cocos2d-e5-9c-a8-e6-96-87-e5-ad-97-e6-97-81-e5-8a-a0-e4-b8-8a-e9-bb-91-e9-82-8a-cclabelttf-and-ccsprite/"/>
+    <id>http://blog.gorendo.org/2014/02/cocos2d-e5-9c-a8-e6-96-87-e5-ad-97-e6-97-81-e5-8a-a0-e4-b8-8a-e9-bb-91-e9-82-8a-cclabelttf-and-ccsprite/</id>
+    <published>2014-02-14T15:40:00.000Z</published>
+    <updated>2017-08-13T03:17:04.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;pre&gt; static CCRenderTexture* createStroke(CCSprite* label, int size, ccColor3B color, GLubyte opacity)
+ {
+
+   CCRenderTexture* rt = CCRende
+    
+    </summary>
+    
+      <category term="C/C++" scheme="http://blog.gorendo.org/categories/C-C/"/>
+    
+      <category term="Cocos2D" scheme="http://blog.gorendo.org/categories/C-C/Cocos2D/"/>
+    
+      <category term="程式語言" scheme="http://blog.gorendo.org/categories/C-C/Cocos2D/%E7%A8%8B%E5%BC%8F%E8%AA%9E%E8%A8%80/"/>
+    
+      <category term="遊戲引擎" scheme="http://blog.gorendo.org/categories/C-C/Cocos2D/%E7%A8%8B%E5%BC%8F%E8%AA%9E%E8%A8%80/%E9%81%8A%E6%88%B2%E5%BC%95%E6%93%8E/"/>
+    
+      <category term="遊戲開發" scheme="http://blog.gorendo.org/categories/C-C/Cocos2D/%E7%A8%8B%E5%BC%8F%E8%AA%9E%E8%A8%80/%E9%81%8A%E6%88%B2%E5%BC%95%E6%93%8E/%E9%81%8A%E6%88%B2%E9%96%8B%E7%99%BC/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>[C#] 一次一行讀取文字檔</title>
+    <link href="http://blog.gorendo.org/2014/02/Csharp-Read-Text-File-One-Line-Time.html/"/>
+    <id>http://blog.gorendo.org/2014/02/Csharp-Read-Text-File-One-Line-Time.html/</id>
+    <published>2014-02-10T07:02:00.000Z</published>
+    <updated>2017-08-13T08:08:03.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;這個範例會使用 StreamReader 類別的 ReadLine 方法，將文字檔的內容一次一行讀入字串中。每一個文字行都會儲存到字串 line 中並顯示在螢幕上。&lt;/p&gt;
+&lt;p&gt;範例&lt;br&gt;&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;pre&gt;int counter 
+    
+    </summary>
+    
+      <category term="C#" scheme="http://blog.gorendo.org/categories/C/"/>
+    
+    
+      <category term="C#" scheme="http://blog.gorendo.org/tags/C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>[Unity] 各平台檔案路徑 Path</title>
+    <link href="http://blog.gorendo.org/2014/02/unity-e5-90-84-e5-b9-b3-e5-8f-b0-e6-aa-94-e6-a1-88-e8-b7-af-e5-be-91-path/"/>
+    <id>http://blog.gorendo.org/2014/02/unity-e5-90-84-e5-b9-b3-e5-8f-b0-e6-aa-94-e6-a1-88-e8-b7-af-e5-be-91-path/</id>
+    <published>2014-02-06T16:52:00.000Z</published>
+    <updated>2017-08-13T03:17:04.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Unity 各平台檔案路徑 Path&lt;/p&gt;
+&lt;p&gt;Application.dataPath&lt;br&gt;包含遊戲資料文件夾的路徑&lt;br&gt;只可讀，放置一些資源資料&lt;/p&gt;
+&lt;pre&gt;OSX:       ProjectPath/Assets/
+Android:   /data/a
+    
+    </summary>
+    
+      <category term="Unity" scheme="http://blog.gorendo.org/categories/Unity/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>[php] array</title>
+    <link href="http://blog.gorendo.org/2014/02/php-array/"/>
+    <id>http://blog.gorendo.org/2014/02/php-array/</id>
+    <published>2014-02-06T16:41:00.000Z</published>
+    <updated>2017-08-13T03:17:04.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;宣告類&lt;/p&gt;
+&lt;div&gt;&lt;br&gt;&lt;div&gt;單維&lt;br&gt;$arr = array(“orange”, “banana”);&amp;nbsp;&lt;/div&gt;&lt;div&gt;// $arr[1]= “banana”&lt;br&gt;&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;&lt;br&gt;$arr = a
+    
+    </summary>
+    
+      <category term="PHP" scheme="http://blog.gorendo.org/categories/PHP/"/>
+    
+      <category term="程式語言" scheme="http://blog.gorendo.org/categories/PHP/%E7%A8%8B%E5%BC%8F%E8%AA%9E%E8%A8%80/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>[Unity] File Download 檔案下載</title>
+    <link href="http://blog.gorendo.org/2014/02/unity-file-download-e6-aa-94-e6-a1-88-e4-b8-8b-e8-bc-89/"/>
+    <id>http://blog.gorendo.org/2014/02/unity-file-download-e6-aa-94-e6-a1-88-e4-b8-8b-e8-bc-89/</id>
+    <published>2014-02-06T16:39:00.000Z</published>
+    <updated>2017-08-13T03:17:04.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;搭配 AssetBundle 可以實現更新 patch 機制&lt;br&gt;就不用什麼都包進 exe / apk / ipa 裡&lt;br&gt;&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;pre&gt;// 從 URL 下載&lt;br&gt;WWW www = new WWW(“&lt;a href
+    
+    </summary>
+    
+      <category term="Unity" scheme="http://blog.gorendo.org/categories/Unity/"/>
+    
+      <category term="遊戲開發" scheme="http://blog.gorendo.org/categories/Unity/%E9%81%8A%E6%88%B2%E9%96%8B%E7%99%BC/"/>
     
     
   </entry>

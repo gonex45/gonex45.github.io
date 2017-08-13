@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>小伍手札</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="小伍手札">
+<meta property="og:url" content="http://blog.gorendo.org/page/10/index.html">
+<meta property="og:site_name" content="小伍手札">
+<meta property="og:locale" content="en">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="小伍手札">
+  
+    <link rel="alternate" href="/atom.xml" title="小伍手札" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">小伍手札</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">某RD的開發筆記</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://blog.gorendo.org"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-e8-bd-89-ef-bc-9a-e3-80-8c-e8-b7-af-e5-be-91-e3-80-8d-e3-80-8c-e8-b2-9d-e8-8c-b2-e6-9b-b2-e7-b7-9a-e3-80-8d-e8-b6-85-e8-a9-b3-e7-b4-b0-e6-95-99-e5-ad-b8" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2010/05/e8-bd-89-ef-bc-9a-e3-80-8c-e8-b7-af-e5-be-91-e3-80-8d-e3-80-8c-e8-b2-9d-e8-8c-b2-e6-9b-b2-e7-b7-9a-e3-80-8d-e8-b6-85-e8-a9-b3-e7-b4-b0-e6-95-99-e5-ad-b8/" class="article-date">
+  <time datetime="2010-05-20T04:06:00.000Z" itemprop="datePublished">2010-05-20</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/未分類/">未分類</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2010/05/e8-bd-89-ef-bc-9a-e3-80-8c-e8-b7-af-e5-be-91-e3-80-8d-e3-80-8c-e8-b2-9d-e8-8c-b2-e6-9b-b2-e7-b7-9a-e3-80-8d-e8-b6-85-e8-a9-b3-e7-b4-b0-e6-95-99-e5-ad-b8/">轉：「路徑」「貝茲曲線」超詳細教學</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>版權聲明：</p>
+<p>作者 趙鵬 zhaopeng.net，所在論壇 blueidea.com</p>
+<p>此文章允許任意轉載，允許用於商業印刷， 不需經過作者同意，不需支付任何費用。但必須保證文章的完整性和原始性，同時注明本版權聲明全部內容。</p>
+<p><a name="more"></a></p>
+<p>首先來簡要介紹一下鋼筆工具和路徑的概念</p>
+<p>1 鋼筆工具屬於向量繪圖工具，其優點是可以勾畫平滑的曲線（在縮放或者變形之後仍能保持平滑效果）</p>
+<p>2 鋼筆工具畫出來的向量圖形稱為路徑，路徑是向量的</p>
+<p>3 路徑允許是不封閉的開放狀，如果把起點與終點重合繪製就可以得到封閉的路徑</p>
+<p>────────────────────</p>
+<p>&nbsp;</p>
+<p>現在我們來繪製一個簡單的路徑</p>
+<p>&nbsp;</p>
+<p>如下圖在工具欄選擇鋼筆工具（快捷鍵P）</p>
+<p><a href="http://album.blog.yam.com/show.php?a=gonex&amp;f=7479395&amp;i=15436080" target="_blank" rel="external"><img src="" alt=""></a></p>
+<p>並保持鋼筆工具的選項如圖所示（在工具欄上方）</p>
+<p>選擇第二種繪圖方式（單純路徑），並取消橡皮帶功能</p>
+<p>&nbsp;<a href="http://album.blog.yam.com/show.php?a=gonex&amp;f=7479395&amp;i=15436082" target="_blank" rel="external"><img src="" alt=""></a>&nbsp;</p>
+<p>然後用鋼筆在畫面中單擊，會看到在擊打的點之間有線段相連</p>
+<p>&nbsp;保持按住Shift鍵可以讓所繪製的點與上一個點保持45度整數倍夾角（比如零度、90度）</p>
+<p>&nbsp;這樣可以繪製水平或者是垂直的線段（圖中從第5個點開始按下了Shift鍵）</p>
+<p>&nbsp;</p>
+<p>&nbsp;<a href="http://album.blog.yam.com/show.php?a=gonex&amp;f=7479395&amp;i=15436083" target="_blank" rel="external"><img src="" alt=""></a></p>
+<p>────────────────────</p>
+<p>&nbsp;</p>
+<p>從上面的簡單練習中我們得出兩個規律：</p>
+<p>&nbsp;1 我們並沒有直接繪製線段，而是定義了各個點的位置，軟體則在點間連線成型</p>
+<p>&nbsp;2 控制線段形態（方向、距離）的，並不是線段本身，而是線段中的各個點的位置</p>
+<p>&nbsp;記住兩個術語：那些點稱為&ldquo;錨點&rdquo;(anchor)；錨點間的線段稱為&ldquo;片斷&rdquo;(segment)。</p>
+<p>&nbsp;剛才我們繪製的那些錨點，由於它們之間的線段都是直線，所以又稱為直線型錨點。<br>&nbsp;</p>
+<p>&nbsp;────────────────────<br>&nbsp;</p>
+<p>&nbsp;現在我們來繪製曲線形錨點</p>
+<p>&nbsp;如下圖所示般，在起點按下滑鼠之後不要鬆手，向上拖動出一條方向線後放手</p>
+<p>&nbsp;<a href="http://album.blog.yam.com/show.php?a=gonex&amp;f=7479395&amp;i=15436084" target="_blank" rel="external"><img src="" alt=""></a></p>
+<p>然後在第二個錨點拖動出一條向下的方向線，以此類推，畫出類似圖示的路徑</p>
+<p>&nbsp;</p>
+<p>我們看到在繪製出第二個及之後的錨點並拖動方向線時，曲線的形態也隨之改變</p>
+<p>究竟曲線是怎樣生成的，我們又該如何來控制曲線的形態呢？</p>
+<p>除了具有直線的方向和距離外，曲線多了一個彎曲度的形態</p>
+<p>方向和距離只要改變錨點位置就可以做到，但是彎曲度該如何控制？</p>
+<p>&nbsp;</p>
+<p>────────────────────</p>
+<p>&nbsp;</p>
+<p>如圖在工具欄選擇&ldquo;直接選擇工具&rdquo;，注意是下方那個空心的箭頭</p>
+<p>&nbsp;<a href="http://album.blog.yam.com/show.php?a=gonex&amp;f=7479395&amp;i=15436085" target="_blank" rel="external"><img src="" alt=""></a></p>
+<p>假設我們剛才繪製的4個錨點分別是ABCD</p>
+<p>用&ldquo;直接選擇工具&rdquo;去點取位於AB之間的片斷</p>
+<p>會看到剛才我們繪製AB錨點時候定義的方向線</p>
+<p>&nbsp;<a href="http://album.blog.yam.com/show.php?a=gonex&amp;f=7479395&amp;i=15436086" target="_blank" rel="external"><img src="" alt=""></a></p>
+<p><img src="" alt=""></p>
+<p>&nbsp;</p>
+<p>仔細看一下這兩個方向線</p>
+<p>再這樣想像：</p>
+<p>一個人要從A點到B點，在A點出發的時候，位於A點的其他人看到他是朝著上偏右的方向走的</p>
+<p>而位於B點的人，看到他是朝著下偏右的方向來的</p>
+<p>那麼綜合兩地的觀測結果。就可以得出這個人行走的路線：必定是一個類似鍋蓋的上弧形</p>
+<p>&nbsp;</p>
+<p>────────────────────</p>
+<p>&nbsp;</p>
+<p>現在我們選擇如圖的&ldquo;轉換點工具&rdquo;，該工具用來修改方向線</p>
+<p><img src="" alt=""></p>
+<p>&nbsp;<a href="http://album.blog.yam.com/show.php?a=gonex&amp;f=7479395&amp;i=15436087" target="_blank" rel="external"><img src="" alt=""></a></p>
+<p>然後如下圖所示般改變AB錨點上的方向線，將會看到曲線彎曲度的改變</p>
+<p>注意方向線末端有一個小圓點，這個圓點稱為&ldquo;手柄&rdquo;，要點擊手柄位置才可以改變方向線</p>
+<p><img src="" alt=""></p>
+<p>&nbsp;<a href="http://album.blog.yam.com/show.php?a=gonex&amp;f=7479395&amp;i=15436088" target="_blank" rel="external"><img src="" alt=""></a></p>
+<p>結合剛才所作的比喻，就不難理解了：</p>
+<p>1 修改B錨點方向線為下，相當於指定那個人從A點上方出發後，從B點下方進入，那麼所走的路程就是一個S形</p>
+<p>2 再修改A錨點方向線為下，相當於從A點下方出發，再從B點下方進入，所走的就是一個下弧形的路程</p>
+<p>&nbsp;</p>
+<p>修改後的方向線如下圖：</p>
+<p>&nbsp;<a href="http://album.blog.yam.com/show.php?a=gonex&amp;f=7479395&amp;i=15436089" target="_blank" rel="external"><img src="" alt=""></a></p>
+<p>&nbsp;</p>
+<p>────────────────────</p>
+<p>&nbsp;</p>
+<p>明白了方向線的方向對曲線形態的影響後，我們來看一下方向線長短造成的影響</p>
+<p>&nbsp;</p>
+<p>如下圖般，在同一方向上拖拉方向線：（可使用&ldquo;直接選擇工具&rdquo;）</p>
+<p><img src="" alt=""></p>
+<p>&nbsp;<a href="http://album.blog.yam.com/show.php?a=gonex&amp;f=7479395&amp;i=15436091" target="_blank" rel="external"><img src="" alt=""></a></p>
+<p><strong>對於一個錨點而言，如果方向線越長，那麼曲線在這個方向上走的路程就越長，反之就越短</strong></p>
+<p>&nbsp;</p>
+<p>可以這樣設想，曲線是一個橡皮筋，在頭尾兩端有兩個力在各自的方向上拉</p>
+<p>哪個方向上力氣大，則橡皮筋就朝向這個方向多靠攏一些。反而反之</p>
+<p>&nbsp;</p>
+<p>────────────────────</p>
+<p>&nbsp;</p>
+<p>除了修改錨點之外，也可以利用&ldquo;直接選擇工具&rdquo;，在片斷上修改曲線的形態</p>
+<p>&nbsp;</p>
+<p>如下圖：</p>
+<p>&nbsp;<a href="http://album.blog.yam.com/show.php?a=gonex&amp;f=7479395&amp;i=15436091" target="_blank" rel="external"><img src="" alt=""></a></p>
+<p>注意：這並不能說是&ldquo;修改了片斷&rdquo;，而應該說是&ldquo;同時修改了兩個錨點&rdquo;</p>
+<p>牢記原則：&lt;SPAN style=&quot;FONT-WEIGHT:  bold&quot;&gt;片斷是由錨點組成的，只有修改錨點才能改變片斷形態，這是不可逆的因果關係&lt;/SPAN&gt;</p>
+<p>&nbsp;</p>
+<p>────────────────────</p>
+<p>&nbsp;</p>
+<p>做一下小結：</p>
+<p></p><p>對於這條曲線上的除了起點和終點的BC兩個錨點而言</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://blog.gorendo.org/2010/05/e8-bd-89-ef-bc-9a-e3-80-8c-e8-b7-af-e5-be-91-e3-80-8d-e3-80-8c-e8-b2-9d-e8-8c-b2-e6-9b-b2-e7-b7-9a-e3-80-8d-e8-b6-85-e8-a9-b3-e7-b4-b0-e6-95-99-e5-ad-b8/" data-id="cj6ag8hgp000yi5xuwherw6xy" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-e6-9c-aa-e6-95-b4-e7-90-86-e9-9b-9c-e8-a8-98" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2009/08/e6-9c-aa-e6-95-b4-e7-90-86-e9-9b-9c-e8-a8-98/" class="article-date">
+  <time datetime="2009-08-24T14:44:00.000Z" itemprop="datePublished">2009-08-24</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/未分類/">未分類</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2009/08/e6-9c-aa-e6-95-b4-e7-90-86-e9-9b-9c-e8-a8-98/">未整理雜記</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>java&nbsp; 快速鍵<br>btmTest.registerKeyboardAction(new java.awt.event.ActionListener() {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; public void actionPerformed(java.awt.event.ActionEvent evt) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; btmTestActionPerformed(evt);<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; System.out.println(&quot;auto&quot;);<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }, KeyStroke.getKeyStroke(KeyEvent.VK_F1, 0),btmTest.WHEN_IN_FOCUSED_WINDOW);</p>
+<p><a name="more"></a></p>
+<p>java 關掉該視窗<br>dispose();</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://blog.gorendo.org/2009/08/e6-9c-aa-e6-95-b4-e7-90-86-e9-9b-9c-e8-a8-98/" data-id="cj6ag8hgi000ni5xuwtwhuidd" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-e6-88-91-e7-9a-84firefox-e8-8f-9c-e5-96-ae09517-e6-9b-b4-e6-96-b0" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2009/03/e6-88-91-e7-9a-84firefox-e8-8f-9c-e5-96-ae09517-e6-9b-b4-e6-96-b0/" class="article-date">
+  <time datetime="2009-03-13T15:56:00.000Z" itemprop="datePublished">2009-03-13</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/02-軟體/">02 軟體</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2009/03/e6-88-91-e7-9a-84firefox-e8-8f-9c-e5-96-ae09517-e6-9b-b4-e6-96-b0/">我的FireFox菜單[09/5/17更新]</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li><span style="font-size: 130%;">本體</span><span style="font-size: 100%;"> </span><span style="font-size: 100%;">因為想搶先用有針對 JavaScrip加速功能(3.1以上限定)所以選用了 3.5 BETA4</span></li>
+</ul>
+<p><a name="more"></a><br><span style="font-size: small;"><br>  </span><span style="font-size: 100%;"><a href="http://moztw.org/beta/" target="_blank" rel="external"><span style="font-size: small;">BETA測試版下載頁</span></a><span style="font-size: small;"><br></span>[<span style="font-size: small;">一般釋出版下載頁</span></span></p>
+<p>](<a href="http://www.moztw.org/firefox/" target="_blank" rel="external">http://www.moztw.org/firefox/</a>)<span style="font-size: small;">　　要開通加速功能請在網址列上輸入「about:config」之後篩選出<strong> jit </strong> 將「javascript.options.jit.content」&amp;「javascript.options.jit.chrome」 的「false」改成「true」後重開FF即可    </span></p>
+<p></p>
+<ul>
+<li><span style="font-size: large;">推薦addons</span><span style="font-size: small;">本人FF中常駐的Addons</span></li>
+</ul>
+<p><strong>MR Tech ToolKit</strong> <a href="https://addons.mozilla.org/zh-TW/firefox/addon/421" target="_blank" rel="external">下載頁</a>&nbsp; [09/5/17]<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="font-size: small;">主要是讓有些過時的Addons</span><span style="font-size: small;">可以無視限制裝在FX上的工具</span></p>
+<p> <strong>Download Statusbar</strong> <span style="font-size: 100%;"><a href="https://addons.mozilla.org/zh-TW/firefox/addon/26" target="_blank" rel="external"><span style="font-size: small;">下載頁</span></a><span style="font-size: small;"><br> 　　用下載列檢視並管理下載狀態 </span></span></p>
+<p> <strong>FlashGot</strong> <a href="https://addons.mozilla.org/zh-TW/firefox/addon/220" target="_blank" rel="external"><span style="font-size: small;">下載頁</span></a><span style="font-size: small;"><br> 　　讓FF使用FlashGet、Orbit、影音傳送帶等續傳軟體下載東西 (點右鍵選&quot;全部使用FlashGot下載&quot;，也可以反白一部份讓他下載) (若想下載YouTube上的flv影片時，在影片播放的同時右下角會出現一個下圖示，點圖示就可以下載啦~) </span></p>
+<p> <strong><span style="font-size: small;">Xmarks </span></strong><a href="https://addons.mozilla.org/zh-TW/firefox/addon/2410" target="_blank" rel="external"><span style="font-size: small;">下載頁</span></a><span style="font-size: small;"><br> 　　在不同電腦間同步書籤 (可以做為我的最愛即時備份用，我是有三台電腦&hellip;用滿大的) </span></p>
+<p> <strong>IE Tag</strong> <a href="https://addons.mozilla.org/zh-TW/firefox/addon/1419" target="_blank" rel="external"><span style="font-size: small;">下載頁</span></a><span style="font-size: small;"><br> 　　讓FF使用IE核心來開分頁 (IE Only?  顯示的效果很怪?  用這個來開吧!!)  </span></p>
+<p><strong>PCMan Plug-in</strong> <a href="http://of.openfoundry.org/projects/941/download" target="_blank" rel="external"><span style="font-size: small;">下載頁</span></a><span style="font-size: small;"><br> 　　讓FF直接輸入telnet://ptt.cc就能玩PTT!! (還能用滑鼠點選項，雖然有時候怪怪的還是用鍵盤玩)  </span></p>
+<p><strong>Add to Search Bar</strong> <a href="http://www.blogger.com/Add%20to%20Search%20Bar" target="_blank" rel="external"><span style="font-size: small;">下載頁</span></a><span style="font-size: small;"><br> 　　右上角的搜尋引擊不夠用嗎? 到你想加的搜尋引擊網頁中，在輸入關鍵字的地方按右鍵點選「Add to Search Bar…」就會加到你FF上的搜尋器了(beta版不給裝的話看看</span><span style="font-size: 100%;"><a href="https://addons.mozilla.org/zh-TW/firefox/addons/versions/3682" target="_blank" rel="external"><span style="font-size: small;">這裡</span></a></span><span style="font-size: small;">)  </span></p>
+<p><strong>Adblock Plus</strong> <span style="font-size: 100%;"><a href="https://addons.mozilla.org/zh-TW/firefox/addon/1865" target="_blank" rel="external"><span style="font-size: small;">下載頁</span></a></span><span style="font-size: small;"><br> 　　網頁上的廣告礙眼? 裝這個就消失大半了，也可以手動右鍵把一些不在名單中的也擋擋掉 (裝這個的重點是&hellip;少了廣告的圖片會讓我的256k網路開的快一點)   </span></p>
+<p></p>
+<ul>
+<li><span style="font-size: large;">特殊addons</span><span style="font-size: small;">有特殊需求的時候才安裝的addons 一般沒用到的時候可以到「工具&rarr;附加元件」把平常還用不到的先停用來節省資源=w=  </span></li>
+</ul>
+<p><strong>NicoFox</strong> <span style="font-size: 130%;"><span style="font-size: 100%;"><a href="https://addons.mozilla.org/zh-TW/firefox/addon/8888" target="_blank" rel="external"><span style="font-size: small;">下載頁</span></a></span></span><span style="font-size: small;"><br> 　　對NICONICO動畫中上傳的影片進行儲存、管理、播放的閱覽支援擴充套件。這個擴充套件可以讓你下載NICONICO動畫上的影片，並使用各種的播放器來回味其中的內容。對於NICOSOUND之類的工具網站只要輕輕在工具列點一下就可以使用！   </span></p>
+<p><strong><span style="font-size: small;">Firebug</span></strong> <a href="https://addons.mozilla.org/zh-TW/firefox/addon/1843" target="_blank" rel="external">下載頁</a><br><span style="font-size: small;">　　我在進行網頁設計時測試各行css及javascript語法的工具<br>可以快速找出是哪行有bug</span></p>
+<p></p>
+<ul>
+<li><p><span style="font-size: large;">我的佈景</span><span style="font-size: small;"> <strong>Chromifox</strong> </span><a href="https://addons.mozilla.org/zh-TW/firefox/addon/8782" target="_blank" rel="external"><span style="font-size: small;">下載頁<br></span></a><span style="font-size: small;"> 　　彷製Google Chrome瀏覽器樣式，乾淨順眼。 (有其它版本，可以用Chromifox搜尋其它的，我在這邊是使用basic版&hellip;剛出就用了&hellip;之後的都不習慣) </span></p>
+<p>以上所有連結都是連到官方或原網站的下載頁確保更新<br></p>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://blog.gorendo.org/2009/03/e6-88-91-e7-9a-84firefox-e8-8f-9c-e5-96-ae09517-e6-9b-b4-e6-96-b0/" data-id="cj6ag8hge000gi5xuh3ictzdp" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-web-div-css-e5-ae-8c-e7-be-8e-e5-85-bc-e5-ae-b9ie6ie7ff-e7-9a-84-e9-80-9a-e7-94-a8-e6-96-b9-e6-b3-95" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2009/02/web-div-css-e5-ae-8c-e7-be-8e-e5-85-bc-e5-ae-b9ie6ie7ff-e7-9a-84-e9-80-9a-e7-94-a8-e6-96-b9-e6-b3-95/" class="article-date">
+  <time datetime="2009-02-12T17:17:00.000Z" itemprop="datePublished">2009-02-13</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/WEB程式/">WEB程式</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2009/02/web-div-css-e5-ae-8c-e7-be-8e-e5-85-bc-e5-ae-b9ie6ie7ff-e7-9a-84-e9-80-9a-e7-94-a8-e6-96-b9-e6-b3-95/">[WEB] DIV CSS完美兼容IE6/IE7/FF的通用方法</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>來源:iwcpu.com</p>
+<p><a name="more"></a></p>
+<p><div dir="ltr">關於CSS對各個瀏覽器兼容已經是老生常談的問題了,網絡上的教程遍地都是.以下內容沒有太多新穎,純屬個人總結,希望能對初學者有一定的幫助.  </div></p>
+<p>一、CSS HACK<br>以下兩種方法幾乎能解決現今所有HACK. </p>
+<p>1, !important  </p>
+<p>隨著IE7對!important的支持, !important方法現在只針對IE6的HACK.(注意寫法.記得該聲明位置需要提前.)</p>
+<p><table border="1" cellpadding="10" cellspacing="1" style="height: 81px; width: 284px;"><tbody><tr><td>#wrapper{<br>width: 100px!important; /<em> IE7+FF </em>/<br>width: 80px; /<em> IE6 </em>/<br>}</td></tr></tbody></table>2, IE6/IE77對FireFox </p>
+<table border="1" cellpadding="10" cellspacing="1" style="height: 136px; width: 453px;"><tbody><tr><td><em>+html與</em>html是IE特有的標籤,  firefox暫不支持<br>而<em>+html又為IE7特有標籤.<br>&lt;style&gt;<br>#wrapper {<br>#wrapper  { width: 120px; } /</em> FireFox <em>/ 
+</em>html #wrapper { width: 80px;} /<em> ie6 fixed  </em>/<br><em>+html #wrapper { width: 60px;} /</em> ie7 fixed,注意順序<em>/<br>}<br>&lt;/style&gt;</em></td></tr></tbody></table><br>注意: 
++html對IE7的HACK必須保證HTML頂部有如下聲明：<br><br>&lt;!DOCTYPE HTML PUBLIC  “-//W3C//DTD HTML 4.01  Transitional//EN””<a href="http://www.w3.org/TR/html4/loose.dtd&quot;&amp;gt" target="_blank" rel="external">http://www.w3.org/TR/html4/loose.dtd&quot;&amp;gt</a>;<br><br>二、萬能float閉合<br><br>關於clear float的原理可參見[How To Clear Floats Without Structural Markup]<br>將以下代碼加入Global CSS中,給需要閉合的div加上class=”clearfix”即可,屢試不爽.<br><table border="1" cellpadding="10" cellspacing="1" height="369" style="width: 357px;"><tbody><tr><td>&lt;style&gt;<br>/<em> Clear Fix </em>/<br>.clearfix:after{<br>　content:”.”;<br>　display:block;<br>　height:0;<br>　clear:both;<br>　visibility:hidden;<br>}<br><br>.clearfix{<br>　display:inline-block;<br>}<br><br>/<em> Hide from IE Mac </em>/<br>.clearfix {<br>　display:block;<br>}<br>/<em> End hide from IE Mac </em>/<br><br>/<em> end of clearfix </em>/<br>&lt;/style&gt;</td></tr></tbody></table><br><div dir="ltr">三、其他兼容技巧<br><br>1,  FF下給div設置padding後會導致width和height增加,但IE不會.(可用!important解決)<br>2,居中問題.<br>1).垂直居中.將line-height設置為當前div相同的高度,再通過vertical-align: middle.(注意內容不要換行.)<br>2).水平居中. margin: 0 auto;(當然不是萬能)<br>3,若需給a標籤內內容加上樣式,需要設置display:  block;(常見於導航標籤)<br>4, FF和IE對BOX理解的差異導致相差2px的還有設為float的div在ie下margin加倍等問題.<br>5, ul標籤在FF下面默認有list-style和padding .最好事先聲明,以避免不必要的麻煩. (常見於導航標籤和內容列表)<br>6,作為外部wrapper的div不要定死高度,最好還加上overflow: hidden.以達到高度自適應.<br>7,關於手形光標.  cursor: pointer.而hand只適用於IE.<br><br>1針對firefox ie6 ie7的css樣式<br>現在大部分都是用!important來hack，對於ie6和firefox測試可以正常顯示，<br>但是ie7對!important可以正確解釋，會導致頁面沒按要求顯示！找到一個針<br>對IE7不錯的hack方式就是使用“<em>+html”，現在用IE7瀏覽一下，應該沒有問題了。<br>現在寫一個CSS可以這樣：<br><br><table border="1" cellpadding="10" cellspacing="1" style="height: 71px; width: 422px;"><tbody><tr><td>#1 { color: #333; } /</td></tr></tbody></table></em> Moz <em>/
+</em> html #1 { color: #666; } /<em> IE6 </em>/<br><em>+html #1 { color: #999; } /</em> IE7 */
+
+<p><div dir="ltr">那麼在firefox下字體顏色顯示為#333，IE6下字體顏色顯示為#666，IE7下字體顏色顯示為#999。 </div></p>
+<p>2  css佈局中的居中問題<br>主要的樣式定義如下： </p>
+<table border="1" cellpadding="10" cellspacing="1" style="height: 39px; width: 365px;"><tbody><tr><td>body {<br>TEXT-ALIGN: center;<br>}<br><br>#center{<br>MARGIN-RIGHT: auto;<br>MARGIN-LEFT: auto;<br>}</td></tr></tbody></table>
+
+<p>說明：<br>首先在父級元素定義TEXT-ALIGN:  center;這個的意思就是在父級元素內的內容居中；對於IE這樣設定就已經可以了。<br>但在mozilla中不能居中。解決辦法就是在子元素定義時候設定時再加上“MARGIN-RIGHT: auto;MARGIN-LEFT: auto; ”<br>需要說明的是，如果你想用這個方法使整個頁面要居中，建議不要套在一個DIV裡，你可以依次拆出多個div，<br>只要在每個拆出的div裡定義MARGIN-RIGHT: auto;MARGIN-LEFT: auto;就可以了。 </p>
+<p>3盒模型不同解釋  </p>
+<table border="1" cellpadding="10" cellspacing="1" style="height: 101px; width: 529px;"><tbody><tr><td>#box{<br>width:600px; //for ie6.0-<br>width:500px; //for ff+ie6.0<br>}<br>#box{<br>width:600px!important //for ff<br>width:600px; //for ff+ie6.0<br>width /**/:500px;  //for ie6.0-<br>}</td></tr></tbody></table>
+
+<p>4浮動ie產生的雙倍距離 </p>
+<p>#box{<br>float:left;<br>width:100px;<br>margin:0 0 0 100px; //這種情況之下IE會產生200px的距離<br>display:inline; //使浮動忽略<br>}<br>這裡細說一下block,inline兩個元素,Block元素的特點是:總是在新行上開始,高度,寬度,行高,邊距都可以控制(塊元素);Inline元素的特點是:和其他元素在同一行上,…不可控制(內嵌元素);  </p>
+<p>#box{<br>display:block;//可以為內嵌元素模擬為塊元素<br>display:inline;  //實現同一行排列的的效果<br>diplay:table;  </p>
+<p>IE不認得min-這個定義，但實際上它把正常的width和height當作有min的情況來使。這樣問題就大了，如果只用寬度和高度，<br>正常的瀏覽器裡這兩個值就不會變，如果只用min-width和min-height的話，IE下面根本等於沒有設置寬度和高度。<br>比如要設置背景圖片，這個寬度是比較重要的。要解決這個問題，可以這樣： </p>
+<p><table border="1" cellpadding="10" cellspacing="1" style="height: 56px; width: 548px;"><tbody><tr><td>#box{ width: 80px; height:  35px;}html&gt;body</td></tr></tbody></table></p>
+<p>#box{ width: auto; height: auto; min-width: 80px; min-height:  35px;}<br>6頁面的最小寬度  </p>
+<p>min-width是個非常方便的CSS命令，它可以指定元素最小也不能小於某個寬度，這樣就能保證排版一直正確。但IE不認得這個，<br>而它實際上把width當做最小寬度來使。為了讓這一命令在IE上也能用，可以把一個&lt;div&gt;放到&lt;body&gt;標籤下，然後為div指定一個類：<br>然後CSS這樣設計： </p>
+<p>#container{<br>min-width: 600px;<br>width:expression(document.body.clientWidth &lt; 600? “600px”: “auto” );<br>}<br>第一個min-width是正常的；但第2行的width使用了Javascript，這只有IE才認得，這也會讓你的HTML文檔不太正規。它實際上通過Javascript的判斷來實現最小寬度。  </p>
+<p>7清除浮動 </p>
+<p>.hackbox{ display:table; //將對像作為塊元素級的表格顯示}或者<br>.hackbox{  clear:both;}<br>或者加入:after（偽對象）,設置在對像後發生的內容，通常和content配合使用，IE不支持此偽對象，非Ie瀏覽器支持，<br>所以並不影響到IE/WIN瀏覽器。這種的最麻煩的……</p>
+<p>#box:after{<br>content: “.”;<br>display: block;<br>height: 0;<br>clear: both;<br>visibility: hidden;<br>} </p>
+<p>8 DIV浮動IE文本產生3像素的bug  </p>
+<p>左邊對象浮動，右邊採用外補丁的左邊距來定位，右邊對象內的文本會離左邊有3px的間距. </p>
+<p>#box{<br>float:left;<br>width:800px;<br>}</p>
+<p>#left{<br>float:left;<br>width:50%;<br>}</p>
+<p>#right<br>{<br>width:50%;<br>}<br>*html #left{<br>margin-right:-3px; //這句是關鍵<br>}<br>HTML代碼<br>&lt;div id=”box”&gt;<br>&lt;div  id=”left”&gt;&lt;/div&gt;<br>&lt;div id=”right”&gt;&lt;/div&gt;<br>&lt;/div&gt;  </p>
+<p>9屬性選擇器(這個不能算是兼容,是隱藏css的一個bug) </p>
+<p>p[id]{}div[id]{}<br>這個對於IE6.0和IE6.0以下的版本都隱藏,FF和OPera作用<br>屬性選擇器和子選擇器還是有區別的,子選擇器的範圍從形式來說縮小了,屬性選擇器的範圍比較大,如p[id]中,所有p標籤中有id的都是同樣式的.  </p>
+<p>10 IE捉迷藏的問題 </p>
+<p>當div應用複雜的時候每個欄中又有一些鏈接，DIV等這個時候容易發生捉迷藏的問題。<br>有些內容顯示不出來，當鼠標選擇這個區域是發現內容確實在頁面。<br>解決辦法：對#layout使用line-height屬性或者給#layout使用固定高和寬。頁面結構盡量簡單。 </p>
+<p>11高度不適應  </p>
+<p>高度不適應是當內層對象的高度發生變化時外層高度不能自動進行調節，特別是當內層對象使用<br>margin或paddign時。</p>
+<p><div dir="ltr">例：<br></div><table border="1" cellpadding="10" cellspacing="1" style="height: 146px; width: 399px;"><tbody><tr><td>&lt;div id=”box”&gt;<br>&lt;p&gt;p對像中的內容&lt;/p&gt;<br>&lt;/div&gt;<br>CSS：</td></tr></tbody></table></p>
+<p>#box {<br>background-color:#eee;<br>} </p>
+<p>#box p {<br>margin-top:  20px;<br>margin-bottom: 20px;<br>text-align:center;<br>}<div dir="ltr"><br>解決方法：在P對像上下各加2個空的div對象CSS代碼：.1{height:0px;overflow:hidden;}或者為DIV加上border屬性。  </div></p>
+<p>六、CSS兼容要點分析IE vs FF </p>
+<p>CSS兼容要點： </p>
+<p>DOCTYPE影響CSS處理 </p>
+<p>FF:  div設置margin-left, margin-right為auto時已經居中, IE不行 </p>
+<p>FF: body設置text-align時,  div需要設置margin: auto(主要是margin-left,margin-right)方可居中 </p>
+<p>FF:設置padding後,  div會增加height和width,但IE不會,故需要用!important多設一個height和width </p>
+<p>FF:支持!important,  IE則忽略,可用!important為FF特別設置樣式 </p>
+<p>div的垂直居中問題:  vertical-align:middle;將行距增加到和整個DIV一樣高line-height:200px;然後插入文字，就垂直居中了。缺點是要控制內容不要換行  </p>
+<p>cursor: pointer可以同時在IE FF中顯示游標手指狀， hand僅IE可以  </p>
+<p>FF:鏈接加邊框和背景色，需設置display: block,同時設置float:  left保證不換行。參照menubar,給a和menubar設置高度是為了避免底邊顯示錯位,若不設height,可以在menubar中插入一個空格XHTML+CSS兼容性解決方案小集  </p>
+<p>使用XHTML＋CSS構架好處不少，但也確實存在一些問題，不論是因為使用不熟練還是思路不清晰，我就先把一些我遇到的問題寫在下面，省的大家四處找^^  </p>
+<p>1、在mozilla firefox和IE中的BOX模型解釋不一致導致相差2px解決方法：  </p>
+<p>div{<br>margin:30px !important;<br>margin:28px;<br>}  </p>
+<p>注意這兩個margin的順序一定不能寫反，據阿捷的說法!important這個屬性IE不能識別，但別的瀏覽器可以識別。所以在IE下其實解釋成這樣：  </p>
+<p>div{<br>maring:30px;<br>margin:28px;<br>}  </p>
+<p>重複定義的話按照最後一個來執行，所以不可以只寫margin:XXpx!important;  </p>
+<p>2、IE5和IE6的BOX解釋不一致IE5下div{width:300px;margin:0 10px 0  10px;}div的寬度會被解釋為300px-10px(右填充)-10px(左填充)最終div的寬度為280px，而在IE6和其他瀏覽器上寬度則是以300px+10px(右填充)+10px(左填充)=320px來計算的。這時我們可以做如下修改  </p>
+<p>div{<br>width:300px !important;<br>width /**/:340px;<br>margin:0 10px 0 10px;<br>}  </p>
+<p>，關於這個/**/是什麼我也不太明白，只知道IE5和firefox都支持但IE6不支持，如果有人理解的話，請告訴我一聲，謝了！ ：）  </p>
+<p>3、ul標籤在Mozilla中默認是有padding值的,而在IE中只有margin有值所以先定義  </p>
+<p>ul{<br>margin:0;<br>padding:0;<br>} </p>
+<p>就能解決大部分問題</p></div><br>//////2009/7/28//////////////////<br>p {<br>&nbsp;&nbsp;&nbsp; color:#F00;&nbsp; /<em>FF &amp; 所有 IE</em>/<br>&nbsp;&nbsp;&nbsp; color:#FF0<strong>9</strong>;&nbsp; /<em>所有 IE</em>/<br>&nbsp;&nbsp;&nbsp; <em>color:#0F0;&nbsp; /</em>IE7 IE6<em>/<br>&nbsp;&nbsp;&nbsp; _color:#00F;&nbsp; /</em>只有IE6*/<br>}<p></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://blog.gorendo.org/2009/02/web-div-css-e5-ae-8c-e7-be-8e-e5-85-bc-e5-ae-b9ie6ie7ff-e7-9a-84-e9-80-9a-e7-94-a8-e6-96-b9-e6-b3-95/" data-id="cj6ag8him0048i5xulfypkjrh" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-mysql-e6-9c-80-e4-bd-b3-e5-8c-96-e8-a8-ad-e5-ae-9a-e5-af-a6-e4-bd-9c-e6-95-99-e5-ad-b8" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2008/10/mysql-e6-9c-80-e4-bd-b3-e5-8c-96-e8-a8-ad-e5-ae-9a-e5-af-a6-e4-bd-9c-e6-95-99-e5-ad-b8/" class="article-date">
+  <time datetime="2008-10-24T17:57:00.000Z" itemprop="datePublished">2008-10-25</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/DATABASE/">DATABASE</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2008/10/mysql-e6-9c-80-e4-bd-b3-e5-8c-96-e8-a8-ad-e5-ae-9a-e5-af-a6-e4-bd-9c-e6-95-99-e5-ad-b8/">MYSQL 最佳化設定實作教學</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>最近要接案子了&hellip;有可能還同時兩個一起接到&hellip;<br>這篇以後架站也許用的到吧0w0</p>
+<p><a name="more"></a><br>MYSQL 最佳化設定實作教學 </p>
+<p>前  言:</p>
+<p>MYSQL的設定參考文件很少,在網上查到了一些相關的原文調整說明,也去翻了翻mysql相關的書<br>我自己在整理資籵的時候也覺得很多東西寫不出來,所以有些地方可能會寫的不是很完整。</p>
+<p>#以下設定適用於1024M-2048M記憶體及2顆CPU的MYSQLDB，如記憶體更大的話請自行做調整。給各項參數增加記憶體配置量會加快速度，但是使用過多的記憶體而導致啟用swap的話，會嚴重導致系統執行效率下降。</p>
+<p>#沒有修改參數，用預設值的記憶體使用量：約 40MB,使用my-large.cnf，記憶體使用量：約420MB但是可以提高DB的存取執行效率。</p>
+<p>– ————————————————————–設定說明—— ——————————————————-</p>
+<p>GLOBAL MEMORY與 THREAD MEMORY<br>MYSQL 再配置記憶體時分成兩各階段，一是當SERVER啟動時配置給整個系統使用，二是當CLINT連線進來的時候配置給單一連線使用。前者被稱為GLOBAL 後者被稱為THREAD，MEMORY的總用量簡單的說就是GLOBAL+(THREAD數*THREAD MEMORY) 這個公式所算出來的記憶體消耗應該要小於系統的總記憶體(這是廢話當然要小於囉)，但是實際上測試時，系統記憶體不足就會回應TOO MANY CONNECTION而暫停回應。但是大量的REQUEST很容易讓DB掛給你看。通常USED CONNECTION會大量增加，是因為TABLELOCK，導致新的QUERY被暫存，後來才發現減低TABLE LOCK的時間與次數，才是解決DB TIMEOUT卡死的方式。但是TABLE LOCK一般是因為SQL查詢寫的不好，可能需要調整程式裡的SQL語法，所以只好以縮短wait_timeout的時間做為應急的辦法。但是這會增加 CPU LOADING，所以調整要小心一點,慢慢TEST出最佳調整參數值。 </p>
+<p>TMP TABLE與TABLE CACHE<br>當 一個查詢所耗用的記憶體超過配置的BUFFER時，MYSQL會開啟暫存TABLE，暫存TABLE先放在記憶體中，記憶體不足再利用DISK，原理就像 是L1、L2、L3 CACHE。table_cache的參數定義了能夠CACHE多少個TABLE ，tmp_table_size是定義在記憶體中開?的暫存TABLE有多大，也就是說<br>，這是個全域的記憶體配置。TMP TABLE超過這個大小，就會被寫到硬碟上。 要比對這個參數是否太大要比較SHOW STATUS(mysql中查看運作狀況的指令)中的open_tables跟opened_tables數量，前者是目前所開啟的TABLE數，後者是 曾開啟的TABLE數，如果後者比前者大很多，表TABLE CACHE太小。可以試著調大數值。 </p>
+<p>wait_timeout<br>這個參數是由global wait_timeout 或是interactive_timeou繼承下來的。而且在COMMAND LINE時無法看到GLOBAL WAIT﹍TIMEOUT ，這個值會繼承自interactive_timeout 。</p>
+<p>————–MY.CNF(調整前的設定沒有做最佳化設定,所以2G記憶體只給了約40M給MYSQL用)———–<br>[mysqld]<br>datadir=/var/lib/mysql<br>socket=/var/lib/mysql/mysql.sock<br>skip-innodb</p>
+<p>[mysql.server]<br>user=mysql<br>basedir=/var/lib</p>
+<p>[safe_mysqld]<br>err-log=/var/log/mysqld.log<br>pid-file=/var/run/mysqld/mysqld.pid</p>
+<hr>
+<p>—————————MY.CNF(調整後的設定,2G記憶體指定了512M左右給MYSQL用)———————–[mysqld]<br>skip-innodb   &lt;—如果不用到innodb數據表，去掉innodb支援，節省記憶體<br>skip-bdb      &lt;—如果不用到bdb數據表，去掉bdb支援，節省記憶體。<br>skip-locking  &lt;—關閉外部鎖定可以提高資料表存取性能。<br>skip-name-resolve  &lt;—關閉DNS反查動作 。</p>
+<p>datadir=/DB/data  &lt;—資料存放位置。<br>socket=/var/lib/mysql/mysql.sock &lt;—sock檔位置。</p>
+<p>[mysql.server]<br>user=mysql<br>basedir=/var/lib</p>
+<p>[safe_mysqld]<br>err-log=/var/log/mysqld.log &lt;—err-log存放位置。<br>pid-file=/var/run/mysqld/mysqld.pid &lt;—PID檔位置。<br>open_files_limit=8192  &lt;—允許MYSQL開啟系統檔案數上限。</p>
+<p>[mysqld]<br>set-variable = back_log=50<br>set-variable = connect_timeout=10<br>set-variable = key_buffer=512M<br>set-variable = max_allowed_packet=4M<br>set-variable = table_cache=1024 &lt;—允許暫存在CACHE裡的TABLE數量。<br>set-variable = thread_cache=64<br>set-variable = join_buffer_size=32M &lt;—使用到JOIN時會用到，如果有大量Select動件時可視情況增加,提供執行效能。<br>set-variable = sort_buffer=32M &lt;—用來排序的BUFFER，如果DB回傳大量的查詢結果而且又使用ORDER BY,增加這個BUFFER大小可以提升速度。<br>set-variable = record_buffer=32M<br>set-variable = max_connections=32000<br>set-variable = wait_timeout=120<br>set-variable = interactive_timeout=120 &lt;—連線timeout時間。<br>set-variable = max_connect_errors=30000<br>set-variable = long_query_time=1<br>set-variable = max_heap_table_size=256M<br>set-variable = tmp_table_size=128M<br>set-variable = myisam_sort_buffer_size=128M<br>set-variable = max_allowed_packet=1M<br>set-variable = net_buffer_length=16K  &lt;—網路暫存BUFFER，TCP最大封包長度是16384。<br>set-variable = thread_concurrency=4 &lt;—設置為你的cpu數目x2,例如，只有一個cpu,那麼thread_concurrency=2 &lt;—有2個cpu,那麼thread_concurrency=4。</p>
+<p>#set-variable = log_slow_queries=/var/log/log_slow_queries.log </p>
+<p>#log-bin &lt;—去掉log，提高性能。<br>server-id = 1 </p>
+<p>[isamchk]<br>set-variable = key_buffer=64M<br>set-variable = sort_buffer=64M<br>set-variable = read_buffer=16M<br>set-variable = write_buffer=16M </p>
+<p>[myisamchk]<br>set-variable = key_buffer=64M<br>set-variable = sort_buffer=64M<br>set-variable = read_buffer=16M<br>set-variable = write_buffer=16M </p>
+<p>[mysqldump]<br>quick<br>set-variable = max_allowed_packet=16M </p>
+<p>[mysql]<br>no-auto-rehash </p>
+<h1 id="Remove-the-next-comment-character-if-you-are-not-familiar-with-SQL"><a href="#Remove-the-next-comment-character-if-you-are-not-familiar-with-SQL" class="headerlink" title="Remove the next comment character if you are not familiar with SQL"></a>Remove the next comment character if you are not familiar with SQL</h1><p>#safe-updates </p>
+<p>[mysqlhotcopy]<br>interactive-timeout </p>
+<p>來源：<a href="http://tw.myblog.yahoo.com/black-lulu/article?mid=148" target="_blank" rel="external">http://tw.myblog.yahoo.com/black-lulu/article?mid=148</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://blog.gorendo.org/2008/10/mysql-e6-9c-80-e4-bd-b3-e5-8c-96-e8-a8-ad-e5-ae-9a-e5-af-a6-e4-bd-9c-e6-95-99-e5-ad-b8/" data-id="cj6ag8hht002li5xup2vgm3hv" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-e5-b0-88-e9-a1-8c-e9-80-b2-e5-ba-a61017" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2008/10/e5-b0-88-e9-a1-8c-e9-80-b2-e5-ba-a61017/" class="article-date">
+  <time datetime="2008-10-17T17:51:00.000Z" itemprop="datePublished">2008-10-18</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/專題週記/">專題週記</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2008/10/e5-b0-88-e9-a1-8c-e9-80-b2-e5-ba-a61017/">專題進度10/17</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a name="more"></a><br>設備連結進度70%<br>使用者介面進度70%</p>
+<p>總算能從設備讀出像樣的東西了~</p>
+<p>辛好和隔壁組比較起來快很多&hellip;大約是10%VS70%的差距</p>
+<p>專題老師看到對面組臉大概綠了吧&hellip;哈</p>
+<p>如果我當初被分派到另一組去&hellip;<br>程式八成都我在弄吧。。。。<br>組員們有你們在真好</p>
+<p>話說今天被開了紅單$600………………………….</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://blog.gorendo.org/2008/10/e5-b0-88-e9-a1-8c-e9-80-b2-e5-ba-a61017/" data-id="cj6ag8hge000fi5xuon0x2j19" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-mysql-e6-a0-bc-e5-bc-8f-e5-8f-8a-e8-aa-9e-e6-b3-95-e5-85-b6-e5-af-a6sql-e9-80-9a-e7-94-a8" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2008/09/mysql-e6-a0-bc-e5-bc-8f-e5-8f-8a-e8-aa-9e-e6-b3-95-e5-85-b6-e5-af-a6sql-e9-80-9a-e7-94-a8/" class="article-date">
+  <time datetime="2008-09-09T00:49:00.000Z" itemprop="datePublished">2008-09-09</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/DATABASE/">DATABASE</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2008/09/mysql-e6-a0-bc-e5-bc-8f-e5-8f-8a-e8-aa-9e-e6-b3-95-e5-85-b6-e5-af-a6sql-e9-80-9a-e7-94-a8/">MySQL 格式及語法(其實SQL通用?)</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="http://dev.mysql.com/doc/refman/5.1/zh/sql-syntax.html" target="_blank" rel="external">官方簡體版(排版較好)</a><br><a href="http://www.hmes.kh.edu.tw/~jona/redhat/mysqlphp/mysqlsyntax.htm" target="_blank" rel="external">繁體版</a></p>
+<p><a name="more"></a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://blog.gorendo.org/2008/09/mysql-e6-a0-bc-e5-bc-8f-e5-8f-8a-e8-aa-9e-e6-b3-95-e5-85-b6-e5-af-a6sql-e9-80-9a-e7-94-a8/" data-id="cj6ag8hhv002qi5xu6mjv7xwe" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-sql-api" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2008/09/sql-api/" class="article-date">
+  <time datetime="2008-09-07T15:37:00.000Z" itemprop="datePublished">2008-09-07</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/DATABASE/">DATABASE</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2008/09/sql-api/">SQL API</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a name="more"></a><br><span style="font-weight: bold;">Connection物件</span>是代表Java與資料庫的連線<br>&nbsp;&nbsp;&nbsp; Connection conn = DriverManager.getConnection(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; url, user, password);</p>
+<p><span style="font-weight: bold;">Statement物件</span>執行SQL<br>&nbsp;&nbsp;&nbsp; Statement stmt = conn.createStatement(); </p>
+<p>&nbsp;&nbsp;&nbsp; 新增：<br>&nbsp;&nbsp;&nbsp; stmt.executeUpdate(“INSERT INTO message VALUES(‘主題’,&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ‘gonex45@mail.com’, ‘留言內容’, ‘2008-8-29’)”);</p>
+<p><span style="font-weight: bold;">ResultSet物件</span>接收Statement物件的SQL結果</p>
+<p>&nbsp;&nbsp;&nbsp; ResultSet result =<br>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; stmt.executeQuery(“SELECT * FROM message”);<br>&nbsp;&nbsp;&nbsp; while(result.next()) {<br>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; System.out.print(result.getString(“name”) + “t”);<br>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; System.out.print(result.getString(“email”) + “t”);<br>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; System.out.print(result.getString(“subject”) + “t”);<br>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; System.out.print(result.getString(“time”) + “t”);<br>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; System.out.println(result.getString(“memo”) + “t”);<br>&nbsp;&nbsp;&nbsp; } </p>
+<p>&nbsp;&nbsp;&nbsp; 使用查詢到的結果之<span style="font-weight: bold;">欄位順序</span>來顯示結果的方式如下：<br>&nbsp;&nbsp;&nbsp; ResultSet result =<br>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; stmt.executeQuery(“SELECT * FROM message”);<br>&nbsp;&nbsp;&nbsp; while(result.next()) {<br>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; System.out.print(result.getString(1) + “t”);<br>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; System.out.print(result.getString(2) + “t”);<br>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; System.out.print(result.getString(3) + “t”);<br>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; System.out.print(result.getString(4) + “t”);<br>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; System.out.println(result.getString(5) + “t”);<br>&nbsp;&nbsp;&nbsp; }</p>
+<p><span style="font-weight: bold;">介面 ResultSetMetaData</span> 用於獲取關於 <code>ResultSet</code> 物件中列的型別和屬性資訊的物件。</p>
+<p><title></title><br><!-- Generated by javadoc (build 1.6.0-beta2) on Fri Mar 09 12:50:59 CST 2007 --></p>
+<link title="Style" href="../../stylesheet.css" type="text/css" rel="stylesheet">
+
+<noscript></noscript>
+
+<p>創建 <code>ResultSetMetaData</code> 物件 rsmd，並使用 rsmd 尋找 rs 有多少列，以及 rs 中的第一列是否可以在  <code>WHERE</code> 子句中使用。 </p>
+<pre>     ResultSet rs = stmt.executeQuery("SELECT a, b, c FROM TABLE2");      ResultSetMetaData rsmd = rs.getMetaData();      int numberOfColumns = rsmd.getColumnCount();      boolean b = rsmd.isSearchable(1); </pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://blog.gorendo.org/2008/09/sql-api/" data-id="cj6ag8hif003ui5xutuat2q00" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-e5-b0-88-e9-a1-8c-e9-80-b2-e5-ba-a609-06" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2008/09/e5-b0-88-e9-a1-8c-e9-80-b2-e5-ba-a609-06/" class="article-date">
+  <time datetime="2008-09-06T22:35:00.000Z" itemprop="datePublished">2008-09-07</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/專題週記/">專題週記</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2008/09/e5-b0-88-e9-a1-8c-e9-80-b2-e5-ba-a609-06/">專題進度09_06</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a name="more"></a><br>爆炸了。</p>
+<p>DLL檔能讀。</p>
+<p>卡機函數還沒弄好。</p>
+<p>JTABLE弄的亂七八糟。</p>
+<p>PHP網頁設計中。</p>
+<p>阿門。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://blog.gorendo.org/2008/09/e5-b0-88-e9-a1-8c-e9-80-b2-e5-ba-a609-06/" data-id="cj6ag8hgd000di5xus7213tdw" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-java-e5-9f-ba-e6-9c-ac" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2008/09/java-e5-9f-ba-e6-9c-ac/" class="article-date">
+  <time datetime="2008-08-31T23:34:00.000Z" itemprop="datePublished">2008-09-01</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/01-3-JAVA/">01-3 JAVA</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2008/09/java-e5-9f-ba-e6-9c-ac/">[Java] 基本</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a name="more"></a><br><span style="font-family: 'Comic Sans MS';">當輸入javac出現</span></p>
+<p><table align="" border="1" cellpadding="1" cellspacing="1" style="font-family: Comic Sans MS; height: 29px; width: 235px;"><tbody><tr><td>‘javac’ 不是內部或外部命令、<br>可執行的程式或批次檔。</td></tr></tbody></table><br><span style="font-family: 'Comic Sans MS';">我的電腦右鍵→內容→進階→環境變數</span></p>
+<p><table align="" border="1" cellpadding="1" cellspacing="1" style="font-family: Comic Sans MS; height: 65px; width: 441px;"><tbody><tr><td>CLASSPATH</td><td style="vertical-align: top;">.;自已需要的CLASS檔的資料夾路徑<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /JAR檔路徑;</td></tr><tr><td>path</td><td style="vertical-align: top;">加入 ;%JAVA_HOME%bin</td></tr><tr><td>JAVA_HOME</td><td style="vertical-align: top;">C:Program FilesJavajdk1.6.0_10</td></tr></tbody></table><br><span style="font-family: 'Comic Sans MS';"> *視自已安裝的版本及路徑，善用ctrl+c / ctrl+v</span></p>
+<p><span style="font-family: 'Comic Sans MS'; font-size: small;">PSPad的設定(以J2SE 6U1為例)：<br> 1.[語法／高亮度設定]<br> 2.[Java／編譯器標籤頁]<br> &nbsp;&nbsp; 3.編譯器：C:Program FilesJavajdk1.6.0_01binjavac.exe<br> &nbsp;&nbsp; 4.參數：%Name%.java<br> &nbsp;&nbsp; 5.編譯之後執行：cmd /c&nbsp; java %Name% &amp;&amp; pause<br> &nbsp;&nbsp; 6.[勾選擷取程式的輸出結果]<br> 7.[Java／規範標籤頁]<br> &nbsp;&nbsp; 8.套用的檔案類型： Java files<br> &nbsp;&nbsp; 9.Help檔：C:Program FilesJavajdk1.6.0_01wdocj2se6.chm<br> &nbsp;&nbsp; 10.副檔名遮罩：*.java</span></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://blog.gorendo.org/2008/09/java-e5-9f-ba-e6-9c-ac/" data-id="cj6ag8hh4001li5xuo85kxtxs" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+
+
+  <nav id="page-nav">
+    <a class="extend prev" rel="prev" href="/page/9/">&laquo; __('prev')</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="page-number" href="/page/9/">9</a><span class="page-number current">10</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/11/">__('next') &raquo;</a>
+  </nav>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Catégories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/01-3-JAVA/">01-3 JAVA</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/02-軟體/">02 軟體</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Android/">Android</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/程式語言/">程式語言</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Android/遊戲引擎/">遊戲引擎</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/C/">C#</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/C/Visuel-Studio/">Visuel Studio</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/C-C/">C/C++</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/C-C/Cocos2D/">Cocos2D</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/C-C/Cocos2D/程式語言/">程式語言</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/C-C/Cocos2D/程式語言/遊戲引擎/">遊戲引擎</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/C-C/Cocos2D/程式語言/遊戲引擎/遊戲開發/">遊戲開發</a></li></ul></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/C-C/程式語言/">程式語言</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Cocos2D/">Cocos2D</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Cocos2D/遊戲引擎/">遊戲引擎</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Cocos2D/遊戲引擎/遊戲開發/">遊戲開發</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/DATABASE/">DATABASE</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Facebook/">Facebook</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Game-Engine/">Game Engine</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Game-Engine/HTML5/">HTML5</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Game-Engine/HTML5/遊戲引擎/">遊戲引擎</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/GameProgram/">GameProgram</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/GameProgram/Lua/">Lua</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/GameProgram/Lua/Mac/">Mac</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Google/">Google</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Google/Google-API/">Google API</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML5/">HTML5</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Javascript/">Javascript</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Javascript/WEB程式/">WEB程式</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Javascript/WEB程式/程式語言/">程式語言</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Mac/">Mac</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Mac/WEB程式/">WEB程式</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Mobile-Dev/">Mobile Dev</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Mobile-Dev/OpenGL/">OpenGL</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Mobile-Dev/OpenGL/Unity/">Unity</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/MySQL/">MySQL</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/MySQL/PHP/">PHP</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/MySQL/PHP/程式語言/">程式語言</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/PHP/">PHP</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/PHP/SEO/">SEO</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/PHP/SEO/套件/">套件</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/PHP/SEO/套件/程式語言/">程式語言</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/PHP/WEB程式/">WEB程式</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/PHP/WEB程式/程式語言/">程式語言</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/PHP/WEB程式/程式語言/網頁設計/">網頁設計</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/PHP/安全性/">安全性</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/PHP/安全性/程式語言/">程式語言</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/PHP/技巧/">技巧</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/PHP/技巧/程式語言/">程式語言</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/PHP/程式語言/">程式語言</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Regular-Expression/">Regular Expression</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Regular-Expression/程式語言/">程式語言</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Unity/">Unity</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Unity/技巧/">技巧</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Unity/技巧/遊戲引擎/">遊戲引擎</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Unity/技巧/遊戲引擎/遊戲開發/">遊戲開發</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Unity/技巧/遊戲引擎/遊戲開發/開發理論/">開發理論</a></li></ul></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Unity/遊戲開發/">遊戲開發</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/WEB程式/">WEB程式</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/WEB程式/網頁設計/">網頁設計</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/html/">html</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/html/PHP/">PHP</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/html/PHP/程式語言/">程式語言</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/html/WEB程式/">WEB程式</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/iOS開發/">iOS開發</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery/">jQuery</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery/PHP/">PHP</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery/PHP/WEB程式/">WEB程式</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery/PHP/WEB程式/程式語言/">程式語言</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery/PHP/WEB程式/程式語言/網頁設計/">網頁設計</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery/PHP/程式語言/">程式語言</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery/WEB程式/">WEB程式</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/專題週記/">專題週記</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/攝影/">攝影</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/敗家/">敗家</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/未分類/">未分類</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/程式語言/">程式語言</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/網頁設計/">網頁設計</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Mot-clés</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ATOM/">ATOM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android/">Android</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/">C#</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Game-Dev/">Game Dev</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Google-API/">Google API</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JAVA/">JAVA</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mac/">Mac</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OpenGL/">OpenGL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PHP/">PHP</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Nuage de mot-clés</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/ATOM/" style="font-size: 10px;">ATOM</a> <a href="/tags/Android/" style="font-size: 20px;">Android</a> <a href="/tags/C/" style="font-size: 10px;">C#</a> <a href="/tags/Game-Dev/" style="font-size: 15px;">Game Dev</a> <a href="/tags/Google-API/" style="font-size: 10px;">Google API</a> <a href="/tags/JAVA/" style="font-size: 10px;">JAVA</a> <a href="/tags/Mac/" style="font-size: 10px;">Mac</a> <a href="/tags/OpenGL/" style="font-size: 10px;">OpenGL</a> <a href="/tags/PHP/" style="font-size: 10px;">PHP</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">October 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">June 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08/">August 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">June 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04/">April 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03/">March 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/02/">February 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01/">January 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/09/">September 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/07/">July 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/04/">April 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/03/">March 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/02/">February 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/01/">January 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/11/">November 2011</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/10/">October 2011</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/09/">September 2011</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/08/">August 2011</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/07/">July 2011</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/06/">June 2011</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/05/">May 2011</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/04/">April 2011</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/03/">March 2011</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/02/">February 2011</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/01/">January 2011</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/07/">July 2010</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/05/">May 2010</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/08/">August 2009</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/03/">March 2009</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/02/">February 2009</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/10/">October 2008</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/09/">September 2008</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/08/">August 2008</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Articles récents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2016/10/php-mac-atom-visual-studio-code-php.html/">[php] 在 Mac 用ATOM / Visual Studio Code 為 php debug</a>
+          </li>
+        
+          <li>
+            <a href="/2015/12/mac-xxx.html/">[Mac] 解決 您要讓應用程式 XXX 接受傳入的網路連接嗎 一直跳出</a>
+          </li>
+        
+          <li>
+            <a href="/2015/10/php-e5-af-a6-e4-bd-9ccallback/">[php] 實作callback</a>
+          </li>
+        
+          <li>
+            <a href="/2015/06/android-setclicklistener-in-custom-view.html/">[Android] setClickListener in custom view</a>
+          </li>
+        
+          <li>
+            <a href="/2015/06/e8-a7-a3-e6-b1-ba-errorexecution-failed-for-task-predexdebug-com-android-ide-common-process-processexception-org-gradle-process-internal-execexception-process-command-finished-with-non-zero/">解決 Error:Execution failed for task &#39;preDexDebug&#39;. &gt; com.android.ide.common.process.ProcessException: org.gradle.process.internal.ExecException: Process &#39;command  finished with non-zero exit value 1</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 gonex45<br>
+      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

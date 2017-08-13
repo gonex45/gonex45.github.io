@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>uploadify jQuery+php 多檔上傳套件 | 小伍手札</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="uploadifyhttp://www.uploadify.comuploadify 是一個jQuery+php 多檔上傳套件 基本安裝 [html language=””]&amp;lt;link href=&amp;quot;/uploadify/uploadify.css&amp;quot; type=&amp;quot;text/css&amp;quot; rel=&amp;quot;stylesheet&amp;quot; /&amp;gt;&amp;lt;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="uploadify jQuery+php 多檔上傳套件">
+<meta property="og:url" content="http://blog.gorendo.org/2011/07/uploadify-jqueryphp-e5-a4-9a-e6-aa-94-e4-b8-8a-e5-82-b3-e5-a5-97-e4-bb-b6/index.html">
+<meta property="og:site_name" content="小伍手札">
+<meta property="og:description" content="uploadifyhttp://www.uploadify.comuploadify 是一個jQuery+php 多檔上傳套件 基本安裝 [html language=””]&amp;lt;link href=&amp;quot;/uploadify/uploadify.css&amp;quot; type=&amp;quot;text/css&amp;quot; rel=&amp;quot;stylesheet&amp;quot; /&amp;gt;&amp;lt;">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2017-08-13T03:17:04.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="uploadify jQuery+php 多檔上傳套件">
+<meta name="twitter:description" content="uploadifyhttp://www.uploadify.comuploadify 是一個jQuery+php 多檔上傳套件 基本安裝 [html language=””]&amp;lt;link href=&amp;quot;/uploadify/uploadify.css&amp;quot; type=&amp;quot;text/css&amp;quot; rel=&amp;quot;stylesheet&amp;quot; /&amp;gt;&amp;lt;">
+  
+    <link rel="alternate" href="/atom.xml" title="小伍手札" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">小伍手札</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">某RD的開發筆記</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://blog.gorendo.org"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-uploadify-jqueryphp-e5-a4-9a-e6-aa-94-e4-b8-8a-e5-82-b3-e5-a5-97-e4-bb-b6" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2011/07/uploadify-jqueryphp-e5-a4-9a-e6-aa-94-e4-b8-8a-e5-82-b3-e5-a5-97-e4-bb-b6/" class="article-date">
+  <time datetime="2011-07-25T22:28:00.000Z" itemprop="datePublished">2011-07-26</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/jQuery/">jQuery</a>►<a class="article-category-link" href="/categories/jQuery/PHP/">PHP</a>►<a class="article-category-link" href="/categories/jQuery/PHP/程式語言/">程式語言</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      uploadify jQuery+php 多檔上傳套件
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>uploadify<br><a href="http://www.uploadify.com/" target="_blank" rel="external">http://www.uploadify.com</a><br>uploadify 是一個jQuery+php 多檔上傳套件</p>
+<h3 id="基本安裝"><a href="#基本安裝" class="headerlink" title="基本安裝"></a>基本安裝</h3><p><a name="more"></a></p>
+<p>[html language=””]<br>&lt;link href=&quot;/uploadify/uploadify.css&quot; type=&quot;text/css&quot; rel=&quot;stylesheet&quot; /&gt;<br>&lt;script type=&quot;text/javascript&quot; src=&quot;/uploadify/jquery-1.4.2.min.js&quot;&gt;&lt;/script&gt;<br>&lt;script type=&quot;text/javascript&quot; src=&quot;/uploadify/swfobject.js&quot;&gt;&lt;/script&gt;<br>&lt;script type=&quot;text/javascript&quot; src=&quot;/uploadify/jquery.uploadify.v2.1.4.min.js&quot;&gt;&lt;/script&gt;<br>&lt;script type=&quot;text/javascript&quot;&gt;<br>$(document).ready(function() {<br>$(‘#file_upload’).uploadify({<br>‘uploader’ : ‘/uploadify/uploadify.swf’,<br>‘script’ : ‘/uploadify/uploadify.php’,<br>‘cancelImg’ : ‘/uploadify/cancel.png’,<br>‘folder’ : ‘/uploads’,<br>‘auto’ : true<br>});<br>});<br>&lt;/script&gt;<br>[/html]</p>
+<p>[html title=”body”]&lt;input id=’file_upload’ name=’file_upload’ type=’file’ /&gt;[/html]</p>
+<h3 id="OPTION"><a href="#OPTION" class="headerlink" title="OPTION"></a>OPTION</h3><pre>(boolean) auto 啟用自動選項會自動開始上傳文件時添加到文件上傳隊列 'auto'        : true (string)
+buttonImg
+設定上傳按鈕圖片
+'buttonImg'   : '/uploadify/button.jpg'
+
+(string)
+buttonText
+顯示在按鈕上的文字
+
+(string)
+cancelImg
+The path to an image you would like to use as the cancel button.
+
+(string)
+checkScript
+檢查檔案是否已在伺服器上的腳本的路徑
+
+(string)
+displayData
+顯示百分比或每秒幾k
+'percentage' / 'speed' 
+
+(string)
+expressInstall
+The path to the expressInstall.swf file.
+提示安裝flashplayer的樣子 
+
+(string)
+fileDataName
+指定上傳後要傳進哪個變數
+'fileDataName' : 'myuploadify' 後會在php傳進 $_FILES['myuploadify']
+
+(string)
+fileDesc
+顯示檔案類型的描述在"瀏覽"
+'fileDesc'    : '網頁圖片 (.JPG, .GIF, .PNG)' 
+
+<span style="color: #ff0000;">(string) fileExt 限制上傳的附檔名或檔名 'fileExt'     : '*.jpg;*.gif;*.png'</span>
+
+<span style="color: #ff0000;">(string) folder 上傳後存放的資料夾</span>
+
+(integer)
+height
+"瀏覽"按鈕的高度
+
+(boolean)
+hideButton
+隱藏按鈕，主要是之後利用 DIV + css 符合你的顯示風格
+
+(string)
+method
+傳值類型， 'POST' or 'GET' 預設是 'POST'
+
+<span style="color: #ff0000;">(boolean) multi 允許多檔上傳</span>
+
+(string)
+queueID
+設置顯示隊列的DIV之類的容器 ID ，未設置時會在瀏覽按鈕下方產生一個
+
+<span style="color: #ff0000;">(integer) queueSizeLimit 同時可以存在幾個任務(檔案)</span>
+
+(boolean)
+removeCompleted
+自動移動已上傳完的檔案列表，預設true
+(boolean)
+rollover
+顯示按鈕的滑鼠事件，如於按鈕上'HOVER' 未於按鈕上'OFF' 按下'PRESSED'
+
+(string)
+script
+後台處理程序的相對路徑。默認值：uploadify.php
+
+(string)
+scriptAccess
+swf檔的連接方式 預設和正式時用'sameDomain' 最好只在測試時 'always' 或不設(和FLASH不熟…)
+
+(JSON object with mixed types)
+scriptData
+夾帶JSON資料傳送…沒研究
+An object containing name/value pairs with additional information that should be sent to the back-end script when processing a file upload.
+
+(integer)
+simUploadLimit
+同時上傳的檔案數，超過可以排在隊列
+
+<span style="color: #ff0000;">(integer) sizeLimit </span><span style="color: #ff0000;">限制每一個上傳檔案的 bytes 數</span>(string)
+uploader
+uploadify.swf 文件的路徑
+
+(integer)
+width
+瀏覽按鈕的寬度
+
+(string)
+wmode
+設'transparent'可使FLASH的背景變透明
+
+EVENTS 事件
+(function)
+onAllComplete
+隊列所有檔案完成上傳時
+data.
+[filesUploaded] - 總上傳檔案
+[errors] - 錯誤數
+[allBytesLoaded] - 總上傳Bytes
+[speed] - 速度， KB/s
+[html]$(#file_upload).uploadify({
+  'uploader'      : '/uploadify/uploadify.swf',
+  'script'        : '/uploadify/uploadify.php',
+  'cancelImg'     : '/uploadify/cancel.png',
+  'folder'        : '/uploads',
+  'onAllComplete' : function(event,data) {
+      alert(data.filesUploaded + ' 個檔案上傳完成!');
+    }
+});[/html]
+(function)
+onCancel
+有檔案被取消時
+'onCancel'    : function(event,ID,fileObj,data) {
+    alert('The upload of ' + fileObj.name + ' has been canceled!');
+}
+(function)
+onCheck
+任務開始前確認檔案名是否存在，存在時會確認覆蓋
+要搭配'checkScript' : '/uploadify/check.php'
+
+(function)
+onClearQueue
+呼叫 uploadifyClearQueue() 清除任務時
+
+(function)
+onComplete
+單個檔案完成時
+
+(function)
+onError
+發生錯誤時
+
+(function)
+onInit
+Uploadify 讀進來時
+
+(function)
+onOpen
+檔案開始上傳前
+
+(function)
+onProgress
+每次進度條變化時
+
+(function)
+onQueueFull
+任務數量達到 queueSizeLimit 最大上傳數時
+
+(function)
+onSelect
+檔案加入任務時(每個檔案觸發)
+
+(function)
+onSelectOnce
+檔案加入任務時(加入一次觸發一次)
+
+(function)
+onSWFReady
+swf物件讀入時
+
+.uploadify()
+實作一個 Uploadify uploader.
+.uploadifyCancel()
+取消移除上傳中檔案
+
+.uploadifyClearQueue()
+取消移除上傳中任務(所有檔案)
+
+.uploadifySettings()
+修改 目前Uploadify 設定
+
+.uploadifyUpload()
+開始上傳</pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://blog.gorendo.org/2011/07/uploadify-jqueryphp-e5-a4-9a-e6-aa-94-e4-b8-8a-e5-82-b3-e5-a5-97-e4-bb-b6/" data-id="cj6ag8hij0043i5xu7ptl0q9h" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2011/07/e3roid-2d-game-library-for-android.html/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Récent</strong>
+      <div class="article-nav-title">
+        
+          [Android] e3roid - 2D game library for Android
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2011/07/wordpress-e5-87-bd-e5-bc-8f/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Ancien</strong>
+      <div class="article-nav-title">Wordpress 函式</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Catégories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/01-3-JAVA/">01-3 JAVA</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/02-軟體/">02 軟體</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Android/">Android</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/程式語言/">程式語言</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Android/遊戲引擎/">遊戲引擎</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/C/">C#</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/C/Visuel-Studio/">Visuel Studio</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/C-C/">C/C++</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/C-C/Cocos2D/">Cocos2D</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/C-C/Cocos2D/程式語言/">程式語言</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/C-C/Cocos2D/程式語言/遊戲引擎/">遊戲引擎</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/C-C/Cocos2D/程式語言/遊戲引擎/遊戲開發/">遊戲開發</a></li></ul></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/C-C/程式語言/">程式語言</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Cocos2D/">Cocos2D</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Cocos2D/遊戲引擎/">遊戲引擎</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Cocos2D/遊戲引擎/遊戲開發/">遊戲開發</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/DATABASE/">DATABASE</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Facebook/">Facebook</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Game-Engine/">Game Engine</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Game-Engine/HTML5/">HTML5</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Game-Engine/HTML5/遊戲引擎/">遊戲引擎</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/GameProgram/">GameProgram</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/GameProgram/Lua/">Lua</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/GameProgram/Lua/Mac/">Mac</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Google/">Google</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Google/Google-API/">Google API</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML5/">HTML5</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Javascript/">Javascript</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Javascript/WEB程式/">WEB程式</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Javascript/WEB程式/程式語言/">程式語言</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Mac/">Mac</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Mac/WEB程式/">WEB程式</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Mobile-Dev/">Mobile Dev</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Mobile-Dev/OpenGL/">OpenGL</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Mobile-Dev/OpenGL/Unity/">Unity</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/MySQL/">MySQL</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/MySQL/PHP/">PHP</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/MySQL/PHP/程式語言/">程式語言</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/PHP/">PHP</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/PHP/SEO/">SEO</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/PHP/SEO/套件/">套件</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/PHP/SEO/套件/程式語言/">程式語言</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/PHP/WEB程式/">WEB程式</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/PHP/WEB程式/程式語言/">程式語言</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/PHP/WEB程式/程式語言/網頁設計/">網頁設計</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/PHP/安全性/">安全性</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/PHP/安全性/程式語言/">程式語言</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/PHP/技巧/">技巧</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/PHP/技巧/程式語言/">程式語言</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/PHP/程式語言/">程式語言</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Regular-Expression/">Regular Expression</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Regular-Expression/程式語言/">程式語言</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Unity/">Unity</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Unity/技巧/">技巧</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Unity/技巧/遊戲引擎/">遊戲引擎</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Unity/技巧/遊戲引擎/遊戲開發/">遊戲開發</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Unity/技巧/遊戲引擎/遊戲開發/開發理論/">開發理論</a></li></ul></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Unity/遊戲開發/">遊戲開發</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/WEB程式/">WEB程式</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/WEB程式/網頁設計/">網頁設計</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/html/">html</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/html/PHP/">PHP</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/html/PHP/程式語言/">程式語言</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/html/WEB程式/">WEB程式</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/iOS開發/">iOS開發</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery/">jQuery</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery/PHP/">PHP</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery/PHP/WEB程式/">WEB程式</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery/PHP/WEB程式/程式語言/">程式語言</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery/PHP/WEB程式/程式語言/網頁設計/">網頁設計</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery/PHP/程式語言/">程式語言</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery/WEB程式/">WEB程式</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/專題週記/">專題週記</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/攝影/">攝影</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/敗家/">敗家</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/未分類/">未分類</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/程式語言/">程式語言</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/網頁設計/">網頁設計</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Mot-clés</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ATOM/">ATOM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android/">Android</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/">C#</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Game-Dev/">Game Dev</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Google-API/">Google API</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JAVA/">JAVA</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mac/">Mac</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OpenGL/">OpenGL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PHP/">PHP</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Nuage de mot-clés</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/ATOM/" style="font-size: 10px;">ATOM</a> <a href="/tags/Android/" style="font-size: 20px;">Android</a> <a href="/tags/C/" style="font-size: 10px;">C#</a> <a href="/tags/Game-Dev/" style="font-size: 15px;">Game Dev</a> <a href="/tags/Google-API/" style="font-size: 10px;">Google API</a> <a href="/tags/JAVA/" style="font-size: 10px;">JAVA</a> <a href="/tags/Mac/" style="font-size: 10px;">Mac</a> <a href="/tags/OpenGL/" style="font-size: 10px;">OpenGL</a> <a href="/tags/PHP/" style="font-size: 10px;">PHP</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">October 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">June 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08/">August 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">June 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04/">April 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03/">March 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/02/">February 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01/">January 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/09/">September 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/07/">July 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/04/">April 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/03/">March 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/02/">February 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/01/">January 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/11/">November 2011</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/10/">October 2011</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/09/">September 2011</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/08/">August 2011</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/07/">July 2011</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/06/">June 2011</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/05/">May 2011</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/04/">April 2011</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/03/">March 2011</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/02/">February 2011</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/01/">January 2011</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/07/">July 2010</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/05/">May 2010</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/08/">August 2009</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/03/">March 2009</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/02/">February 2009</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/10/">October 2008</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/09/">September 2008</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/08/">August 2008</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Articles récents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2016/10/php-mac-atom-visual-studio-code-php.html/">[php] 在 Mac 用ATOM / Visual Studio Code 為 php debug</a>
+          </li>
+        
+          <li>
+            <a href="/2015/12/mac-xxx.html/">[Mac] 解決 您要讓應用程式 XXX 接受傳入的網路連接嗎 一直跳出</a>
+          </li>
+        
+          <li>
+            <a href="/2015/10/php-e5-af-a6-e4-bd-9ccallback/">[php] 實作callback</a>
+          </li>
+        
+          <li>
+            <a href="/2015/06/android-setclicklistener-in-custom-view.html/">[Android] setClickListener in custom view</a>
+          </li>
+        
+          <li>
+            <a href="/2015/06/e8-a7-a3-e6-b1-ba-errorexecution-failed-for-task-predexdebug-com-android-ide-common-process-processexception-org-gradle-process-internal-execexception-process-command-finished-with-non-zero/">解決 Error:Execution failed for task &#39;preDexDebug&#39;. &gt; com.android.ide.common.process.ProcessException: org.gradle.process.internal.ExecException: Process &#39;command  finished with non-zero exit value 1</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 gonex45<br>
+      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
