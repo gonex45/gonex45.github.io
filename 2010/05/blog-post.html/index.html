@@ -1,0 +1,98 @@
+<!DOCTYPE html><html lang="en"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description"><title>轉：「路徑」「貝茲曲線」超詳細教學 | 小伍手札</title><link rel="stylesheet" type="text/css" href="/css/style.css?v=0.0.0"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/normalize/7.0.0/normalize.min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/1.0.0/pure-min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/1.0.0/grids-responsive-min.css"><link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"><link rel="alternate" type="application/atom+xml" href="/atom.xml"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">轉：「路徑」「貝茲曲線」超詳細教學</h1><a id="logo" href="/.">小伍手札</a><p class="description">某RD的開發筆記</p></div><div id="nav-menu"><a href="/." class="current"><i class="fa fa-home"> Home</i></a><a href="/archives/"><i class="fa fa-archive"> Archive</i></a><a href="/about/"><i class="fa fa-user"> About</i></a><a href="/atom.xml"><i class="fa fa-rss"> RSS</i></a></div></div><div id="layout" class="pure-g"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title">轉：「路徑」「貝茲曲線」超詳細教學</h1><div class="post-meta">May 20, 2010<span> | </span><span class="category"><a href="/categories/programming/">programming</a></span></div><div class="post-content"><p>版權聲明：</p>
+<p>作者 趙鵬 zhaopeng.net，所在論壇 blueidea.com</p>
+<p>此文章允許任意轉載，允許用於商業印刷， 不需經過作者同意，不需支付任何費用。但必須保證文章的完整性和原始性，同時注明本版權聲明全部內容。</p>
+<p><a name="more"></a></p>
+<p>首先來簡要介紹一下鋼筆工具和路徑的概念</p>
+<p>1 鋼筆工具屬於向量繪圖工具，其優點是可以勾畫平滑的曲線（在縮放或者變形之後仍能保持平滑效果）</p>
+<p>2 鋼筆工具畫出來的向量圖形稱為路徑，路徑是向量的</p>
+<p>3 路徑允許是不封閉的開放狀，如果把起點與終點重合繪製就可以得到封閉的路徑</p>
+<p>────────────────────</p>
+<p>&nbsp;</p>
+<p>現在我們來繪製一個簡單的路徑</p>
+<p>&nbsp;</p>
+<p>如下圖在工具欄選擇鋼筆工具（快捷鍵P）</p>
+<p><a href="http://album.blog.yam.com/show.php?a=gonex&amp;f=7479395&amp;i=15436080" target="_blank" rel="external"><img src="" alt=""></a></p>
+<p>並保持鋼筆工具的選項如圖所示（在工具欄上方）</p>
+<p>選擇第二種繪圖方式（單純路徑），並取消橡皮帶功能</p>
+<p>&nbsp;<a href="http://album.blog.yam.com/show.php?a=gonex&amp;f=7479395&amp;i=15436082" target="_blank" rel="external"><img src="" alt=""></a>&nbsp;</p>
+<p>然後用鋼筆在畫面中單擊，會看到在擊打的點之間有線段相連</p>
+<p>&nbsp;保持按住Shift鍵可以讓所繪製的點與上一個點保持45度整數倍夾角（比如零度、90度）</p>
+<p>&nbsp;這樣可以繪製水平或者是垂直的線段（圖中從第5個點開始按下了Shift鍵）</p>
+<p>&nbsp;</p>
+<p>&nbsp;<a href="http://album.blog.yam.com/show.php?a=gonex&amp;f=7479395&amp;i=15436083" target="_blank" rel="external"><img src="" alt=""></a></p>
+<p>────────────────────</p>
+<p>&nbsp;</p>
+<p>從上面的簡單練習中我們得出兩個規律：</p>
+<p>&nbsp;1 我們並沒有直接繪製線段，而是定義了各個點的位置，軟體則在點間連線成型</p>
+<p>&nbsp;2 控制線段形態（方向、距離）的，並不是線段本身，而是線段中的各個點的位置</p>
+<p>&nbsp;記住兩個術語：那些點稱為&ldquo;錨點&rdquo;(anchor)；錨點間的線段稱為&ldquo;片斷&rdquo;(segment)。</p>
+<p>&nbsp;剛才我們繪製的那些錨點，由於它們之間的線段都是直線，所以又稱為直線型錨點。<br>&nbsp;</p>
+<p>&nbsp;────────────────────<br>&nbsp;</p>
+<p>&nbsp;現在我們來繪製曲線形錨點</p>
+<p>&nbsp;如下圖所示般，在起點按下滑鼠之後不要鬆手，向上拖動出一條方向線後放手</p>
+<p>&nbsp;<a href="http://album.blog.yam.com/show.php?a=gonex&amp;f=7479395&amp;i=15436084" target="_blank" rel="external"><img src="" alt=""></a></p>
+<p>然後在第二個錨點拖動出一條向下的方向線，以此類推，畫出類似圖示的路徑</p>
+<p>&nbsp;</p>
+<p>我們看到在繪製出第二個及之後的錨點並拖動方向線時，曲線的形態也隨之改變</p>
+<p>究竟曲線是怎樣生成的，我們又該如何來控制曲線的形態呢？</p>
+<p>除了具有直線的方向和距離外，曲線多了一個彎曲度的形態</p>
+<p>方向和距離只要改變錨點位置就可以做到，但是彎曲度該如何控制？</p>
+<p>&nbsp;</p>
+<p>────────────────────</p>
+<p>&nbsp;</p>
+<p>如圖在工具欄選擇&ldquo;直接選擇工具&rdquo;，注意是下方那個空心的箭頭</p>
+<p>&nbsp;<a href="http://album.blog.yam.com/show.php?a=gonex&amp;f=7479395&amp;i=15436085" target="_blank" rel="external"><img src="" alt=""></a></p>
+<p>假設我們剛才繪製的4個錨點分別是ABCD</p>
+<p>用&ldquo;直接選擇工具&rdquo;去點取位於AB之間的片斷</p>
+<p>會看到剛才我們繪製AB錨點時候定義的方向線</p>
+<p>&nbsp;<a href="http://album.blog.yam.com/show.php?a=gonex&amp;f=7479395&amp;i=15436086" target="_blank" rel="external"><img src="" alt=""></a></p>
+<p><img src="" alt=""></p>
+<p>&nbsp;</p>
+<p>仔細看一下這兩個方向線</p>
+<p>再這樣想像：</p>
+<p>一個人要從A點到B點，在A點出發的時候，位於A點的其他人看到他是朝著上偏右的方向走的</p>
+<p>而位於B點的人，看到他是朝著下偏右的方向來的</p>
+<p>那麼綜合兩地的觀測結果。就可以得出這個人行走的路線：必定是一個類似鍋蓋的上弧形</p>
+<p>&nbsp;</p>
+<p>────────────────────</p>
+<p>&nbsp;</p>
+<p>現在我們選擇如圖的&ldquo;轉換點工具&rdquo;，該工具用來修改方向線</p>
+<p><img src="" alt=""></p>
+<p>&nbsp;<a href="http://album.blog.yam.com/show.php?a=gonex&amp;f=7479395&amp;i=15436087" target="_blank" rel="external"><img src="" alt=""></a></p>
+<p>然後如下圖所示般改變AB錨點上的方向線，將會看到曲線彎曲度的改變</p>
+<p>注意方向線末端有一個小圓點，這個圓點稱為&ldquo;手柄&rdquo;，要點擊手柄位置才可以改變方向線</p>
+<p><img src="" alt=""></p>
+<p>&nbsp;<a href="http://album.blog.yam.com/show.php?a=gonex&amp;f=7479395&amp;i=15436088" target="_blank" rel="external"><img src="" alt=""></a></p>
+<p>結合剛才所作的比喻，就不難理解了：</p>
+<p>1 修改B錨點方向線為下，相當於指定那個人從A點上方出發後，從B點下方進入，那麼所走的路程就是一個S形</p>
+<p>2 再修改A錨點方向線為下，相當於從A點下方出發，再從B點下方進入，所走的就是一個下弧形的路程</p>
+<p>&nbsp;</p>
+<p>修改後的方向線如下圖：</p>
+<p>&nbsp;<a href="http://album.blog.yam.com/show.php?a=gonex&amp;f=7479395&amp;i=15436089" target="_blank" rel="external"><img src="" alt=""></a></p>
+<p>&nbsp;</p>
+<p>────────────────────</p>
+<p>&nbsp;</p>
+<p>明白了方向線的方向對曲線形態的影響後，我們來看一下方向線長短造成的影響</p>
+<p>&nbsp;</p>
+<p>如下圖般，在同一方向上拖拉方向線：（可使用&ldquo;直接選擇工具&rdquo;）</p>
+<p><img src="" alt=""></p>
+<p>&nbsp;<a href="http://album.blog.yam.com/show.php?a=gonex&amp;f=7479395&amp;i=15436091" target="_blank" rel="external"><img src="" alt=""></a></p>
+<p><strong>對於一個錨點而言，如果方向線越長，那麼曲線在這個方向上走的路程就越長，反之就越短</strong></p>
+<p>&nbsp;</p>
+<p>可以這樣設想，曲線是一個橡皮筋，在頭尾兩端有兩個力在各自的方向上拉</p>
+<p>哪個方向上力氣大，則橡皮筋就朝向這個方向多靠攏一些。反而反之</p>
+<p>&nbsp;</p>
+<p>────────────────────</p>
+<p>&nbsp;</p>
+<p>除了修改錨點之外，也可以利用&ldquo;直接選擇工具&rdquo;，在片斷上修改曲線的形態</p>
+<p>&nbsp;</p>
+<p>如下圖：</p>
+<p>&nbsp;<a href="http://album.blog.yam.com/show.php?a=gonex&amp;f=7479395&amp;i=15436091" target="_blank" rel="external"><img src="" alt=""></a></p>
+<p>注意：這並不能說是&ldquo;修改了片斷&rdquo;，而應該說是&ldquo;同時修改了兩個錨點&rdquo;</p>
+<p>牢記原則：&lt;SPAN style=&quot;FONT-WEIGHT:  bold&quot;&gt;片斷是由錨點組成的，只有修改錨點才能改變片斷形態，這是不可逆的因果關係&lt;/SPAN&gt;</p>
+<p>&nbsp;</p>
+<p>────────────────────</p>
+<p>&nbsp;</p>
+<p>做一下小結：</p>
+<p></p><p>對於這條曲線上的除了起點和終點的BC兩個錨點而言</p>
+</div><div class="tags"><a href="/tags/programming/">programming</a></div><div class="post-nav"><a href="/2010/07/android-3d-game-tutorial-part-i.html/" class="pre">[Android] 3D game tutorial – Part I</a><a href="/2009/03/firefox09517.html/" class="next">我的FireFox菜單[09/5/17更新]</a></div></div></div></div><div class="pure-u-1-4 hidden_mid_and_down"><div id="sidebar"><div class="widget"><form action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank" class="search-form"><input type="text" name="q" maxlength="20" placeholder="Search"/><input type="hidden" name="sitesearch" value="http://blog.gorendo.org"/></form></div><div class="widget"><div class="widget-title"><i class="fa fa-folder-o"> Categories</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/">Android</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/C/">C#</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/C-C/">C/C++</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Cocos2D/">Cocos2D</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/DATABASE/">DATABASE</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Facebook/">Facebook</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Game-Dev/">Game Dev</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JAVA/">JAVA</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Javascript/">Javascript</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Lua/">Lua</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Mac/">Mac</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/PHP/">PHP</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Software/">Software</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Unity/">Unity</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Unity/AssetBundle/">AssetBundle</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/WEB/">WEB</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/WEB/CSS/">CSS</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/iOS/">iOS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery/">jQuery</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/programming/">programming</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/大學專題/">大學專題</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/攝影/">攝影</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/敗家/">敗家</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/程式語言/">程式語言</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-star-o"> Tags</i></div><div class="tagcloud"><a href="/tags/Facebook/" style="font-size: 15px;">Facebook</a> <a href="/tags/Unity/" style="font-size: 15px;">Unity</a> <a href="/tags/Game-Dev/" style="font-size: 15px;">Game Dev</a> <a href="/tags/JAVA/" style="font-size: 15px;">JAVA</a> <a href="/tags/OpenGL/" style="font-size: 15px;">OpenGL</a> <a href="/tags/Google-API/" style="font-size: 15px;">Google API</a> <a href="/tags/C-C/" style="font-size: 15px;">C/C++</a> <a href="/tags/Cocos2D/" style="font-size: 15px;">Cocos2D</a> <a href="/tags/DATABASE/" style="font-size: 15px;">DATABASE</a> <a href="/tags/MySQL/" style="font-size: 15px;">MySQL</a> <a href="/tags/iOS/" style="font-size: 15px;">iOS</a> <a href="/tags/Xcode/" style="font-size: 15px;">Xcode</a> <a href="/tags/敗家/" style="font-size: 15px;">敗家</a> <a href="/tags/Mac/" style="font-size: 15px;">Mac</a> <a href="/tags/Software/" style="font-size: 15px;">Software</a> <a href="/tags/Lua/" style="font-size: 15px;">Lua</a> <a href="/tags/Android/" style="font-size: 15px;">Android</a> <a href="/tags/opensource/" style="font-size: 15px;">opensource</a> <a href="/tags/程式語言/" style="font-size: 15px;">程式語言</a> <a href="/tags/programming/" style="font-size: 15px;">programming</a> <a href="/tags/PHP/" style="font-size: 15px;">PHP</a> <a href="/tags/SEO/" style="font-size: 15px;">SEO</a> <a href="/tags/ATOM/" style="font-size: 15px;">ATOM</a> <a href="/tags/資訊安全/" style="font-size: 15px;">資訊安全</a> <a href="/tags/攝影/" style="font-size: 15px;">攝影</a> <a href="/tags/C/" style="font-size: 15px;">C#</a> <a href="/tags/WINDOWS/" style="font-size: 15px;">WINDOWS</a> <a href="/tags/WEB/" style="font-size: 15px;">WEB</a> <a href="/tags/Javascript/" style="font-size: 15px;">Javascript</a> <a href="/tags/Node-JS/" style="font-size: 15px;">Node.JS</a> <a href="/tags/jQuery/" style="font-size: 15px;">jQuery</a> <a href="/tags/CSS/" style="font-size: 15px;">CSS</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-file-o"> Recent</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/10/php-mac-atom-visual-studio-code-php.html/">[php] 在 Mac 用ATOM / Visual Studio Code 為 php debug</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/mac-xxx.html/">[Mac] 解決 您要讓應用程式 XXX 接受傳入的網路連接嗎 一直跳出</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/10/php-callback.html/">[php] 實作callback</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/06/android-setclicklistener-in-custom-view.html/">[Android] setClickListener in custom view</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/06/errorexecution-failed-for-task.html/">解決 Error:Execution failed for task 'preDexDebug'. > com.android.ide.common.process.ProcessException: org.gradle.process.internal.ExecException: Process 'command  finished with non-zero exit value 1</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/05/android-wiperefreshlayout.html/">[Android] 下拉更新 SwipeRefreshLayout</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/04/android-cant-create-handler-inside.html/">[Android] 處理 Can't create handler inside thread that has not called Looper.prepare()</a></li><li class="post-list-item"><a class="post-list-link" href="/2014/08/unity-ugui-46-eventsystem.html/">[Unity] uGUI (4.6) EventSystem 事件系統 快速上手</a></li><li class="post-list-item"><a class="post-list-link" href="/2014/08/unity-ugui-46-eventsystem.html/">[Unity] uGUI (4.6) EventSystem 事件系統 快速上手</a></li><li class="post-list-item"><a class="post-list-link" href="/2014/06/cocos2d-x-install-mac.html/">[Cocos2d-x] 在 Mac 上設置 Cocos2d-x (Cocos2d-x 3 .x)</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-external-link"> Links</i></div><ul></ul><a href="http://www.example1.com/" title="site-name1" target="_blank">site-name1</a><ul></ul><a href="http://www.example2.com/" title="site-name2" target="_blank">site-name2</a><ul></ul><a href="http://www.example3.com/" title="site-name3" target="_blank">site-name3</a></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">Copyright © 2017 <a href="/." rel="nofollow">小伍手札.</a> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a><a rel="nofollow" target="_blank" href="https://github.com/tufu9441/maupassant-hexo"> Theme</a> by<a rel="nofollow" target="_blank" href="https://github.com/pagecho"> Cho.</a></div></div></div><a id="rocket" href="#top" class="show"></a><script type="text/javascript" src="/js/totop.js?v=0.0.0" async></script><script type="text/javascript" src="//cdn.bootcss.com/fancybox/3.1.20/jquery.fancybox.min.js" async></script><script type="text/javascript" src="/js/fancybox.js?v=0.0.0" async></script><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/fancybox/3.1.20/jquery.fancybox.min.css"><script type="text/javascript" src="/js/codeblock-resizer.js?v=0.0.0"></script><script type="text/javascript" src="/js/smartresize.js?v=0.0.0"></script></div></body></html>
