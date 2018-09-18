@@ -1,10 +1,7 @@
 function ready(fn) {
-  console.log(111);
   if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading"){
     fn();
-    console.log(123);
   } else {
-    console.log(1234);
     document.addEventListener('DOMContentLoaded', fn);
   }
 }
@@ -44,8 +41,7 @@ function Gsitesearch(curobj){
         var d = document, s = d.createElement('script');
 
         // IMPORTANT: Replace EXAMPLE with your forum shortname!
-                 https://blog.gorendo.disqus.com/embed.js
-        s.src = 'http://blog-gorendo.disqus.com/embed.js';
+        s.src = window.location.protocol + '//blog-gorendo.disqus.com/embed.js';
 
         s.setAttribute('data-timestamp', +new Date());
         (d.head || d.body).appendChild(s);
