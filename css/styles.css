@@ -301,7 +301,6 @@
   text-decoration: underline;
 }
 
-
 body {
   /*font-family: Georgia, "Times New Roman", Times, serif;*/
   color: #212121;
@@ -322,21 +321,33 @@ body {
   }
 
   #blog-title {
-    display: none;
+    font-size:14px;
   }
 
   #asidebtn {
 
-    width: 100px;
+    width: 50px;
     right: 15px;
     bottom: 20px;
     z-index: 888;
     position: fixed;
   }
+
+  #asidebtn:after {
+    content: "<<";
+  }
+
+  #asidebtn.active:after {
+    content: ">>";
+  }
+}
+
+article.post {
+  padding: 16px;
 }
 
 aside {
-  background:#f7f7f7
+  background: #f7f7f7
 }
 
 pre {
@@ -354,5 +365,18 @@ pre {
 
   #asidebtn {
     display: none;
+    content: "<<";
   }
+
+  #asidebtn::after {
+    content: "<<";
+  }
+}
+
+
+
+
+.article-meta {
+  color: #666;
+  font-size: 14px;
 }
