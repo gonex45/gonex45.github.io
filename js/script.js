@@ -44,7 +44,7 @@ function Gsitesearch(curobj){
         var d = document, s = d.createElement('script');
 
         // IMPORTANT: Replace EXAMPLE with your forum shortname!
-        s.src = 'https://disqus_2n6aCcT1qB.disqus.com/embed.js';
+        s.src = 'https://blog.gorendo.disqus.com/embed.js';
 
         s.setAttribute('data-timestamp', +new Date());
         (d.head || d.body).appendChild(s);

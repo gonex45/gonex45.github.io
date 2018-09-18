@@ -197,7 +197,7 @@ run1(&#39;by run1&#39;);//funA:by run
     <link href="http://blog.gorendo.org/2014/08/unity-ugui-46-eventsystem.html/"/>
     <id>http://blog.gorendo.org/2014/08/unity-ugui-46-eventsystem.html/</id>
     <published>2014-08-21T09:49:00.000Z</published>
-    <updated>2017-08-13T14:08:54.000Z</updated>
+    <updated>2017-08-13T14:21:54.000Z</updated>
     
     <summary type="html">
     
@@ -223,7 +223,7 @@ run1(&#39;by run1&#39;);//funA:by run
     <link href="http://blog.gorendo.org/2014/08/unity-ugui-46-eventsystem.html/"/>
     <id>http://blog.gorendo.org/2014/08/unity-ugui-46-eventsystem.html/</id>
     <published>2014-08-21T09:49:00.000Z</published>
-    <updated>2017-08-13T14:21:54.000Z</updated>
+    <updated>2017-08-13T14:08:54.000Z</updated>
     
     <summary type="html">
     
@@ -264,9 +264,9 @@ run1(&#39;by run1&#39;);//funA:by run
       <category term="Cocos2D" scheme="http://blog.gorendo.org/categories/Cocos2D/"/>
     
     
-      <category term="Cocos2D" scheme="http://blog.gorendo.org/tags/Cocos2D/"/>
-    
       <category term="Game Dev" scheme="http://blog.gorendo.org/tags/Game-Dev/"/>
+    
+      <category term="Cocos2D" scheme="http://blog.gorendo.org/tags/Cocos2D/"/>
     
   </entry>
   
@@ -275,7 +275,7 @@ run1(&#39;by run1&#39;);//funA:by run
     <link href="http://blog.gorendo.org/2014/04/unity-assetbundle-shader-lost.html/"/>
     <id>http://blog.gorendo.org/2014/04/unity-assetbundle-shader-lost.html/</id>
     <published>2014-04-29T01:54:00.000Z</published>
-    <updated>2017-08-13T14:07:37.000Z</updated>
+    <updated>2017-08-13T14:22:02.000Z</updated>
     
     <summary type="html">
     
@@ -302,7 +302,7 @@ gameObject.renderer.material.shader =  Shader.Find(
     <link href="http://blog.gorendo.org/2014/04/unity-assetbundle-shader-lost.html/"/>
     <id>http://blog.gorendo.org/2014/04/unity-assetbundle-shader-lost.html/</id>
     <published>2014-04-29T01:54:00.000Z</published>
-    <updated>2017-08-13T14:22:02.000Z</updated>
+    <updated>2017-08-13T14:07:37.000Z</updated>
     
     <summary type="html">
     
@@ -480,9 +480,9 @@ startActivity(intent);&lt;/pre&gt;
       <category term="Cocos2D" scheme="http://blog.gorendo.org/categories/Cocos2D/"/>
     
     
-      <category term="Cocos2D" scheme="http://blog.gorendo.org/tags/Cocos2D/"/>
-    
       <category term="Game Dev" scheme="http://blog.gorendo.org/tags/Game-Dev/"/>
+    
+      <category term="Cocos2D" scheme="http://blog.gorendo.org/tags/Cocos2D/"/>
     
       <category term="C/C++" scheme="http://blog.gorendo.org/tags/C-C/"/>
     
