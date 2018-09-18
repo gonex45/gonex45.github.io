@@ -1,13 +1,1022 @@
-<!DOCTYPE html><html lang="en"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description"><title>小伍手札 | 某RD的開發筆記</title><link rel="stylesheet" type="text/css" href="/css/style.css?v=0.0.0"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/normalize/7.0.0/normalize.min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/1.0.0/pure-min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/1.0.0/grids-responsive-min.css"><link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"><link rel="alternate" type="application/atom+xml" href="/atom.xml"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">小伍手札</h1><a id="logo" href="/.">小伍手札</a><p class="description">某RD的開發筆記</p></div><div id="nav-menu"><a href="/." class="current"><i class="fa fa-home"> Home</i></a><a href="/archives/"><i class="fa fa-archive"> Archive</i></a><a href="/about/"><i class="fa fa-user"> About</i></a><a href="/atom.xml"><i class="fa fa-rss"> RSS</i></a></div></div><div id="layout" class="pure-g"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title"><a href="/2012/07/android-conversion-to-dalvik-format.html/">[Android] Conversion to Dalvik format failed with error 1</a></h1><div class="post-meta">2012-07-26</div><div class="post-content"><p>先清除lib多餘的東西</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Project -&gt; Clean...</div></pre></td></tr></table></figure></div><p class="readmore"><a href="/2012/07/android-conversion-to-dalvik-format.html/">Read More</a></p></div><div class="post"><h1 class="post-title"><a href="/2012/04/google-spreadsheet-row-color-use-google.html/">[Google] Google 文件試算表偶數行變色 以Google Apps Script</a></h1><div class="post-meta">2012-04-29</div><div class="post-content"><p>最近非常常用Google 文件的試算表，在哪存取都很方便<br>可是又感覺背景純白的有點難辨視行數… 一行一行改顏色又很麻煩<br>這時候當然要找自動變色的方法了! 先看一下預期的成果如下</p>
-<div style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/-awg5bmANJeg/T5wTR2NkgtI/AAAAAAAABCY/lVFi5cneSQ8/s1600/01.png" target="_blank" rel="external"><img src="" alt=""></a></div><a name="more"></a><br><br>###     實作方法：<br>打開工具→指令碼管理員<br><div style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-dvgKj3pjHE8/T5wTTCXm7kI/AAAAAAAABCg/dcfWBkYhIN8/s1600/02.jpg" target="_blank" rel="external"><img src="" alt=""></a></div><br>按 New 建立新的指令碼<br><div style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-mlVurz77zZQ/T5wTUFX6OSI/AAAAAAAABCo/5s6OhGRYo1o/s1600/03.jpg" target="_blank" rel="external"><img src="" alt=""></a></div></div><p class="readmore"><a href="/2012/04/google-spreadsheet-row-color-use-google.html/">Read More</a></p></div><div class="post"><h1 class="post-title"><a href="/2012/03/android-position-sensors.html/">[Android] Position Sensors 位置感應器</a></h1><div class="post-meta">2012-03-31</div><div class="post-content"><p><a href="http://developer.android.com/guide/topics/sensors/sensors_position.html" target="_blank" rel="external">http://developer.android.com/guide/topics/sensors/sensors_position.html</a></p></div><p class="readmore"><a href="/2012/03/android-position-sensors.html/">Read More</a></p></div><div class="post"><h1 class="post-title"><a href="/2012/03/web.html/">[WEB] 網站開發用工具總匯</a></h1><div class="post-meta">2012-03-31</div><div class="post-content"><p>jQuery</p>
-<p><a href="http://jquery.com/" target="_blank" rel="external">http://jquery.com/</a></p>
-<p>IETester<br>測試IE各版本環境<br><a href="http://www.my-debugbar.com/wiki/IETester/HomePage" target="_blank" rel="external">http://www.my-debugbar.com/wiki/IETester/HomePage</a></p></div><p class="readmore"><a href="/2012/03/web.html/">Read More</a></p></div><div class="post"><h1 class="post-title"><a href="/2012/03/php-get.html/">[php] 連結保留所有$_GET</a></h1><div class="post-meta">2012-03-29</div><div class="post-content"><p>你可能會以page做為頁面控制的參數，在 if($key==”page”)&nbsp;時排除掉，你也可以增加或減少</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">$extra_txt = <span class="string">''</span>;</div><div class="line"><span class="keyword">foreach</span>($_GET <span class="keyword">as</span> $key =&amp;gt; $aget)&#123;</div><div class="line">	<span class="keyword">if</span>($key==<span class="string">"page"</span>)&#123;</div><div class="line">		<span class="keyword">continue</span>;</div><div class="line">	&#125;</div><div class="line">	$extra_txt .= <span class="string">'&amp;amp;'</span>.$key.<span class="string">'='</span>.$aget;</div><div class="line">&#125;</div></pre></td></tr></table></figure></div><p class="readmore"><a href="/2012/03/php-get.html/">Read More</a></p></div><div class="post"><h1 class="post-title"><a href="/2012/03/cc-windows-beging-helloworld-in-eclipse.html/">[C/C++] HelloWorld in Eclipse</a></h1><div class="post-meta">2012-03-25</div><div class="post-content"><p>安裝&nbsp;<a href="http://sourceforge.net/projects/mingw/" target="_blank" rel="external">MinGW</a><br>我的電腦右鍵→內容→進階→環境變數→在系統變數的 [path] 內加入 C:MinGWbin;</p></div><p class="readmore"><a href="/2012/03/cc-windows-beging-helloworld-in-eclipse.html/">Read More</a></p></div><div class="post"><h1 class="post-title"><a href="/2012/03/jquery-selectors.html/">[jQuery] 選取元素 (Selectors)</a></h1><div class="post-meta">2012-03-23</div><div class="post-content"><pre>$('*')
+<!DOCTYPE html>
+<!-- layout.ejs -->
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+  <title>
+    
+    小伍手札
+  </title>
+
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+    crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+    crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="/css/styles.css">
+  <script src="/js/script.js"></script>
+</head>
+
+<body>
+
+  <button type="button" id="asidebtn" class="btn btn-primary btn-sm" data-toggle="offcanvas"></button>
+  <script>
+  </script>
+  <section class="border">
+    <header>
+
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/">
+          <img src="https://www.gravatar.com/avatar/46c6cc40826824204a70f22ee75c3752?s=50" alt="">
+        </a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li id="blog-title" class="nav-item active">
+              <a class="nav-link" href="/">
+                <h1>
+                  小伍手札 <span class="sr-only">(current)</span>
+              </a>
+              </h1>
+            </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0" action="https://google.com/search" method="get" onSubmit="Gsitesearch(this)"
+            target="_blank">
+            <input name="q" type="hidden" />
+            <input name="qfront" class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+        </div>
+      </nav>
+    </header>
+
+    <div class="row border">
+      <div class="col col-lg-9 border">
+        <!-- index.ejs -->
+<!-- _partial/archive -->
+_partial/archive.ejs
+
+  pagination == 2
+  
+    <!-- article.ejs -->
+<article id="post-android-conversion-to-dalvik-format.html" class="border post">
+    
+    <h2>
+      <a class="article-title" href="/2012/07/android-conversion-to-dalvik-format.html/">[Android] Conversion to Dalvik format failed with error 1</a>
+    </h2>
+
+
+
+  <div class="article-meta">
+    <!-- date.ejs -->
+<div class="article-datetime">
+  date.ejs
+  <a href="/2012/07/android-conversion-to-dalvik-format.html/" class="article-date"><time datetime="2012-07-26T02:24:00.000Z" itemprop="datePublished">2012-07-26</time></a>
+</div>
+
+    <!-- category.ejs -->
+
+  <div class="article-category">
+      category.ejs
+    分類:
+    <a class="article-category-link" href="/categories/Android/">Android</a>
+  </div>
+
+
+    
+  TAG:
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li></ul>
+
+
+  </div>
+  <div class="article-inner border">
+    <div class="article-entry border">
+      
+
+        
+        
+          <p>先清除lib多餘的東西</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Project -&gt; Clean...</span><br></pre></td></tr></table></figure>
+
+        
+      
+    </div>
+
+    
+      
+
+    
+
+    <footer class="article-footer border">
+      <a data-url="http://blog.gorendo.org/2012/07/android-conversion-to-dalvik-format.html/" data-id="cjm64u1070021g6xucp0j6iqo" class="article-share-link">
+        <i class="fa fa-share"></i> Share
+      </a>
+      
+        <a href="http://blog.gorendo.org/2012/07/android-conversion-to-dalvik-format.html/#disqus_thread" class="article-comment-link">
+          <i class="fa fa-comment"></i> Comments
+        </a>
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+<!-- article.ejs end -->
+  
+    <!-- article.ejs -->
+<article id="post-google-spreadsheet-row-color-use-google.html" class="border post">
+    
+    <h2>
+      <a class="article-title" href="/2012/04/google-spreadsheet-row-color-use-google.html/">[Google] Google 文件試算表偶數行變色 以Google Apps Script</a>
+    </h2>
+
+
+
+  <div class="article-meta">
+    <!-- date.ejs -->
+<div class="article-datetime">
+  date.ejs
+  <a href="/2012/04/google-spreadsheet-row-color-use-google.html/" class="article-date"><time datetime="2012-04-28T16:14:00.000Z" itemprop="datePublished">2012-04-29</time></a>
+</div>
+
+    <!-- category.ejs -->
+
+  <div class="article-category">
+      category.ejs
+    分類:
+    <a class="article-category-link" href="/categories/Software/">Software</a>
+  </div>
+
+
+    
+  TAG:
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Google-API/">Google API</a></li></ul>
+
+
+  </div>
+  <div class="article-inner border">
+    <div class="article-entry border">
+      
+
+        
+        
+          <p>最近非常常用Google 文件的試算表，在哪存取都很方便<br>可是又感覺背景純白的有點難辨視行數… 一行一行改顏色又很麻煩<br>這時候當然要找自動變色的方法了! 先看一下預期的成果如下</p>
+<div style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/-awg5bmANJeg/T5wTR2NkgtI/AAAAAAAABCY/lVFi5cneSQ8/s1600/01.png" target="_blank" rel="noopener"><img src="" alt=""></a></div><a name="more"></a><br><br>###     實作方法：<br>打開工具→指令碼管理員<br><div style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-dvgKj3pjHE8/T5wTTCXm7kI/AAAAAAAABCg/dcfWBkYhIN8/s1600/02.jpg" target="_blank" rel="noopener"><img src="" alt=""></a></div><br>按 New 建立新的指令碼<br><div style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-mlVurz77zZQ/T5wTUFX6OSI/AAAAAAAABCo/5s6OhGRYo1o/s1600/03.jpg" target="_blank" rel="noopener"><img src="" alt=""></a></div>
+
+<p>設定如下，按完儲存後點標題左邊的返回回到試算表中</p>
+<div style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/-tdr0m7IjR0A/T5wTV5uiUuI/AAAAAAAABCw/gFUN_36Tgxk/s1600/04.jpg" target="_blank" rel="noopener"><img src="" alt=""></a></div><div style="clear: both; text-align: left;"></div><div style="text-align: -webkit-auto;"><br>原始碼：</div><div style="text-align: -webkit-auto;"><span style="color: #38761d; font-size: x-small;"></span></div><span style="color: #38761d; font-size: x-small;">// 自動更改選取範圍內的儲存格偶數行和奇數行底色</span><br><span style="color: #38761d; font-size: x-small;">function RowColor() {</span><br><span style="color: #38761d; font-size: x-small;">&nbsp; var range = SpreadsheetApp.getActiveRange();</span><br><span style="color: #38761d; font-size: x-small;">&nbsp; var cols = range.getNumColumns();</span><br><span style="color: #38761d; font-size: x-small;">&nbsp; var rows = range.getNumRows();</span><br><span style="color: #38761d; font-size: x-small;">&nbsp; for (var y = 1; y &lt;= rows; y++) {</span><br><span style="color: #38761d; font-size: x-small;">&nbsp; &nbsp; for (var x = 1; x &lt;= cols; x++) {</span><br><span style="color: #38761d; font-size: x-small;">&nbsp; &nbsp; &nbsp; var cell = range.getCell(y, x);</span><br><span style="color: #38761d; font-size: x-small;">&nbsp; &nbsp; &nbsp; if ((y % 2) == 0) {</span><br><span style="color: #38761d; font-size: x-small;">&nbsp; &nbsp; &nbsp; &nbsp; cell.setBackgroundColor(“#EFF”); &nbsp;// 偶數行顏色</span><br><span style="color: #38761d; font-size: x-small;">&nbsp; &nbsp; &nbsp; }</span><br><span style="color: #38761d; font-size: x-small;">&nbsp; &nbsp; &nbsp; else {</span><br><span style="color: #38761d; font-size: x-small;">&nbsp; &nbsp; &nbsp; &nbsp; cell.setBackgroundColor(“#FFF”); &nbsp;// 奇數行顏色</span><br><span style="color: #38761d; font-size: x-small;">&nbsp; &nbsp; &nbsp; }</span><br><span style="color: #38761d; font-size: x-small;">&nbsp; &nbsp; }</span><br><span style="color: #38761d; font-size: x-small;">&nbsp; }</span><br><span style="color: #38761d; font-size: x-small;">}</span><br><br>回到試算表選取要變色的儲存格範圍<br><div style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-NTWbYCRFXT4/T5wTX-ZFpJI/AAAAAAAABC4/MIDZreOCFF0/s1600/05.jpg" target="_blank" rel="noopener"><img src="" alt=""></a></div><div style="clear: both; text-align: center;"><br></div><div style="clear: both; text-align: left;">打開 工具→指令碼管理工具 選剛剛製作的指令碼後執行</div><br><div style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-05cUOVd6Gg0/T5wTZPVANKI/AAAAAAAABDA/6x99q3Axr54/s1600/06.jpg" target="_blank" rel="noopener"><img src="" alt=""></a></div><br><span></span><span></span><br><br>完成!<br><div style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/-awg5bmANJeg/T5wTR2NkgtI/AAAAAAAABCY/lVFi5cneSQ8/s1600/01.png" target="_blank" rel="noopener"><img src="" alt=""></a></div>
+
+<p>指令碼可以留著續用<br>要換顏色的話改<br><span style="color: #38761d; font-size: x-small; text-align: left;">cell.setBackgroundColor(“#EFF”);</span><br><span style="font-size: x-small;">的部份就可以了</span></p>
+<p><a href="https://developers.google.com/apps-script/class_spreadsheetapp" target="_blank" rel="noopener">https://developers.google.com/apps-script/class_spreadsheetapp</a></p>
+
+        
+      
+    </div>
+
+    
+      
+
+    
+
+    <footer class="article-footer border">
+      <a data-url="http://blog.gorendo.org/2012/04/google-spreadsheet-row-color-use-google.html/" data-id="cjm64u13b008ug6xukzeckrwu" class="article-share-link">
+        <i class="fa fa-share"></i> Share
+      </a>
+      
+        <a href="http://blog.gorendo.org/2012/04/google-spreadsheet-row-color-use-google.html/#disqus_thread" class="article-comment-link">
+          <i class="fa fa-comment"></i> Comments
+        </a>
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+<!-- article.ejs end -->
+  
+    <!-- article.ejs -->
+<article id="post-android-position-sensors.html" class="border post">
+    
+    <h2>
+      <a class="article-title" href="/2012/03/android-position-sensors.html/">[Android] Position Sensors 位置感應器</a>
+    </h2>
+
+
+
+  <div class="article-meta">
+    <!-- date.ejs -->
+<div class="article-datetime">
+  date.ejs
+  <a href="/2012/03/android-position-sensors.html/" class="article-date"><time datetime="2012-03-31T03:47:00.000Z" itemprop="datePublished">2012-03-31</time></a>
+</div>
+
+    <!-- category.ejs -->
+
+  <div class="article-category">
+      category.ejs
+    分類:
+    <a class="article-category-link" href="/categories/Android/">Android</a>
+  </div>
+
+
+    
+  TAG:
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li></ul>
+
+
+  </div>
+  <div class="article-inner border">
+    <div class="article-entry border">
+      
+
+        
+        
+          <p><a href="http://developer.android.com/guide/topics/sensors/sensors_position.html" target="_blank" rel="noopener">http://developer.android.com/guide/topics/sensors/sensors_position.html</a></p>
+<p>Orientation Sensor 方向 Sensor</p>
+<p>private SensorManager mSensorManager;<br>private Sensor mSensor;<br>…<br>mSensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);<br>mSensor = mSensorManager.getDefaultSensor(Sensor.TYPE_ORIENTATION);</p>
+<p>&nbsp; @Override<br>&nbsp; public void onSensorChanged(SensorEvent event) {<br>&nbsp; &nbsp; float azimuth_angle = event.values[0];<br>&nbsp; &nbsp; float pitch_angle = event.values[1];<br>&nbsp; &nbsp; float roll_angle = event.values[2];<br>&nbsp; &nbsp; // Do something with these orientation angles.<br>&nbsp; }</p>
+<p>azimuth_angle<br>正北邊為0<br>往東順時鐘遞增<br>上限359.999….</p>
+
+        
+      
+    </div>
+
+    
+      
+
+    
+
+    <footer class="article-footer border">
+      <a data-url="http://blog.gorendo.org/2012/03/android-position-sensors.html/" data-id="cjm64u10c002cg6xu4w4jjg3r" class="article-share-link">
+        <i class="fa fa-share"></i> Share
+      </a>
+      
+        <a href="http://blog.gorendo.org/2012/03/android-position-sensors.html/#disqus_thread" class="article-comment-link">
+          <i class="fa fa-comment"></i> Comments
+        </a>
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+<!-- article.ejs end -->
+  
+    <!-- article.ejs -->
+<article id="post-web.html" class="border post">
+    
+    <h2>
+      <a class="article-title" href="/2012/03/web.html/">[WEB] 網站開發用工具總匯</a>
+    </h2>
+
+
+
+  <div class="article-meta">
+    <!-- date.ejs -->
+<div class="article-datetime">
+  date.ejs
+  <a href="/2012/03/web.html/" class="article-date"><time datetime="2012-03-31T03:32:00.000Z" itemprop="datePublished">2012-03-31</time></a>
+</div>
+
+    <!-- category.ejs -->
+
+  <div class="article-category">
+      category.ejs
+    分類:
+    <a class="article-category-link" href="/categories/WEB/">WEB</a>
+  </div>
+
+
+    
+  TAG:
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/WEB/">WEB</a></li></ul>
+
+
+  </div>
+  <div class="article-inner border">
+    <div class="article-entry border">
+      
+
+        
+        
+          <p>jQuery</p>
+<p><a href="http://jquery.com/" target="_blank" rel="noopener">http://jquery.com/</a></p>
+<p>IETester<br>測試IE各版本環境<br><a href="http://www.my-debugbar.com/wiki/IETester/HomePage" target="_blank" rel="noopener">http://www.my-debugbar.com/wiki/IETester/HomePage</a></p>
+<p>uploadify<br>jquery+swf(進度條) 多檔上傳套件<br><a href="http://www.uploadify.com/" target="_blank" rel="noopener">http://www.uploadify.com/</a></p>
+
+        
+      
+    </div>
+
+    
+      
+
+    
+
+    <footer class="article-footer border">
+      <a data-url="http://blog.gorendo.org/2012/03/web.html/" data-id="cjm64u14400ajg6xuz78h3sao" class="article-share-link">
+        <i class="fa fa-share"></i> Share
+      </a>
+      
+        <a href="http://blog.gorendo.org/2012/03/web.html/#disqus_thread" class="article-comment-link">
+          <i class="fa fa-comment"></i> Comments
+        </a>
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+<!-- article.ejs end -->
+  
+    <!-- article.ejs -->
+<article id="post-php-get.html" class="border post">
+    
+    <h2>
+      <a class="article-title" href="/2012/03/php-get.html/">[php] 連結保留所有$_GET</a>
+    </h2>
+
+
+
+  <div class="article-meta">
+    <!-- date.ejs -->
+<div class="article-datetime">
+  date.ejs
+  <a href="/2012/03/php-get.html/" class="article-date"><time datetime="2012-03-29T01:56:00.000Z" itemprop="datePublished">2012-03-29</time></a>
+</div>
+
+    <!-- category.ejs -->
+
+  <div class="article-category">
+      category.ejs
+    分類:
+    <a class="article-category-link" href="/categories/PHP/">PHP</a>
+  </div>
+
+
+    
+  TAG:
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PHP/">PHP</a></li></ul>
+
+
+  </div>
+  <div class="article-inner border">
+    <div class="article-entry border">
+      
+
+        
+        
+          <p>你可能會以page做為頁面控制的參數，在 if($key==”page”)&nbsp;時排除掉，你也可以增加或減少</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$extra_txt = <span class="string">''</span>;</span><br><span class="line"><span class="keyword">foreach</span>($_GET <span class="keyword">as</span> $key =&amp;gt; $aget)&#123;</span><br><span class="line">	<span class="keyword">if</span>($key==<span class="string">"page"</span>)&#123;</span><br><span class="line">		<span class="keyword">continue</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	$extra_txt .= <span class="string">'&amp;amp;'</span>.$key.<span class="string">'='</span>.$aget;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre>
+[1](http://blog.gorendo.org/text.php?page=1%3C?=$extra_txt?%3E)
+</pre>
+
+        
+      
+    </div>
+
+    
+      
+
+    
+
+    <footer class="article-footer border">
+      <a data-url="http://blog.gorendo.org/2012/03/php-get.html/" data-id="cjm64u12m0070g6xul3oml3v1" class="article-share-link">
+        <i class="fa fa-share"></i> Share
+      </a>
+      
+        <a href="http://blog.gorendo.org/2012/03/php-get.html/#disqus_thread" class="article-comment-link">
+          <i class="fa fa-comment"></i> Comments
+        </a>
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+<!-- article.ejs end -->
+  
+    <!-- article.ejs -->
+<article id="post-cc-windows-beging-helloworld-in-eclipse.html" class="border post">
+    
+    <h2>
+      <a class="article-title" href="/2012/03/cc-windows-beging-helloworld-in-eclipse.html/">[C/C++] HelloWorld in Eclipse</a>
+    </h2>
+
+
+
+  <div class="article-meta">
+    <!-- date.ejs -->
+<div class="article-datetime">
+  date.ejs
+  <a href="/2012/03/cc-windows-beging-helloworld-in-eclipse.html/" class="article-date"><time datetime="2012-03-24T17:20:00.000Z" itemprop="datePublished">2012-03-25</time></a>
+</div>
+
+    <!-- category.ejs -->
+
+  <div class="article-category">
+      category.ejs
+    分類:
+    <a class="article-category-link" href="/categories/C-C/">C/C++</a>
+  </div>
+
+
+    
+  TAG:
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C-C/">C/C++</a></li></ul>
+
+
+  </div>
+  <div class="article-inner border">
+    <div class="article-entry border">
+      
+
+        
+        
+          <p>安裝&nbsp;<a href="http://sourceforge.net/projects/mingw/" target="_blank" rel="noopener">MinGW</a><br>我的電腦右鍵→內容→進階→環境變數→在系統變數的 [path] 內加入 C:MinGWbin;</p>
+<p>安裝 Eclipse<br>&nbsp;C/C++ Development Tooling</p>
+<p>之後就可以建一個C/C++ Project來玩了</p>
+<pre>#include &lt;iostream&gt;
+
+using namespace std;
+
+int main()
+{
+    cout << "Hello, world!" << endl;
+    return 0;
+}
+</pre>
+
+        
+      
+    </div>
+
+    
+      
+
+    
+
+    <footer class="article-footer border">
+      <a data-url="http://blog.gorendo.org/2012/03/cc-windows-beging-helloworld-in-eclipse.html/" data-id="cjm64u112003wg6xumfihzq6z" class="article-share-link">
+        <i class="fa fa-share"></i> Share
+      </a>
+      
+        <a href="http://blog.gorendo.org/2012/03/cc-windows-beging-helloworld-in-eclipse.html/#disqus_thread" class="article-comment-link">
+          <i class="fa fa-comment"></i> Comments
+        </a>
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+<!-- article.ejs end -->
+  
+    <!-- article.ejs -->
+<article id="post-jquery-selectors.html" class="border post">
+    
+    <h2>
+      <a class="article-title" href="/2012/03/jquery-selectors.html/">[jQuery] 選取元素 (Selectors)</a>
+    </h2>
+
+
+
+  <div class="article-meta">
+    <!-- date.ejs -->
+<div class="article-datetime">
+  date.ejs
+  <a href="/2012/03/jquery-selectors.html/" class="article-date"><time datetime="2012-03-23T03:39:00.000Z" itemprop="datePublished">2012-03-23</time></a>
+</div>
+
+    <!-- category.ejs -->
+
+  <div class="article-category">
+      category.ejs
+    分類:
+    <a class="article-category-link" href="/categories/jQuery/">jQuery</a>
+  </div>
+
+
+    
+  TAG:
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery/">jQuery</a></li></ul>
+
+
+  </div>
+  <div class="article-inner border">
+    <div class="article-entry border">
+      
+
+        
+        
+          <pre>$('*')
 取得所有元素
 
 $('div')
-取得所有</div><p class="readmore"><a href="/2012/03/jquery-selectors.html/">Read More</a></p></div><div class="post"><h1 class="post-title"><a href="/2012/03/facebook-icon.html/">[facebook] 把app新增到粉絲團分頁含icon</a></h1><div class="post-meta">2012-03-21</div><div class="post-content"><p>先建好facebook app後並編輯app的icon<br>連到<br><a href="http://www.facebook.com/add.php?api_key=應用程式" target="_blank" rel="external">http://www.facebook.com/add.php?api_key=應用程式</a> ID / API 鑰匙&amp;pages<br>加到所要的粉絲頁<br>完成</p></div><p class="readmore"><a href="/2012/03/facebook-icon.html/">Read More</a></p></div><div class="post"><h1 class="post-title"><a href="/2012/03/android-phonegapcordova-get-started.html/">[Android] PhoneGap(cordova) 安裝流程</a></h1><div class="post-meta">2012-03-18</div><div class="post-content"><p>PhoneGap(後來改名為<span style="background-color: white; color: #343434; font-family: Cardo; font-size: 15px; line-height: 20px;">Cordova</span>)是利用HTML5和 JavaScript的跨平台快速開發工具，如果你只是想快速的做出一些簡單的應用可以使用它，目前已知的缺點是速度不如純原生程式寫的APP</p></div><p class="readmore"><a href="/2012/03/android-phonegapcordova-get-started.html/">Read More</a></p></div><div class="post"><h1 class="post-title"><a href="/2012/02/javascript-select-select.html/">[javascript] Select 選擇後改變另個Select的項目</a></h1><div class="post-meta">2012-02-24</div><div class="post-content"><select name="select1" onchange="select1_onchange()">   </select>  <select name="select2" onchange="">   </select>  
+取得所有
+
+$('.class01')
+取得所有class為class01的元素(class="class01")
+
+$('#id01')
+取得id為id01的元素(id="id01")
+
+$("#id[1]")
+取得id為id[1]的元素
+
+印出所有id[]的元素 (在checkbox特好用)
+
+$('#id[]').each(function(index) {
+ alert($(this).val());
+});
+
+關係選擇
+$('div p')祖先元素是 div 的 p
+
+$('div &gt; p')
+父元素是 div 的 p
+
+$('div + span')
+緊接在 div 之後的 p
+</pre><pre>
+</pre><pre>$("option:selected",this).text()</pre><pre>$("select1 :selected").text()</pre>
+
+        
+      
+    </div>
+
+    
+      
+
+    
+
+    <footer class="article-footer border">
+      <a data-url="http://blog.gorendo.org/2012/03/jquery-selectors.html/" data-id="cjm64u13w00a1g6xufswxc0ev" class="article-share-link">
+        <i class="fa fa-share"></i> Share
+      </a>
+      
+        <a href="http://blog.gorendo.org/2012/03/jquery-selectors.html/#disqus_thread" class="article-comment-link">
+          <i class="fa fa-comment"></i> Comments
+        </a>
+      
+    </footer>
+  </div>
+  
+</article>
 
 
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">select</span> <span class="attr">name</span>=<span class="string">"select1"</span> <span class="attr">onchange</span>=<span class="string">"select1_onchange()"</span>&gt;</span></div><div class="line"> <span class="tag">&lt;/<span class="name">select</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">select</span> <span class="attr">name</span>=<span class="string">"select2"</span> <span class="attr">onchange</span>=<span class="string">""</span>&gt;</span></div><div class="line"> <span class="tag">&lt;/<span class="name">select</span>&gt;</span></div></pre></td></tr></table></figure></div><p class="readmore"><a href="/2012/02/javascript-select-select.html/">Read More</a></p></div><nav class="page-navigator"><a class="extend prev" rel="prev" href="/page/3/">Previous</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/5/">Next</a></nav></div></div><div class="pure-u-1-4 hidden_mid_and_down"><div id="sidebar"><div class="widget"><form action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank" class="search-form"><input type="text" name="q" maxlength="20" placeholder="Search"/><input type="hidden" name="sitesearch" value="http://blog.gorendo.org"/></form></div><div class="widget"><div class="widget-title"><i class="fa fa-folder-o"> Categories</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/">Android</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/C/">C#</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/C-C/">C/C++</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Cocos2D/">Cocos2D</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/DATABASE/">DATABASE</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Facebook/">Facebook</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Game-Dev/">Game Dev</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JAVA/">JAVA</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Javascript/">Javascript</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Lua/">Lua</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Mac/">Mac</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/PHP/">PHP</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Software/">Software</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Unity/">Unity</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Unity/AssetBundle/">AssetBundle</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/WEB/">WEB</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/WEB/CSS/">CSS</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/iOS/">iOS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery/">jQuery</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/programming/">programming</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/大學專題/">大學專題</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/攝影/">攝影</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/敗家/">敗家</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/程式語言/">程式語言</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-star-o"> Tags</i></div><div class="tagcloud"><a href="/tags/PHP/" style="font-size: 15px;">PHP</a> <a href="/tags/Unity/" style="font-size: 15px;">Unity</a> <a href="/tags/Game-Dev/" style="font-size: 15px;">Game Dev</a> <a href="/tags/JAVA/" style="font-size: 15px;">JAVA</a> <a href="/tags/OpenGL/" style="font-size: 15px;">OpenGL</a> <a href="/tags/Google-API/" style="font-size: 15px;">Google API</a> <a href="/tags/C-C/" style="font-size: 15px;">C/C++</a> <a href="/tags/Cocos2D/" style="font-size: 15px;">Cocos2D</a> <a href="/tags/DATABASE/" style="font-size: 15px;">DATABASE</a> <a href="/tags/MySQL/" style="font-size: 15px;">MySQL</a> <a href="/tags/iOS/" style="font-size: 15px;">iOS</a> <a href="/tags/Xcode/" style="font-size: 15px;">Xcode</a> <a href="/tags/Mac/" style="font-size: 15px;">Mac</a> <a href="/tags/Software/" style="font-size: 15px;">Software</a> <a href="/tags/Lua/" style="font-size: 15px;">Lua</a> <a href="/tags/敗家/" style="font-size: 15px;">敗家</a> <a href="/tags/Android/" style="font-size: 15px;">Android</a> <a href="/tags/ATOM/" style="font-size: 15px;">ATOM</a> <a href="/tags/SEO/" style="font-size: 15px;">SEO</a> <a href="/tags/資訊安全/" style="font-size: 15px;">資訊安全</a> <a href="/tags/opensource/" style="font-size: 15px;">opensource</a> <a href="/tags/程式語言/" style="font-size: 15px;">程式語言</a> <a href="/tags/Facebook/" style="font-size: 15px;">Facebook</a> <a href="/tags/programming/" style="font-size: 15px;">programming</a> <a href="/tags/攝影/" style="font-size: 15px;">攝影</a> <a href="/tags/C/" style="font-size: 15px;">C#</a> <a href="/tags/WINDOWS/" style="font-size: 15px;">WINDOWS</a> <a href="/tags/WEB/" style="font-size: 15px;">WEB</a> <a href="/tags/Javascript/" style="font-size: 15px;">Javascript</a> <a href="/tags/Node-JS/" style="font-size: 15px;">Node.JS</a> <a href="/tags/jQuery/" style="font-size: 15px;">jQuery</a> <a href="/tags/CSS/" style="font-size: 15px;">CSS</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-file-o"> Recent</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/10/php-mac-atom-visual-studio-code-php.html/">[php] 在 Mac 用ATOM / Visual Studio Code 為 php debug</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/mac-xxx.html/">[Mac] 解決 您要讓應用程式 XXX 接受傳入的網路連接嗎 一直跳出</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/10/php-callback.html/">[php] 實作callback</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/06/android-setclicklistener-in-custom-view.html/">[Android] setClickListener in custom view</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/06/errorexecution-failed-for-task.html/">解決 Error:Execution failed for task 'preDexDebug'. > com.android.ide.common.process.ProcessException: org.gradle.process.internal.ExecException: Process 'command  finished with non-zero exit value 1</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/05/android-wiperefreshlayout.html/">[Android] 下拉更新 SwipeRefreshLayout</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/04/android-cant-create-handler-inside.html/">[Android] 處理 Can't create handler inside thread that has not called Looper.prepare()</a></li><li class="post-list-item"><a class="post-list-link" href="/2014/08/unity-ugui-46-eventsystem.html/">[Unity] uGUI (4.6) EventSystem 事件系統 快速上手</a></li><li class="post-list-item"><a class="post-list-link" href="/2014/08/unity-ugui-46-eventsystem.html/">[Unity] uGUI (4.6) EventSystem 事件系統 快速上手</a></li><li class="post-list-item"><a class="post-list-link" href="/2014/06/cocos2d-x-install-mac.html/">[Cocos2d-x] 在 Mac 上設置 Cocos2d-x (Cocos2d-x 3 .x)</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-external-link"> Links</i></div><ul></ul><a href="http://www.example1.com/" title="site-name1" target="_blank">site-name1</a><ul></ul><a href="http://www.example2.com/" title="site-name2" target="_blank">site-name2</a><ul></ul><a href="http://www.example3.com/" title="site-name3" target="_blank">site-name3</a></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">Copyright © 2017 <a href="/." rel="nofollow">小伍手札.</a> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a><a rel="nofollow" target="_blank" href="https://github.com/tufu9441/maupassant-hexo"> Theme</a> by<a rel="nofollow" target="_blank" href="https://github.com/pagecho"> Cho.</a></div></div></div><a id="rocket" href="#top" class="show"></a><script type="text/javascript" src="/js/totop.js?v=0.0.0" async></script><script type="text/javascript" src="//cdn.bootcss.com/fancybox/3.1.20/jquery.fancybox.min.js" async></script><script type="text/javascript" src="/js/fancybox.js?v=0.0.0" async></script><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/fancybox/3.1.20/jquery.fancybox.min.css"><script type="text/javascript" src="/js/codeblock-resizer.js?v=0.0.0"></script><script type="text/javascript" src="/js/smartresize.js?v=0.0.0"></script></div></body></html>
+<!-- article.ejs end -->
+  
+    <!-- article.ejs -->
+<article id="post-facebook-icon.html" class="border post">
+    
+    <h2>
+      <a class="article-title" href="/2012/03/facebook-icon.html/">[facebook] 把app新增到粉絲團分頁含icon</a>
+    </h2>
+
+
+
+  <div class="article-meta">
+    <!-- date.ejs -->
+<div class="article-datetime">
+  date.ejs
+  <a href="/2012/03/facebook-icon.html/" class="article-date"><time datetime="2012-03-21T04:08:00.000Z" itemprop="datePublished">2012-03-21</time></a>
+</div>
+
+    <!-- category.ejs -->
+
+  <div class="article-category">
+      category.ejs
+    分類:
+    <a class="article-category-link" href="/categories/Facebook/">Facebook</a>
+  </div>
+
+
+    
+  TAG:
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Facebook/">Facebook</a></li></ul>
+
+
+  </div>
+  <div class="article-inner border">
+    <div class="article-entry border">
+      
+
+        
+        
+          <p>先建好facebook app後並編輯app的icon<br>連到<br><a href="http://www.facebook.com/add.php?api_key=應用程式" target="_blank" rel="noopener">http://www.facebook.com/add.php?api_key=應用程式</a> ID / API 鑰匙&amp;pages<br>加到所要的粉絲頁<br>完成</p>
+<p>facebook開發的方法怎那麼不直覺…<br>(例如直接可以新增頁面就好…頁面又可以選純內容或外連到app或網頁)</p>
+
+        
+      
+    </div>
+
+    
+      
+
+    
+
+    <footer class="article-footer border">
+      <a data-url="http://blog.gorendo.org/2012/03/facebook-icon.html/" data-id="cjm64u12s007eg6xuwrvzol1k" class="article-share-link">
+        <i class="fa fa-share"></i> Share
+      </a>
+      
+        <a href="http://blog.gorendo.org/2012/03/facebook-icon.html/#disqus_thread" class="article-comment-link">
+          <i class="fa fa-comment"></i> Comments
+        </a>
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+<!-- article.ejs end -->
+  
+    <!-- article.ejs -->
+<article id="post-android-phonegapcordova-get-started.html" class="border post">
+    
+    <h2>
+      <a class="article-title" href="/2012/03/android-phonegapcordova-get-started.html/">[Android] PhoneGap(cordova) 安裝流程</a>
+    </h2>
+
+
+
+  <div class="article-meta">
+    <!-- date.ejs -->
+<div class="article-datetime">
+  date.ejs
+  <a href="/2012/03/android-phonegapcordova-get-started.html/" class="article-date"><time datetime="2012-03-18T13:53:00.000Z" itemprop="datePublished">2012-03-18</time></a>
+</div>
+
+    <!-- category.ejs -->
+
+  <div class="article-category">
+      category.ejs
+    分類:
+    <a class="article-category-link" href="/categories/Android/">Android</a>
+  </div>
+
+
+    
+  TAG:
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li></ul>
+
+
+  </div>
+  <div class="article-inner border">
+    <div class="article-entry border">
+      
+
+        
+        
+          <p>PhoneGap(後來改名為<span style="background-color: white; color: #343434; font-family: Cardo; font-size: 15px; line-height: 20px;">Cordova</span>)是利用HTML5和 JavaScript的跨平台快速開發工具，如果你只是想快速的做出一些簡單的應用可以使用它，目前已知的缺點是速度不如純原生程式寫的APP</p>
+<div><br><span style="font-size: large;">準備開發環境</span><br><br>1. 裝好一般的Android&nbsp;開發環境：JDK、Eclipse、Android SDK、ADT Plugin ( <a href="http://developer.android.com/sdk/installing.html" target="_blank" rel="noopener">developer.android</a>&nbsp;)<br>2. 到 <a href="http://phonegap.com/" target="_blank" rel="noopener">PhoneGap</a>&nbsp;官網下載最新的&nbsp;PhoneGap 先解開到任何你記得的地方備用<br><a name="more"></a><br><br><span style="font-size: large;">開始設定</span><br><br>1. 打開你的Eclipse建立一個Android Project 如HelloPhoneGap<br>2. 建立兩個資料夾<br><br><em>   /libs
+</em>   /assets/www<div style="clear: both; text-align: center;"></div>3. 複製檔案<br><br><em>   Copy android/cordova-x.x.x.js 進&nbsp;/assets/www
+</em>   Copy&nbsp;android/phonegap.jar 進&nbsp;/libs<br><em>   Copy&nbsp;android/xml/ 進&nbsp;/res<div style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/-rgW5k_i6m64/T2Xm3wobr4I/AAAAAAAAA9M/HfXxbwtJIoI/s1600/%E6%9C%AA%E5%91%BD%E5%90%8D.jpg" target="_blank" rel="noopener"><img src="" alt=""></a></div>4. 設定你的專案要匯入cordova-x.x.x.jar<br><div style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/-g2oo719sF0U/T2XqcLjFXkI/AAAAAAAAA9U/FFmJmlfgMTA/s1600/%E6%9C%AA%E5%91%BD%E5%90%8D.jpg" target="_blank" rel="noopener"><img src="" alt=""></a></div><br>5. 修改你專案的Active.java檔
+
+</em>   移除&nbsp;import android.app.Activity;<br><em>   加入&nbsp;import org.apache.cordova.</em>;<br><em>   extends 從 <strong>Activity </strong>改成 <strong>DroidGap</strong>
+</em>   setContentView(R.layout.main); 改成 super.loadUrl(“file:///android_asset/www/index.html”);<pre>package idv.gonex45.hellophonegap;<br><br>import android.os.Bundle;<br>import org.apache.cordova.<em>;<br><br>public class HelloPhoneGapActivity extends DroidGap {<br>    /** Called when the activity is first created. </em>/<br>    @Override<br>    public void onCreate(Bundle savedInstanceState) {<br>        super.onCreate(savedInstanceState);<br>        super.loadUrl(“file:///android_asset/www/index.html”);<br>    }<br>}<br></pre><br>6. 修改AndroidManifest.xml<br><br><em>   貼入以下程式碼<pre><supports-screens android:anydensity="true" android:largescreens="true" android:normalscreens="true" android:resizeable="true" android:smallscreens="true"><br><uses-permission android:name="android.permission.CAMERA"><br><uses-permission android:name="android.permission.VIBRATE"><br><uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"><br><uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"><br><uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS"><br><uses-permission android:name="android.permission.READ_PHONE_STATE"><br><uses-permission android:name="android.permission.INTERNET"><br><uses-permission android:name="android.permission.RECEIVE_SMS"><br><uses-permission android:name="android.permission.RECORD_AUDIO"><br><uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS"><br><uses-permission android:name="android.permission.READ_CONTACTS"><br><uses-permission android:name="android.permission.WRITE_CONTACTS"><br><uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"><br><uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"> <uses-permission android:name="android.permission.GET_ACCOUNTS"><br><uses-permission android:name="android.permission.BROADCAST_STICKY"><br></uses-permission></uses-permission></uses-permission></uses-permission></uses-permission></uses-permission></uses-permission></uses-permission></uses-permission></uses-permission></uses-permission></uses-permission></uses-permission></uses-permission></uses-permission></uses-permission></supports-screens></pre>
+
+</em>   在activity&nbsp;裡加入 android:configChanges=”orientation|keyboardHidden”*   在現有的activity … /activity 之下再加入<pre>   <activity android:configchanges="orientation|keyboardHidden" android:label="@string/app_name" android:name="com.phonegap.DroidGap"><br>   <intent-filter><br>   </intent-filter><br>  </activity><br></pre><br><li>完成後像這樣</li><br><pre><br><manifest android:versioncode="1" android:versionname="1.0" package="idv.gonex45.hellophonegap" xmlns:andro=""><br><supports-screens android:anydensity="true" android:largescreens="true" android:normalscreens="true" android:resizeable="true" android:smallscreens="true"><br><uses-permission android:name="android.permission.CAMERA"><br><uses-permission android:name="android.permission.VIBRATE"><br><uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"><br><uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"><br><uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS"><br><uses-permission android:name="android.permission.READ_PHONE_STATE"><br><uses-permission android:name="android.permission.INTERNET"><br><uses-permission android:name="android.permission.RECEIVE_SMS"><br><uses-permission android:name="android.permission.RECORD_AUDIO"><br><uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS"><br><uses-permission android:name="android.permission.READ_CONTACTS"><br><uses-permission android:name="android.permission.WRITE_CONTACTS"><br><uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"><br><uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"> <uses-permission android:name="android.permission.GET_ACCOUNTS"><br><uses-permission android:name="android.permission.BROADCAST_STICKY"><br>    <uses-sdk android:minsdkversion="10"><br><br>    <application android:icon="@drawable/ic_launcher" android:label="@string/app_name"><br>        <activity android:configchanges="orientation|keyboardHidden" android:label="@string/app_name" android:name=".HelloPhoneGapActivity"><br>            <intent-filter><br>                <action android:name="android.intent.action.MAIN"><br><br>                <category android:name="android.intent.category.LAUNCHER"><br>            </category></action></intent-filter><br>        </activity><br>        <activity android:configchanges="orientation|keyboardHidden" android:label="@string/app_name" android:name="com.phonegap.DroidGap"><br>   <intent-filter><br>   </intent-filter><br>  </activity><br>    </application><br><br></uses-sdk></uses-permission></uses-permission></uses-permission></uses-permission></uses-permission></uses-permission></uses-permission></uses-permission></uses-permission></uses-permission></uses-permission></uses-permission></uses-permission></uses-permission></uses-permission></uses-permission></supports-screens></manifest><br></pre>7. 建立www/index.html<br><pre><br><head><br><title>PhoneGap</title><br><br></head><br><br>#<br>Hello World<br><br></pre>注意src=”cordova-1.5.0.js”的版本 8. 完工執行!<br><br><a href="http://phonegap.com/start#android" target="_blank" rel="noopener">http://phonegap.com/start#android</a> </div>
+
+        
+      
+    </div>
+
+    
+      
+
+    
+
+    <footer class="article-footer border">
+      <a data-url="http://blog.gorendo.org/2012/03/android-phonegapcordova-get-started.html/" data-id="cjm64u10h002lg6xu84j0w35e" class="article-share-link">
+        <i class="fa fa-share"></i> Share
+      </a>
+      
+        <a href="http://blog.gorendo.org/2012/03/android-phonegapcordova-get-started.html/#disqus_thread" class="article-comment-link">
+          <i class="fa fa-comment"></i> Comments
+        </a>
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+<!-- article.ejs end -->
+  
+    <!-- article.ejs -->
+<article id="post-javascript-select-select.html" class="border post">
+    
+    <h2>
+      <a class="article-title" href="/2012/02/javascript-select-select.html/">[javascript] Select 選擇後改變另個Select的項目</a>
+    </h2>
+
+
+
+  <div class="article-meta">
+    <!-- date.ejs -->
+<div class="article-datetime">
+  date.ejs
+  <a href="/2012/02/javascript-select-select.html/" class="article-date"><time datetime="2012-02-24T02:44:00.000Z" itemprop="datePublished">2012-02-24</time></a>
+</div>
+
+    <!-- category.ejs -->
+
+  <div class="article-category">
+      category.ejs
+    分類:
+    <a class="article-category-link" href="/categories/Javascript/">Javascript</a>
+  </div>
+
+
+    
+  TAG:
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Javascript/">Javascript</a></li></ul>
+
+
+  </div>
+  <div class="article-inner border">
+    <div class="article-entry border">
+      
+
+        
+        
+          <select name="select1" onchange="select1_onchange()">   </select>  <select name="select2" onchange="">   </select>  
+
+
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">select</span> <span class="attr">name</span>=<span class="string">"select1"</span> <span class="attr">onchange</span>=<span class="string">"select1_onchange()"</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">select</span> <span class="attr">name</span>=<span class="string">"select2"</span> <span class="attr">onchange</span>=<span class="string">""</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+        
+      
+    </div>
+
+    
+      
+
+    
+
+    <footer class="article-footer border">
+      <a data-url="http://blog.gorendo.org/2012/02/javascript-select-select.html/" data-id="cjm64u13s009xg6xu7u3vg8d1" class="article-share-link">
+        <i class="fa fa-share"></i> Share
+      </a>
+      
+        <a href="http://blog.gorendo.org/2012/02/javascript-select-select.html/#disqus_thread" class="article-comment-link">
+          <i class="fa fa-comment"></i> Comments
+        </a>
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+<!-- article.ejs end -->
+  
+
+
+  <div id="page-nav">
+    page-nav TODO
+  </div>
+
+<!-- end _partial/archive -->
+
+<!-- end index.ejs  -->
+      </div>
+      <aside id="aside" class="aside col-10 col-lg-3 border">
+        aside
+        <div class="card bg-primary d-none">
+          <div class="card-header">
+            ABOUT
+          </div>
+          <img class="card-img rounded w-50 mx-auto" src="https://www.gravatar.com/avatar/46c6cc40826824204a70f22ee75c3752?s=240"
+            alt="Card image cap">
+
+          <div class="card-body">
+            <h4 class="card-title">Special title treatment</h4>
+            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+        </div>
+
+
+        
+        <div class="card">
+          <div class="card-header">
+            最新文章
+          </div>
+          <div class="card-body">
+            
+            <li>
+              <a href="/2016/10/php-mac-atom-visual-studio-code-php.html/">
+                [php] 在 Mac 用ATOM / Visual Studio Code 為 php debug</a>
+            </li>
+            
+            <li>
+              <a href="/2015/12/mac-xxx.html/">
+                [Mac] 解決 您要讓應用程式 XXX 接受傳入的網路連接嗎 一直跳出</a>
+            </li>
+            
+            <li>
+              <a href="/2015/10/php-callback.html/">
+                [php] 實作callback</a>
+            </li>
+            
+            <li>
+              <a href="/2015/06/android-setclicklistener-in-custom-view.html/">
+                [Android] setClickListener in custom view</a>
+            </li>
+            
+            <li>
+              <a href="/2015/06/errorexecution-failed-for-task.html/">
+                解決 Error:Execution failed for task &#39;preDexDebug&#39;. &gt; com.android.ide.common.process.ProcessException: org.gradle.process.internal.ExecException: Process &#39;command  finished with non-zero exit value 1</a>
+            </li>
+            
+
+          </div>
+        </div>
+        
+
+        
+
+        <div class="card">
+          <div class="card-header">
+            標籤
+          </div>
+          <div class="card-body">
+
+            
+            <a class="badge badge-primary" href="/tags/PHP/">
+              PHP <span class="badge badge-light">
+                20</span></a>
+            
+            <a class="badge badge-primary" href="/tags/Android/">
+              Android <span class="badge badge-light">
+                17</span></a>
+            
+            <a class="badge badge-primary" href="/tags/WEB/">
+              WEB <span class="badge badge-light">
+                10</span></a>
+            
+            <a class="badge badge-primary" href="/tags/JAVA/">
+              JAVA <span class="badge badge-light">
+                9</span></a>
+            
+            <a class="badge badge-primary" href="/tags/Game-Dev/">
+              Game Dev <span class="badge badge-light">
+                9</span></a>
+            
+            <a class="badge badge-primary" href="/tags/Unity/">
+              Unity <span class="badge badge-light">
+                8</span></a>
+            
+            <a class="badge badge-primary" href="/tags/攝影/">
+              攝影 <span class="badge badge-light">
+                7</span></a>
+            
+            <a class="badge badge-primary" href="/tags/Software/">
+              Software <span class="badge badge-light">
+                4</span></a>
+            
+            <a class="badge badge-primary" href="/tags/C-C/">
+              C/C++ <span class="badge badge-light">
+                3</span></a>
+            
+            <a class="badge badge-primary" href="/tags/Mac/">
+              Mac <span class="badge badge-light">
+                3</span></a>
+            
+            <a class="badge badge-primary" href="/tags/DATABASE/">
+              DATABASE <span class="badge badge-light">
+                3</span></a>
+            
+            <a class="badge badge-primary" href="/tags/MySQL/">
+              MySQL <span class="badge badge-light">
+                3</span></a>
+            
+            <a class="badge badge-primary" href="/tags/jQuery/">
+              jQuery <span class="badge badge-light">
+                3</span></a>
+            
+            <a class="badge badge-primary" href="/tags/程式語言/">
+              程式語言 <span class="badge badge-light">
+                2</span></a>
+            
+            <a class="badge badge-primary" href="/tags/Xcode/">
+              Xcode <span class="badge badge-light">
+                2</span></a>
+            
+            <a class="badge badge-primary" href="/tags/C/">
+              C# <span class="badge badge-light">
+                2</span></a>
+            
+            <a class="badge badge-primary" href="/tags/iOS/">
+              iOS <span class="badge badge-light">
+                2</span></a>
+            
+            <a class="badge badge-primary" href="/tags/Cocos2D/">
+              Cocos2D <span class="badge badge-light">
+                2</span></a>
+            
+            <a class="badge badge-primary" href="/tags/Google-API/">
+              Google API <span class="badge badge-light">
+                2</span></a>
+            
+            <a class="badge badge-primary" href="/tags/Javascript/">
+              Javascript <span class="badge badge-light">
+                2</span></a>
+            
+            <a class="badge badge-primary" href="/tags/opensource/">
+              opensource <span class="badge badge-light">
+                1</span></a>
+            
+            <a class="badge badge-primary" href="/tags/敗家/">
+              敗家 <span class="badge badge-light">
+                1</span></a>
+            
+            <a class="badge badge-primary" href="/tags/programming/">
+              programming <span class="badge badge-light">
+                1</span></a>
+            
+            <a class="badge badge-primary" href="/tags/SEO/">
+              SEO <span class="badge badge-light">
+                1</span></a>
+            
+            <a class="badge badge-primary" href="/tags/CSS/">
+              CSS <span class="badge badge-light">
+                1</span></a>
+            
+            <a class="badge badge-primary" href="/tags/WINDOWS/">
+              WINDOWS <span class="badge badge-light">
+                1</span></a>
+            
+            <a class="badge badge-primary" href="/tags/資訊安全/">
+              資訊安全 <span class="badge badge-light">
+                1</span></a>
+            
+            <a class="badge badge-primary" href="/tags/Facebook/">
+              Facebook <span class="badge badge-light">
+                1</span></a>
+            
+            <a class="badge badge-primary" href="/tags/Lua/">
+              Lua <span class="badge badge-light">
+                1</span></a>
+            
+            <a class="badge badge-primary" href="/tags/Node-JS/">
+              Node.JS <span class="badge badge-light">
+                1</span></a>
+            
+            <a class="badge badge-primary" href="/tags/OpenGL/">
+              OpenGL <span class="badge badge-light">
+                1</span></a>
+            
+            <a class="badge badge-primary" href="/tags/ATOM/">
+              ATOM <span class="badge badge-light">
+                1</span></a>
+            
+          </div>
+        </div>
+        
+
+
+      </aside>
+    </div>
+  </section>
+
+  <footer class="blog-footer">
+    <div class="container">
+      <div id="footer-info" class="inner">
+        &copy;
+        2018
+        gonex45<br>
+        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- end layout.ejs  -->
+</body>
+
+</html>

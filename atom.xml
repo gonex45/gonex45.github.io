@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>小伍手札</title>
+  
   <subtitle>某RD的開發筆記</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.gorendo.org/"/>
-  <updated>2017-08-13T06:35:47.000Z</updated>
+  <updated>2018-09-17T10:56:08.331Z</updated>
   <id>http://blog.gorendo.org/</id>
   
   <author>
@@ -20,15 +21,13 @@
     <link href="http://blog.gorendo.org/2016/10/php-mac-atom-visual-studio-code-php.html/"/>
     <id>http://blog.gorendo.org/2016/10/php-mac-atom-visual-studio-code-php.html/</id>
     <published>2016-10-26T02:24:00.000Z</published>
-    <updated>2017-08-13T06:35:47.000Z</updated>
+    <updated>2018-09-17T10:56:08.331Z</updated>
     
     <summary type="html">
     
       &lt;p&gt;依php版本安裝 xdebug&lt;/p&gt;
-&lt;pre&gt;brew install homebrew/php/phpXX-xdebug
-&lt;/pre&gt;
-在 /usr/local/etc/php/{x.y}/conf.d/ext-xdebug.ini) 內加上
-&lt;pre&gt;xdebug.
+&lt;p&gt;&lt;pre&gt;brew install homebrew/php/phpXX-xdebug&lt;br&gt;&lt;/pre&gt;&lt;br&gt;在 /usr/local/etc/php/{x.y}/conf.d/ext-xdebug.ini) 內加上&lt;/p&gt;
+&lt;p&gt;&lt;pre&gt;xdebug.remote_enable=1&lt;br&gt;xdebug.remote_host=127.0.0.1&lt;br&gt;xdebug.remote_connect_back=1    # Not safe for production servers&lt;br&gt;xdebug.remote_port=9000&lt;br&gt;xdebug.remote_handler=dbgp&lt;br&gt;xdebug.remote_mode=req&lt;br&gt;xdebug.remote_autostart=true&lt;br&gt;&lt;/pre&gt;&lt;br&gt;
     
     </summary>
     
@@ -50,7 +49,10 @@
     
     <summary type="html">
     
-      &lt;p&gt;方法1： 先關掉該app 設定→防火牆→進階→允許名單找到該app移掉 再打開app 同意  方法2： 開啟終端機輸入 (可以先輸入codesign -v 後把app檔拉到終端機畫面會自動產生路徑) &lt;pre&gt;&lt;br&gt;codesign -v /Applications/xx
+      
+      
+        &lt;p&gt;方法1： 先關掉該app 設定→防火牆→進階→允許名單找到該app移掉 再打開app 同意  方法2： 開啟終端機輸入 (可以先輸入codesign -v 後把app檔拉到終端機畫面會自動產生路徑) &lt;pre&gt;&lt;br&gt;codesign -v /Applications/xx
+      
     
     </summary>
     
@@ -70,7 +72,9 @@
     
     <summary type="html">
     
-      &lt;p&gt;用名稱呼&lt;/p&gt;
+      
+      
+        &lt;p&gt;用名稱呼&lt;/p&gt;
 &lt;pre&gt;function run1($callback)
 {
  $callback(&#39;123&#39;);
@@ -82,6 +86,7 @@ function funA($val)
 }
 
 run1(&#39;by run1&#39;);//funA:by run
+      
     
     </summary>
     
@@ -101,11 +106,14 @@ run1(&#39;by run1&#39;);//funA:by run
     
     <summary type="html">
     
-      &lt;p&gt;直接設 setClickListener 沒反應&lt;br&gt;要加上&lt;/p&gt;
+      
+      
+        &lt;p&gt;直接設 setClickListener 沒反應&lt;br&gt;要加上&lt;/p&gt;
 &lt;pre&gt;    private OnClickListener listener;
 
     @Override
     public boolean dispatchTouchEvent(Motio
+      
     
     </summary>
     
@@ -121,11 +129,11 @@ run1(&#39;by run1&#39;);//funA:by run
     <link href="http://blog.gorendo.org/2015/06/errorexecution-failed-for-task.html/"/>
     <id>http://blog.gorendo.org/2015/06/errorexecution-failed-for-task.html/</id>
     <published>2015-06-04T03:43:00.000Z</published>
-    <updated>2017-08-13T08:49:52.000Z</updated>
+    <updated>2018-09-17T10:55:18.488Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;解決 Error:Execution failed for task ‘preDexDebug’. &amp;gt; com.android.ide.common.process.ProcessException: org.gradle.process.internal.ExecE
+      &lt;p&gt;解決 Error:Execution failed for task ‘preDexDebug’. &amp;gt; com.android.ide.common.process.ProcessException: org.gradle.process.internal.ExecException: Process ‘command &amp;nbsp;finished with non-zero exit value 1&lt;br&gt;
     
     </summary>
     
@@ -145,8 +153,11 @@ run1(&#39;by run1&#39;);//funA:by run
     
     <summary type="html">
     
-      &lt;h3 id=&quot;Layout-Xml&quot;&gt;&lt;a href=&quot;#Layout-Xml&quot; class=&quot;headerlink&quot; title=&quot;Layout Xml&quot;&gt;&lt;/a&gt;Layout Xml&lt;/h3&gt;&lt;pre&gt;
+      
+      
+        &lt;h3 id=&quot;Layout-Xml&quot;&gt;&lt;a href=&quot;#Layout-Xml&quot; class=&quot;headerlink&quot; title=&quot;Layout Xml&quot;&gt;&lt;/a&gt;Layout Xml&lt;/h3&gt;&lt;pre&gt;
                 &amp;#x3C;android.suppo
+      
     
     </summary>
     
@@ -166,8 +177,11 @@ run1(&#39;by run1&#39;);//funA:by run
     
     <summary type="html">
     
-      &lt;p&gt;因為 UI 操作不能在其它 thread 做&lt;br&gt;直接用 activity 提供的 runOnUiThread 做掉&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div c
+      
+      
+        &lt;p&gt;因為 UI 操作不能在其它 thread 做&lt;br&gt;直接用 activity 提供的 runOnUiThread 做掉&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span 
+      
     
     </summary>
     
@@ -187,10 +201,13 @@ run1(&#39;by run1&#39;);//funA:by run
     
     <summary type="html">
     
-      &lt;p&gt;4.6 新進的 EventSystem 事件系統 可以用在 UI 事件外也可以用在普通的 GameObject&lt;br&gt;終於不用自已打射線偵測點擊了&lt;/p&gt;
+      
+      
+        &lt;p&gt;4.6 新進的 EventSystem 事件系統 可以用在 UI 事件外也可以用在普通的 GameObject&lt;br&gt;終於不用自已打射線偵測點擊了&lt;/p&gt;
 &lt;p&gt;環境 4.6.0b17 因為才beta版所以變動的機率很大&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;對 UI&amp;nbsp;
+      
     
     </summary>
     
@@ -210,10 +227,13 @@ run1(&#39;by run1&#39;);//funA:by run
     
     <summary type="html">
     
-      &lt;p&gt;4.6 新進的 EventSystem 事件系統 可以用在 UI 事件外也可以用在普通的 GameObject&lt;br&gt;終於不用自已打射線偵測點擊了&lt;/p&gt;
+      
+      
+        &lt;p&gt;4.6 新進的 EventSystem 事件系統 可以用在 UI 事件外也可以用在普通的 GameObject&lt;br&gt;終於不用自已打射線偵測點擊了&lt;/p&gt;
 &lt;p&gt;環境 4.6.0b17 因為才beta版所以變動的機率很大&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;對 UI&amp;nbsp;
+      
     
     </summary>
     
@@ -233,8 +253,11 @@ run1(&#39;by run1&#39;);//funA:by run
     
     <summary type="html">
     
-      &lt;p&gt;環境 OSX 10.9 , Cocos2d-x 3.2&lt;/p&gt;
-&lt;p&gt;下載Cocos2d-x &lt;a href=&quot;http://cocos2d-x.org/download&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://cocos2d-x.or
+      
+      
+        &lt;p&gt;環境 OSX 10.9 , Cocos2d-x 3.2&lt;/p&gt;
+&lt;p&gt;下載Cocos2d-x &lt;a href=&quot;http://cocos2d-x.org/download&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;http://cocos2d-x.or
+      
     
     </summary>
     
@@ -256,9 +279,12 @@ run1(&#39;by run1&#39;);//funA:by run
     
     <summary type="html">
     
-      &lt;p&gt;物件打包成 AssetBundle 後有的物件上的材質的shader 會 lost 變一塊紫色&lt;/p&gt;
+      
+      
+        &lt;p&gt;物件打包成 AssetBundle 後有的物件上的材質的shader 會 lost 變一塊紫色&lt;/p&gt;
 &lt;pre&gt;//assetbundle後shader會lost的處理
 gameObject.renderer.material.shader =  Shader.Find(
+      
     
     </summary>
     
@@ -280,9 +306,12 @@ gameObject.renderer.material.shader =  Shader.Find(
     
     <summary type="html">
     
-      &lt;p&gt;物件打包成 AssetBundle 後有的物件上的材質的shader 會 lost 變一塊紫色&lt;/p&gt;
+      
+      
+        &lt;p&gt;物件打包成 AssetBundle 後有的物件上的材質的shader 會 lost 變一塊紫色&lt;/p&gt;
 &lt;pre&gt;//assetbundle後shader會lost的處理
 gameObject.renderer.material.shader =  Shader.Find(
+      
     
     </summary>
     
@@ -304,11 +333,14 @@ gameObject.renderer.material.shader =  Shader.Find(
     
     <summary type="html">
     
-      &lt;p&gt;安裝 Homebrew&lt;/p&gt;
+      
+      
+        &lt;p&gt;安裝 Homebrew&lt;/p&gt;
 &lt;pre&gt;ruby -e &quot;$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)&quot;
 &lt;/pre&gt;安裝 nginx
 &lt;pre&gt;brew install nginx
 &lt;
+      
     
     </summary>
     
@@ -328,8 +360,11 @@ gameObject.renderer.material.shader =  Shader.Find(
     
     <summary type="html">
     
-      &lt;p&gt;&lt;a href=&quot;http://localhost:32772/wp-content/uploads/2014/02/Navigation.png&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;&lt;img src=&quot;&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+      
+      
+        &lt;p&gt;&lt;a href=&quot;http://localhost:32772/wp-content/uploads/2014/02/Navigation.png&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;&lt;img src=&quot;&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;
+      
     
     </summary>
     
@@ -351,10 +386,13 @@ gameObject.renderer.material.shader =  Shader.Find(
     
     <summary type="html">
     
-      &lt;p&gt;簡單的讓 UIImageView 變成 ImageButton  imgBtn.png 放在 Resources 資料夾&lt;/p&gt;
+      
+      
+        &lt;p&gt;簡單的讓 UIImageView 變成 ImageButton  imgBtn.png 放在 Resources 資料夾&lt;/p&gt;
 &lt;pre&gt;
 //生成 UIImage 並指定圖片
 UIImage *image = [UIImage imageNamed:@&quot;imgBtn.p
+      
     
     </summary>
     
@@ -374,12 +412,15 @@ UIImage *image = [UIImage imageNamed:@&quot;imgBtn.p
     
     <summary type="html">
     
-      &lt;p&gt;最近工作時常常要按 f11 時按沒有&lt;/p&gt;
+      
+      
+        &lt;p&gt;最近工作時常常要按 f11 時按沒有&lt;/p&gt;
 &lt;p&gt;打開終端機&lt;/p&gt;
 &lt;pre&gt;
 killall Dock
 &lt;/pre&gt;
 
+      
     
     </summary>
     
@@ -399,11 +440,14 @@ killall Dock
     
     <summary type="html">
     
-      &lt;p&gt;開啟另一個Activity ( A 呼 B&lt;/p&gt;
+      
+      
+        &lt;p&gt;開啟另一個Activity ( A 呼 B&lt;/p&gt;
 &lt;pre&gt;Intent intent = new Intent();
 intent.setClass(A.this, B.class);
 startActivity(intent);&lt;/pre&gt;
 不同 Activity 之
+      
     
     </summary>
     
@@ -423,10 +467,13 @@ startActivity(intent);&lt;/pre&gt;
     
     <summary type="html">
     
-      &lt;pre&gt; static CCRenderTexture* createStroke(CCSprite* label, int size, ccColor3B color, GLubyte opacity)
+      
+      
+        &lt;pre&gt; static CCRenderTexture* createStroke(CCSprite* label, int size, ccColor3B color, GLubyte opacity)
  {
 
    CCRenderTexture* rt = CCRende
+      
     
     </summary>
     
@@ -450,9 +497,12 @@ startActivity(intent);&lt;/pre&gt;
     
     <summary type="html">
     
-      &lt;p&gt;這個範例會使用 StreamReader 類別的 ReadLine 方法，將文字檔的內容一次一行讀入字串中。每一個文字行都會儲存到字串 line 中並顯示在螢幕上。&lt;/p&gt;
+      
+      
+        &lt;p&gt;這個範例會使用 StreamReader 類別的 ReadLine 方法，將文字檔的內容一次一行讀入字串中。每一個文字行都會儲存到字串 line 中並顯示在螢幕上。&lt;/p&gt;
 &lt;p&gt;範例&lt;br&gt;&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;figure class=&quot;hi
+      
     
     </summary>
     
@@ -472,10 +522,13 @@ startActivity(intent);&lt;/pre&gt;
     
     <summary type="html">
     
-      &lt;p&gt;Unity 各平台檔案路徑 Path&lt;/p&gt;
+      
+      
+        &lt;p&gt;Unity 各平台檔案路徑 Path&lt;/p&gt;
 &lt;p&gt;Application.dataPath&lt;br&gt;包含遊戲資料文件夾的路徑&lt;br&gt;只可讀，放置一些資源資料&lt;/p&gt;
 &lt;pre&gt;OSX:       ProjectPath/Assets/
 Android:   /data/a
+      
     
     </summary>
     

@@ -1,18 +1,1267 @@
-<!DOCTYPE html><html lang="en"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description"><title>小伍手札 | 某RD的開發筆記</title><link rel="stylesheet" type="text/css" href="/css/style.css?v=0.0.0"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/normalize/7.0.0/normalize.min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/1.0.0/pure-min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/1.0.0/grids-responsive-min.css"><link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"><link rel="alternate" type="application/atom+xml" href="/atom.xml"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">小伍手札</h1><a id="logo" href="/.">小伍手札</a><p class="description">某RD的開發筆記</p></div><div id="nav-menu"><a href="/." class="current"><i class="fa fa-home"> Home</i></a><a href="/archives/"><i class="fa fa-archive"> Archive</i></a><a href="/about/"><i class="fa fa-user"> About</i></a><a href="/atom.xml"><i class="fa fa-rss"> RSS</i></a></div></div><div id="layout" class="pure-g"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title"><a href="/2011/08/php-class-and-object.html/">[php] Class and Object類別與物件</a></h1><div class="post-meta">2011-08-08</div><div class="post-content"><pre>
+<!DOCTYPE html>
+<!-- layout.ejs -->
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+  <title>
+    
+    小伍手札
+  </title>
+
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+    crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+    crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="/css/styles.css">
+  <script src="/js/script.js"></script>
+</head>
+
+<body>
+
+  <button type="button" id="asidebtn" class="btn btn-primary btn-sm" data-toggle="offcanvas"></button>
+  <script>
+  </script>
+  <section class="border">
+    <header>
+
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/">
+          <img src="https://www.gravatar.com/avatar/46c6cc40826824204a70f22ee75c3752?s=50" alt="">
+        </a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li id="blog-title" class="nav-item active">
+              <a class="nav-link" href="/">
+                <h1>
+                  小伍手札 <span class="sr-only">(current)</span>
+              </a>
+              </h1>
+            </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0" action="https://google.com/search" method="get" onSubmit="Gsitesearch(this)"
+            target="_blank">
+            <input name="q" type="hidden" />
+            <input name="qfront" class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+        </div>
+      </nav>
+    </header>
+
+    <div class="row border">
+      <div class="col col-lg-9 border">
+        <!-- index.ejs -->
+<!-- _partial/archive -->
+_partial/archive.ejs
+
+  pagination == 2
+  
+    <!-- article.ejs -->
+<article id="post-php-class-and-object.html" class="border post">
+    
+    <h2>
+      <a class="article-title" href="/2011/08/php-class-and-object.html/">[php] Class and Object類別與物件</a>
+    </h2>
+
+
+
+  <div class="article-meta">
+    <!-- date.ejs -->
+<div class="article-datetime">
+  date.ejs
+  <a href="/2011/08/php-class-and-object.html/" class="article-date"><time datetime="2011-08-08T02:30:00.000Z" itemprop="datePublished">2011-08-08</time></a>
+</div>
+
+    <!-- category.ejs -->
+
+  <div class="article-category">
+      category.ejs
+    分類:
+    <a class="article-category-link" href="/categories/PHP/">PHP</a>
+  </div>
+
+
+    
+  TAG:
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PHP/">PHP</a></li></ul>
+
+
+  </div>
+  <div class="article-inner border">
+    <div class="article-entry border">
+      
+
+        
+        
+          <pre>
 class MyClass {
 //宣告常數
 const PI = "3.1415926535";
-</div><p class="readmore"><a href="/2011/08/php-class-and-object.html/">Read More</a></p></div><div class="post"><h1 class="post-title"><a href="/2011/08/php-session.html/">[php] Session</a></h1><div class="post-meta">2011-08-07</div><div class="post-content"><p>需要在echo和HTML語法顯示之前start</p>
+
+//宣告成員
+var $var1 = 'test';
+var $var2;
+
+//靜態成員
+static $classname = 'MyClass';
+
+//建構子
+funtion __construct() {
+    echo 'MyClass被建立';
+}
+//解構子
+funtion __destruct() {
+    echo 'MyClass被已解構';
+}
+//定義方法
+funtion showHelloWorld() {
+    echo 'HelloWorld!!';
+}
+
+//
+funtion sum($a, $b) {
+return $a + $b ;
+}
+
+//取得靜態成員svar1的值
+funtion getsvar1($a, $b) {
+    return MyClass::$svar1;
+}
+}
+</pre><a name="more"></a><pre>
+$myclass1 = new MyClass();
+echo myclass1 -&gt; var1;&nbsp;//test
+$myclass1 -&gt; sum(1,3);//4
+echo MyClass::$classname ; //'MyClass'
+echo MyClass::PI ; //'3.14......'
+</pre>
+
+        
+      
+    </div>
+
+    
+      
+
+    
+
+    <footer class="article-footer border">
+      <a data-url="http://blog.gorendo.org/2011/08/php-class-and-object.html/" data-id="cjm64u124005ug6xuqlem3s39" class="article-share-link">
+        <i class="fa fa-share"></i> Share
+      </a>
+      
+        <a href="http://blog.gorendo.org/2011/08/php-class-and-object.html/#disqus_thread" class="article-comment-link">
+          <i class="fa fa-comment"></i> Comments
+        </a>
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+<!-- article.ejs end -->
+  
+    <!-- article.ejs -->
+<article id="post-php-session.html" class="border post">
+    
+    <h2>
+      <a class="article-title" href="/2011/08/php-session.html/">[php] Session</a>
+    </h2>
+
+
+
+  <div class="article-meta">
+    <!-- date.ejs -->
+<div class="article-datetime">
+  date.ejs
+  <a href="/2011/08/php-session.html/" class="article-date"><time datetime="2011-08-07T04:30:00.000Z" itemprop="datePublished">2011-08-07</time></a>
+</div>
+
+    <!-- category.ejs -->
+
+  <div class="article-category">
+      category.ejs
+    分類:
+    <a class="article-category-link" href="/categories/PHP/">PHP</a>
+  </div>
+
+
+    
+  TAG:
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PHP/">PHP</a></li></ul>
+
+
+  </div>
+  <div class="article-inner border">
+    <div class="article-entry border">
+      
+
+        
+        
+          <p>需要在echo和HTML語法顯示之前start</p>
 <p>//開啟Session功能<br>session_start();<a name="more"></a></p>
-<p>//建立Session user變數 值為gonex45<br>$_SESSION[‘user’]  = ‘gonex45’;</p></div><p class="readmore"><a href="/2011/08/php-session.html/">Read More</a></p></div><div class="post"><h1 class="post-title"><a href="/2011/08/php-cookie.html/">[php] Cookie 用戶端儲存資料</a></h1><div class="post-meta">2011-08-07</div><div class="post-content"><p>存放帳號，過期日期，購物車等 (密碼不適用，會被看光)</p>
+<p>//建立Session user變數 值為gonex45<br>$_SESSION[‘user’]  = ‘gonex45’;</p>
+<p>//刪除Session<br>unset($_SESSION[‘user’]);</p>
+<p>//刪除所有Session<br>session_unset();</p>
+<p>&nbsp;</p>
+<p>//後期的IE7以上會禁止沒有宣告存取網域的session<br>session_set_cookie_params(3600, ‘/‘,$_SERVER[‘SERVER_NAME’]);</p>
+
+        
+      
+    </div>
+
+    
+      
+
+    
+
+    <footer class="article-footer border">
+      <a data-url="http://blog.gorendo.org/2011/08/php-session.html/" data-id="cjm64u12r007bg6xu3p6ygn8h" class="article-share-link">
+        <i class="fa fa-share"></i> Share
+      </a>
+      
+        <a href="http://blog.gorendo.org/2011/08/php-session.html/#disqus_thread" class="article-comment-link">
+          <i class="fa fa-comment"></i> Comments
+        </a>
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+<!-- article.ejs end -->
+  
+    <!-- article.ejs -->
+<article id="post-php-cookie.html" class="border post">
+    
+    <h2>
+      <a class="article-title" href="/2011/08/php-cookie.html/">[php] Cookie 用戶端儲存資料</a>
+    </h2>
+
+
+
+  <div class="article-meta">
+    <!-- date.ejs -->
+<div class="article-datetime">
+  date.ejs
+  <a href="/2011/08/php-cookie.html/" class="article-date"><time datetime="2011-08-07T04:15:00.000Z" itemprop="datePublished">2011-08-07</time></a>
+</div>
+
+    <!-- category.ejs -->
+
+  <div class="article-category">
+      category.ejs
+    分類:
+    <a class="article-category-link" href="/categories/PHP/">PHP</a>
+  </div>
+
+
+    
+  TAG:
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PHP/">PHP</a></li></ul>
+
+
+  </div>
+  <div class="article-inner border">
+    <div class="article-entry border">
+      
+
+        
+        
+          <p>存放帳號，過期日期，購物車等 (密碼不適用，會被看光)</p>
 <p>建立Cookie<br>setcookie(變數名, 變數值, 到期時間的時間戳記-可略)<br><a name="more"></a></p>
 <p>必需在echo() 或HTML輸出前設定</p>
-<p>讀取Cookie</p></div><p class="readmore"><a href="/2011/08/php-cookie.html/">Read More</a></p></div><div class="post"><h1 class="post-title"><a href="/2011/08/php-datetime.html/">[php] Datetime日期時間函式</a></h1><div class="post-meta">2011-08-07</div><div class="post-content"><p>date($format_string)</p>
+<p>讀取Cookie</p>
+<p>echo $_COOKIE[‘name’];</p>
+<p>刪除Cookie</p>
+<p>setcookie(‘name’, 1, time()-10); //時間戳記設成過期即可</p>
+<p>建立Cookie陣列<br>setcookie(“info[name]”, ‘gonex45’, time() + 30<em>60);<br>setcookie(“info[mail]”, <a href="mailto:&#39;gonex45@gmail.com" target="_blank" rel="noopener">&#39;gonex45@gmail.com</a>‘, time() + 30</em>60);</p>
+<p>echo $_COOKIE[‘info’][‘name’] .’的e-mail為’. $_COOKIE[‘info’][‘mail’];</p>
+
+        
+      
+    </div>
+
+    
+      
+
+    
+
+    <footer class="article-footer border">
+      <a data-url="http://blog.gorendo.org/2011/08/php-cookie.html/" data-id="cjm64u121005og6xunge9n6vy" class="article-share-link">
+        <i class="fa fa-share"></i> Share
+      </a>
+      
+        <a href="http://blog.gorendo.org/2011/08/php-cookie.html/#disqus_thread" class="article-comment-link">
+          <i class="fa fa-comment"></i> Comments
+        </a>
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+<!-- article.ejs end -->
+  
+    <!-- article.ejs -->
+<article id="post-php-datetime.html" class="border post">
+    
+    <h2>
+      <a class="article-title" href="/2011/08/php-datetime.html/">[php] Datetime日期時間函式</a>
+    </h2>
+
+
+
+  <div class="article-meta">
+    <!-- date.ejs -->
+<div class="article-datetime">
+  date.ejs
+  <a href="/2011/08/php-datetime.html/" class="article-date"><time datetime="2011-08-07T03:51:00.000Z" itemprop="datePublished">2011-08-07</time></a>
+</div>
+
+    <!-- category.ejs -->
+
+  <div class="article-category">
+      category.ejs
+    分類:
+    <a class="article-category-link" href="/categories/PHP/">PHP</a>
+  </div>
+
+
+    
+  TAG:
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PHP/">PHP</a></li></ul>
+
+
+  </div>
+  <div class="article-inner border">
+    <div class="article-entry border">
+      
+
+        
+        
+          <p>date($format_string)</p>
 <p><pre>echo date(‘Y-m-d h : i : s a’) ; // 2011-08-07 03:38:59 am</pre><br><a name="more"></a></p>
-<p>參數<br>年<br>Y &nbsp; &nbsp;四位數 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 2011<br>y &nbsp; &nbsp;二位數西元年 &nbsp; 11</p></div><p class="readmore"><a href="/2011/08/php-datetime.html/">Read More</a></p></div><div class="post"><h1 class="post-title"><a href="/2011/08/php-string.html/">[php] String字串處理</a></h1><div class="post-meta">2011-08-07</div><div class="post-content"><p>利用php內建的字串函式庫來處理字串</p>
-<p>分割字串<br>$arr = explode(‘/‘, ‘71/12/03’);<br>→$arr[0] = 71 , $arr[1]=12 , $arr[2] = 03<br><a name="more"></a>正則表示式判斷字串(Regular Expression)<br>ereg(‘[A-Za-z]{1}[1-2]{1}[0-9]{8}’, ‘A123456789’); &nbsp;// ture or false</p></div><p class="readmore"><a href="/2011/08/php-string.html/">Read More</a></p></div><div class="post"><h1 class="post-title"><a href="/2011/08/php.html/">[php] 小知識</a></h1><div class="post-meta">2011-08-07</div><div class="post-content"><p>isset($x)<br>檢查$x 是否被定義過</p>
-<p>傳址呼叫<br>function double(&amp;$x){<br>$x *= $x;<br>}<a name="more"></a><br>include()<br>引用錯誤會繼續執行<br>require()<br>引用錯誤會中斷執行<br>include_once() 和 require_once()<br>相同的php檔在同一頁只會被引用一次</p></div><p class="readmore"><a href="/2011/08/php.html/">Read More</a></p></div><div class="post"><h1 class="post-title"><a href="/2011/08/php-10php.html/">[php] 10個php新手應該知道的技巧</a></h1><div class="post-meta">2011-08-06</div><div class="post-content"><p>原文： <a href="http://www.phpbuilder.com/columns/vaska20050722.php3" target="_blank" rel="external">http://www.phpbuilder.com/columns/vaska20050722.php3</a></p></div><p class="readmore"><a href="/2011/08/php-10php.html/">Read More</a></p></div><div class="post"><h1 class="post-title"><a href="/2011/08/libgdx-androiddesktop-game-development.html/">libgdx 遊戲引擎 (Android/desktop game development framework)</a></h1><div class="post-meta">2011-08-04</div><div class="post-content"><p>更新中。。。</p>
+<p>參數<br>年<br>Y &nbsp; &nbsp;四位數 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 2011<br>y &nbsp; &nbsp;二位數西元年 &nbsp; 11</p>
+<p>月<br>F &nbsp; &nbsp;英文名稱 &nbsp; &nbsp; July<br>M &nbsp; &nbsp;英文縮寫 &nbsp; &nbsp; &nbsp;Jan<br>m &nbsp; &nbsp; 二位月份 &nbsp; &nbsp; &nbsp; 08<br>n &nbsp; 月份(不補零) &nbsp; &nbsp;8<br>t &nbsp; &nbsp; &nbsp;當月天數 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 28~31</p>
+<p>日<br>d &nbsp; &nbsp; &nbsp; 二位數日期 &nbsp; &nbsp; &nbsp;01<br>j &nbsp; &nbsp; &nbsp; &nbsp; 不補零日期 &nbsp; &nbsp; &nbsp;1</p>
+<p>時間<br>a &nbsp; &nbsp; &nbsp; 上下午小寫 &nbsp; &nbsp; am pm<br>A &nbsp; &nbsp; 上下午大寫 &nbsp; &nbsp; AM &nbsp;PM<br>g &nbsp; &nbsp; 不補零12小時 &nbsp; 1-12<br>h &nbsp; &nbsp; 12小時 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;01-12<br>G &nbsp; &nbsp; &nbsp;不補零24小時 &nbsp; &nbsp;0-23<br>H &nbsp; &nbsp; 24小時 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;00-23<br>i &nbsp; &nbsp; &nbsp; 分 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;00-59<br>s &nbsp; &nbsp; &nbsp; 秒 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;00-59</p>
+<p>週<br>D &nbsp; &nbsp; &nbsp;英文縮寫<br>I &nbsp; &nbsp; &nbsp; 英文名<br>N &nbsp; &nbsp; 星期 &nbsp; &nbsp; &nbsp; &nbsp; 1(日)~7(六)<br>W &nbsp; &nbsp; 星期 &nbsp; &nbsp; &nbsp; &nbsp;0(日)~6(六)</p>
+<p>時區<br>O &nbsp; &nbsp; &nbsp; &nbsp;與格林威治標準時間時差 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;+0800</p>
+<p>時間戳記</p>
+<p>time()<br>傳回自1970 /01/01 &nbsp;00:00:00 到現在相差秒數</p>
+<p>//顯示 2 小時後的日期時間<br>echo date(‘Y-m-d h : i : s a’, time() + 2 <em> 60 </em> 60);</p>
+<p>取得指定日期時間的時間戳記<br>mktime(hour, minute, second, month, day, year)</p>
+<p>設定時區<br>date_default_timezone_set(‘Asia/Taipei’);</p>
+
+        
+      
+    </div>
+
+    
+      
+
+    
+
+    <footer class="article-footer border">
+      <a data-url="http://blog.gorendo.org/2011/08/php-datetime.html/" data-id="cjm64u125005zg6xudukr6bd7" class="article-share-link">
+        <i class="fa fa-share"></i> Share
+      </a>
+      
+        <a href="http://blog.gorendo.org/2011/08/php-datetime.html/#disqus_thread" class="article-comment-link">
+          <i class="fa fa-comment"></i> Comments
+        </a>
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+<!-- article.ejs end -->
+  
+    <!-- article.ejs -->
+<article id="post-php-string.html" class="border post">
+    
+    <h2>
+      <a class="article-title" href="/2011/08/php-string.html/">[php] String字串處理</a>
+    </h2>
+
+
+
+  <div class="article-meta">
+    <!-- date.ejs -->
+<div class="article-datetime">
+  date.ejs
+  <a href="/2011/08/php-string.html/" class="article-date"><time datetime="2011-08-07T03:26:00.000Z" itemprop="datePublished">2011-08-07</time></a>
+</div>
+
+    <!-- category.ejs -->
+
+  <div class="article-category">
+      category.ejs
+    分類:
+    <a class="article-category-link" href="/categories/PHP/">PHP</a>
+  </div>
+
+
+    
+  TAG:
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PHP/">PHP</a></li></ul>
+
+
+  </div>
+  <div class="article-inner border">
+    <div class="article-entry border">
+      
+
+        
+        
+          <p>利用php內建的字串函式庫來處理字串</p>
+<p>分割字串<br>$arr = explode(‘/‘, ‘71/12/03’);<br>→$arr[0] = 71 , $arr[1]=12 , $arr[2] = 03<br><a name="more"></a>正則表示式判斷字串(Regular Expression)<br>ereg(‘[A-Za-z]{1}[1-2]{1}[0-9]{8}’, ‘A123456789’); &nbsp;// ture or false</p>
+<p>取代字串內容<br>echo str_replace(‘技術學院’, ‘科技大學’, ‘國立台中技術學院’); &nbsp;//國立台中科技大學<br>ereg_replace()//正則表示式版</p>
+<p>格式化字串<br>echo sprintf(‘你好 %s 現在已經 %d 點了’ , ‘帥哥’ , 7);</p>
+<p>清除左右空白<br>trim(string)</p>
+<p>nl2br()<br>把換行字元取代成&lt;br /&gt;</p>
+<p>htmlspecialchars($str)<br>把&amp; ‘ “ &lt; &gt; …… 取代成html符號</p>
+<p>htmlentities($str)<br>把所有字元轉成html實體(含中文什麼的都會被轉掉)</p>
+
+        
+      
+    </div>
+
+    
+      
+
+    
+
+    <footer class="article-footer border">
+      <a data-url="http://blog.gorendo.org/2011/08/php-string.html/" data-id="cjm64u12o0074g6xu1yf2h9fr" class="article-share-link">
+        <i class="fa fa-share"></i> Share
+      </a>
+      
+        <a href="http://blog.gorendo.org/2011/08/php-string.html/#disqus_thread" class="article-comment-link">
+          <i class="fa fa-comment"></i> Comments
+        </a>
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+<!-- article.ejs end -->
+  
+    <!-- article.ejs -->
+<article id="post-php.html" class="border post">
+    
+    <h2>
+      <a class="article-title" href="/2011/08/php.html/">[php] 小知識</a>
+    </h2>
+
+
+
+  <div class="article-meta">
+    <!-- date.ejs -->
+<div class="article-datetime">
+  date.ejs
+  <a href="/2011/08/php.html/" class="article-date"><time datetime="2011-08-07T02:56:00.000Z" itemprop="datePublished">2011-08-07</time></a>
+</div>
+
+    <!-- category.ejs -->
+
+  <div class="article-category">
+      category.ejs
+    分類:
+    <a class="article-category-link" href="/categories/PHP/">PHP</a>
+  </div>
+
+
+    
+  TAG:
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PHP/">PHP</a></li></ul>
+
+
+  </div>
+  <div class="article-inner border">
+    <div class="article-entry border">
+      
+
+        
+        
+          <p>isset($x)<br>檢查$x 是否被定義過</p>
+<p>傳址呼叫<br>function double(&amp;$x){<br>$x *= $x;<br>}<a name="more"></a><br>include()<br>引用錯誤會繼續執行<br>require()<br>引用錯誤會中斷執行<br>include_once() 和 require_once()<br>相同的php檔在同一頁只會被引用一次</p>
+<p>nl2br()<br>把換行字元取代成&lt;br /&gt;</p>
+<p>==<br>值相等為真</p>
+<p>===<br>值和型態相等才為真</p>
+<p>foreach( $arr as $value){<br>echo $value;<br>}</p>
+<p>foreach( $students as $name =&gt; $score){<br>echo “$name 考了 $score 分&lt;br /&gt;”;<br>}</p>
+<p>die($error_msg)<br>exit($error_msg)<br>中斷執行並顯示訊息</p>
+<p>header() 設定HTTP 協定表頭<br>//網頁轉向到google<br>header(‘Location: <a href="http://www.google.com&#39;)" target="_blank" rel="noopener">http://www.google.com&#39;)</a>;<br>//設定網頁是utf-8<br>header(‘Content-Type: text/html; charset=utf-8’);</p>
+<p>測試變數</p>
+<p>isset($var) //是否被設定<br>empty ($var) //是否為0或空值<br>is_array($var) //是否 為陣列<br>is_int($var) //是否為int<br>is_null($var) //是否為null<br>is_numeric($var) //是否為數字或數字形式的字串<br>is_string($var) //是否 為字串</p>
+<p>unset($var) //刪除變數</p>
+<p>亂數<br>mt_rand(1,100) //隨機產生1-100   (windows最小0 最大32768)</p>
+<p><strong>FILE</strong> 與 <strong>LINE</strong>，分別代表目前正在被直譯執行的檔案名稱與執行的行數</p>
+<p>&nbsp;</p>
+<p>//////2011/8/28///////////////</p>
+<pre>使用 ip2long() 和 long2ip() 函數來把 IP 地址轉化成整型存儲到數據庫里。這種方法把存儲空間降到了接近四分之一
+
+在驗證 email 地址的時候使用 checkdnsrr() 函數驗證域名是否存在。
+
+.使用 error_reporting(0) 函數來防止用戶看到潛在的敏感錯誤信息。]在理想情況下，發布伺服器應該在 php.ini 里完全禁止。但是如果你用的是一個共享的 web 伺服器的話，你沒有自己的 php.ini 文件，那么這種情況下你最好的選擇就是在所有腳本的第一行前加上 error_reporting(0);（或者使用 require_once() 方法）。這就能夠在出錯的時候完全屏蔽敏感的 SQL 查詢語句和路徑名。
+
+.在網數據庫中存儲很大的字符串之前使用 gzcompress() 和 gzuncompress() 來顯式的壓縮/解壓字符串。這個 PHP 內置函數使用 gzip 算法，可以壓縮普通文本達 90%。
+
+</pre>
+
+        
+      
+    </div>
+
+    
+      
+
+    
+
+    <footer class="article-footer border">
+      <a data-url="http://blog.gorendo.org/2011/08/php.html/" data-id="cjm64u12h006mg6xuv6gh9pod" class="article-share-link">
+        <i class="fa fa-share"></i> Share
+      </a>
+      
+        <a href="http://blog.gorendo.org/2011/08/php.html/#disqus_thread" class="article-comment-link">
+          <i class="fa fa-comment"></i> Comments
+        </a>
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+<!-- article.ejs end -->
+  
+    <!-- article.ejs -->
+<article id="post-php-10php.html" class="border post">
+    
+    <h2>
+      <a class="article-title" href="/2011/08/php-10php.html/">[php] 10個php新手應該知道的技巧</a>
+    </h2>
+
+
+
+  <div class="article-meta">
+    <!-- date.ejs -->
+<div class="article-datetime">
+  date.ejs
+  <a href="/2011/08/php-10php.html/" class="article-date"><time datetime="2011-08-06T04:29:00.000Z" itemprop="datePublished">2011-08-06</time></a>
+</div>
+
+    <!-- category.ejs -->
+
+  <div class="article-category">
+      category.ejs
+    分類:
+    <a class="article-category-link" href="/categories/PHP/">PHP</a>
+  </div>
+
+
+    
+  TAG:
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PHP/">PHP</a></li></ul>
+
+
+  </div>
+  <div class="article-inner border">
+    <div class="article-entry border">
+      
+
+        
+        
+          <p>原文： <a href="http://www.phpbuilder.com/columns/vaska20050722.php3" target="_blank" rel="noopener">http://www.phpbuilder.com/columns/vaska20050722.php3</a></p>
+<h3 id="Tip-1-MySQL-連結-Class"><a href="#Tip-1-MySQL-連結-Class" class="headerlink" title="Tip 1: MySQL 連結 Class"></a>Tip 1: MySQL 連結 Class</h3><p>[php]class DB {<br>    function DB() {<br>        $this-&gt;host = &quot;localhost&quot;; // your host<br>        $this-&gt;db = &quot;myDatabase&quot;; // your database<br>        $this-&gt;user = &quot;root&quot;; // your username<br>        $this-&gt;pass = &quot;mysql&quot;; // your password</p>
+<pre><code>$this-&amp;gt;link = mysql_connect($this-&amp;gt;host, $this-&amp;gt;user,
+</code></pre><p>$this-&gt;pass);<br>        mysql_select_db($this-&gt;db);<br>    }<br>}</p>
+<p>// 在你需要開始使用資料庫的地方(記得先include起來)<br>$db = new $DB;[/php]</p>
+<h3 id="只要更改變數就可以馬上套用，讓你的程式碼更乾淨。"><a href="#只要更改變數就可以馬上套用，讓你的程式碼更乾淨。" class="headerlink" title="只要更改變數就可以馬上套用，讓你的程式碼更乾淨。"></a>只要更改變數就可以馬上套用，讓你的程式碼更乾淨。</h3><p>Tip 2: 安全性 (Dealing with Magic Quotes)</p>
+<p><a name="more"></a></p>
+<pre> 
+
+magic quotes .... 不大懂
+SQL injection 注入：在使用者能輸入的地方動手腳，如文字方塊
+regular expressions 利用正規表示式檢查變數</pre>
+
+<h3 id="Tip-3-使用mysql-real-escape-string安全的查詢資料庫-Safely-Query-Database-with-mysql-real-escape-string"><a href="#Tip-3-使用mysql-real-escape-string安全的查詢資料庫-Safely-Query-Database-with-mysql-real-escape-string" class="headerlink" title="Tip 3: 使用mysql_real_escape_string安全的查詢資料庫 (Safely Query Database with mysql_real_escape_string)"></a>Tip 3: 使用mysql_real_escape_string安全的查詢資料庫 (Safely Query Database with mysql_real_escape_string)</h3><p>[php]function escapeString($post) {<br>    if (phpversion() &gt;= ‘4.3.0’) {<br>        return array_map(‘mysql_real_escape_string’,$post);<br>    } else {<br>        return array_map(‘mysql_escape_string’,$post);<br>    }<br>}[/php]</p>
+<h3 id="Tip-4-除錯-Debugging"><a href="#Tip-4-除錯-Debugging" class="headerlink" title="Tip 4: 除錯 (Debugging)"></a>Tip 4: 除錯 (Debugging)</h3><p>[php]//禁用錯誤報告<br>error_reporting(0);<br>//報告運行時錯誤<br>error_reporting(E_ERROR | E_WARNING | E_PARSE);<br>//報告所有錯誤<br>error_reporting(E_ALL);<br>//印出物件、陣列內容<br>print_r($result); exit;[/php]</p>
+<h3 id="Tip-5-編寫函數和類別-Writing-Functions-and-Classes"><a href="#Tip-5-編寫函數和類別-Writing-Functions-and-Classes" class="headerlink" title="Tip 5: 編寫函數和類別 - Writing Functions (and Classes)"></a>Tip 5: 編寫函數和類別 - Writing Functions (and Classes)</h3><h3 id="Tip-6-單引號和雙引號-Single-and-double-quotes"><a href="#Tip-6-單引號和雙引號-Single-and-double-quotes" class="headerlink" title="Tip 6: 單引號和雙引號 - Single and double quotes"></a>Tip 6: 單引號和雙引號 - Single and double quotes</h3><p>$abc = 1; echo ‘$abc’; //印出$abc echo “$abc”; //印出1 只是單純字串用單引號效率會比較好。</p>
+<h3 id="Tip-7-撰寫風格-Problems-of-style-讓寫出來的程式碼更易讀、易除錯。"><a href="#Tip-7-撰寫風格-Problems-of-style-讓寫出來的程式碼更易讀、易除錯。" class="headerlink" title="Tip 7: 撰寫風格 - Problems of style 讓寫出來的程式碼更易讀、易除錯。"></a>Tip 7: 撰寫風格 - Problems of style 讓寫出來的程式碼更易讀、易除錯。</h3><h3 id="Tip-8-三元運算符-Ternary-Operator"><a href="#Tip-8-三元運算符-Ternary-Operator" class="headerlink" title="Tip 8: 三元運算符 - Ternary Operator"></a>Tip 8: 三元運算符 - Ternary Operator</h3><p>讓程式碼精簡、更快(?) echo ( true ? ‘true’ : false ? ‘t’ : ‘f’ );</p>
+<h3 id="Tip-9-安全查詢-Safe-Queries"><a href="#Tip-9-安全查詢-Safe-Queries" class="headerlink" title="Tip 9: 安全查詢 - Safe Queries"></a>Tip 9: 安全查詢 - Safe Queries</h3><p>[php]// returns an array of records<br>function fetchArray($query=’’)<br>{<br>    if ($result = safeQuery($query)) {<br>        if (mysql_num_rows($result) &gt; 0) {<br>            while ($arr = mysql_fetch_assoc($result)) $rows[] = $arr;<br>            return $rows;<br>        }<br>    }<br>    return false;<br>}</p>
+<p>// returns a single record<br>function fetchRecord($query=’’)<br>{<br>    if ($row = safeQuery($query)) {<br>        if (mysql_num_rows($row) &gt; 0) {<br>            return mysql_fetch_assoc($row);<br>        }<br>    }<br>    return false;<br>}<br>Now, with one simple line of code we can perform our query to return our predicted results.<br>$results = fetchArray(&quot;SELECT id,field1 FROM records&quot;);</p>
+<p>// sample output results<br>if (!$results) {<br>    echo ‘No results.’;<br>} else {<br>    // loop the data<br>    foreach ($results as $result) {<br>        echo $result[‘id’] . ‘ ‘ . $result[‘field1’];<br>    }<br>}[/php]</p>
+<h3 id="Tip-10-成功的策略-A-Strategy-for-Success"><a href="#Tip-10-成功的策略-A-Strategy-for-Success" class="headerlink" title="Tip 10: 成功的策略 - A Strategy for Success"></a>Tip 10: 成功的策略 - A Strategy for Success</h3><p>用紙筆規劃好你的想法!</p>
+
+        
+      
+    </div>
+
+    
+      
+
+    
+
+    <footer class="article-footer border">
+      <a data-url="http://blog.gorendo.org/2011/08/php-10php.html/" data-id="cjm64u11z005lg6xugywa1xd8" class="article-share-link">
+        <i class="fa fa-share"></i> Share
+      </a>
+      
+        <a href="http://blog.gorendo.org/2011/08/php-10php.html/#disqus_thread" class="article-comment-link">
+          <i class="fa fa-comment"></i> Comments
+        </a>
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+<!-- article.ejs end -->
+  
+    <!-- article.ejs -->
+<article id="post-libgdx-androiddesktop-game-development.html" class="border post">
+    
+    <h2>
+      <a class="article-title" href="/2011/08/libgdx-androiddesktop-game-development.html/">libgdx 遊戲引擎 (Android/desktop game development framework)</a>
+    </h2>
+
+
+
+  <div class="article-meta">
+    <!-- date.ejs -->
+<div class="article-datetime">
+  date.ejs
+  <a href="/2011/08/libgdx-androiddesktop-game-development.html/" class="article-date"><time datetime="2011-08-04T14:28:00.000Z" itemprop="datePublished">2011-08-04</time></a>
+</div>
+
+    <!-- category.ejs -->
+
+  <div class="article-category">
+      category.ejs
+    分類:
+    <a class="article-category-link" href="/categories/Android/">Android</a>
+  </div>
+
+
+    
+  TAG:
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Game-Dev/">Game Dev</a></li></ul>
+
+
+  </div>
+  <div class="article-inner border">
+    <div class="article-entry border">
+      
+
+        
+        
+          <p>更新中。。。</p>
 <p>libgdx</p>
-<p>下載：<a href="http://code.google.com/p/libgdx/downloads/list" target="_blank" rel="external">http://code.google.com/p/libgdx/downloads/list</div><p class="readmore"><a href="/2011/08/libgdx-androiddesktop-game-development.html/">Read More</a></p></div><div class="post"><h1 class="post-title"><a href="/2011/07/e3roid-2d-game-library-for-android.html/">[Android] e3roid - 2D game library for Android</a></h1><div class="post-meta">2011-07-27</div><div class="post-content"><iframe allowfullscreen frameborder="0" height="349" src="http://www.youtube.com/embed/GC1cXiTZTzg" width="425"></iframe>
-</div><p class="readmore"><a href="/2011/07/e3roid-2d-game-library-for-android.html/">Read More</a></p></div><div class="post"><h1 class="post-title"><a href="/2011/07/uploadify-jqueryphp.html/">uploadify jQuery+php 多檔上傳套件</a></h1><div class="post-meta">2011-07-26</div><div class="post-content"><p>uploadify<br><a href="http://www.uploadify.com/" target="_blank" rel="external">http://www.uploadify.com</a><br>uploadify 是一個jQuery+php 多檔上傳套件</p>
-<h3 id="基本安裝"><a href="#基本安裝" class="headerlink" title="基本安裝"></a>基本安裝</h3><p><a name="more"></a></p></div><p class="readmore"><a href="/2011/07/uploadify-jqueryphp.html/">Read More</a></p></div><nav class="page-navigator"><a class="extend prev" rel="prev" href="/page/6/">Previous</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/page/8/">8</a><a class="page-number" href="/page/9/">9</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/8/">Next</a></nav></div></div><div class="pure-u-1-4 hidden_mid_and_down"><div id="sidebar"><div class="widget"><form action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank" class="search-form"><input type="text" name="q" maxlength="20" placeholder="Search"/><input type="hidden" name="sitesearch" value="http://blog.gorendo.org"/></form></div><div class="widget"><div class="widget-title"><i class="fa fa-folder-o"> Categories</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/">Android</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/C/">C#</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/C-C/">C/C++</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Cocos2D/">Cocos2D</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/DATABASE/">DATABASE</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Facebook/">Facebook</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Game-Dev/">Game Dev</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JAVA/">JAVA</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Javascript/">Javascript</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Lua/">Lua</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Mac/">Mac</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/PHP/">PHP</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Software/">Software</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Unity/">Unity</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Unity/AssetBundle/">AssetBundle</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/WEB/">WEB</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/WEB/CSS/">CSS</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/iOS/">iOS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery/">jQuery</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/programming/">programming</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/大學專題/">大學專題</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/攝影/">攝影</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/敗家/">敗家</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/程式語言/">程式語言</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-star-o"> Tags</i></div><div class="tagcloud"><a href="/tags/PHP/" style="font-size: 15px;">PHP</a> <a href="/tags/Unity/" style="font-size: 15px;">Unity</a> <a href="/tags/Game-Dev/" style="font-size: 15px;">Game Dev</a> <a href="/tags/JAVA/" style="font-size: 15px;">JAVA</a> <a href="/tags/OpenGL/" style="font-size: 15px;">OpenGL</a> <a href="/tags/Google-API/" style="font-size: 15px;">Google API</a> <a href="/tags/C-C/" style="font-size: 15px;">C/C++</a> <a href="/tags/Cocos2D/" style="font-size: 15px;">Cocos2D</a> <a href="/tags/DATABASE/" style="font-size: 15px;">DATABASE</a> <a href="/tags/MySQL/" style="font-size: 15px;">MySQL</a> <a href="/tags/iOS/" style="font-size: 15px;">iOS</a> <a href="/tags/Xcode/" style="font-size: 15px;">Xcode</a> <a href="/tags/Mac/" style="font-size: 15px;">Mac</a> <a href="/tags/Software/" style="font-size: 15px;">Software</a> <a href="/tags/Lua/" style="font-size: 15px;">Lua</a> <a href="/tags/敗家/" style="font-size: 15px;">敗家</a> <a href="/tags/Android/" style="font-size: 15px;">Android</a> <a href="/tags/ATOM/" style="font-size: 15px;">ATOM</a> <a href="/tags/SEO/" style="font-size: 15px;">SEO</a> <a href="/tags/資訊安全/" style="font-size: 15px;">資訊安全</a> <a href="/tags/opensource/" style="font-size: 15px;">opensource</a> <a href="/tags/程式語言/" style="font-size: 15px;">程式語言</a> <a href="/tags/Facebook/" style="font-size: 15px;">Facebook</a> <a href="/tags/programming/" style="font-size: 15px;">programming</a> <a href="/tags/攝影/" style="font-size: 15px;">攝影</a> <a href="/tags/C/" style="font-size: 15px;">C#</a> <a href="/tags/WINDOWS/" style="font-size: 15px;">WINDOWS</a> <a href="/tags/WEB/" style="font-size: 15px;">WEB</a> <a href="/tags/Javascript/" style="font-size: 15px;">Javascript</a> <a href="/tags/Node-JS/" style="font-size: 15px;">Node.JS</a> <a href="/tags/jQuery/" style="font-size: 15px;">jQuery</a> <a href="/tags/CSS/" style="font-size: 15px;">CSS</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-file-o"> Recent</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/10/php-mac-atom-visual-studio-code-php.html/">[php] 在 Mac 用ATOM / Visual Studio Code 為 php debug</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/mac-xxx.html/">[Mac] 解決 您要讓應用程式 XXX 接受傳入的網路連接嗎 一直跳出</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/10/php-callback.html/">[php] 實作callback</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/06/android-setclicklistener-in-custom-view.html/">[Android] setClickListener in custom view</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/06/errorexecution-failed-for-task.html/">解決 Error:Execution failed for task 'preDexDebug'. > com.android.ide.common.process.ProcessException: org.gradle.process.internal.ExecException: Process 'command  finished with non-zero exit value 1</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/05/android-wiperefreshlayout.html/">[Android] 下拉更新 SwipeRefreshLayout</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/04/android-cant-create-handler-inside.html/">[Android] 處理 Can't create handler inside thread that has not called Looper.prepare()</a></li><li class="post-list-item"><a class="post-list-link" href="/2014/08/unity-ugui-46-eventsystem.html/">[Unity] uGUI (4.6) EventSystem 事件系統 快速上手</a></li><li class="post-list-item"><a class="post-list-link" href="/2014/08/unity-ugui-46-eventsystem.html/">[Unity] uGUI (4.6) EventSystem 事件系統 快速上手</a></li><li class="post-list-item"><a class="post-list-link" href="/2014/06/cocos2d-x-install-mac.html/">[Cocos2d-x] 在 Mac 上設置 Cocos2d-x (Cocos2d-x 3 .x)</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-external-link"> Links</i></div><ul></ul><a href="http://www.example1.com/" title="site-name1" target="_blank">site-name1</a><ul></ul><a href="http://www.example2.com/" title="site-name2" target="_blank">site-name2</a><ul></ul><a href="http://www.example3.com/" title="site-name3" target="_blank">site-name3</a></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">Copyright © 2017 <a href="/." rel="nofollow">小伍手札.</a> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a><a rel="nofollow" target="_blank" href="https://github.com/tufu9441/maupassant-hexo"> Theme</a> by<a rel="nofollow" target="_blank" href="https://github.com/pagecho"> Cho.</a></div></div></div><a id="rocket" href="#top" class="show"></a><script type="text/javascript" src="/js/totop.js?v=0.0.0" async></script><script type="text/javascript" src="//cdn.bootcss.com/fancybox/3.1.20/jquery.fancybox.min.js" async></script><script type="text/javascript" src="/js/fancybox.js?v=0.0.0" async></script><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/fancybox/3.1.20/jquery.fancybox.min.css"><script type="text/javascript" src="/js/codeblock-resizer.js?v=0.0.0"></script><script type="text/javascript" src="/js/smartresize.js?v=0.0.0"></script></div></body></html>
+<p>下載：<a href="http://code.google.com/p/libgdx/downloads/list" target="_blank" rel="noopener">http://code.google.com/p/libgdx/downloads/list
+</a><a href="http://libgdx.l33tlabs.org/" target="_blank" rel="noopener">http://libgdx.l33tlabs.org/</a><br>doc： <a href="http://libgdx.l33tlabs.org/docs/api/" target="_blank" rel="noopener">http://libgdx.l33tlabs.org/docs/api/</a></p>
+<p><a name="more"></a></p>
+<pre>Texture Packer
+材質打包
+利用這個演算法排列的。 [http://www.blackpawn.com/texts/lightmaps/default.html](http://www.blackpawn.com/texts/lightmaps/default.html)</pre>
+![texturepacker.jpg]()![]()
+<pre>
+Hiero
+字體材質產生器</pre>
+字體材質產生器，把文本貼到sample text後
+下面選glyph cache會把重覆的字只留一筆
+
+![hiero.jpg]()![]()
+<pre>
+Particle Editor
+粒子編輯器</pre>
+
+        
+      
+    </div>
+
+    
+      
+
+    
+
+    <footer class="article-footer border">
+      <a data-url="http://blog.gorendo.org/2011/08/libgdx-androiddesktop-game-development.html/" data-id="cjm71voap00001xxuh1q1vtt2" class="article-share-link">
+        <i class="fa fa-share"></i> Share
+      </a>
+      
+        <a href="http://blog.gorendo.org/2011/08/libgdx-androiddesktop-game-development.html/#disqus_thread" class="article-comment-link">
+          <i class="fa fa-comment"></i> Comments
+        </a>
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+<!-- article.ejs end -->
+  
+    <!-- article.ejs -->
+<article id="post-e3roid-2d-game-library-for-android.html" class="border post">
+    
+    <h2>
+      <a class="article-title" href="/2011/07/e3roid-2d-game-library-for-android.html/">[Android] e3roid - 2D game library for Android</a>
+    </h2>
+
+
+
+  <div class="article-meta">
+    <!-- date.ejs -->
+<div class="article-datetime">
+  date.ejs
+  <a href="/2011/07/e3roid-2d-game-library-for-android.html/" class="article-date"><time datetime="2011-07-27T14:26:00.000Z" itemprop="datePublished">2011-07-27</time></a>
+</div>
+
+    <!-- category.ejs -->
+
+  <div class="article-category">
+      category.ejs
+    分類:
+    <a class="article-category-link" href="/categories/Android/">Android</a>
+  </div>
+
+
+    
+  TAG:
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Game-Dev/">Game Dev</a></li></ul>
+
+
+  </div>
+  <div class="article-inner border">
+    <div class="article-entry border">
+      
+
+        
+        
+          <iframe allowfullscreen frameborder="0" height="349" src="http://www.youtube.com/embed/GC1cXiTZTzg" width="425"></iframe>
+
+        
+      
+    </div>
+
+    
+      
+
+    
+
+    <footer class="article-footer border">
+      <a data-url="http://blog.gorendo.org/2011/07/e3roid-2d-game-library-for-android.html/" data-id="cjm64u10i002pg6xu1lc1qxav" class="article-share-link">
+        <i class="fa fa-share"></i> Share
+      </a>
+      
+        <a href="http://blog.gorendo.org/2011/07/e3roid-2d-game-library-for-android.html/#disqus_thread" class="article-comment-link">
+          <i class="fa fa-comment"></i> Comments
+        </a>
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+<!-- article.ejs end -->
+  
+    <!-- article.ejs -->
+<article id="post-uploadify-jqueryphp.html" class="border post">
+    
+    <h2>
+      <a class="article-title" href="/2011/07/uploadify-jqueryphp.html/">uploadify jQuery+php 多檔上傳套件</a>
+    </h2>
+
+
+
+  <div class="article-meta">
+    <!-- date.ejs -->
+<div class="article-datetime">
+  date.ejs
+  <a href="/2011/07/uploadify-jqueryphp.html/" class="article-date"><time datetime="2011-07-25T22:28:00.000Z" itemprop="datePublished">2011-07-26</time></a>
+</div>
+
+    <!-- category.ejs -->
+
+  <div class="article-category">
+      category.ejs
+    分類:
+    <a class="article-category-link" href="/categories/WEB/">WEB</a>
+  </div>
+
+
+    
+  TAG:
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PHP/">PHP</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/WEB/">WEB</a></li></ul>
+
+
+  </div>
+  <div class="article-inner border">
+    <div class="article-entry border">
+      
+
+        
+        
+          <p>uploadify<br><a href="http://www.uploadify.com/" target="_blank" rel="noopener">http://www.uploadify.com</a><br>uploadify 是一個jQuery+php 多檔上傳套件</p>
+<h3 id="基本安裝"><a href="#基本安裝" class="headerlink" title="基本安裝"></a>基本安裝</h3><p><a name="more"></a></p>
+<p>[html language=””]<br>&lt;link href=&quot;/uploadify/uploadify.css&quot; type=&quot;text/css&quot; rel=&quot;stylesheet&quot; /&gt;<br>&lt;script type=&quot;text/javascript&quot; src=&quot;/uploadify/jquery-1.4.2.min.js&quot;&gt;&lt;/script&gt;<br>&lt;script type=&quot;text/javascript&quot; src=&quot;/uploadify/swfobject.js&quot;&gt;&lt;/script&gt;<br>&lt;script type=&quot;text/javascript&quot; src=&quot;/uploadify/jquery.uploadify.v2.1.4.min.js&quot;&gt;&lt;/script&gt;<br>&lt;script type=&quot;text/javascript&quot;&gt;<br>$(document).ready(function() {<br>$(‘#file_upload’).uploadify({<br>‘uploader’ : ‘/uploadify/uploadify.swf’,<br>‘script’ : ‘/uploadify/uploadify.php’,<br>‘cancelImg’ : ‘/uploadify/cancel.png’,<br>‘folder’ : ‘/uploads’,<br>‘auto’ : true<br>});<br>});<br>&lt;/script&gt;<br>[/html]</p>
+<p>[html title=”body”]&lt;input id=’file_upload’ name=’file_upload’ type=’file’ /&gt;[/html]</p>
+<h3 id="OPTION"><a href="#OPTION" class="headerlink" title="OPTION"></a>OPTION</h3><pre>(boolean) auto 啟用自動選項會自動開始上傳文件時添加到文件上傳隊列 'auto'        : true (string)
+buttonImg
+設定上傳按鈕圖片
+'buttonImg'   : '/uploadify/button.jpg'
+
+(string)
+buttonText
+顯示在按鈕上的文字
+
+(string)
+cancelImg
+The path to an image you would like to use as the cancel button.
+
+(string)
+checkScript
+檢查檔案是否已在伺服器上的腳本的路徑
+
+(string)
+displayData
+顯示百分比或每秒幾k
+'percentage' / 'speed' 
+
+(string)
+expressInstall
+The path to the expressInstall.swf file.
+提示安裝flashplayer的樣子 
+
+(string)
+fileDataName
+指定上傳後要傳進哪個變數
+'fileDataName' : 'myuploadify' 後會在php傳進 $_FILES['myuploadify']
+
+(string)
+fileDesc
+顯示檔案類型的描述在"瀏覽"
+'fileDesc'    : '網頁圖片 (.JPG, .GIF, .PNG)' 
+
+<span style="color: #ff0000;">(string) fileExt 限制上傳的附檔名或檔名 'fileExt'     : '*.jpg;*.gif;*.png'</span>
+
+<span style="color: #ff0000;">(string) folder 上傳後存放的資料夾</span>
+
+(integer)
+height
+"瀏覽"按鈕的高度
+
+(boolean)
+hideButton
+隱藏按鈕，主要是之後利用 DIV + css 符合你的顯示風格
+
+(string)
+method
+傳值類型， 'POST' or 'GET' 預設是 'POST'
+
+<span style="color: #ff0000;">(boolean) multi 允許多檔上傳</span>
+
+(string)
+queueID
+設置顯示隊列的DIV之類的容器 ID ，未設置時會在瀏覽按鈕下方產生一個
+
+<span style="color: #ff0000;">(integer) queueSizeLimit 同時可以存在幾個任務(檔案)</span>
+
+(boolean)
+removeCompleted
+自動移動已上傳完的檔案列表，預設true
+(boolean)
+rollover
+顯示按鈕的滑鼠事件，如於按鈕上'HOVER' 未於按鈕上'OFF' 按下'PRESSED'
+
+(string)
+script
+後台處理程序的相對路徑。默認值：uploadify.php
+
+(string)
+scriptAccess
+swf檔的連接方式 預設和正式時用'sameDomain' 最好只在測試時 'always' 或不設(和FLASH不熟…)
+
+(JSON object with mixed types)
+scriptData
+夾帶JSON資料傳送…沒研究
+An object containing name/value pairs with additional information that should be sent to the back-end script when processing a file upload.
+
+(integer)
+simUploadLimit
+同時上傳的檔案數，超過可以排在隊列
+
+<span style="color: #ff0000;">(integer) sizeLimit </span><span style="color: #ff0000;">限制每一個上傳檔案的 bytes 數</span>(string)
+uploader
+uploadify.swf 文件的路徑
+
+(integer)
+width
+瀏覽按鈕的寬度
+
+(string)
+wmode
+設'transparent'可使FLASH的背景變透明
+
+EVENTS 事件
+(function)
+onAllComplete
+隊列所有檔案完成上傳時
+data.
+[filesUploaded] - 總上傳檔案
+[errors] - 錯誤數
+[allBytesLoaded] - 總上傳Bytes
+[speed] - 速度， KB/s
+[html]$(#file_upload).uploadify({
+  'uploader'      : '/uploadify/uploadify.swf',
+  'script'        : '/uploadify/uploadify.php',
+  'cancelImg'     : '/uploadify/cancel.png',
+  'folder'        : '/uploads',
+  'onAllComplete' : function(event,data) {
+      alert(data.filesUploaded + ' 個檔案上傳完成!');
+    }
+});[/html]
+(function)
+onCancel
+有檔案被取消時
+'onCancel'    : function(event,ID,fileObj,data) {
+    alert('The upload of ' + fileObj.name + ' has been canceled!');
+}
+(function)
+onCheck
+任務開始前確認檔案名是否存在，存在時會確認覆蓋
+要搭配'checkScript' : '/uploadify/check.php'
+
+(function)
+onClearQueue
+呼叫 uploadifyClearQueue() 清除任務時
+
+(function)
+onComplete
+單個檔案完成時
+
+(function)
+onError
+發生錯誤時
+
+(function)
+onInit
+Uploadify 讀進來時
+
+(function)
+onOpen
+檔案開始上傳前
+
+(function)
+onProgress
+每次進度條變化時
+
+(function)
+onQueueFull
+任務數量達到 queueSizeLimit 最大上傳數時
+
+(function)
+onSelect
+檔案加入任務時(每個檔案觸發)
+
+(function)
+onSelectOnce
+檔案加入任務時(加入一次觸發一次)
+
+(function)
+onSWFReady
+swf物件讀入時
+
+.uploadify()
+實作一個 Uploadify uploader.
+.uploadifyCancel()
+取消移除上傳中檔案
+
+.uploadifyClearQueue()
+取消移除上傳中任務(所有檔案)
+
+.uploadifySettings()
+修改 目前Uploadify 設定
+
+.uploadifyUpload()
+開始上傳</pre>
+
+        
+      
+    </div>
+
+    
+      
+
+    
+
+    <footer class="article-footer border">
+      <a data-url="http://blog.gorendo.org/2011/07/uploadify-jqueryphp.html/" data-id="cjm64u14600amg6xuyc2ywmyp" class="article-share-link">
+        <i class="fa fa-share"></i> Share
+      </a>
+      
+        <a href="http://blog.gorendo.org/2011/07/uploadify-jqueryphp.html/#disqus_thread" class="article-comment-link">
+          <i class="fa fa-comment"></i> Comments
+        </a>
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+<!-- article.ejs end -->
+  
+
+
+  <div id="page-nav">
+    page-nav TODO
+  </div>
+
+<!-- end _partial/archive -->
+
+<!-- end index.ejs  -->
+      </div>
+      <aside id="aside" class="aside col-10 col-lg-3 border">
+        aside
+        <div class="card bg-primary d-none">
+          <div class="card-header">
+            ABOUT
+          </div>
+          <img class="card-img rounded w-50 mx-auto" src="https://www.gravatar.com/avatar/46c6cc40826824204a70f22ee75c3752?s=240"
+            alt="Card image cap">
+
+          <div class="card-body">
+            <h4 class="card-title">Special title treatment</h4>
+            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+        </div>
+
+
+        
+        <div class="card">
+          <div class="card-header">
+            最新文章
+          </div>
+          <div class="card-body">
+            
+            <li>
+              <a href="/2016/10/php-mac-atom-visual-studio-code-php.html/">
+                [php] 在 Mac 用ATOM / Visual Studio Code 為 php debug</a>
+            </li>
+            
+            <li>
+              <a href="/2015/12/mac-xxx.html/">
+                [Mac] 解決 您要讓應用程式 XXX 接受傳入的網路連接嗎 一直跳出</a>
+            </li>
+            
+            <li>
+              <a href="/2015/10/php-callback.html/">
+                [php] 實作callback</a>
+            </li>
+            
+            <li>
+              <a href="/2015/06/android-setclicklistener-in-custom-view.html/">
+                [Android] setClickListener in custom view</a>
+            </li>
+            
+            <li>
+              <a href="/2015/06/errorexecution-failed-for-task.html/">
+                解決 Error:Execution failed for task &#39;preDexDebug&#39;. &gt; com.android.ide.common.process.ProcessException: org.gradle.process.internal.ExecException: Process &#39;command  finished with non-zero exit value 1</a>
+            </li>
+            
+
+          </div>
+        </div>
+        
+
+        
+
+        <div class="card">
+          <div class="card-header">
+            標籤
+          </div>
+          <div class="card-body">
+
+            
+            <a class="badge badge-primary" href="/tags/PHP/">
+              PHP <span class="badge badge-light">
+                20</span></a>
+            
+            <a class="badge badge-primary" href="/tags/Android/">
+              Android <span class="badge badge-light">
+                17</span></a>
+            
+            <a class="badge badge-primary" href="/tags/WEB/">
+              WEB <span class="badge badge-light">
+                10</span></a>
+            
+            <a class="badge badge-primary" href="/tags/JAVA/">
+              JAVA <span class="badge badge-light">
+                9</span></a>
+            
+            <a class="badge badge-primary" href="/tags/Game-Dev/">
+              Game Dev <span class="badge badge-light">
+                9</span></a>
+            
+            <a class="badge badge-primary" href="/tags/Unity/">
+              Unity <span class="badge badge-light">
+                8</span></a>
+            
+            <a class="badge badge-primary" href="/tags/攝影/">
+              攝影 <span class="badge badge-light">
+                7</span></a>
+            
+            <a class="badge badge-primary" href="/tags/Software/">
+              Software <span class="badge badge-light">
+                4</span></a>
+            
+            <a class="badge badge-primary" href="/tags/C-C/">
+              C/C++ <span class="badge badge-light">
+                3</span></a>
+            
+            <a class="badge badge-primary" href="/tags/Mac/">
+              Mac <span class="badge badge-light">
+                3</span></a>
+            
+            <a class="badge badge-primary" href="/tags/DATABASE/">
+              DATABASE <span class="badge badge-light">
+                3</span></a>
+            
+            <a class="badge badge-primary" href="/tags/MySQL/">
+              MySQL <span class="badge badge-light">
+                3</span></a>
+            
+            <a class="badge badge-primary" href="/tags/jQuery/">
+              jQuery <span class="badge badge-light">
+                3</span></a>
+            
+            <a class="badge badge-primary" href="/tags/程式語言/">
+              程式語言 <span class="badge badge-light">
+                2</span></a>
+            
+            <a class="badge badge-primary" href="/tags/Xcode/">
+              Xcode <span class="badge badge-light">
+                2</span></a>
+            
+            <a class="badge badge-primary" href="/tags/C/">
+              C# <span class="badge badge-light">
+                2</span></a>
+            
+            <a class="badge badge-primary" href="/tags/iOS/">
+              iOS <span class="badge badge-light">
+                2</span></a>
+            
+            <a class="badge badge-primary" href="/tags/Cocos2D/">
+              Cocos2D <span class="badge badge-light">
+                2</span></a>
+            
+            <a class="badge badge-primary" href="/tags/Google-API/">
+              Google API <span class="badge badge-light">
+                2</span></a>
+            
+            <a class="badge badge-primary" href="/tags/Javascript/">
+              Javascript <span class="badge badge-light">
+                2</span></a>
+            
+            <a class="badge badge-primary" href="/tags/opensource/">
+              opensource <span class="badge badge-light">
+                1</span></a>
+            
+            <a class="badge badge-primary" href="/tags/敗家/">
+              敗家 <span class="badge badge-light">
+                1</span></a>
+            
+            <a class="badge badge-primary" href="/tags/programming/">
+              programming <span class="badge badge-light">
+                1</span></a>
+            
+            <a class="badge badge-primary" href="/tags/SEO/">
+              SEO <span class="badge badge-light">
+                1</span></a>
+            
+            <a class="badge badge-primary" href="/tags/CSS/">
+              CSS <span class="badge badge-light">
+                1</span></a>
+            
+            <a class="badge badge-primary" href="/tags/WINDOWS/">
+              WINDOWS <span class="badge badge-light">
+                1</span></a>
+            
+            <a class="badge badge-primary" href="/tags/資訊安全/">
+              資訊安全 <span class="badge badge-light">
+                1</span></a>
+            
+            <a class="badge badge-primary" href="/tags/Facebook/">
+              Facebook <span class="badge badge-light">
+                1</span></a>
+            
+            <a class="badge badge-primary" href="/tags/Lua/">
+              Lua <span class="badge badge-light">
+                1</span></a>
+            
+            <a class="badge badge-primary" href="/tags/Node-JS/">
+              Node.JS <span class="badge badge-light">
+                1</span></a>
+            
+            <a class="badge badge-primary" href="/tags/OpenGL/">
+              OpenGL <span class="badge badge-light">
+                1</span></a>
+            
+            <a class="badge badge-primary" href="/tags/ATOM/">
+              ATOM <span class="badge badge-light">
+                1</span></a>
+            
+          </div>
+        </div>
+        
+
+
+      </aside>
+    </div>
+  </section>
+
+  <footer class="blog-footer">
+    <div class="container">
+      <div id="footer-info" class="inner">
+        &copy;
+        2018
+        gonex45<br>
+        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- end layout.ejs  -->
+</body>
+
+</html>

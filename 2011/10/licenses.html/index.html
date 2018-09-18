@@ -1,29 +1,397 @@
-<!DOCTYPE html><html lang="en"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description"><title>Open Source License 開源協議的比較(BSD,Apache,GPL,LGPL,MIT) (轉) | 小伍手札</title><link rel="stylesheet" type="text/css" href="/css/style.css?v=0.0.0"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/normalize/7.0.0/normalize.min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/1.0.0/pure-min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/1.0.0/grids-responsive-min.css"><link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"><link rel="alternate" type="application/atom+xml" href="/atom.xml"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">Open Source License 開源協議的比較(BSD,Apache,GPL,LGPL,MIT) (轉)</h1><a id="logo" href="/.">小伍手札</a><p class="description">某RD的開發筆記</p></div><div id="nav-menu"><a href="/." class="current"><i class="fa fa-home"> Home</i></a><a href="/archives/"><i class="fa fa-archive"> Archive</i></a><a href="/about/"><i class="fa fa-user"> About</i></a><a href="/atom.xml"><i class="fa fa-rss"> RSS</i></a></div></div><div id="layout" class="pure-g"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title">Open Source License 開源協議的比較(BSD,Apache,GPL,LGPL,MIT) (轉)</h1><div class="post-meta">Oct 12, 2011<span> | </span><span class="category"><a href="/categories/programming/">programming</a></span></div><div class="post-content"><p>當Adobe、Microsoft、Sun等一系列巨頭開始表現出對”開源”的青睞時，”開源”的時代即將到來！</p>
-<p>最初來自：sinoprise.com/read.php?tid-662-page-e-fpage-1.html（遺憾的是這個鏈接已經打不開了），我基本未改動，只是進行了一些排版和整理。<br>參考文獻：<a href="http://www.fsf.org/licensing/licenses/" target="_blank" rel="external">http://www.fsf.org/licensing/licenses/</a></p>
-<p>現今存在的開源協議很多，而經過Open Source Initiative組織通過批准的開源協議目前有58種（<a href="http://www.opensource.org/licenses/alphabetical" target="_blank" rel="external">http://www.opensource.org/licenses/alphabetical</a>）。我們在常見的開源協議如BSD, GPL, LGPL,MIT等都是OSI批准的協議。如果要開源自己的代碼，最好也是選擇這些被批准的開源協議。</p>
+<!DOCTYPE html>
+<!-- layout.ejs -->
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+  <title>
+    
+    Open Source License 開源協議的比較(BSD,Apache,GPL,LGPL,MIT) (轉) |
+    
+    小伍手札
+  </title>
+
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+    crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+    crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="/css/styles.css">
+  <script src="/js/script.js"></script>
+</head>
+
+<body>
+
+  <button type="button" id="asidebtn" class="btn btn-primary btn-sm" data-toggle="offcanvas"></button>
+  <script>
+  </script>
+  <section class="border">
+    <header>
+
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/">
+          <img src="https://www.gravatar.com/avatar/46c6cc40826824204a70f22ee75c3752?s=50" alt="">
+        </a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li id="blog-title" class="nav-item active">
+              <a class="nav-link" href="/">
+                <h1>
+                  小伍手札 <span class="sr-only">(current)</span>
+              </a>
+              </h1>
+            </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0" action="https://google.com/search" method="get" onSubmit="Gsitesearch(this)"
+            target="_blank">
+            <input name="q" type="hidden" />
+            <input name="qfront" class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+        </div>
+      </nav>
+    </header>
+
+    <div class="row border">
+      <div class="col col-lg-9 border">
+        <!-- article.ejs -->
+<article id="post-licenses.html" class="border post">
+    
+    <h2>
+      <a class="article-title" href="/2011/10/licenses.html/">Open Source License 開源協議的比較(BSD,Apache,GPL,LGPL,MIT) (轉)</a>
+    </h2>
+
+
+
+  <div class="article-meta">
+    <!-- date.ejs -->
+<div class="article-datetime">
+  date.ejs
+  <a href="/2011/10/licenses.html/" class="article-date"><time datetime="2011-10-12T13:20:00.000Z" itemprop="datePublished">2011-10-12</time></a>
+</div>
+
+    <!-- category.ejs -->
+
+  <div class="article-category">
+      category.ejs
+    分類:
+    <a class="article-category-link" href="/categories/programming/">programming</a>
+  </div>
+
+
+    
+  TAG:
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/opensource/">opensource</a></li></ul>
+
+
+  </div>
+  <div class="article-inner border">
+    <div class="article-entry border">
+      
+
+        
+        
+          <p>當Adobe、Microsoft、Sun等一系列巨頭開始表現出對”開源”的青睞時，”開源”的時代即將到來！</p>
+<p>最初來自：sinoprise.com/read.php?tid-662-page-e-fpage-1.html（遺憾的是這個鏈接已經打不開了），我基本未改動，只是進行了一些排版和整理。<br>參考文獻：<a href="http://www.fsf.org/licensing/licenses/" target="_blank" rel="noopener">http://www.fsf.org/licensing/licenses/</a></p>
+<p>現今存在的開源協議很多，而經過Open Source Initiative組織通過批准的開源協議目前有58種（<a href="http://www.opensource.org/licenses/alphabetical" target="_blank" rel="noopener">http://www.opensource.org/licenses/alphabetical</a>）。我們在常見的開源協議如BSD, GPL, LGPL,MIT等都是OSI批准的協議。如果要開源自己的代碼，最好也是選擇這些被批准的開源協議。</p>
 <p>這裡我們來看四種最常用的開源協議及它們的適用範圍，供那些準備開源或者使用開源產品的開發人員/廠家參考。<br><a name="more"></a></p>
 <ul>
-<li>BSD開源協議（<a href="http://www.fsf.org/licensing/licenses/index_html#OriginalBSD" target="_blank" rel="external">original BSD license </a>、<a href="http://www.freebsd.org/copyright/freebsd-license.html" target="_blank" rel="external">FreeBSD license </a>、<a href="http://www.xfree86.org/3.3.6/COPYRIGHT2.html#6" target="_blank" rel="external">Original BSD license </a>）<br>BSD開源​​協議是一個給於使用者很大自由的協議。基本上使用者可以”為所欲為”,可以自由的使用，修改源代碼，也可以將修改後的代碼作為開源或者專有軟件再發布。</li>
+<li>BSD開源協議（<a href="http://www.fsf.org/licensing/licenses/index_html#OriginalBSD" target="_blank" rel="noopener">original BSD license </a>、<a href="http://www.freebsd.org/copyright/freebsd-license.html" target="_blank" rel="noopener">FreeBSD license </a>、<a href="http://www.xfree86.org/3.3.6/COPYRIGHT2.html#6" target="_blank" rel="noopener">Original BSD license </a>）<br>BSD開源​​協議是一個給於使用者很大自由的協議。基本上使用者可以”為所欲為”,可以自由的使用，修改源代碼，也可以將修改後的代碼作為開源或者專有軟件再發布。</li>
 </ul>
 <p>但”為所欲為”的前提當你發布使用了BSD協議的代碼，或則以BSD協議代碼為基礎做二次開發自己的產品時，需要滿足三個條件：<br>如果再發布的產品中包含源代碼，則在源代碼中必須帶有原來代碼中的BSD協議。<br>如果再發布的只是二進制類庫/軟件，則需要在類庫/軟件的文檔和版權聲明中包含原來代碼中的BSD協議。<br>不可以用開源代碼的作者/機構名字和原來產品的名字做市場推廣。</p>
 <p>BSD 代碼鼓勵代碼共享，但需要尊重代碼作者的著作權。BSD由於允許使用者修改和重新發布代碼，也允許使用或在BSD代碼上開發商業軟件發布和銷售，因此是對商業集成很友好的協議。而很多的公司企業在選用開源產品的時候都首選BSD協議，因為可以完全控制這些第三方的代碼，在必要的時候可以修改或者二次開發。</p>
 <ul>
-<li>Apache Licence 2.0（<a href="http://www.apache.org/licenses/LICENSE-2.0" target="_blank" rel="external">Apache License, Version 2.0</a>、<a href="http://www.apache.org/LICENSE-1.1" target="_blank" rel="external">Apache License, Version 1.1</a>、<a href="http://www.apache.org/LICENSE-1.0" target="_blank" rel="external">Apache License, Version 1.0 </a>）<br>Apache Licence是著名的非盈利開源組織Apache採用的協議。該協議和BSD類似，同樣鼓勵代碼共享和尊重原作者的著作權，同樣允許代碼修改，再發布（作為開源或商業軟件）。需要滿足的條件也和BSD類似：<br>需要給代碼的用戶一份Apache Licence<br>如果你修改了代碼，需要再被修改的文件中說明。<br>在延伸的代碼中（修改和有源代碼衍生的代碼中）需要帶有原來代碼中的協議，商標，專利聲明和其他原來作者規定需要包含的說明。<br>如果再發布的產品中包含一個Notice文件，則在Notice文件中需要帶有Apache Licence。你可以在Notice中增加自己的許可，但不可以表現為對Apache Licence構成更改。</li>
+<li>Apache Licence 2.0（<a href="http://www.apache.org/licenses/LICENSE-2.0" target="_blank" rel="noopener">Apache License, Version 2.0</a>、<a href="http://www.apache.org/LICENSE-1.1" target="_blank" rel="noopener">Apache License, Version 1.1</a>、<a href="http://www.apache.org/LICENSE-1.0" target="_blank" rel="noopener">Apache License, Version 1.0 </a>）<br>Apache Licence是著名的非盈利開源組織Apache採用的協議。該協議和BSD類似，同樣鼓勵代碼共享和尊重原作者的著作權，同樣允許代碼修改，再發布（作為開源或商業軟件）。需要滿足的條件也和BSD類似：<br>需要給代碼的用戶一份Apache Licence<br>如果你修改了代碼，需要再被修改的文件中說明。<br>在延伸的代碼中（修改和有源代碼衍生的代碼中）需要帶有原來代碼中的協議，商標，專利聲明和其他原來作者規定需要包含的說明。<br>如果再發布的產品中包含一個Notice文件，則在Notice文件中需要帶有Apache Licence。你可以在Notice中增加自己的許可，但不可以表現為對Apache Licence構成更改。</li>
 </ul>
 <p>Apache Licence也是對商業應用友好的許可。使用者也可以在需要的時候修改代碼來滿足需要並作為開源或商業產品發布/銷售。</p>
 <ul>
-<li>GPL（<a href="http://www.fsf.org/licensing/licenses/gpl.html" target="_blank" rel="external">GNU General Public License </a>）<br>我們很熟悉的Linux就是採用了GPL。GPL協議和BSD, Apache Licence等鼓勵代碼重用的許可很不一樣。GPL的出發點是代碼的開源/免費使用和引用/修改/衍生代碼的開源/免費使用，但不允許修改後和衍生的代碼做為閉源的商業軟件發布和銷售。這也就是為什麼我們能用免費的各種linux，包括商業公司的linux和linux上各種各樣的由個人，組織，以及商業軟件公司開發的免費軟件了。</li>
+<li>GPL（<a href="http://www.fsf.org/licensing/licenses/gpl.html" target="_blank" rel="noopener">GNU General Public License </a>）<br>我們很熟悉的Linux就是採用了GPL。GPL協議和BSD, Apache Licence等鼓勵代碼重用的許可很不一樣。GPL的出發點是代碼的開源/免費使用和引用/修改/衍生代碼的開源/免費使用，但不允許修改後和衍生的代碼做為閉源的商業軟件發布和銷售。這也就是為什麼我們能用免費的各種linux，包括商業公司的linux和linux上各種各樣的由個人，組織，以及商業軟件公司開發的免費軟件了。</li>
 </ul>
 <p>GPL協議的主要內容是只要在一個軟件中使用(“使用”指類庫引用，修改後的代碼或者衍生代碼)GPL協議的產品，則該軟件產品必須也採用GPL協議，既必須也是開源和免費。這就是所謂的”傳染性”。GPL協議的產品作為一個單獨的產品使用沒有任何問題，還可以享受免費的優勢。</p>
 <p>由於GPL嚴格要求使用了GPL類庫的軟件產品必須使用GPL協議，對於使用GPL協議的開源代碼，商業軟件或者對代碼有保密要求的部門就不適合集成/採用作為類庫和二次開發的基礎。</p>
 <p>其它細節如再發布的時候需要伴隨GPL協議等和BSD/Apache等類似。</p>
 <ul>
-<li>LGPL（<a href="http://www.fsf.org/licensing/licenses/lgpl.html" target="_blank" rel="external">GNU Lesser General Public License </a>）<br>LGPL是GPL的一個為主要為類庫使用設計的開源協議。和GPL要求任何使用/修改/衍生之GPL類庫的的軟件必須採用GPL協議不同。LGPL允許商業軟件通過類庫引用(link)方式使用LGPL類庫而不需要開源商業軟件的代碼。這使得採用LGPL協議的開源代碼可以被商業軟件作為類庫引用並發布和銷售。</li>
+<li>LGPL（<a href="http://www.fsf.org/licensing/licenses/lgpl.html" target="_blank" rel="noopener">GNU Lesser General Public License </a>）<br>LGPL是GPL的一個為主要為類庫使用設計的開源協議。和GPL要求任何使用/修改/衍生之GPL類庫的的軟件必須採用GPL協議不同。LGPL允許商業軟件通過類庫引用(link)方式使用LGPL類庫而不需要開源商業軟件的代碼。這使得採用LGPL協議的開源代碼可以被商業軟件作為類庫引用並發布和銷售。</li>
 </ul>
 <p>但是如果修改LGPL協議的代碼或者衍生，則所有修改的代碼，涉及修改部分的額外代碼和衍生的代碼都必須採用LGPL協議。因此LGPL協議的開源代碼很適合作為第三方類庫被商業軟件引用，但不適合希望以LGPL協議代碼為基礎，通過修改和衍生的方式做二次開發的商業軟件採用。</p>
 <p>GPL/LGPL都保障原作者的知識產權，避免有人利用開源代碼複製並開發類似的產品</p>
 <ul>
-<li>MIT（<a href="http://www.opensource.org/licenses/mit-license.php" target="_blank" rel="external">MIT</a>）<br>MIT是和BSD一樣寬範的許可協議,作者只想保留版權,而無任何其他了限制.也就是說,你必須在你的發行版裡包含原許可協議的聲明,無論你是以二進制發布的還是以源代碼發布的.</li>
+<li>MIT（<a href="http://www.opensource.org/licenses/mit-license.php" target="_blank" rel="noopener">MIT</a>）<br>MIT是和BSD一樣寬範的許可協議,作者只想保留版權,而無任何其他了限制.也就是說,你必須在你的發行版裡包含原許可協議的聲明,無論你是以二進制發布的還是以源代碼發布的.</li>
 </ul>
-<p>本文來自：<a href="http://www.awflasher.com/blog/archives/939" target="_blank" rel="external">http://www.awflasher.com/blog/archives/939</a></p>
-</div><div class="tags"><a href="/tags/opensource/">opensource</a></div><div class="post-nav"><a href="/2011/10/php-jpg.html/" class="pre">[php] 印出資料夾裡所有jpg檔</a><a href="/2011/10/android-game-engine.html/" class="next">[Android] Game Engine 遊戲引擎整理</a></div></div></div></div><div class="pure-u-1-4 hidden_mid_and_down"><div id="sidebar"><div class="widget"><form action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank" class="search-form"><input type="text" name="q" maxlength="20" placeholder="Search"/><input type="hidden" name="sitesearch" value="http://blog.gorendo.org"/></form></div><div class="widget"><div class="widget-title"><i class="fa fa-folder-o"> Categories</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/">Android</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/C/">C#</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/C-C/">C/C++</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Cocos2D/">Cocos2D</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/DATABASE/">DATABASE</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Facebook/">Facebook</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Game-Dev/">Game Dev</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JAVA/">JAVA</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Javascript/">Javascript</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Lua/">Lua</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Mac/">Mac</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/PHP/">PHP</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Software/">Software</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Unity/">Unity</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Unity/AssetBundle/">AssetBundle</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/WEB/">WEB</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/WEB/CSS/">CSS</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/iOS/">iOS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery/">jQuery</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/programming/">programming</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/大學專題/">大學專題</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/攝影/">攝影</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/敗家/">敗家</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/程式語言/">程式語言</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-star-o"> Tags</i></div><div class="tagcloud"><a href="/tags/PHP/" style="font-size: 15px;">PHP</a> <a href="/tags/Unity/" style="font-size: 15px;">Unity</a> <a href="/tags/Game-Dev/" style="font-size: 15px;">Game Dev</a> <a href="/tags/JAVA/" style="font-size: 15px;">JAVA</a> <a href="/tags/OpenGL/" style="font-size: 15px;">OpenGL</a> <a href="/tags/Google-API/" style="font-size: 15px;">Google API</a> <a href="/tags/C-C/" style="font-size: 15px;">C/C++</a> <a href="/tags/Cocos2D/" style="font-size: 15px;">Cocos2D</a> <a href="/tags/DATABASE/" style="font-size: 15px;">DATABASE</a> <a href="/tags/MySQL/" style="font-size: 15px;">MySQL</a> <a href="/tags/iOS/" style="font-size: 15px;">iOS</a> <a href="/tags/Xcode/" style="font-size: 15px;">Xcode</a> <a href="/tags/Mac/" style="font-size: 15px;">Mac</a> <a href="/tags/Software/" style="font-size: 15px;">Software</a> <a href="/tags/Lua/" style="font-size: 15px;">Lua</a> <a href="/tags/敗家/" style="font-size: 15px;">敗家</a> <a href="/tags/Android/" style="font-size: 15px;">Android</a> <a href="/tags/ATOM/" style="font-size: 15px;">ATOM</a> <a href="/tags/SEO/" style="font-size: 15px;">SEO</a> <a href="/tags/資訊安全/" style="font-size: 15px;">資訊安全</a> <a href="/tags/opensource/" style="font-size: 15px;">opensource</a> <a href="/tags/程式語言/" style="font-size: 15px;">程式語言</a> <a href="/tags/Facebook/" style="font-size: 15px;">Facebook</a> <a href="/tags/programming/" style="font-size: 15px;">programming</a> <a href="/tags/攝影/" style="font-size: 15px;">攝影</a> <a href="/tags/C/" style="font-size: 15px;">C#</a> <a href="/tags/WINDOWS/" style="font-size: 15px;">WINDOWS</a> <a href="/tags/WEB/" style="font-size: 15px;">WEB</a> <a href="/tags/Javascript/" style="font-size: 15px;">Javascript</a> <a href="/tags/Node-JS/" style="font-size: 15px;">Node.JS</a> <a href="/tags/jQuery/" style="font-size: 15px;">jQuery</a> <a href="/tags/CSS/" style="font-size: 15px;">CSS</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-file-o"> Recent</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/10/php-mac-atom-visual-studio-code-php.html/">[php] 在 Mac 用ATOM / Visual Studio Code 為 php debug</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/mac-xxx.html/">[Mac] 解決 您要讓應用程式 XXX 接受傳入的網路連接嗎 一直跳出</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/10/php-callback.html/">[php] 實作callback</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/06/android-setclicklistener-in-custom-view.html/">[Android] setClickListener in custom view</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/06/errorexecution-failed-for-task.html/">解決 Error:Execution failed for task 'preDexDebug'. > com.android.ide.common.process.ProcessException: org.gradle.process.internal.ExecException: Process 'command  finished with non-zero exit value 1</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/05/android-wiperefreshlayout.html/">[Android] 下拉更新 SwipeRefreshLayout</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/04/android-cant-create-handler-inside.html/">[Android] 處理 Can't create handler inside thread that has not called Looper.prepare()</a></li><li class="post-list-item"><a class="post-list-link" href="/2014/08/unity-ugui-46-eventsystem.html/">[Unity] uGUI (4.6) EventSystem 事件系統 快速上手</a></li><li class="post-list-item"><a class="post-list-link" href="/2014/08/unity-ugui-46-eventsystem.html/">[Unity] uGUI (4.6) EventSystem 事件系統 快速上手</a></li><li class="post-list-item"><a class="post-list-link" href="/2014/06/cocos2d-x-install-mac.html/">[Cocos2d-x] 在 Mac 上設置 Cocos2d-x (Cocos2d-x 3 .x)</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-external-link"> Links</i></div><ul></ul><a href="http://www.example1.com/" title="site-name1" target="_blank">site-name1</a><ul></ul><a href="http://www.example2.com/" title="site-name2" target="_blank">site-name2</a><ul></ul><a href="http://www.example3.com/" title="site-name3" target="_blank">site-name3</a></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">Copyright © 2017 <a href="/." rel="nofollow">小伍手札.</a> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a><a rel="nofollow" target="_blank" href="https://github.com/tufu9441/maupassant-hexo"> Theme</a> by<a rel="nofollow" target="_blank" href="https://github.com/pagecho"> Cho.</a></div></div></div><a id="rocket" href="#top" class="show"></a><script type="text/javascript" src="/js/totop.js?v=0.0.0" async></script><script type="text/javascript" src="//cdn.bootcss.com/fancybox/3.1.20/jquery.fancybox.min.js" async></script><script type="text/javascript" src="/js/fancybox.js?v=0.0.0" async></script><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/fancybox/3.1.20/jquery.fancybox.min.css"><script type="text/javascript" src="/js/codeblock-resizer.js?v=0.0.0"></script><script type="text/javascript" src="/js/smartresize.js?v=0.0.0"></script></div></body></html>
+<p>本文來自：<a href="http://www.awflasher.com/blog/archives/939" target="_blank" rel="noopener">http://www.awflasher.com/blog/archives/939</a></p>
+
+        
+      
+    </div>
+
+    
+      
+
+    
+
+    <footer class="article-footer border">
+      <a data-url="http://blog.gorendo.org/2011/10/licenses.html/" data-id="cjm64u12v007lg6xuubt91sz4" class="article-share-link">
+        <i class="fa fa-share"></i> Share
+      </a>
+      
+        <a href="http://blog.gorendo.org/2011/10/licenses.html/#disqus_thread" class="article-comment-link">
+          <i class="fa fa-comment"></i> Comments
+        </a>
+      
+    </footer>
+  </div>
+  
+    
+  
+    Next:<a href="/2011/10/android-game-engine.html/">
+      [Android] Game Engine 遊戲引擎整理
+    </a>
+  
+  
+    Prev:<a href="/2011/10/php-jpg.html/">
+      [php] 印出資料夾裡所有jpg檔
+    </a>
+  
+
+
+  
+</article>
+
+
+<section id="comments">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+
+<!-- article.ejs end -->
+      </div>
+      <aside id="aside" class="aside col-10 col-lg-3 border">
+        aside
+        <div class="card bg-primary d-none">
+          <div class="card-header">
+            ABOUT
+          </div>
+          <img class="card-img rounded w-50 mx-auto" src="https://www.gravatar.com/avatar/46c6cc40826824204a70f22ee75c3752?s=240"
+            alt="Card image cap">
+
+          <div class="card-body">
+            <h4 class="card-title">Special title treatment</h4>
+            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+        </div>
+
+
+        
+        <div class="card">
+          <div class="card-header">
+            最新文章
+          </div>
+          <div class="card-body">
+            
+            <li>
+              <a href="/2016/10/php-mac-atom-visual-studio-code-php.html/">
+                [php] 在 Mac 用ATOM / Visual Studio Code 為 php debug</a>
+            </li>
+            
+            <li>
+              <a href="/2015/12/mac-xxx.html/">
+                [Mac] 解決 您要讓應用程式 XXX 接受傳入的網路連接嗎 一直跳出</a>
+            </li>
+            
+            <li>
+              <a href="/2015/10/php-callback.html/">
+                [php] 實作callback</a>
+            </li>
+            
+            <li>
+              <a href="/2015/06/android-setclicklistener-in-custom-view.html/">
+                [Android] setClickListener in custom view</a>
+            </li>
+            
+            <li>
+              <a href="/2015/06/errorexecution-failed-for-task.html/">
+                解決 Error:Execution failed for task &#39;preDexDebug&#39;. &gt; com.android.ide.common.process.ProcessException: org.gradle.process.internal.ExecException: Process &#39;command  finished with non-zero exit value 1</a>
+            </li>
+            
+
+          </div>
+        </div>
+        
+
+        
+
+        <div class="card">
+          <div class="card-header">
+            標籤
+          </div>
+          <div class="card-body">
+
+            
+            <a class="badge badge-primary" href="/tags/PHP/">
+              PHP <span class="badge badge-light">
+                20</span></a>
+            
+            <a class="badge badge-primary" href="/tags/Android/">
+              Android <span class="badge badge-light">
+                17</span></a>
+            
+            <a class="badge badge-primary" href="/tags/WEB/">
+              WEB <span class="badge badge-light">
+                10</span></a>
+            
+            <a class="badge badge-primary" href="/tags/JAVA/">
+              JAVA <span class="badge badge-light">
+                9</span></a>
+            
+            <a class="badge badge-primary" href="/tags/Game-Dev/">
+              Game Dev <span class="badge badge-light">
+                9</span></a>
+            
+            <a class="badge badge-primary" href="/tags/Unity/">
+              Unity <span class="badge badge-light">
+                8</span></a>
+            
+            <a class="badge badge-primary" href="/tags/攝影/">
+              攝影 <span class="badge badge-light">
+                7</span></a>
+            
+            <a class="badge badge-primary" href="/tags/Software/">
+              Software <span class="badge badge-light">
+                4</span></a>
+            
+            <a class="badge badge-primary" href="/tags/C-C/">
+              C/C++ <span class="badge badge-light">
+                3</span></a>
+            
+            <a class="badge badge-primary" href="/tags/Mac/">
+              Mac <span class="badge badge-light">
+                3</span></a>
+            
+            <a class="badge badge-primary" href="/tags/DATABASE/">
+              DATABASE <span class="badge badge-light">
+                3</span></a>
+            
+            <a class="badge badge-primary" href="/tags/MySQL/">
+              MySQL <span class="badge badge-light">
+                3</span></a>
+            
+            <a class="badge badge-primary" href="/tags/jQuery/">
+              jQuery <span class="badge badge-light">
+                3</span></a>
+            
+            <a class="badge badge-primary" href="/tags/程式語言/">
+              程式語言 <span class="badge badge-light">
+                2</span></a>
+            
+            <a class="badge badge-primary" href="/tags/Xcode/">
+              Xcode <span class="badge badge-light">
+                2</span></a>
+            
+            <a class="badge badge-primary" href="/tags/C/">
+              C# <span class="badge badge-light">
+                2</span></a>
+            
+            <a class="badge badge-primary" href="/tags/iOS/">
+              iOS <span class="badge badge-light">
+                2</span></a>
+            
+            <a class="badge badge-primary" href="/tags/Cocos2D/">
+              Cocos2D <span class="badge badge-light">
+                2</span></a>
+            
+            <a class="badge badge-primary" href="/tags/Google-API/">
+              Google API <span class="badge badge-light">
+                2</span></a>
+            
+            <a class="badge badge-primary" href="/tags/Javascript/">
+              Javascript <span class="badge badge-light">
+                2</span></a>
+            
+            <a class="badge badge-primary" href="/tags/opensource/">
+              opensource <span class="badge badge-light">
+                1</span></a>
+            
+            <a class="badge badge-primary" href="/tags/敗家/">
+              敗家 <span class="badge badge-light">
+                1</span></a>
+            
+            <a class="badge badge-primary" href="/tags/programming/">
+              programming <span class="badge badge-light">
+                1</span></a>
+            
+            <a class="badge badge-primary" href="/tags/SEO/">
+              SEO <span class="badge badge-light">
+                1</span></a>
+            
+            <a class="badge badge-primary" href="/tags/CSS/">
+              CSS <span class="badge badge-light">
+                1</span></a>
+            
+            <a class="badge badge-primary" href="/tags/WINDOWS/">
+              WINDOWS <span class="badge badge-light">
+                1</span></a>
+            
+            <a class="badge badge-primary" href="/tags/資訊安全/">
+              資訊安全 <span class="badge badge-light">
+                1</span></a>
+            
+            <a class="badge badge-primary" href="/tags/Facebook/">
+              Facebook <span class="badge badge-light">
+                1</span></a>
+            
+            <a class="badge badge-primary" href="/tags/Lua/">
+              Lua <span class="badge badge-light">
+                1</span></a>
+            
+            <a class="badge badge-primary" href="/tags/Node-JS/">
+              Node.JS <span class="badge badge-light">
+                1</span></a>
+            
+            <a class="badge badge-primary" href="/tags/OpenGL/">
+              OpenGL <span class="badge badge-light">
+                1</span></a>
+            
+            <a class="badge badge-primary" href="/tags/ATOM/">
+              ATOM <span class="badge badge-light">
+                1</span></a>
+            
+          </div>
+        </div>
+        
+
+
+      </aside>
+    </div>
+  </section>
+
+  <footer class="blog-footer">
+    <div class="container">
+      <div id="footer-info" class="inner">
+        &copy;
+        2018
+        gonex45<br>
+        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- end layout.ejs  -->
+</body>
+
+</html>

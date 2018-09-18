@@ -1,18 +1,1034 @@
-<!DOCTYPE html><html lang="en"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description"><title>小伍手札 | 某RD的開發筆記</title><link rel="stylesheet" type="text/css" href="/css/style.css?v=0.0.0"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/normalize/7.0.0/normalize.min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/1.0.0/pure-min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/1.0.0/grids-responsive-min.css"><link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"><link rel="alternate" type="application/atom+xml" href="/atom.xml"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">小伍手札</h1><a id="logo" href="/.">小伍手札</a><p class="description">某RD的開發筆記</p></div><div id="nav-menu"><a href="/." class="current"><i class="fa fa-home"> Home</i></a><a href="/archives/"><i class="fa fa-archive"> Archive</i></a><a href="/about/"><i class="fa fa-user"> About</i></a><a href="/atom.xml"><i class="fa fa-rss"> RSS</i></a></div></div><div id="layout" class="pure-g"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title"><a href="/2008/10/mysql.html/">MYSQL 最佳化設定實作教學</a></h1><div class="post-meta">2008-10-25</div><div class="post-content"><p>最近要接案子了&hellip;有可能還同時兩個一起接到&hellip;<br>這篇以後架站也許用的到吧0w0</p>
+<!DOCTYPE html>
+<!-- layout.ejs -->
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+  <title>
+    
+    小伍手札
+  </title>
+
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+    crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+    crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="/css/styles.css">
+  <script src="/js/script.js"></script>
+</head>
+
+<body>
+
+  <button type="button" id="asidebtn" class="btn btn-primary btn-sm" data-toggle="offcanvas"></button>
+  <script>
+  </script>
+  <section class="border">
+    <header>
+
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/">
+          <img src="https://www.gravatar.com/avatar/46c6cc40826824204a70f22ee75c3752?s=50" alt="">
+        </a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li id="blog-title" class="nav-item active">
+              <a class="nav-link" href="/">
+                <h1>
+                  小伍手札 <span class="sr-only">(current)</span>
+              </a>
+              </h1>
+            </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0" action="https://google.com/search" method="get" onSubmit="Gsitesearch(this)"
+            target="_blank">
+            <input name="q" type="hidden" />
+            <input name="qfront" class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+        </div>
+      </nav>
+    </header>
+
+    <div class="row border">
+      <div class="col col-lg-9 border">
+        <!-- index.ejs -->
+<!-- _partial/archive -->
+_partial/archive.ejs
+
+  pagination == 2
+  
+    <!-- article.ejs -->
+<article id="post-mysql.html" class="border post">
+    
+    <h2>
+      <a class="article-title" href="/2008/10/mysql.html/">MYSQL 最佳化設定實作教學</a>
+    </h2>
+
+
+
+  <div class="article-meta">
+    <!-- date.ejs -->
+<div class="article-datetime">
+  date.ejs
+  <a href="/2008/10/mysql.html/" class="article-date"><time datetime="2008-10-24T17:57:00.000Z" itemprop="datePublished">2008-10-25</time></a>
+</div>
+
+    <!-- category.ejs -->
+
+  <div class="article-category">
+      category.ejs
+    分類:
+    <a class="article-category-link" href="/categories/DATABASE/">DATABASE</a>
+  </div>
+
+
+    
+  TAG:
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DATABASE/">DATABASE</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MySQL/">MySQL</a></li></ul>
+
+
+  </div>
+  <div class="article-inner border">
+    <div class="article-entry border">
+      
+
+        
+        
+          <p>最近要接案子了&hellip;有可能還同時兩個一起接到&hellip;<br>這篇以後架站也許用的到吧0w0</p>
 <p><a name="more"></a><br>MYSQL 最佳化設定實作教學</p>
 <p>前  言:</p>
-<p>MYSQL的設定參考文件很少,在網上查到了一些相關的原文調整說明,也去翻了翻mysql相關的書<br>我自己在整理資籵的時候也覺得很多東西寫不出來,所以有些地方可能會寫的不是很完整。</p></div><p class="readmore"><a href="/2008/10/mysql.html/">Read More</a></p></div><div class="post"><h1 class="post-title"><a href="/2008/10/1017.html/">專題進度10/17</a></h1><div class="post-meta">2008-10-18</div><div class="post-content"><p><a name="more"></a><br>設備連結進度70%<br>使用者介面進度70%</p>
+<p>MYSQL的設定參考文件很少,在網上查到了一些相關的原文調整說明,也去翻了翻mysql相關的書<br>我自己在整理資籵的時候也覺得很多東西寫不出來,所以有些地方可能會寫的不是很完整。</p>
+<p>#以下設定適用於1024M-2048M記憶體及2顆CPU的MYSQLDB，如記憶體更大的話請自行做調整。給各項參數增加記憶體配置量會加快速度，但是使用過多的記憶體而導致啟用swap的話，會嚴重導致系統執行效率下降。</p>
+<p>#沒有修改參數，用預設值的記憶體使用量：約 40MB,使用my-large.cnf，記憶體使用量：約420MB但是可以提高DB的存取執行效率。</p>
+<p>– ————————————————————–設定說明—— ——————————————————-</p>
+<p>GLOBAL MEMORY與 THREAD MEMORY<br>MYSQL 再配置記憶體時分成兩各階段，一是當SERVER啟動時配置給整個系統使用，二是當CLINT連線進來的時候配置給單一連線使用。前者被稱為GLOBAL 後者被稱為THREAD，MEMORY的總用量簡單的說就是GLOBAL+(THREAD數*THREAD MEMORY) 這個公式所算出來的記憶體消耗應該要小於系統的總記憶體(這是廢話當然要小於囉)，但是實際上測試時，系統記憶體不足就會回應TOO MANY CONNECTION而暫停回應。但是大量的REQUEST很容易讓DB掛給你看。通常USED CONNECTION會大量增加，是因為TABLELOCK，導致新的QUERY被暫存，後來才發現減低TABLE LOCK的時間與次數，才是解決DB TIMEOUT卡死的方式。但是TABLE LOCK一般是因為SQL查詢寫的不好，可能需要調整程式裡的SQL語法，所以只好以縮短wait_timeout的時間做為應急的辦法。但是這會增加 CPU LOADING，所以調整要小心一點,慢慢TEST出最佳調整參數值。</p>
+<p>TMP TABLE與TABLE CACHE<br>當 一個查詢所耗用的記憶體超過配置的BUFFER時，MYSQL會開啟暫存TABLE，暫存TABLE先放在記憶體中，記憶體不足再利用DISK，原理就像 是L1、L2、L3 CACHE。table_cache的參數定義了能夠CACHE多少個TABLE ，tmp_table_size是定義在記憶體中開?的暫存TABLE有多大，也就是說<br>，這是個全域的記憶體配置。TMP TABLE超過這個大小，就會被寫到硬碟上。 要比對這個參數是否太大要比較SHOW STATUS(mysql中查看運作狀況的指令)中的open_tables跟opened_tables數量，前者是目前所開啟的TABLE數，後者是 曾開啟的TABLE數，如果後者比前者大很多，表TABLE CACHE太小。可以試著調大數值。</p>
+<p>wait_timeout<br>這個參數是由global wait_timeout 或是interactive_timeou繼承下來的。而且在COMMAND LINE時無法看到GLOBAL WAIT﹍TIMEOUT ，這個值會繼承自interactive_timeout 。</p>
+<p>————–MY.CNF(調整前的設定沒有做最佳化設定,所以2G記憶體只給了約40M給MYSQL用)———–<br>[mysqld]<br>datadir=/var/lib/mysql<br>socket=/var/lib/mysql/mysql.sock<br>skip-innodb</p>
+<p>[mysql.server]<br>user=mysql<br>basedir=/var/lib</p>
+<p>[safe_mysqld]<br>err-log=/var/log/mysqld.log<br>pid-file=/var/run/mysqld/mysqld.pid</p>
+<hr>
+<p>—————————MY.CNF(調整後的設定,2G記憶體指定了512M左右給MYSQL用)———————–[mysqld]<br>skip-innodb   &lt;—如果不用到innodb數據表，去掉innodb支援，節省記憶體<br>skip-bdb      &lt;—如果不用到bdb數據表，去掉bdb支援，節省記憶體。<br>skip-locking  &lt;—關閉外部鎖定可以提高資料表存取性能。<br>skip-name-resolve  &lt;—關閉DNS反查動作 。</p>
+<p>datadir=/DB/data  &lt;—資料存放位置。<br>socket=/var/lib/mysql/mysql.sock &lt;—sock檔位置。</p>
+<p>[mysql.server]<br>user=mysql<br>basedir=/var/lib</p>
+<p>[safe_mysqld]<br>err-log=/var/log/mysqld.log &lt;—err-log存放位置。<br>pid-file=/var/run/mysqld/mysqld.pid &lt;—PID檔位置。<br>open_files_limit=8192  &lt;—允許MYSQL開啟系統檔案數上限。</p>
+<p>[mysqld]<br>set-variable = back_log=50<br>set-variable = connect_timeout=10<br>set-variable = key_buffer=512M<br>set-variable = max_allowed_packet=4M<br>set-variable = table_cache=1024 &lt;—允許暫存在CACHE裡的TABLE數量。<br>set-variable = thread_cache=64<br>set-variable = join_buffer_size=32M &lt;—使用到JOIN時會用到，如果有大量Select動件時可視情況增加,提供執行效能。<br>set-variable = sort_buffer=32M &lt;—用來排序的BUFFER，如果DB回傳大量的查詢結果而且又使用ORDER BY,增加這個BUFFER大小可以提升速度。<br>set-variable = record_buffer=32M<br>set-variable = max_connections=32000<br>set-variable = wait_timeout=120<br>set-variable = interactive_timeout=120 &lt;—連線timeout時間。<br>set-variable = max_connect_errors=30000<br>set-variable = long_query_time=1<br>set-variable = max_heap_table_size=256M<br>set-variable = tmp_table_size=128M<br>set-variable = myisam_sort_buffer_size=128M<br>set-variable = max_allowed_packet=1M<br>set-variable = net_buffer_length=16K  &lt;—網路暫存BUFFER，TCP最大封包長度是16384。<br>set-variable = thread_concurrency=4 &lt;—設置為你的cpu數目x2,例如，只有一個cpu,那麼thread_concurrency=2 &lt;—有2個cpu,那麼thread_concurrency=4。</p>
+<p>#set-variable = log_slow_queries=/var/log/log_slow_queries.log</p>
+<p>#log-bin &lt;—去掉log，提高性能。<br>server-id = 1</p>
+<p>[isamchk]<br>set-variable = key_buffer=64M<br>set-variable = sort_buffer=64M<br>set-variable = read_buffer=16M<br>set-variable = write_buffer=16M</p>
+<p>[myisamchk]<br>set-variable = key_buffer=64M<br>set-variable = sort_buffer=64M<br>set-variable = read_buffer=16M<br>set-variable = write_buffer=16M</p>
+<p>[mysqldump]<br>quick<br>set-variable = max_allowed_packet=16M</p>
+<p>[mysql]<br>no-auto-rehash</p>
+<h1 id="Remove-the-next-comment-character-if-you-are-not-familiar-with-SQL"><a href="#Remove-the-next-comment-character-if-you-are-not-familiar-with-SQL" class="headerlink" title="Remove the next comment character if you are not familiar with SQL"></a>Remove the next comment character if you are not familiar with SQL</h1><p>#safe-updates</p>
+<p>[mysqlhotcopy]<br>interactive-timeout</p>
+<p>來源：<a href="http://tw.myblog.yahoo.com/black-lulu/article?mid=148" target="_blank" rel="noopener">http://tw.myblog.yahoo.com/black-lulu/article?mid=148</a></p>
+
+        
+      
+    </div>
+
+    
+      
+
+    
+
+    <footer class="article-footer border">
+      <a data-url="http://blog.gorendo.org/2008/10/mysql.html/" data-id="cjm64u113003zg6xu3croksiq" class="article-share-link">
+        <i class="fa fa-share"></i> Share
+      </a>
+      
+        <a href="http://blog.gorendo.org/2008/10/mysql.html/#disqus_thread" class="article-comment-link">
+          <i class="fa fa-comment"></i> Comments
+        </a>
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+<!-- article.ejs end -->
+  
+    <!-- article.ejs -->
+<article id="post-1017.html" class="border post">
+    
+    <h2>
+      <a class="article-title" href="/2008/10/1017.html/">專題進度10/17</a>
+    </h2>
+
+
+
+  <div class="article-meta">
+    <!-- date.ejs -->
+<div class="article-datetime">
+  date.ejs
+  <a href="/2008/10/1017.html/" class="article-date"><time datetime="2008-10-17T17:51:00.000Z" itemprop="datePublished">2008-10-18</time></a>
+</div>
+
+    <!-- category.ejs -->
+
+  <div class="article-category">
+      category.ejs
+    分類:
+    <a class="article-category-link" href="/categories/大學專題/">大學專題</a>
+  </div>
+
+
+    
+
+  </div>
+  <div class="article-inner border">
+    <div class="article-entry border">
+      
+
+        
+        
+          <p><a name="more"></a><br>設備連結進度70%<br>使用者介面進度70%</p>
 <p>總算能從設備讀出像樣的東西了~</p>
 <p>辛好和隔壁組比較起來快很多&hellip;大約是10%VS70%的差距</p>
-<p>專題老師看到對面組臉大概綠了吧&hellip;哈</p></div><p class="readmore"><a href="/2008/10/1017.html/">Read More</a></p></div><div class="post"><h1 class="post-title"><a href="/2008/09/mysqlsql.html/">MySQL 格式及語法(其實SQL通用?)</a></h1><div class="post-meta">2008-09-09</div><div class="post-content"><p><a href="http://dev.mysql.com/doc/refman/5.1/zh/sql-syntax.html" target="_blank" rel="external">官方簡體版(排版較好)</a><br><a href="http://www.hmes.kh.edu.tw/~jona/redhat/mysqlphp/mysqlsyntax.htm" target="_blank" rel="external">繁體版</a></p></div><p class="readmore"><a href="/2008/09/mysqlsql.html/">Read More</a></p></div><div class="post"><h1 class="post-title"><a href="/2008/09/sql-api.html/">SQL API</a></h1><div class="post-meta">2008-09-07</div><div class="post-content"><p><a name="more"></a><br><span style="font-weight: bold;">Connection物件</span>是代表Java與資料庫的連線<br>&nbsp;&nbsp;&nbsp; Connection conn = DriverManager.getConnection(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; url, user, password);</p></div><p class="readmore"><a href="/2008/09/sql-api.html/">Read More</a></p></div><div class="post"><h1 class="post-title"><a href="/2008/09/0906.html/">專題進度09_06</a></h1><div class="post-meta">2008-09-07</div><div class="post-content"><p><a name="more"></a><br>爆炸了。</p>
+<p>專題老師看到對面組臉大概綠了吧&hellip;哈</p>
+<p>如果我當初被分派到另一組去&hellip;<br>程式八成都我在弄吧。。。。<br>組員們有你們在真好</p>
+<p>話說今天被開了紅單$600………………………….</p>
+
+        
+      
+    </div>
+
+    
+      
+
+    
+
+    <footer class="article-footer border">
+      <a data-url="http://blog.gorendo.org/2008/10/1017.html/" data-id="cjm64u1300082g6xujnpc2zwj" class="article-share-link">
+        <i class="fa fa-share"></i> Share
+      </a>
+      
+        <a href="http://blog.gorendo.org/2008/10/1017.html/#disqus_thread" class="article-comment-link">
+          <i class="fa fa-comment"></i> Comments
+        </a>
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+<!-- article.ejs end -->
+  
+    <!-- article.ejs -->
+<article id="post-mysqlsql.html" class="border post">
+    
+    <h2>
+      <a class="article-title" href="/2008/09/mysqlsql.html/">MySQL 格式及語法(其實SQL通用?)</a>
+    </h2>
+
+
+
+  <div class="article-meta">
+    <!-- date.ejs -->
+<div class="article-datetime">
+  date.ejs
+  <a href="/2008/09/mysqlsql.html/" class="article-date"><time datetime="2008-09-09T00:49:00.000Z" itemprop="datePublished">2008-09-09</time></a>
+</div>
+
+    <!-- category.ejs -->
+
+  <div class="article-category">
+      category.ejs
+    分類:
+    <a class="article-category-link" href="/categories/DATABASE/">DATABASE</a>
+  </div>
+
+
+    
+  TAG:
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DATABASE/">DATABASE</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MySQL/">MySQL</a></li></ul>
+
+
+  </div>
+  <div class="article-inner border">
+    <div class="article-entry border">
+      
+
+        
+        
+          <p><a href="http://dev.mysql.com/doc/refman/5.1/zh/sql-syntax.html" target="_blank" rel="noopener">官方簡體版(排版較好)</a><br><a href="http://www.hmes.kh.edu.tw/~jona/redhat/mysqlphp/mysqlsyntax.htm" target="_blank" rel="noopener">繁體版</a></p>
+<p><a name="more"></a></p>
+
+        
+      
+    </div>
+
+    
+      
+
+    
+
+    <footer class="article-footer border">
+      <a data-url="http://blog.gorendo.org/2008/09/mysqlsql.html/" data-id="cjm64u1140044g6xujprrxn2t" class="article-share-link">
+        <i class="fa fa-share"></i> Share
+      </a>
+      
+        <a href="http://blog.gorendo.org/2008/09/mysqlsql.html/#disqus_thread" class="article-comment-link">
+          <i class="fa fa-comment"></i> Comments
+        </a>
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+<!-- article.ejs end -->
+  
+    <!-- article.ejs -->
+<article id="post-sql-api.html" class="border post">
+    
+    <h2>
+      <a class="article-title" href="/2008/09/sql-api.html/">SQL API</a>
+    </h2>
+
+
+
+  <div class="article-meta">
+    <!-- date.ejs -->
+<div class="article-datetime">
+  date.ejs
+  <a href="/2008/09/sql-api.html/" class="article-date"><time datetime="2008-09-07T15:37:00.000Z" itemprop="datePublished">2008-09-07</time></a>
+</div>
+
+    <!-- category.ejs -->
+
+  <div class="article-category">
+      category.ejs
+    分類:
+    <a class="article-category-link" href="/categories/DATABASE/">DATABASE</a>
+  </div>
+
+
+    
+  TAG:
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DATABASE/">DATABASE</a></li></ul>
+
+
+  </div>
+  <div class="article-inner border">
+    <div class="article-entry border">
+      
+
+        
+        
+          <p><a name="more"></a><br><span style="font-weight: bold;">Connection物件</span>是代表Java與資料庫的連線<br>&nbsp;&nbsp;&nbsp; Connection conn = DriverManager.getConnection(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; url, user, password);</p>
+<p><span style="font-weight: bold;">Statement物件</span>執行SQL<br>&nbsp;&nbsp;&nbsp; Statement stmt = conn.createStatement();</p>
+<p>&nbsp;&nbsp;&nbsp; 新增：<br>&nbsp;&nbsp;&nbsp; stmt.executeUpdate(“INSERT INTO message VALUES(‘主題’,&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="mailto:&#39;gonex45@mail.com" target="_blank" rel="noopener">&#39;gonex45@mail.com</a>‘, ‘留言內容’, ‘2008-8-29’)”);</p>
+<p><span style="font-weight: bold;">ResultSet物件</span>接收Statement物件的SQL結果</p>
+<p>&nbsp;&nbsp;&nbsp; ResultSet result =<br>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; stmt.executeQuery(“SELECT * FROM message”);<br>&nbsp;&nbsp;&nbsp; while(result.next()) {<br>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; System.out.print(result.getString(“name”) + “t”);<br>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; System.out.print(result.getString(“email”) + “t”);<br>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; System.out.print(result.getString(“subject”) + “t”);<br>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; System.out.print(result.getString(“time”) + “t”);<br>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; System.out.println(result.getString(“memo”) + “t”);<br>&nbsp;&nbsp;&nbsp; }</p>
+<p>&nbsp;&nbsp;&nbsp; 使用查詢到的結果之<span style="font-weight: bold;">欄位順序</span>來顯示結果的方式如下：<br>&nbsp;&nbsp;&nbsp; ResultSet result =<br>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; stmt.executeQuery(“SELECT * FROM message”);<br>&nbsp;&nbsp;&nbsp; while(result.next()) {<br>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; System.out.print(result.getString(1) + “t”);<br>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; System.out.print(result.getString(2) + “t”);<br>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; System.out.print(result.getString(3) + “t”);<br>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; System.out.print(result.getString(4) + “t”);<br>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; System.out.println(result.getString(5) + “t”);<br>&nbsp;&nbsp;&nbsp; }</p>
+<p><span style="font-weight: bold;">介面 ResultSetMetaData</span> 用於獲取關於 <code>ResultSet</code> 物件中列的型別和屬性資訊的物件。</p>
+<p><title></title><br><!-- Generated by javadoc (build 1.6.0-beta2) on Fri Mar 09 12:50:59 CST 2007 --></p>
+<link title="Style" href="../../stylesheet.css" type="text/css" rel="stylesheet">
+
+<noscript></noscript>
+
+<p>創建 <code>ResultSetMetaData</code> 物件 rsmd，並使用 rsmd 尋找 rs 有多少列，以及 rs 中的第一列是否可以在  <code>WHERE</code> 子句中使用。</p>
+<pre>     ResultSet rs = stmt.executeQuery("SELECT a, b, c FROM TABLE2");      ResultSetMetaData rsmd = rs.getMetaData();      int numberOfColumns = rsmd.getColumnCount();      boolean b = rsmd.isSearchable(1); </pre>
+
+        
+      
+    </div>
+
+    
+      
+
+    
+
+    <footer class="article-footer border">
+      <a data-url="http://blog.gorendo.org/2008/09/sql-api.html/" data-id="cjm64u1160047g6xuopdkcmqm" class="article-share-link">
+        <i class="fa fa-share"></i> Share
+      </a>
+      
+        <a href="http://blog.gorendo.org/2008/09/sql-api.html/#disqus_thread" class="article-comment-link">
+          <i class="fa fa-comment"></i> Comments
+        </a>
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+<!-- article.ejs end -->
+  
+    <!-- article.ejs -->
+<article id="post-0906.html" class="border post">
+    
+    <h2>
+      <a class="article-title" href="/2008/09/0906.html/">專題進度09_06</a>
+    </h2>
+
+
+
+  <div class="article-meta">
+    <!-- date.ejs -->
+<div class="article-datetime">
+  date.ejs
+  <a href="/2008/09/0906.html/" class="article-date"><time datetime="2008-09-06T22:35:00.000Z" itemprop="datePublished">2008-09-07</time></a>
+</div>
+
+    <!-- category.ejs -->
+
+  <div class="article-category">
+      category.ejs
+    分類:
+    <a class="article-category-link" href="/categories/大學專題/">大學專題</a>
+  </div>
+
+
+    
+
+  </div>
+  <div class="article-inner border">
+    <div class="article-entry border">
+      
+
+        
+        
+          <p><a name="more"></a><br>爆炸了。</p>
 <p>DLL檔能讀。</p>
 <p>卡機函數還沒弄好。</p>
 <p>JTABLE弄的亂七八糟。</p>
-<p>PHP網頁設計中。</p></div><p class="readmore"><a href="/2008/09/0906.html/">Read More</a></p></div><div class="post"><h1 class="post-title"><a href="/2008/09/blog-post_01.html/">[Java] 基本</a></h1><div class="post-meta">2008-09-01</div><div class="post-content"><p><a name="more"></a><br><span style="font-family: 'Comic Sans MS';">當輸入javac出現</span></p>
-<p><table align="" border="1" cellpadding="1" cellspacing="1" style="font-family: Comic Sans MS; height: 29px; width: 235px;"><tbody><tr><td>‘javac’ 不是內部或外部命令、<br>可執行的程式或批次檔。</td></tr></tbody></table><br><span style="font-family: 'Comic Sans MS';">我的電腦右鍵→內容→進階→環境變數</span></p></div><p class="readmore"><a href="/2008/09/blog-post_01.html/">Read More</a></p></div><div class="post"><h1 class="post-title"><a href="/2008/08/sun.html/">SUN原廠的資源</a></h1><div class="post-meta">2008-08-20</div><div class="post-content"><p>慢慢收集…慢慢更新…</p>
-<p><a name="more"></a><br>教學文件下載(必看)<br><a href="javascript:void(0" target="_blank" rel="external">http://java.sun.com/docs/books/tutorial/information/download.html#egs</a>;/<em>1219153739454</em>/)</p></div><p class="readmore"><a href="/2008/08/sun.html/">Read More</a></p></div><div class="post"><h1 class="post-title"><a href="/2008/08/jnative.html/">[Java] JNative</a></h1><div class="post-meta">2008-08-11</div><div class="post-content"><p><a name="more"></a></p>
-<div><wbr>&nbsp;&nbsp;&nbsp; 網上最多的就是使用JNI調用dll的方法，試了試發現JNI和JNA方法對dll包的路徑都很嚴格，一般都是調用自己寫的dll檔案，要是調用已經寫好的就需要Java類的路徑和dll裡的路徑是一致的，不然能找到這個dll檔案也不能讀取裡面的內容，（我是這么理解的，因為我就沒成功，呵呵）只能自己再寫一個dll檔案調用你需要的那個已經有的檔案，然後在用java調用自己寫的這個dll檔案。<br>JAWIN和JNative是開源組件，使用這兩種方法可以直接調用寫好的dll檔案，Jawin 數據類型匹配相當敏感，它採用一種叫做”instruction string”的格式來傳遞參數，至今還沒學會。<br>我是使用JNative方法調用dll檔案。<br>需要下載一個JNative的壓縮包，<br><br>解壓獲得三個檔案，分別是︰JNativeCpp.dll，libJNativeCpp.so，JNative.jar 。<br><br>&nbsp;&nbsp;&nbsp; JNativeCpp.dll Windows下用的，拷到windows / system32目錄下；<br><br>&nbsp;&nbsp;&nbsp; libJNativeCpp.so Linux下的格式檔案；<br><br>&nbsp;&nbsp;&nbsp; JNative.jar　這是一個擴展包，將其copy到C:Javajre1.5.0lib下（我的目錄架構），系統會自動加載，也可以用eclipse直接加載。<br><br>方法︰</div><br><div><br><br><table border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse; border: medium none; height: 403px; margin-left: 5.4pt; width: 560px;"><tbody><tr style="height: 18.75pt;"><td style="vertical-align: top;"></td><td style="border: 1pt solid windowtext; height: 18.75pt; padding: 0cm 5.4pt; width: 135pt;" valign="top" width="180"><br><div align="center" style="text-align: center;"><strong>Class</strong></div><br></td><td style="border-color: windowtext windowtext windowtext -moz-use-text-color; border-style: solid solid solid none; border-width: 1pt 1pt 1pt medium; height: 18.75pt; padding: 0cm 5.4pt; width: 162pt;" valign="top" width="216"><br><div align="center" style="text-align: center;"><strong>作用</strong></div><br></td><td style="border-color: windowtext windowtext windowtext -moz-use-text-color; border-style: solid solid solid none; border-width: 1pt 1pt 1pt medium; height: 18.75pt; padding: 0cm 5.4pt; width: 207pt;" valign="top" width="276"><br><div align="center" style="text-align: center;"><strong>一般用到的方法<br>（**</strong><a href="http://jnative.free.fr/docs/" target="_blank" rel="external">参考Javadoc</a><strong>**）</strong></div><br></td></tr><tr style="height: 16.5pt;"><td style="vertical-align: top;"></td><td style="border-color: -moz-use-text-color; border-style: none solid solid; border-width: medium 1pt 1pt; height: 16.5pt; padding: 0cm 5.4pt; width: 135pt;" valign="top" width="180"><br><div>org.xvolks.jnative.Jnative</div><br></td><td style="border-color: -moz-use-text-color; border-style: none solid solid none; border-width: medium 1pt 1pt medium; height: 16.5pt; padding: 0cm 5.4pt; width: 162pt;" valign="top" width="216">裝載dll檔案，定位函數</td><td style="border-color: -moz-use-text-color; border-style: none solid solid none; border-width: medium 1pt 1pt medium; height: 16.5pt; padding: 0cm 5.4pt; width: 207pt;" valign="top" width="276"><br><div>JNative(),setParameter(),<span style="font-size: 10pt;"><br>setRetVal(),getRetVal() etc.</span></div><br></td></tr><tr style="height: 32.25pt;"><td style="vertical-align: top;"></td><td style="border-color: -moz-use-text-color; border-style: none solid solid; border-width: medium 1pt 1pt; height: 32.25pt; padding: 0cm 5.4pt; width: 135pt;" valign="top" width="180"><br><div>org.xvolks.jnative.pointers<br>.Pointer</div><br></td><td style="border-color: -moz-use-text-color; border-style: none solid solid none; border-width: medium 1pt 1pt medium; height: 32.25pt; padding: 0cm 5.4pt; width: 162pt;" valign="top" width="216">替代本地函數中的的指標，需要先申請一塊記憶體空間，才能創建</td><td style="border-color: -moz-use-text-color; border-style: none solid solid none; border-width: medium 1pt 1pt medium; height: 32.25pt; padding: 0cm 5.4pt; width: 207pt;" valign="top" width="276"><br><div>Pointer()，dispose()</div><br></td></tr><tr style="height: 32.25pt;"><td style="vertical-align: top;"></td><td style="border-color: -moz-use-text-color; border-style: none solid solid; border-width: medium 1pt 1pt; height: 32.25pt; padding: 0cm 5.4pt; width: 135pt;" valign="top" width="180"><br><div>org.xvolks.jnative.<br>pointers.memory.<br>MemoryBlockFactory</div><br></td><td style="border-color: -moz-use-text-color; border-style: none solid solid none; border-width: medium 1pt 1pt medium; height: 32.25pt; padding: 0cm 5.4pt; width: 162pt;" valign="top" width="216"><br><div>申請一塊記憶體空間</div><br></td><td style="border-color: -moz-use-text-color; border-style: none solid solid none; border-width: medium 1pt 1pt medium; height: 32.25pt; padding: 0cm 5.4pt; width: 207pt;" valign="top" width="276"><br><div>createMemoryBlock()</div><br></td></tr><tr style="height: 17.9pt;"><td style="vertical-align: top;"></td><td style="border-color: -moz-use-text-color; border-style: none solid solid; border-width: medium 1pt 1pt; height: 17.9pt; padding: 0cm 5.4pt; width: 135pt;" valign="top" width="180"><br><div>org.xvolks.jnative.<br>exceptions<br>.NativeException</div><br></td><td style="border-color: -moz-use-text-color; border-style: none solid solid none; border-width: medium 1pt 1pt medium; height: 17.9pt; padding: 0cm 5.4pt; width: 162pt;" valign="top" width="216"><br><div>拋出裝載，定位等方面的異常</div><br></td><td style="border-color: -moz-use-text-color; border-style: none solid solid none; border-width: medium 1pt 1pt medium; height: 17.9pt; padding: 0cm 5.4pt; width: 207pt;" valign="top" width="276"></td></tr><tr style="height: 17.9pt;"><td style="vertical-align: top;"></td><td style="border-color: -moz-use-text-color; border-style: none solid solid; border-width: medium 1pt 1pt; height: 17.9pt; padding: 0cm 5.4pt; width: 135pt;" valign="top" width="180"><br><div>org.xvolks.jnative.Type</div><br></td><td style="border-color: -moz-use-text-color; border-style: none solid solid none; border-width: medium 1pt 1pt medium; height: 17.9pt; padding: 0cm 5.4pt; width: 162pt;" valign="top" width="216"><br><div>&nbsp;列舉和管理Jnative需要的不同的數據類型</div><br></td><td style="border-color: -moz-use-text-color; border-style: none solid solid none; border-width: medium 1pt 1pt medium; height: 17.9pt; padding: 0cm 5.4pt; width: 207pt;" valign="top" width="276"></td></tr></tbody></table><br><div style="margin-left: 10.5pt;">具体参考API：<a href="http://jnative.free.fr/docs/" target="_blank" rel="external"><span style="font-family: 宋体;">http://jnative.free.fr/docs/</span></a></div><br>這個使用很簡單,參數設定也很自由<br><br>//首先加載dll和需要的方法<br><br>&nbsp; JNative messageBox = new JNative(“dll_name.dll”, “method_name”);<br><br>//返回值數據類型<br>&nbsp;&nbsp; messageBox.setRetVal(Type.INT);<br><br>//參數設定<br>&nbsp;&nbsp; messageBox.setParameter(0, Type.STRING,”piserver”);<br><br>//營運<br>&nbsp;&nbsp; messageBox.invoke();<br><div style="margin-left: 10.5pt;"><br></div><br><div style="margin-left: 10.5pt;"><span style="font-family: 宋体;">====================================</span></div><br><div style="margin-left: 10.5pt;"><a href="http://jnative.free.fr/docs/" target="_blank" rel="external"><span style="font-family: 宋体;">http://jnative.free.fr/docs/</span></a></div><br><div style="margin-left: 10.5pt;"><code>取得回傳值</div><p class="readmore"><a href="/2008/08/jnative.html/">Read More</a></p></div><div class="post"><h1 class="post-title"><a href="/2008/08/jawin-dll.html/">[Java] jawin 調用本地dll</a></h1><div class="post-meta">2008-08-11</div><div class="post-content"><p>最近做一個項目使用jawin調用本地的dll，給有關心得貼上來<br>步驟：<br>1.下載jawin：<a href="http://jawinproject.sourceforge.net/。" target="_blank" rel="external">http://jawinproject.sourceforge.net/。</a><br>2.將jawin.jar放於%JAVA_HOME%jrelibext下 。<br>3.將jawin.dll放於c win32下。</p></div><p class="readmore"><a href="/2008/08/jawin-dll.html/">Read More</a></p></div><div class="post"><h1 class="post-title"><a href="/2008/08/jawinwordjava.html/">[Java] 使用jawin操作Word文檔的Java程式</a></h1><div class="post-meta">2008-08-11</div><div class="post-content"><p><a name="more"></a></p>
+<p>PHP網頁設計中。</p>
+<p>阿門。</p>
+
+        
+      
+    </div>
+
+    
+      
+
+    
+
+    <footer class="article-footer border">
+      <a data-url="http://blog.gorendo.org/2008/09/0906.html/" data-id="cjm64u12y007rg6xuwb3svuy3" class="article-share-link">
+        <i class="fa fa-share"></i> Share
+      </a>
+      
+        <a href="http://blog.gorendo.org/2008/09/0906.html/#disqus_thread" class="article-comment-link">
+          <i class="fa fa-comment"></i> Comments
+        </a>
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+<!-- article.ejs end -->
+  
+    <!-- article.ejs -->
+<article id="post-blog-post_01.html" class="border post">
+    
+    <h2>
+      <a class="article-title" href="/2008/09/blog-post_01.html/">[Java] 基本</a>
+    </h2>
+
+
+
+  <div class="article-meta">
+    <!-- date.ejs -->
+<div class="article-datetime">
+  date.ejs
+  <a href="/2008/09/blog-post_01.html/" class="article-date"><time datetime="2008-08-31T23:34:00.000Z" itemprop="datePublished">2008-09-01</time></a>
+</div>
+
+    <!-- category.ejs -->
+
+  <div class="article-category">
+      category.ejs
+    分類:
+    <a class="article-category-link" href="/categories/JAVA/">JAVA</a>
+  </div>
+
+
+    
+  TAG:
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JAVA/">JAVA</a></li></ul>
+
+
+  </div>
+  <div class="article-inner border">
+    <div class="article-entry border">
+      
+
+        
+        
+          <p><a name="more"></a><br><span style="font-family: 'Comic Sans MS';">當輸入javac出現</span></p>
+<p><table align="" border="1" cellpadding="1" cellspacing="1" style="font-family: Comic Sans MS; height: 29px; width: 235px;"><tbody><tr><td>‘javac’ 不是內部或外部命令、<br>可執行的程式或批次檔。</td></tr></tbody></table><br><span style="font-family: 'Comic Sans MS';">我的電腦右鍵→內容→進階→環境變數</span></p>
+<p><table align="" border="1" cellpadding="1" cellspacing="1" style="font-family: Comic Sans MS; height: 65px; width: 441px;"><tbody><tr><td>CLASSPATH</td><td style="vertical-align: top;">.;自已需要的CLASS檔的資料夾路徑<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /JAR檔路徑;</td></tr><tr><td>path</td><td style="vertical-align: top;">加入 ;%JAVA_HOME%bin</td></tr><tr><td>JAVA_HOME</td><td style="vertical-align: top;">C:Program FilesJavajdk1.6.0_10</td></tr></tbody></table><br><span style="font-family: 'Comic Sans MS';"> *視自已安裝的版本及路徑，善用ctrl+c / ctrl+v</span></p>
+<p><span style="font-family: 'Comic Sans MS'; font-size: small;">PSPad的設定(以J2SE 6U1為例)：<br> 1.[語法／高亮度設定]<br> 2.[Java／編譯器標籤頁]<br> &nbsp;&nbsp; 3.編譯器：C:Program FilesJavajdk1.6.0_01binjavac.exe<br> &nbsp;&nbsp; 4.參數：%Name%.java<br> &nbsp;&nbsp; 5.編譯之後執行：cmd /c&nbsp; java %Name% &amp;&amp; pause<br> &nbsp;&nbsp; 6.[勾選擷取程式的輸出結果]<br> 7.[Java／規範標籤頁]<br> &nbsp;&nbsp; 8.套用的檔案類型： Java files<br> &nbsp;&nbsp; 9.Help檔：C:Program FilesJavajdk1.6.0_01wdocj2se6.chm<br> &nbsp;&nbsp; 10.副檔名遮罩：*.java</span></p>
+
+        
+      
+    </div>
+
+    
+      
+
+    
+
+    <footer class="article-footer border">
+      <a data-url="http://blog.gorendo.org/2008/09/blog-post_01.html/" data-id="cjm64u11p004xg6xufk57w81n" class="article-share-link">
+        <i class="fa fa-share"></i> Share
+      </a>
+      
+        <a href="http://blog.gorendo.org/2008/09/blog-post_01.html/#disqus_thread" class="article-comment-link">
+          <i class="fa fa-comment"></i> Comments
+        </a>
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+<!-- article.ejs end -->
+  
+    <!-- article.ejs -->
+<article id="post-sun.html" class="border post">
+    
+    <h2>
+      <a class="article-title" href="/2008/08/sun.html/">SUN原廠的資源</a>
+    </h2>
+
+
+
+  <div class="article-meta">
+    <!-- date.ejs -->
+<div class="article-datetime">
+  date.ejs
+  <a href="/2008/08/sun.html/" class="article-date"><time datetime="2008-08-19T21:45:00.000Z" itemprop="datePublished">2008-08-20</time></a>
+</div>
+
+    <!-- category.ejs -->
+
+  <div class="article-category">
+      category.ejs
+    分類:
+    <a class="article-category-link" href="/categories/JAVA/">JAVA</a>
+  </div>
+
+
+    
+  TAG:
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JAVA/">JAVA</a></li></ul>
+
+
+  </div>
+  <div class="article-inner border">
+    <div class="article-entry border">
+      
+
+        
+        
+          <p>慢慢收集…慢慢更新…</p>
+<p><a name="more"></a><br>教學文件下載(必看)<br><a href="javascript:void(0" target="_blank" rel="noopener">http://java.sun.com/docs/books/tutorial/information/download.html#egs</a>;/<em>1219153739454</em>/)</p>
+
+        
+      
+    </div>
+
+    
+      
+
+    
+
+    <footer class="article-footer border">
+      <a data-url="http://blog.gorendo.org/2008/08/sun.html/" data-id="cjm64u11s0050g6xu4hrsyo88" class="article-share-link">
+        <i class="fa fa-share"></i> Share
+      </a>
+      
+        <a href="http://blog.gorendo.org/2008/08/sun.html/#disqus_thread" class="article-comment-link">
+          <i class="fa fa-comment"></i> Comments
+        </a>
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+<!-- article.ejs end -->
+  
+    <!-- article.ejs -->
+<article id="post-jnative.html" class="border post">
+    
+    <h2>
+      <a class="article-title" href="/2008/08/jnative.html/">[Java] JNative</a>
+    </h2>
+
+
+
+  <div class="article-meta">
+    <!-- date.ejs -->
+<div class="article-datetime">
+  date.ejs
+  <a href="/2008/08/jnative.html/" class="article-date"><time datetime="2008-08-11T15:52:00.000Z" itemprop="datePublished">2008-08-11</time></a>
+</div>
+
+    <!-- category.ejs -->
+
+  <div class="article-category">
+      category.ejs
+    分類:
+    <a class="article-category-link" href="/categories/JAVA/">JAVA</a>
+  </div>
+
+
+    
+  TAG:
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JAVA/">JAVA</a></li></ul>
+
+
+  </div>
+  <div class="article-inner border">
+    <div class="article-entry border">
+      
+
+        
+        
+          <p><a name="more"></a></p>
+<div><wbr>&nbsp;&nbsp;&nbsp; 網上最多的就是使用JNI調用dll的方法，試了試發現JNI和JNA方法對dll包的路徑都很嚴格，一般都是調用自己寫的dll檔案，要是調用已經寫好的就需要Java類的路徑和dll裡的路徑是一致的，不然能找到這個dll檔案也不能讀取裡面的內容，（我是這么理解的，因為我就沒成功，呵呵）只能自己再寫一個dll檔案調用你需要的那個已經有的檔案，然後在用java調用自己寫的這個dll檔案。<br>JAWIN和JNative是開源組件，使用這兩種方法可以直接調用寫好的dll檔案，Jawin 數據類型匹配相當敏感，它採用一種叫做”instruction string”的格式來傳遞參數，至今還沒學會。<br>我是使用JNative方法調用dll檔案。<br>需要下載一個JNative的壓縮包，<br><br>解壓獲得三個檔案，分別是︰JNativeCpp.dll，libJNativeCpp.so，JNative.jar 。<br><br>&nbsp;&nbsp;&nbsp; JNativeCpp.dll Windows下用的，拷到windows / system32目錄下；<br><br>&nbsp;&nbsp;&nbsp; libJNativeCpp.so Linux下的格式檔案；<br><br>&nbsp;&nbsp;&nbsp; JNative.jar　這是一個擴展包，將其copy到C:Javajre1.5.0lib下（我的目錄架構），系統會自動加載，也可以用eclipse直接加載。<br><br>方法︰</div><br><div><br><br><table border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse; border: medium none; height: 403px; margin-left: 5.4pt; width: 560px;"><tbody><tr style="height: 18.75pt;"><td style="vertical-align: top;"></td><td style="border: 1pt solid windowtext; height: 18.75pt; padding: 0cm 5.4pt; width: 135pt;" valign="top" width="180"><br><div align="center" style="text-align: center;"><strong>Class</strong></div><br></td><td style="border-color: windowtext windowtext windowtext -moz-use-text-color; border-style: solid solid solid none; border-width: 1pt 1pt 1pt medium; height: 18.75pt; padding: 0cm 5.4pt; width: 162pt;" valign="top" width="216"><br><div align="center" style="text-align: center;"><strong>作用</strong></div><br></td><td style="border-color: windowtext windowtext windowtext -moz-use-text-color; border-style: solid solid solid none; border-width: 1pt 1pt 1pt medium; height: 18.75pt; padding: 0cm 5.4pt; width: 207pt;" valign="top" width="276"><br><div align="center" style="text-align: center;"><strong>一般用到的方法<br>（**</strong><a href="http://jnative.free.fr/docs/" target="_blank" rel="noopener">参考Javadoc</a><strong>**）</strong></div><br></td></tr><tr style="height: 16.5pt;"><td style="vertical-align: top;"></td><td style="border-color: -moz-use-text-color; border-style: none solid solid; border-width: medium 1pt 1pt; height: 16.5pt; padding: 0cm 5.4pt; width: 135pt;" valign="top" width="180"><br><div>org.xvolks.jnative.Jnative</div><br></td><td style="border-color: -moz-use-text-color; border-style: none solid solid none; border-width: medium 1pt 1pt medium; height: 16.5pt; padding: 0cm 5.4pt; width: 162pt;" valign="top" width="216">裝載dll檔案，定位函數</td><td style="border-color: -moz-use-text-color; border-style: none solid solid none; border-width: medium 1pt 1pt medium; height: 16.5pt; padding: 0cm 5.4pt; width: 207pt;" valign="top" width="276"><br><div>JNative(),setParameter(),<span style="font-size: 10pt;"><br>setRetVal(),getRetVal() etc.</span></div><br></td></tr><tr style="height: 32.25pt;"><td style="vertical-align: top;"></td><td style="border-color: -moz-use-text-color; border-style: none solid solid; border-width: medium 1pt 1pt; height: 32.25pt; padding: 0cm 5.4pt; width: 135pt;" valign="top" width="180"><br><div>org.xvolks.jnative.pointers<br>.Pointer</div><br></td><td style="border-color: -moz-use-text-color; border-style: none solid solid none; border-width: medium 1pt 1pt medium; height: 32.25pt; padding: 0cm 5.4pt; width: 162pt;" valign="top" width="216">替代本地函數中的的指標，需要先申請一塊記憶體空間，才能創建</td><td style="border-color: -moz-use-text-color; border-style: none solid solid none; border-width: medium 1pt 1pt medium; height: 32.25pt; padding: 0cm 5.4pt; width: 207pt;" valign="top" width="276"><br><div>Pointer()，dispose()</div><br></td></tr><tr style="height: 32.25pt;"><td style="vertical-align: top;"></td><td style="border-color: -moz-use-text-color; border-style: none solid solid; border-width: medium 1pt 1pt; height: 32.25pt; padding: 0cm 5.4pt; width: 135pt;" valign="top" width="180"><br><div>org.xvolks.jnative.<br>pointers.memory.<br>MemoryBlockFactory</div><br></td><td style="border-color: -moz-use-text-color; border-style: none solid solid none; border-width: medium 1pt 1pt medium; height: 32.25pt; padding: 0cm 5.4pt; width: 162pt;" valign="top" width="216"><br><div>申請一塊記憶體空間</div><br></td><td style="border-color: -moz-use-text-color; border-style: none solid solid none; border-width: medium 1pt 1pt medium; height: 32.25pt; padding: 0cm 5.4pt; width: 207pt;" valign="top" width="276"><br><div>createMemoryBlock()</div><br></td></tr><tr style="height: 17.9pt;"><td style="vertical-align: top;"></td><td style="border-color: -moz-use-text-color; border-style: none solid solid; border-width: medium 1pt 1pt; height: 17.9pt; padding: 0cm 5.4pt; width: 135pt;" valign="top" width="180"><br><div>org.xvolks.jnative.<br>exceptions<br>.NativeException</div><br></td><td style="border-color: -moz-use-text-color; border-style: none solid solid none; border-width: medium 1pt 1pt medium; height: 17.9pt; padding: 0cm 5.4pt; width: 162pt;" valign="top" width="216"><br><div>拋出裝載，定位等方面的異常</div><br></td><td style="border-color: -moz-use-text-color; border-style: none solid solid none; border-width: medium 1pt 1pt medium; height: 17.9pt; padding: 0cm 5.4pt; width: 207pt;" valign="top" width="276"></td></tr><tr style="height: 17.9pt;"><td style="vertical-align: top;"></td><td style="border-color: -moz-use-text-color; border-style: none solid solid; border-width: medium 1pt 1pt; height: 17.9pt; padding: 0cm 5.4pt; width: 135pt;" valign="top" width="180"><br><div>org.xvolks.jnative.Type</div><br></td><td style="border-color: -moz-use-text-color; border-style: none solid solid none; border-width: medium 1pt 1pt medium; height: 17.9pt; padding: 0cm 5.4pt; width: 162pt;" valign="top" width="216"><br><div>&nbsp;列舉和管理Jnative需要的不同的數據類型</div><br></td><td style="border-color: -moz-use-text-color; border-style: none solid solid none; border-width: medium 1pt 1pt medium; height: 17.9pt; padding: 0cm 5.4pt; width: 207pt;" valign="top" width="276"></td></tr></tbody></table><br><div style="margin-left: 10.5pt;">具体参考API：<a href="http://jnative.free.fr/docs/" target="_blank" rel="noopener"><span style="font-family: 宋体;">http://jnative.free.fr/docs/</span></a></div><br>這個使用很簡單,參數設定也很自由<br><br>//首先加載dll和需要的方法<br><br>&nbsp; JNative messageBox = new JNative(“dll_name.dll”, “method_name”);<br><br>//返回值數據類型<br>&nbsp;&nbsp; messageBox.setRetVal(Type.INT);<br><br>//參數設定<br>&nbsp;&nbsp; messageBox.setParameter(0, Type.STRING,”piserver”);<br><br>//營運<br>&nbsp;&nbsp; messageBox.invoke();<br><div style="margin-left: 10.5pt;"><br></div><br><div style="margin-left: 10.5pt;"><span style="font-family: 宋体;">====================================</span></div><br><div style="margin-left: 10.5pt;"><a href="http://jnative.free.fr/docs/" target="_blank" rel="noopener"><span style="font-family: 宋体;">http://jnative.free.fr/docs/</span></a></div><br><div style="margin-left: 10.5pt;"><code>取得回傳值
+getRetVal()</code></div><br><div style="margin-left: 10.5pt;"><code>TYPE</code></div>
+
+<p><table border="1" cellpadding="3" cellspacing="0" summary=""><tbody><tr bgcolor="white"><td><code>**[DOUBLE](http://jnative.free.fr/docs/org/xvolks/jnative/Type.html#DOUBLE)**</code><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Used for <strong>in</strong> params of type double</td></tr><tr bgcolor="white"><td><code>**[FLOAT](http://jnative.free.fr/docs/org/xvolks/jnative/Type.html#FLOAT)**</code><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Used for <strong>in</strong> params of type float</td></tr><tr bgcolor="white"><td><code>**[INT](http://jnative.free.fr/docs/org/xvolks/jnative/Type.html#INT)**</code><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Used for <strong>in</strong> params of type bool, byte to long (32 bits)</td></tr><tr bgcolor="white"><td><code>**[LONG](http://jnative.free.fr/docs/org/xvolks/jnative/Type.html#LONG)**</code><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Used for <strong>in</strong> params of type int64 (64 bits)</td></tr><tr bgcolor="white"><td><code>**[PSTRUCT](http://jnative.free.fr/docs/org/xvolks/jnative/Type.html#PSTRUCT)**</code>  (指標)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Not use directly, use a Pointer(指標) object instead<br>This is used internaly for <strong>out</strong> parameters.</td></tr><tr bgcolor="white"><td><code>**[STRING](http://jnative.free.fr/docs/org/xvolks/jnative/Type.html#STRING)**</code><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Used for <strong>in</strong> params of type const char*, LPCSTR</td></tr><tr bgcolor="white"><td><code>**[VOID](http://jnative.free.fr/docs/org/xvolks/jnative/Type.html#VOID)**</code><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Used only for return values</td></tr></tbody></table></p>
+<div style="margin-left: 10.5pt;">&nbsp;<strong><strong><strong><strong><strong><strong><em>**</em></strong></strong></strong></strong></strong></strong></div><br><div style="margin-left: 10.5pt;">有指標時的用法</div><br><div style="margin-left: 10.5pt;"><strong><strong><strong><strong><strong><strong><strong>*</strong></strong></strong></strong></strong></strong></strong></div><br><div style="margin-left: 10.5pt;">假設dllName.dll裡有<br>FuntionName(string <em> str)<br>的方法</em></div><br><div style="margin-left: 10.5pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; JNative funDLL = new JNative(dllName.dll, “FuntionName”);<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; funDLL.setRetVal(Type.INT);<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //参数设置<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Pointer pointer1 = new Pointer( new HeapMemoryBlock(50));<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //設定要預用多少記憶體空間來放指標<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; pointer1.setStringAt(0 ,”指標初值”);<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //設定初值<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; System.out.println(pointer1.getAsString()); //會印出 指標初值 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; funDLL.setParameter(0, pointer1);<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //運行dllFuntion<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; funDLL.invoke();<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; System.out.println(pointer1.getAsString());<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //印出指標的值</div><br><div style="margin-left: 10.5pt;"><strong><strong><strong><strong><strong><strong><em>**</em></strong></strong></strong></strong></strong></strong></div>
+
+<p></p></div><p></p>
+
+        
+      
+    </div>
+
+    
+      
+
+    
+
+    <footer class="article-footer border">
+      <a data-url="http://blog.gorendo.org/2008/08/jnative.html/" data-id="cjm64u15500dyg6xuu8s2lee0" class="article-share-link">
+        <i class="fa fa-share"></i> Share
+      </a>
+      
+        <a href="http://blog.gorendo.org/2008/08/jnative.html/#disqus_thread" class="article-comment-link">
+          <i class="fa fa-comment"></i> Comments
+        </a>
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+<!-- article.ejs end -->
+  
+    <!-- article.ejs -->
+<article id="post-jawin-dll.html" class="border post">
+    
+    <h2>
+      <a class="article-title" href="/2008/08/jawin-dll.html/">[Java] jawin 調用本地dll</a>
+    </h2>
+
+
+
+  <div class="article-meta">
+    <!-- date.ejs -->
+<div class="article-datetime">
+  date.ejs
+  <a href="/2008/08/jawin-dll.html/" class="article-date"><time datetime="2008-08-11T14:37:00.000Z" itemprop="datePublished">2008-08-11</time></a>
+</div>
+
+    <!-- category.ejs -->
+
+  <div class="article-category">
+      category.ejs
+    分類:
+    <a class="article-category-link" href="/categories/JAVA/">JAVA</a>
+  </div>
+
+
+    
+  TAG:
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JAVA/">JAVA</a></li></ul>
+
+
+  </div>
+  <div class="article-inner border">
+    <div class="article-entry border">
+      
+
+        
+        
+          <p>最近做一個項目使用jawin調用本地的dll，給有關心得貼上來<br>步驟：<br>1.下載jawin：<a href="http://jawinproject.sourceforge.net/。" target="_blank" rel="noopener">http://jawinproject.sourceforge.net/。</a><br>2.將jawin.jar放於%JAVA_HOME%jrelibext下 。<br>3.將jawin.dll放於c win32下。</p>
+<p><a name="more"></a></p>
+<p>import org.jawin.funcptr;&nbsp;<br>import org.jawin.returnflags;&nbsp;<br>public class createppt {&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; public static void main(string[] args) {&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; try {&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; funcptr msgbox = new funcptr(“user32.dll”, “messageboxw”); //獲得函數指針<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; msgbox.invoke(0, “hello from a dll”, “from jawin”, 0, returnflags.fail_on_false);&nbsp;<br>/*1.&nbsp;&nbsp;&nbsp;&nbsp; 指令字符串。一個”XXX:Y:ZZZ”格式的字符串。其含義分別是傳入參數中的每個字節的數據類型意義、返回值的類型、需要從傳入指針中讀取的數據(inout類型參數)。比如：</p>
+<p>函數簽名int func(int, int, struct s<em>, char</em>); //其中struct s*調用完函數後需要讀出，struct s所占字節數為16。</p>
+<p>其指令字符串為：IIP16G:I:L4L4n16L4。該字符串在解析返回值(字節數組)時，首先應該是返回類型I對應的4個字節，然後是inout類型的參數中n16對應的16個字節。</p>
+<p>其中字符串的意義可以在Jawin提供的文件instructions.h中找到，或者在官方文檔(Jawin數據指令)中找到常用的一些指令字符串的意義。</p>
+<p>2.&nbsp;&nbsp;&nbsp;&nbsp; 傳入參數的總字節大小。</p>
+<p>3.&nbsp;&nbsp;&nbsp;&nbsp; 前面寫好的傳入參數的原始字節流。</p>
+<p>4.&nbsp;&nbsp;&nbsp;&nbsp; 一個object數組。</p>
+<p>5.&nbsp;&nbsp;&nbsp;&nbsp; ReturnFlags，用以根據C/C++返回值將C/C++的錯誤轉換為Java的異常並拋出。其中CHECK_NONE表示不檢查；CHECK_FALSE和 CHECK_WIN32分別表示返回0是FALSE和SUCCESS，根據是否出錯決定是否拋出異常；CHECK_HRESULT表示使用COM模型中的 HRESULT作為返回值，其錯誤碼可以配置。</p>
+<p>*/<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } catch (exception e) {&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; e.printstacktrace();&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</p>
+
+        
+      
+    </div>
+
+    
+      
+
+    
+
+    <footer class="article-footer border">
+      <a data-url="http://blog.gorendo.org/2008/08/jawin-dll.html/" data-id="cjm64u11t0054g6xu1k17i1yw" class="article-share-link">
+        <i class="fa fa-share"></i> Share
+      </a>
+      
+        <a href="http://blog.gorendo.org/2008/08/jawin-dll.html/#disqus_thread" class="article-comment-link">
+          <i class="fa fa-comment"></i> Comments
+        </a>
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+<!-- article.ejs end -->
+  
+    <!-- article.ejs -->
+<article id="post-jawinwordjava.html" class="border post">
+    
+    <h2>
+      <a class="article-title" href="/2008/08/jawinwordjava.html/">[Java] 使用jawin操作Word文檔的Java程式</a>
+    </h2>
+
+
+
+  <div class="article-meta">
+    <!-- date.ejs -->
+<div class="article-datetime">
+  date.ejs
+  <a href="/2008/08/jawinwordjava.html/" class="article-date"><time datetime="2008-08-11T14:27:00.000Z" itemprop="datePublished">2008-08-11</time></a>
+</div>
+
+    <!-- category.ejs -->
+
+  <div class="article-category">
+      category.ejs
+    分類:
+    <a class="article-category-link" href="/categories/JAVA/">JAVA</a>
+  </div>
+
+
+    
+  TAG:
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JAVA/">JAVA</a></li></ul>
+
+
+  </div>
+  <div class="article-inner border">
+    <div class="article-entry border">
+      
+
+        
+        
+          <p><a name="more"></a></p>
 <p><div></div></p>
 <p><div style="display: inline;"><strong>
 </strong><span>                      </span></div><br></p>
-<p><div><br></div></p></div><p class="readmore"><a href="/2008/08/jawinwordjava.html/">Read More</a></p></div><nav class="page-navigator"><a class="extend prev" rel="prev" href="/page/9/">Previous</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="page-number" href="/page/9/">9</a><span class="page-number current">10</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/11/">Next</a></nav></div></div><div class="pure-u-1-4 hidden_mid_and_down"><div id="sidebar"><div class="widget"><form action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank" class="search-form"><input type="text" name="q" maxlength="20" placeholder="Search"/><input type="hidden" name="sitesearch" value="http://blog.gorendo.org"/></form></div><div class="widget"><div class="widget-title"><i class="fa fa-folder-o"> Categories</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/">Android</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/C/">C#</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/C-C/">C/C++</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Cocos2D/">Cocos2D</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/DATABASE/">DATABASE</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Facebook/">Facebook</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Game-Dev/">Game Dev</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JAVA/">JAVA</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Javascript/">Javascript</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Lua/">Lua</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Mac/">Mac</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/PHP/">PHP</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Software/">Software</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Unity/">Unity</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Unity/AssetBundle/">AssetBundle</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/WEB/">WEB</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/WEB/CSS/">CSS</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/iOS/">iOS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery/">jQuery</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/programming/">programming</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/大學專題/">大學專題</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/攝影/">攝影</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/敗家/">敗家</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/程式語言/">程式語言</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-star-o"> Tags</i></div><div class="tagcloud"><a href="/tags/PHP/" style="font-size: 15px;">PHP</a> <a href="/tags/Unity/" style="font-size: 15px;">Unity</a> <a href="/tags/Game-Dev/" style="font-size: 15px;">Game Dev</a> <a href="/tags/JAVA/" style="font-size: 15px;">JAVA</a> <a href="/tags/OpenGL/" style="font-size: 15px;">OpenGL</a> <a href="/tags/Google-API/" style="font-size: 15px;">Google API</a> <a href="/tags/C-C/" style="font-size: 15px;">C/C++</a> <a href="/tags/Cocos2D/" style="font-size: 15px;">Cocos2D</a> <a href="/tags/DATABASE/" style="font-size: 15px;">DATABASE</a> <a href="/tags/MySQL/" style="font-size: 15px;">MySQL</a> <a href="/tags/iOS/" style="font-size: 15px;">iOS</a> <a href="/tags/Xcode/" style="font-size: 15px;">Xcode</a> <a href="/tags/Mac/" style="font-size: 15px;">Mac</a> <a href="/tags/Software/" style="font-size: 15px;">Software</a> <a href="/tags/Lua/" style="font-size: 15px;">Lua</a> <a href="/tags/敗家/" style="font-size: 15px;">敗家</a> <a href="/tags/Android/" style="font-size: 15px;">Android</a> <a href="/tags/ATOM/" style="font-size: 15px;">ATOM</a> <a href="/tags/SEO/" style="font-size: 15px;">SEO</a> <a href="/tags/資訊安全/" style="font-size: 15px;">資訊安全</a> <a href="/tags/opensource/" style="font-size: 15px;">opensource</a> <a href="/tags/程式語言/" style="font-size: 15px;">程式語言</a> <a href="/tags/Facebook/" style="font-size: 15px;">Facebook</a> <a href="/tags/programming/" style="font-size: 15px;">programming</a> <a href="/tags/攝影/" style="font-size: 15px;">攝影</a> <a href="/tags/C/" style="font-size: 15px;">C#</a> <a href="/tags/WINDOWS/" style="font-size: 15px;">WINDOWS</a> <a href="/tags/WEB/" style="font-size: 15px;">WEB</a> <a href="/tags/Javascript/" style="font-size: 15px;">Javascript</a> <a href="/tags/Node-JS/" style="font-size: 15px;">Node.JS</a> <a href="/tags/jQuery/" style="font-size: 15px;">jQuery</a> <a href="/tags/CSS/" style="font-size: 15px;">CSS</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-file-o"> Recent</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/10/php-mac-atom-visual-studio-code-php.html/">[php] 在 Mac 用ATOM / Visual Studio Code 為 php debug</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/mac-xxx.html/">[Mac] 解決 您要讓應用程式 XXX 接受傳入的網路連接嗎 一直跳出</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/10/php-callback.html/">[php] 實作callback</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/06/android-setclicklistener-in-custom-view.html/">[Android] setClickListener in custom view</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/06/errorexecution-failed-for-task.html/">解決 Error:Execution failed for task 'preDexDebug'. > com.android.ide.common.process.ProcessException: org.gradle.process.internal.ExecException: Process 'command  finished with non-zero exit value 1</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/05/android-wiperefreshlayout.html/">[Android] 下拉更新 SwipeRefreshLayout</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/04/android-cant-create-handler-inside.html/">[Android] 處理 Can't create handler inside thread that has not called Looper.prepare()</a></li><li class="post-list-item"><a class="post-list-link" href="/2014/08/unity-ugui-46-eventsystem.html/">[Unity] uGUI (4.6) EventSystem 事件系統 快速上手</a></li><li class="post-list-item"><a class="post-list-link" href="/2014/08/unity-ugui-46-eventsystem.html/">[Unity] uGUI (4.6) EventSystem 事件系統 快速上手</a></li><li class="post-list-item"><a class="post-list-link" href="/2014/06/cocos2d-x-install-mac.html/">[Cocos2d-x] 在 Mac 上設置 Cocos2d-x (Cocos2d-x 3 .x)</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-external-link"> Links</i></div><ul></ul><a href="http://www.example1.com/" title="site-name1" target="_blank">site-name1</a><ul></ul><a href="http://www.example2.com/" title="site-name2" target="_blank">site-name2</a><ul></ul><a href="http://www.example3.com/" title="site-name3" target="_blank">site-name3</a></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">Copyright © 2017 <a href="/." rel="nofollow">小伍手札.</a> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a><a rel="nofollow" target="_blank" href="https://github.com/tufu9441/maupassant-hexo"> Theme</a> by<a rel="nofollow" target="_blank" href="https://github.com/pagecho"> Cho.</a></div></div></div><a id="rocket" href="#top" class="show"></a><script type="text/javascript" src="/js/totop.js?v=0.0.0" async></script><script type="text/javascript" src="//cdn.bootcss.com/fancybox/3.1.20/jquery.fancybox.min.js" async></script><script type="text/javascript" src="/js/fancybox.js?v=0.0.0" async></script><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/fancybox/3.1.20/jquery.fancybox.min.css"><script type="text/javascript" src="/js/codeblock-resizer.js?v=0.0.0"></script><script type="text/javascript" src="/js/smartresize.js?v=0.0.0"></script></div></body></html>
+<p><div><br></div></p>
+<p><div>/<em><br>&nbsp;<wbr></em> CreateWordDoc.java<br>&nbsp;<wbr><em><br>&nbsp;<wbr></em> 1.Create a new word document;</div></p>
+<p><div>&nbsp;<wbr>* 2.assign font name</div></p>
+<p><div>&nbsp;<wbr>* 3.assign font size</div></p>
+<p><div>&nbsp;<wbr>* 4.write&nbsp;<wbr>two sentences</div></p>
+<p><div>&nbsp;<wbr>* 5.save it</div></p>
+<p><div>&nbsp;<wbr>* 6.close it</div></p>
+<p><div>&nbsp;<wbr><em> 7.exit word.<br>&nbsp;<wbr></em><br>&nbsp;<wbr><em> @version&nbsp;<wbr>&nbsp;<wbr>&nbsp;<wbr>&nbsp;<wbr> vision: 1.0<br>&nbsp;<wbr></em> @author&nbsp;<wbr>&nbsp;<wbr>&nbsp;<wbr>&nbsp;<wbr>&nbsp;<wbr> <a href="mailto:howwa@sina.com" target="_blank" rel="noopener">howwa@sina.com</a></div></p>
+<p><div>&nbsp;<wbr><em> <a href="http://blog.sina.com.cn/u/1495389370" target="_blank" rel="noopener">http://blog.sina.com.cn/u/1495389370</a><br>&nbsp;<wbr></em>/</div></p>
+<p><div></div></p>
+<p><div></div></p>
+<p><div>import org.jawin.DispatchPtr;<br>import org.jawin.win32.Ole32;</div></p>
+<p><div></div><br></p>
+<p><div>public class CreateWordDoc {</div></p>
+<p><div>public static void main(String[] args) {<br>&nbsp;<wbr> try {<br>&nbsp;<wbr>&nbsp;<wbr>&nbsp;<wbr> Ole32.CoInitialize();<br>&nbsp;<wbr>&nbsp;<wbr>&nbsp;<wbr> //初始化<br>&nbsp;<wbr>&nbsp;<wbr>&nbsp;<wbr> DispatchPtr app = new DispatchPtr(“Word.Application”);<br>&nbsp;<wbr>&nbsp;<wbr>&nbsp;<wbr> //创建word对象<br>&nbsp;<wbr>&nbsp;<wbr>&nbsp;<wbr> app.put(“Visible”, true);<br>&nbsp;<wbr>&nbsp;<wbr>&nbsp;<wbr> //使word 可见<br>&nbsp;<wbr>&nbsp;<wbr>&nbsp;<wbr> DispatchPtr docs = (DispatchPtr)app.get(“Documents”);<br>&nbsp;<wbr>&nbsp;<wbr>&nbsp;<wbr> //取得document对象集合(Documents)<br>&nbsp;<wbr>&nbsp;<wbr>&nbsp;<wbr> DispatchPtr doc = (DispatchPtr) docs.invoke(“Add”);&nbsp;<wbr><br>&nbsp;<wbr>&nbsp;<wbr>&nbsp;<wbr> //新增一个文档<br>&nbsp;<wbr>&nbsp;<wbr>&nbsp;<wbr> app.invoke(“Activate”);<br>&nbsp;<wbr>&nbsp;<wbr>&nbsp;<wbr> //激活当前文档<br>&nbsp;<wbr>&nbsp;<wbr>&nbsp;<wbr> DispatchPtr objTextFont = (DispatchPtr)((DispatchPtr) doc.get(“Content”)).get(“Font”);<br>&nbsp;<wbr>&nbsp;<wbr>&nbsp;<wbr> //取得Font对象<br>&nbsp;<wbr>&nbsp;<wbr>&nbsp;<wbr> objTextFont.put(“Name”,”黑体”);<br>&nbsp;<wbr>&nbsp;<wbr>&nbsp;<wbr> //设置字体<br>&nbsp;<wbr>&nbsp;<wbr>&nbsp;<wbr> objTextFont.put(“Size”,”48”);<br>&nbsp;<wbr>&nbsp;<wbr>&nbsp;<wbr> //设置字号<br>&nbsp;<wbr>&nbsp;<wbr>&nbsp;<wbr> DispatchPtr docSelection = (DispatchPtr)app.get(“Selection”);<br>&nbsp;<wbr>&nbsp;<wbr>&nbsp;<wbr> //取得Selection对象<br>&nbsp;<wbr>&nbsp;<wbr>&nbsp;<wbr> docSelection.invoke(“TypeText”,”Jawwin test text!nJawin测试文本。”);<br>&nbsp;<wbr>&nbsp;<wbr>&nbsp;<wbr> //使用TypeText方法添加文本<br>&nbsp;<wbr>&nbsp;<wbr>&nbsp;<wbr> doc.invoke(“SaveAs”,”c:\jawintest.doc”);&nbsp;<wbr><br>&nbsp;<wbr>&nbsp;<wbr>&nbsp;<wbr> //保存文档(保存在C盘根目录下)<br>&nbsp;<wbr>&nbsp;<wbr>&nbsp;<wbr> //doc.invoke(“Close”);<br>&nbsp;<wbr>&nbsp;<wbr>&nbsp;<wbr> //关闭当前文档，去掉前面的注释符并重新编译后可生效<br>&nbsp;<wbr>&nbsp;<wbr>&nbsp;<wbr> //app.invoke(“Quit”);<br>&nbsp;<wbr>&nbsp;<wbr>&nbsp;<wbr> //退出Word，去掉前面的注释符并重新编译后可生效</div></p>
+<p><div>&nbsp;<wbr>&nbsp;<wbr>&nbsp;<wbr> Ole32.CoUninitialize();&nbsp;<wbr> //释放对象<br>} catch (Exception e) {<br>e.printStackTrace();<br>}<br>}</div><br>}</p>
+
+        
+      
+    </div>
+
+    
+      
+
+    
+
+    <footer class="article-footer border">
+      <a data-url="http://blog.gorendo.org/2008/08/jawinwordjava.html/" data-id="cjm64u11n004tg6xu07u3afn3" class="article-share-link">
+        <i class="fa fa-share"></i> Share
+      </a>
+      
+        <a href="http://blog.gorendo.org/2008/08/jawinwordjava.html/#disqus_thread" class="article-comment-link">
+          <i class="fa fa-comment"></i> Comments
+        </a>
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+<!-- article.ejs end -->
+  
+
+
+  <div id="page-nav">
+    page-nav TODO
+  </div>
+
+<!-- end _partial/archive -->
+
+<!-- end index.ejs  -->
+      </div>
+      <aside id="aside" class="aside col-10 col-lg-3 border">
+        aside
+        <div class="card bg-primary d-none">
+          <div class="card-header">
+            ABOUT
+          </div>
+          <img class="card-img rounded w-50 mx-auto" src="https://www.gravatar.com/avatar/46c6cc40826824204a70f22ee75c3752?s=240"
+            alt="Card image cap">
+
+          <div class="card-body">
+            <h4 class="card-title">Special title treatment</h4>
+            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+        </div>
+
+
+        
+        <div class="card">
+          <div class="card-header">
+            最新文章
+          </div>
+          <div class="card-body">
+            
+            <li>
+              <a href="/2016/10/php-mac-atom-visual-studio-code-php.html/">
+                [php] 在 Mac 用ATOM / Visual Studio Code 為 php debug</a>
+            </li>
+            
+            <li>
+              <a href="/2015/12/mac-xxx.html/">
+                [Mac] 解決 您要讓應用程式 XXX 接受傳入的網路連接嗎 一直跳出</a>
+            </li>
+            
+            <li>
+              <a href="/2015/10/php-callback.html/">
+                [php] 實作callback</a>
+            </li>
+            
+            <li>
+              <a href="/2015/06/android-setclicklistener-in-custom-view.html/">
+                [Android] setClickListener in custom view</a>
+            </li>
+            
+            <li>
+              <a href="/2015/06/errorexecution-failed-for-task.html/">
+                解決 Error:Execution failed for task &#39;preDexDebug&#39;. &gt; com.android.ide.common.process.ProcessException: org.gradle.process.internal.ExecException: Process &#39;command  finished with non-zero exit value 1</a>
+            </li>
+            
+
+          </div>
+        </div>
+        
+
+        
+
+        <div class="card">
+          <div class="card-header">
+            標籤
+          </div>
+          <div class="card-body">
+
+            
+            <a class="badge badge-primary" href="/tags/PHP/">
+              PHP <span class="badge badge-light">
+                20</span></a>
+            
+            <a class="badge badge-primary" href="/tags/Android/">
+              Android <span class="badge badge-light">
+                17</span></a>
+            
+            <a class="badge badge-primary" href="/tags/WEB/">
+              WEB <span class="badge badge-light">
+                10</span></a>
+            
+            <a class="badge badge-primary" href="/tags/JAVA/">
+              JAVA <span class="badge badge-light">
+                9</span></a>
+            
+            <a class="badge badge-primary" href="/tags/Game-Dev/">
+              Game Dev <span class="badge badge-light">
+                9</span></a>
+            
+            <a class="badge badge-primary" href="/tags/Unity/">
+              Unity <span class="badge badge-light">
+                8</span></a>
+            
+            <a class="badge badge-primary" href="/tags/攝影/">
+              攝影 <span class="badge badge-light">
+                7</span></a>
+            
+            <a class="badge badge-primary" href="/tags/Software/">
+              Software <span class="badge badge-light">
+                4</span></a>
+            
+            <a class="badge badge-primary" href="/tags/C-C/">
+              C/C++ <span class="badge badge-light">
+                3</span></a>
+            
+            <a class="badge badge-primary" href="/tags/Mac/">
+              Mac <span class="badge badge-light">
+                3</span></a>
+            
+            <a class="badge badge-primary" href="/tags/DATABASE/">
+              DATABASE <span class="badge badge-light">
+                3</span></a>
+            
+            <a class="badge badge-primary" href="/tags/MySQL/">
+              MySQL <span class="badge badge-light">
+                3</span></a>
+            
+            <a class="badge badge-primary" href="/tags/jQuery/">
+              jQuery <span class="badge badge-light">
+                3</span></a>
+            
+            <a class="badge badge-primary" href="/tags/程式語言/">
+              程式語言 <span class="badge badge-light">
+                2</span></a>
+            
+            <a class="badge badge-primary" href="/tags/Xcode/">
+              Xcode <span class="badge badge-light">
+                2</span></a>
+            
+            <a class="badge badge-primary" href="/tags/C/">
+              C# <span class="badge badge-light">
+                2</span></a>
+            
+            <a class="badge badge-primary" href="/tags/iOS/">
+              iOS <span class="badge badge-light">
+                2</span></a>
+            
+            <a class="badge badge-primary" href="/tags/Cocos2D/">
+              Cocos2D <span class="badge badge-light">
+                2</span></a>
+            
+            <a class="badge badge-primary" href="/tags/Google-API/">
+              Google API <span class="badge badge-light">
+                2</span></a>
+            
+            <a class="badge badge-primary" href="/tags/Javascript/">
+              Javascript <span class="badge badge-light">
+                2</span></a>
+            
+            <a class="badge badge-primary" href="/tags/opensource/">
+              opensource <span class="badge badge-light">
+                1</span></a>
+            
+            <a class="badge badge-primary" href="/tags/敗家/">
+              敗家 <span class="badge badge-light">
+                1</span></a>
+            
+            <a class="badge badge-primary" href="/tags/programming/">
+              programming <span class="badge badge-light">
+                1</span></a>
+            
+            <a class="badge badge-primary" href="/tags/SEO/">
+              SEO <span class="badge badge-light">
+                1</span></a>
+            
+            <a class="badge badge-primary" href="/tags/CSS/">
+              CSS <span class="badge badge-light">
+                1</span></a>
+            
+            <a class="badge badge-primary" href="/tags/WINDOWS/">
+              WINDOWS <span class="badge badge-light">
+                1</span></a>
+            
+            <a class="badge badge-primary" href="/tags/資訊安全/">
+              資訊安全 <span class="badge badge-light">
+                1</span></a>
+            
+            <a class="badge badge-primary" href="/tags/Facebook/">
+              Facebook <span class="badge badge-light">
+                1</span></a>
+            
+            <a class="badge badge-primary" href="/tags/Lua/">
+              Lua <span class="badge badge-light">
+                1</span></a>
+            
+            <a class="badge badge-primary" href="/tags/Node-JS/">
+              Node.JS <span class="badge badge-light">
+                1</span></a>
+            
+            <a class="badge badge-primary" href="/tags/OpenGL/">
+              OpenGL <span class="badge badge-light">
+                1</span></a>
+            
+            <a class="badge badge-primary" href="/tags/ATOM/">
+              ATOM <span class="badge badge-light">
+                1</span></a>
+            
+          </div>
+        </div>
+        
+
+
+      </aside>
+    </div>
+  </section>
+
+  <footer class="blog-footer">
+    <div class="container">
+      <div id="footer-info" class="inner">
+        &copy;
+        2018
+        gonex45<br>
+        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- end layout.ejs  -->
+</body>
+
+</html>

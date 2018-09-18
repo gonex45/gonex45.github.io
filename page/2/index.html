@@ -1,30 +1,1170 @@
-<!DOCTYPE html><html lang="en"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description"><title>小伍手札 | 某RD的開發筆記</title><link rel="stylesheet" type="text/css" href="/css/style.css?v=0.0.0"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/normalize/7.0.0/normalize.min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/1.0.0/pure-min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/1.0.0/grids-responsive-min.css"><link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"><link rel="alternate" type="application/atom+xml" href="/atom.xml"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">小伍手札</h1><a id="logo" href="/.">小伍手札</a><p class="description">某RD的開發筆記</p></div><div id="nav-menu"><a href="/." class="current"><i class="fa fa-home"> Home</i></a><a href="/archives/"><i class="fa fa-archive"> Archive</i></a><a href="/about/"><i class="fa fa-user"> About</i></a><a href="/atom.xml"><i class="fa fa-rss"> RSS</i></a></div></div><div id="layout" class="pure-g"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title"><a href="/2014/04/unity-assetbundle-shader-lost.html/">[Unity] Assetbundle Shader 遺失的解決方案</a></h1><div class="post-meta">2014-04-29</div><div class="post-content"><p>物件打包成 AssetBundle 後有的物件上的材質的shader 會 lost 變一塊紫色</p>
+<!DOCTYPE html>
+<!-- layout.ejs -->
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+  <title>
+    
+    小伍手札
+  </title>
+
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+    crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+    crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="/css/styles.css">
+  <script src="/js/script.js"></script>
+</head>
+
+<body>
+
+  <button type="button" id="asidebtn" class="btn btn-primary btn-sm" data-toggle="offcanvas"></button>
+  <script>
+  </script>
+  <section class="border">
+    <header>
+
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/">
+          <img src="https://www.gravatar.com/avatar/46c6cc40826824204a70f22ee75c3752?s=50" alt="">
+        </a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li id="blog-title" class="nav-item active">
+              <a class="nav-link" href="/">
+                <h1>
+                  小伍手札 <span class="sr-only">(current)</span>
+              </a>
+              </h1>
+            </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0" action="https://google.com/search" method="get" onSubmit="Gsitesearch(this)"
+            target="_blank">
+            <input name="q" type="hidden" />
+            <input name="qfront" class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+        </div>
+      </nav>
+    </header>
+
+    <div class="row border">
+      <div class="col col-lg-9 border">
+        <!-- index.ejs -->
+<!-- _partial/archive -->
+_partial/archive.ejs
+
+  pagination == 2
+  
+    <!-- article.ejs -->
+<article id="post-unity-assetbundle-shader-lost.html" class="border post">
+    
+    <h2>
+      <a class="article-title" href="/2014/04/unity-assetbundle-shader-lost.html/">[Unity] Assetbundle Shader 遺失的解決方案</a>
+    </h2>
+
+
+
+  <div class="article-meta">
+    <!-- date.ejs -->
+<div class="article-datetime">
+  date.ejs
+  <a href="/2014/04/unity-assetbundle-shader-lost.html/" class="article-date"><time datetime="2014-04-29T01:54:00.000Z" itemprop="datePublished">2014-04-29</time></a>
+</div>
+
+    <!-- category.ejs -->
+
+  <div class="article-category">
+      category.ejs
+    分類:
+    <a class="article-category-link" href="/categories/Unity/">Unity</a> / <a class="article-category-link" href="/categories/Unity/AssetBundle/">AssetBundle</a>
+  </div>
+
+
+    
+  TAG:
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Unity/">Unity</a></li></ul>
+
+
+  </div>
+  <div class="article-inner border">
+    <div class="article-entry border">
+      
+
+        
+        
+          <p>物件打包成 AssetBundle 後有的物件上的材質的shader 會 lost 變一塊紫色</p>
 <pre>//assetbundle後shader會lost的處理
-gameObject.renderer.material.shader =  Shader.Find(gameObject.renderer.material.shader.name);</div><p class="readmore"><a href="/2014/04/unity-assetbundle-shader-lost.html/">Read More</a></p></div><div class="post"><h1 class="post-title"><a href="/2014/04/unity-assetbundle-shader-lost.html/">[Unity] Assetbundle Shader 遺失的解決方案</a></h1><div class="post-meta">2014-04-29</div><div class="post-content"><p>物件打包成 AssetBundle 後有的物件上的材質的shader 會 lost 變一塊紫色</p>
+gameObject.renderer.material.shader =  Shader.Find(gameObject.renderer.material.shader.name);
+</pre>
+或是
+
+<pre>    using UnityEngine;
+    using System.Collections;
+    public class ApplyShader : MonoBehaviour
+    {
+        private Material[] thisMaterial;
+        private string[] shaders;
+        void Start () {
+            thisMaterial = this.renderer.sharedMaterials;             
+            shaders =  new string[thisMaterial.Length];
+            for( int i = 0; i &lt; thisMaterial.Length; i++){
+                shaders[i] = thisMaterial[i].shader.name;
+            }    
+
+            for( int i = 0; i &lt; thisMaterial.Length; i++){
+                thisMaterial[i].shader = Shader.Find(shaders[i]);  
+            }
+        }
+    }
+</pre>
+
+        
+      
+    </div>
+
+    
+      
+
+    
+
+    <footer class="article-footer border">
+      <a data-url="http://blog.gorendo.org/2014/04/unity-assetbundle-shader-lost.html/" data-id="cjm64u13d008xg6xuzb9b0vmb" class="article-share-link">
+        <i class="fa fa-share"></i> Share
+      </a>
+      
+        <a href="http://blog.gorendo.org/2014/04/unity-assetbundle-shader-lost.html/#disqus_thread" class="article-comment-link">
+          <i class="fa fa-comment"></i> Comments
+        </a>
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+<!-- article.ejs end -->
+  
+    <!-- article.ejs -->
+<article id="post-unity-assetbundle-shader-lost.html" class="border post">
+    
+    <h2>
+      <a class="article-title" href="/2014/04/unity-assetbundle-shader-lost.html/">[Unity] Assetbundle Shader 遺失的解決方案</a>
+    </h2>
+
+
+
+  <div class="article-meta">
+    <!-- date.ejs -->
+<div class="article-datetime">
+  date.ejs
+  <a href="/2014/04/unity-assetbundle-shader-lost.html/" class="article-date"><time datetime="2014-04-29T01:54:00.000Z" itemprop="datePublished">2014-04-29</time></a>
+</div>
+
+    <!-- category.ejs -->
+
+  <div class="article-category">
+      category.ejs
+    分類:
+    <a class="article-category-link" href="/categories/Unity/">Unity</a> / <a class="article-category-link" href="/categories/Unity/AssetBundle/">AssetBundle</a>
+  </div>
+
+
+    
+  TAG:
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Unity/">Unity</a></li></ul>
+
+
+  </div>
+  <div class="article-inner border">
+    <div class="article-entry border">
+      
+
+        
+        
+          <p>物件打包成 AssetBundle 後有的物件上的材質的shader 會 lost 變一塊紫色</p>
 <pre>//assetbundle後shader會lost的處理
-gameObject.renderer.material.shader =  Shader.Find(gameObject.renderer.material.shader.name);</div><p class="readmore"><a href="/2014/04/unity-assetbundle-shader-lost.html/">Read More</a></p></div><div class="post"><h1 class="post-title"><a href="/2014/03/mac-mac-nginx.html/">[MAC]  在 MAC 上安裝 nginx</a></h1><div class="post-meta">2014-03-21</div><div class="post-content"><p>安裝 Homebrew</p>
+gameObject.renderer.material.shader =  Shader.Find(gameObject.renderer.material.shader.name);
+</pre>
+或是
+
+<pre>    using UnityEngine;
+    using System.Collections;
+    public class ApplyShader : MonoBehaviour
+    {
+        private Material[] thisMaterial;
+        private string[] shaders;
+        void Start () {
+            thisMaterial = this.renderer.sharedMaterials;             
+            shaders =  new string[thisMaterial.Length];
+            for( int i = 0; i &lt; thisMaterial.Length; i++){
+                shaders[i] = thisMaterial[i].shader.name;
+            }    
+
+            for( int i = 0; i &lt; thisMaterial.Length; i++){
+                thisMaterial[i].shader = Shader.Find(shaders[i]);  
+            }
+        }
+    }
+</pre>
+
+        
+      
+    </div>
+
+    
+      
+
+    
+
+    <footer class="article-footer border">
+      <a data-url="http://blog.gorendo.org/2014/04/unity-assetbundle-shader-lost.html/" data-id="cjm64u102001vg6xus4q0ksh4" class="article-share-link">
+        <i class="fa fa-share"></i> Share
+      </a>
+      
+        <a href="http://blog.gorendo.org/2014/04/unity-assetbundle-shader-lost.html/#disqus_thread" class="article-comment-link">
+          <i class="fa fa-comment"></i> Comments
+        </a>
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+<!-- article.ejs end -->
+  
+    <!-- article.ejs -->
+<article id="post-mac-mac-nginx.html" class="border post">
+    
+    <h2>
+      <a class="article-title" href="/2014/03/mac-mac-nginx.html/">[MAC]  在 MAC 上安裝 nginx</a>
+    </h2>
+
+
+
+  <div class="article-meta">
+    <!-- date.ejs -->
+<div class="article-datetime">
+  date.ejs
+  <a href="/2014/03/mac-mac-nginx.html/" class="article-date"><time datetime="2014-03-21T14:28:00.000Z" itemprop="datePublished">2014-03-21</time></a>
+</div>
+
+    <!-- category.ejs -->
+
+  <div class="article-category">
+      category.ejs
+    分類:
+    <a class="article-category-link" href="/categories/WEB/">WEB</a>
+  </div>
+
+
+    
+  TAG:
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/WEB/">WEB</a></li></ul>
+
+
+  </div>
+  <div class="article-inner border">
+    <div class="article-entry border">
+      
+
+        
+        
+          <p>安裝 Homebrew</p>
 <pre>ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
 </pre>安裝 nginx
 <pre>brew install nginx
-</pre>讓 nginx 在登入時自動載入</div><p class="readmore"><a href="/2014/03/mac-mac-nginx.html/">Read More</a></p></div><div class="post"><h1 class="post-title"><a href="/2014/02/ios-xocde-tab-no-new-window.html/">[iOS開發] 在 Xcode5 點兩下檔案開在 Tab 不開新視窗</a></h1><div class="post-meta">2014-02-21</div><div class="post-content"><p><a href="http://localhost:32772/wp-content/uploads/2014/02/Navigation.png" target="_blank" rel="external"><img src="" alt=""></a></p>
-<p>Preferences &gt; Navigation &gt; Double Click Navigation 選 Uses Separate Tab<br>就不會點兩下檔案又開在新視窗了</p></div><p class="readmore"><a href="/2014/02/ios-xocde-tab-no-new-window.html/">Read More</a></p></div><div class="post"><h1 class="post-title"><a href="/2014/02/ios-uiimageview.html/">[iOS開發] UIImageView 加點擊範例</a></h1><div class="post-meta">2014-02-20</div><div class="post-content"><p>簡單的讓 UIImageView 變成 ImageButton  imgBtn.png 放在 Resources 資料夾</p>
+</pre>讓 nginx 在登入時自動載入
+<pre>ln -sfv /usr/local/opt/nginx/*.plist ~/Library/LaunchAgents
+</pre>立刻載入
+<pre>launchctl load ~/Library/LaunchAgents/homebrew.mxcl.nginx.plist
+</pre>或
+<pre>sudo nginx
+</pre>網頁根目錄
+<pre>/usr/local/var/www
+</pre>nginx 的設定檔
+<pre>/usr/local/etc/nginx/nginx.conf
+</pre>  關掉 apache <pre>
+sudo apachectl stop
+</pre>
+
+        
+      
+    </div>
+
+    
+      
+
+    
+
+    <footer class="article-footer border">
+      <a data-url="http://blog.gorendo.org/2014/03/mac-mac-nginx.html/" data-id="cjm64u14100adg6xusy6xgukx" class="article-share-link">
+        <i class="fa fa-share"></i> Share
+      </a>
+      
+        <a href="http://blog.gorendo.org/2014/03/mac-mac-nginx.html/#disqus_thread" class="article-comment-link">
+          <i class="fa fa-comment"></i> Comments
+        </a>
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+<!-- article.ejs end -->
+  
+    <!-- article.ejs -->
+<article id="post-ios-xocde-tab-no-new-window.html" class="border post">
+    
+    <h2>
+      <a class="article-title" href="/2014/02/ios-xocde-tab-no-new-window.html/">[iOS開發] 在 Xcode5 點兩下檔案開在 Tab 不開新視窗</a>
+    </h2>
+
+
+
+  <div class="article-meta">
+    <!-- date.ejs -->
+<div class="article-datetime">
+  date.ejs
+  <a href="/2014/02/ios-xocde-tab-no-new-window.html/" class="article-date"><time datetime="2014-02-21T02:28:00.000Z" itemprop="datePublished">2014-02-21</time></a>
+</div>
+
+    <!-- category.ejs -->
+
+  <div class="article-category">
+      category.ejs
+    分類:
+    <a class="article-category-link" href="/categories/iOS/">iOS</a>
+  </div>
+
+
+    
+  TAG:
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Xcode/">Xcode</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/">iOS</a></li></ul>
+
+
+  </div>
+  <div class="article-inner border">
+    <div class="article-entry border">
+      
+
+        
+        
+          <p><a href="http://localhost:32772/wp-content/uploads/2014/02/Navigation.png" target="_blank" rel="noopener"><img src="" alt=""></a></p>
+<p>Preferences &gt; Navigation &gt; Double Click Navigation 選 Uses Separate Tab<br>就不會點兩下檔案又開在新視窗了</p>
+
+        
+      
+    </div>
+
+    
+      
+
+    
+
+    <footer class="article-footer border">
+      <a data-url="http://blog.gorendo.org/2014/02/ios-xocde-tab-no-new-window.html/" data-id="cjm64u11j004jg6xuj618evvm" class="article-share-link">
+        <i class="fa fa-share"></i> Share
+      </a>
+      
+        <a href="http://blog.gorendo.org/2014/02/ios-xocde-tab-no-new-window.html/#disqus_thread" class="article-comment-link">
+          <i class="fa fa-comment"></i> Comments
+        </a>
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+<!-- article.ejs end -->
+  
+    <!-- article.ejs -->
+<article id="post-ios-uiimageview.html" class="border post">
+    
+    <h2>
+      <a class="article-title" href="/2014/02/ios-uiimageview.html/">[iOS開發] UIImageView 加點擊範例</a>
+    </h2>
+
+
+
+  <div class="article-meta">
+    <!-- date.ejs -->
+<div class="article-datetime">
+  date.ejs
+  <a href="/2014/02/ios-uiimageview.html/" class="article-date"><time datetime="2014-02-20T02:19:00.000Z" itemprop="datePublished">2014-02-20</time></a>
+</div>
+
+    <!-- category.ejs -->
+
+  <div class="article-category">
+      category.ejs
+    分類:
+    <a class="article-category-link" href="/categories/iOS/">iOS</a>
+  </div>
+
+
+    
+  TAG:
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/">iOS</a></li></ul>
+
+
+  </div>
+  <div class="article-inner border">
+    <div class="article-entry border">
+      
+
+        
+        
+          <p>簡單的讓 UIImageView 變成 ImageButton  imgBtn.png 放在 Resources 資料夾</p>
 <pre>
 //生成 UIImage 並指定圖片
 UIImage *image = [UIImage imageNamed:@"imgBtn.png"];
-UIImageView *iv = [[UIImageView alloc] initWithImage:image];</div><p class="readmore"><a href="/2014/02/ios-uiimageview.html/">Read More</a></p></div><div class="post"><h1 class="post-title"><a href="/2014/02/mac-f8f11.html/">[Mac] F8~F11 失效</a></h1><div class="post-meta">2014-02-19</div><div class="post-content"><p>最近工作時常常要按 f11 時按沒有</p>
+UIImageView *iv = [[UIImageView alloc] initWithImage:image];
+//指定位置 x,y,width,height
+iv.frame = CGRectMake(10, 10, image.size.width, image.size.height);
+
+//讓 UIImage 能接受使用者事件
+iv.userInteractionEnabled = YES;
+
+//UITapGestureRecognizer 是觸控控制類
+UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapDetected)];
+singleTap.numberOfTapsRequired = 1;
+[iv addGestureRecognizer:singleTap];
+
+[self.view addSubview:iv];
+
+-(void)tapDetected{
+  NSLog(@"Click!!");
+}
+</pre>
+
+        
+      
+    </div>
+
+    
+      
+
+    
+
+    <footer class="article-footer border">
+      <a data-url="http://blog.gorendo.org/2014/02/ios-uiimageview.html/" data-id="cjm64u11l004mg6xuo9e1af4y" class="article-share-link">
+        <i class="fa fa-share"></i> Share
+      </a>
+      
+        <a href="http://blog.gorendo.org/2014/02/ios-uiimageview.html/#disqus_thread" class="article-comment-link">
+          <i class="fa fa-comment"></i> Comments
+        </a>
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+<!-- article.ejs end -->
+  
+    <!-- article.ejs -->
+<article id="post-mac-f8f11.html" class="border post">
+    
+    <h2>
+      <a class="article-title" href="/2014/02/mac-f8f11.html/">[Mac] F8~F11 失效</a>
+    </h2>
+
+
+
+  <div class="article-meta">
+    <!-- date.ejs -->
+<div class="article-datetime">
+  date.ejs
+  <a href="/2014/02/mac-f8f11.html/" class="article-date"><time datetime="2014-02-19T04:20:00.000Z" itemprop="datePublished">2014-02-19</time></a>
+</div>
+
+    <!-- category.ejs -->
+
+  <div class="article-category">
+      category.ejs
+    分類:
+    <a class="article-category-link" href="/categories/Mac/">Mac</a>
+  </div>
+
+
+    
+  TAG:
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mac/">Mac</a></li></ul>
+
+
+  </div>
+  <div class="article-inner border">
+    <div class="article-entry border">
+      
+
+        
+        
+          <p>最近工作時常常要按 f11 時按沒有</p>
 <p>打開終端機</p>
 <pre>
 killall Dock
-</pre></div><p class="readmore"><a href="/2014/02/mac-f8f11.html/">Read More</a></p></div><div class="post"><h1 class="post-title"><a href="/2014/02/android-activity.html/">[Android] 開啟另一個Activity</a></h1><div class="post-meta">2014-02-16</div><div class="post-content"><p>開啟另一個Activity ( A 呼 B</p>
+</pre>
+
+        
+      
+    </div>
+
+    
+      
+
+    
+
+    <footer class="article-footer border">
+      <a data-url="http://blog.gorendo.org/2014/02/mac-f8f11.html/" data-id="cjm64u11v005bg6xuuwkz3z22" class="article-share-link">
+        <i class="fa fa-share"></i> Share
+      </a>
+      
+        <a href="http://blog.gorendo.org/2014/02/mac-f8f11.html/#disqus_thread" class="article-comment-link">
+          <i class="fa fa-comment"></i> Comments
+        </a>
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+<!-- article.ejs end -->
+  
+    <!-- article.ejs -->
+<article id="post-android-activity.html" class="border post">
+    
+    <h2>
+      <a class="article-title" href="/2014/02/android-activity.html/">[Android] 開啟另一個Activity</a>
+    </h2>
+
+
+
+  <div class="article-meta">
+    <!-- date.ejs -->
+<div class="article-datetime">
+  date.ejs
+  <a href="/2014/02/android-activity.html/" class="article-date"><time datetime="2014-02-16T04:37:00.000Z" itemprop="datePublished">2014-02-16</time></a>
+</div>
+
+    <!-- category.ejs -->
+
+  <div class="article-category">
+      category.ejs
+    分類:
+    <a class="article-category-link" href="/categories/Android/">Android</a>
+  </div>
+
+
+    
+  TAG:
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li></ul>
+
+
+  </div>
+  <div class="article-inner border">
+    <div class="article-entry border">
+      
+
+        
+        
+          <p>開啟另一個Activity ( A 呼 B</p>
 <pre>Intent intent = new Intent();
 intent.setClass(A.this, B.class);
 startActivity(intent);</pre>
-不同 Activity 之間傳值</div><p class="readmore"><a href="/2014/02/android-activity.html/">Read More</a></p></div><div class="post"><h1 class="post-title"><a href="/2014/02/cocos2d/[Cocos2D] 在文字旁加上黑邊 CCLabelTTF and CCSprite/">[Cocos2D] 在文字旁加上黑邊 CCLabelTTF and CCSprite</a></h1><div class="post-meta">2014-02-14</div><div class="post-content"><pre> static CCRenderTexture* createStroke(CCSprite* label, int size, ccColor3B color, GLubyte opacity)
+不同 Activity 之間傳值
+<a name="more"></a>
+A.class
+<pre>Intent intent = new Intent();
+intent.setClass(this, Report.class);
+Bundle bundle = new Bundle();
+bundle.putString("VAR_A", field_height.getText().toString());
+bundle.putString("VAR_B", field_weight.getText().toString());
+intent.putExtras(bundle);
+startActivity(intent);
+</pre>
+B.class
+<pre>Bundle bundle = this.getIntent().getExtras();
+double a= Double.parseDouble(bundle.getString("VAR_A"));
+double b= Double.parseDouble(bundle.getString("VAR_B"));
+</pre>
+
+<p>回傳資料給前一個 Activity 並回復其狀態<br>A.class</p>
+<pre>//呼叫B</pre><pre>startActivityForResult(intent);
+</pre>
+<pre>//接受B的回傳值</pre><pre>protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+super.onActivityResult(requestCode, resultCode, data);
+if (resultCode == RESULT_OK) {
+             Bundle bundleResult = data.getExtras();
+        }
+}
+</pre>
+B.class
+<pre>//回傳bundle 給前一個 activity
+B.this.setResult(RESULT_OK, intent);
+B.this.finish();
+</pre>
+
+<p>不重複啟動相同的Activity<br>Manifest.xml配置成android:launchMode=”singleTask”</p>
+
+        
+      
+    </div>
+
+    
+      
+
+    
+
+    <footer class="article-footer border">
+      <a data-url="http://blog.gorendo.org/2014/02/android-activity.html/" data-id="cjm64u10r003ag6xui563amqf" class="article-share-link">
+        <i class="fa fa-share"></i> Share
+      </a>
+      
+        <a href="http://blog.gorendo.org/2014/02/android-activity.html/#disqus_thread" class="article-comment-link">
+          <i class="fa fa-comment"></i> Comments
+        </a>
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+<!-- article.ejs end -->
+  
+    <!-- article.ejs -->
+<article id="post-cocos2d/[Cocos2D] 在文字旁加上黑邊 CCLabelTTF and CCSprite" class="border post">
+    
+    <h2>
+      <a class="article-title" href="/2014/02/cocos2d/[Cocos2D] 在文字旁加上黑邊 CCLabelTTF and CCSprite/">[Cocos2D] 在文字旁加上黑邊 CCLabelTTF and CCSprite</a>
+    </h2>
+
+
+
+  <div class="article-meta">
+    <!-- date.ejs -->
+<div class="article-datetime">
+  date.ejs
+  <a href="/2014/02/cocos2d/[Cocos2D] 在文字旁加上黑邊 CCLabelTTF and CCSprite/" class="article-date"><time datetime="2014-02-14T15:40:00.000Z" itemprop="datePublished">2014-02-14</time></a>
+</div>
+
+    <!-- category.ejs -->
+
+  <div class="article-category">
+      category.ejs
+    分類:
+    <a class="article-category-link" href="/categories/Cocos2D/">Cocos2D</a>
+  </div>
+
+
+    
+  TAG:
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C-C/">C/C++</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Cocos2D/">Cocos2D</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Game-Dev/">Game Dev</a></li></ul>
+
+
+  </div>
+  <div class="article-inner border">
+    <div class="article-entry border">
+      
+
+        
+        
+          <pre> static CCRenderTexture* createStroke(CCSprite* label, int size, ccColor3B color, GLubyte opacity)
  {
 
-   CCRenderTexture* rt = CCRenderTexture::create(label-&gt;getTexture()-&gt;getContentSize().width + size * 2,</div><p class="readmore"><a href="/2014/02/cocos2d/[Cocos2D] 在文字旁加上黑邊 CCLabelTTF and CCSprite/">Read More</a></p></div><div class="post"><h1 class="post-title"><a href="/2014/02/Csharp-Read-Text-File-One-Line-Time.html/">[C#] 一次一行讀取文字檔</a></h1><div class="post-meta">2014-02-10</div><div class="post-content"><p>這個範例會使用 StreamReader 類別的 ReadLine 方法，將文字檔的內容一次一行讀入字串中。每一個文字行都會儲存到字串 line 中並顯示在螢幕上。</p>
+   CCRenderTexture* rt = CCRenderTexture::create(label-&gt;getTexture()-&gt;getContentSize().width + size * 2,
+       label-&gt;getTexture()-&gt;getContentSize().height+size * 2);
+   CCPoint originalPos = label-&gt;getPosition();
+
+   ccColor3B originalColor = label-&gt;getColor();
+
+   GLubyte originalOpacity = label-&gt;getOpacity();
+
+   label-&gt;setColor(color);
+
+   label-&gt;setOpacity(opacity);
+
+   bool originalVisibility = label-&gt;isVisible();
+
+   ccBlendFunc originalBlend = label-&gt;getBlendFunc();
+
+   ccBlendFunc bf = {GL_SRC_ALPHA, GL_ONE};
+
+   label-&gt;setBlendFunc(bf);
+
+   CCPoint bottomLeft = ccp(
+       label-&gt;getTexture()-&gt;getContentSize().width * label-&gt;getAnchorPoint().x + size,
+       label-&gt;getTexture()-&gt;getContentSize().height * label-&gt;getAnchorPoint().y + size);
+
+ //原來沒有判斷AnchorPoint的寫法
+ //  CCPoint positionOffset= ccp(   - label-&gt;getTexture()-&gt;getContentSize().width / 2,
+ //                                  - label-&gt;getTexture()-&gt;getContentSize().height / 2);
+
+ //SetAnchorPoint會影響到positionOffset，所以要做判斷
+   CCPoint positionOffset = CCPointZero;
+   if(label-&gt;getAnchorPoint().x == 0.5f){
+       positionOffset.x = 0;
+   }else if(label-&gt;getAnchorPoint().x == 0.0f){
+       positionOffset.x =- label-&gt;getTexture()-&gt;getContentSize().width / 2;
+   }else{
+       positionOffset.x = label-&gt;getTexture()-&gt;getContentSize().width/2;
+   }
+   if(label-&gt;getAnchorPoint().y == 0.5f){
+       positionOffset.y = 0;
+   }else if(label-&gt;getAnchorPoint().y == 0.0f){
+       positionOffset.y =- label-&gt;getTexture()-&gt;getContentSize().height / 2;
+   }else{
+       positionOffset.y =  label-&gt;getTexture()-&gt;getContentSize().height/2;
+   }
+
+   CCPoint position = ccpSub(originalPos, positionOffset);
+
+   rt-&gt;begin();
+
+   for (int i=0; i<360 data-blogger-escaped-for="" data-blogger-escaped-i="" data-blogger-escaped-label-="" data-blogger-escaped-needs="" data-blogger-escaped-optimize="" data-blogger-escaped-should="" data-blogger-escaped-that="" data-blogger-escaped-you="" data-blogger-escaped-your="">setPosition(
+       ccp(bottomLeft.x + sin(CC_DEGREES_TO_RADIANS(i))*size, bottomLeft.y + cos(CC_DEGREES_TO_RADIANS(i))*size)
+       );
+       label-&gt;visit();
+   }
+   rt-&gt;end();
+
+   label-&gt;setPosition(originalPos);
+   label-&gt;setColor(originalColor);
+   label-&gt;setBlendFunc(originalBlend);
+   label-&gt;setVisible(originalVisibility);
+   label-&gt;setOpacity(originalOpacity);
+
+   rt-&gt;setPosition(position);
+ //反踞齒
+   rt-&gt;getSprite()-&gt;getTexture()-&gt;setAntiAliasTexParameters();
+
+   return rt;
+}
+
+<!--360--><!--360--></360></pre>
+
+        
+      
+    </div>
+
+    
+      
+
+    
+
+    <footer class="article-footer border">
+      <a data-url="http://blog.gorendo.org/2014/02/cocos2d/[Cocos2D] 在文字旁加上黑邊 CCLabelTTF and CCSprite/" data-id="cjm64u10x003kg6xuww7jb52m" class="article-share-link">
+        <i class="fa fa-share"></i> Share
+      </a>
+      
+        <a href="http://blog.gorendo.org/2014/02/cocos2d/[Cocos2D] 在文字旁加上黑邊 CCLabelTTF and CCSprite/#disqus_thread" class="article-comment-link">
+          <i class="fa fa-comment"></i> Comments
+        </a>
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+<!-- article.ejs end -->
+  
+    <!-- article.ejs -->
+<article id="post-Csharp-Read-Text-File-One-Line-Time.html" class="border post">
+    
+    <h2>
+      <a class="article-title" href="/2014/02/Csharp-Read-Text-File-One-Line-Time.html/">[C#] 一次一行讀取文字檔</a>
+    </h2>
+
+
+
+  <div class="article-meta">
+    <!-- date.ejs -->
+<div class="article-datetime">
+  date.ejs
+  <a href="/2014/02/Csharp-Read-Text-File-One-Line-Time.html/" class="article-date"><time datetime="2014-02-10T07:02:00.000Z" itemprop="datePublished">2014-02-10</time></a>
+</div>
+
+    <!-- category.ejs -->
+
+  <div class="article-category">
+      category.ejs
+    分類:
+    <a class="article-category-link" href="/categories/C/">C#</a>
+  </div>
+
+
+    
+  TAG:
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/">C#</a></li></ul>
+
+
+  </div>
+  <div class="article-inner border">
+    <div class="article-entry border">
+      
+
+        
+        
+          <p>這個範例會使用 StreamReader 類別的 ReadLine 方法，將文字檔的內容一次一行讀入字串中。每一個文字行都會儲存到字串 line 中並顯示在螢幕上。</p>
 <p>範例<br><a name="more"></a></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">int counter = 0;</div><div class="line">string line;</div><div class="line"></div><div class="line">// Read the file and display it line by line.</div><div class="line">System.IO.StreamReader file =</div><div class="line">   new System.IO.StreamReader(&quot;c:\test.txt&quot;);</div><div class="line">while((line = file.ReadLine()) != null)</div><div class="line">&#123;</div><div class="line">   Console.WriteLine (line);</div><div class="line">   counter++;</div><div class="line">&#125;</div><div class="line"></div><div class="line">file.Close();</div><div class="line"></div><div class="line">// Suspend the screen.</div><div class="line">Console.ReadLine();</div></pre></td></tr></table></figure></div><p class="readmore"><a href="/2014/02/Csharp-Read-Text-File-One-Line-Time.html/">Read More</a></p></div><div class="post"><h1 class="post-title"><a href="/2014/02/unity-platform-file-path.html/">[Unity] 各平台檔案路徑 Path</a></h1><div class="post-meta">2014-02-07</div><div class="post-content"><p>Unity 各平台檔案路徑 Path</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">int counter = 0;</span><br><span class="line">string line;</span><br><span class="line"></span><br><span class="line">// Read the file and display it line by line.</span><br><span class="line">System.IO.StreamReader file =</span><br><span class="line">   new System.IO.StreamReader(&quot;c:\test.txt&quot;);</span><br><span class="line">while((line = file.ReadLine()) != null)</span><br><span class="line">&#123;</span><br><span class="line">   Console.WriteLine (line);</span><br><span class="line">   counter++;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">file.Close();</span><br><span class="line"></span><br><span class="line">// Suspend the screen.</span><br><span class="line">Console.ReadLine();</span><br></pre></td></tr></table></figure>
+
+        
+      
+    </div>
+
+    
+      
+
+    
+
+    <footer class="article-footer border">
+      <a data-url="http://blog.gorendo.org/2014/02/Csharp-Read-Text-File-One-Line-Time.html/" data-id="cjm64u13a008og6xud5l2gbvm" class="article-share-link">
+        <i class="fa fa-share"></i> Share
+      </a>
+      
+        <a href="http://blog.gorendo.org/2014/02/Csharp-Read-Text-File-One-Line-Time.html/#disqus_thread" class="article-comment-link">
+          <i class="fa fa-comment"></i> Comments
+        </a>
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+<!-- article.ejs end -->
+  
+    <!-- article.ejs -->
+<article id="post-unity-platform-file-path.html" class="border post">
+    
+    <h2>
+      <a class="article-title" href="/2014/02/unity-platform-file-path.html/">[Unity] 各平台檔案路徑 Path</a>
+    </h2>
+
+
+
+  <div class="article-meta">
+    <!-- date.ejs -->
+<div class="article-datetime">
+  date.ejs
+  <a href="/2014/02/unity-platform-file-path.html/" class="article-date"><time datetime="2014-02-06T16:52:00.000Z" itemprop="datePublished">2014-02-07</time></a>
+</div>
+
+    <!-- category.ejs -->
+
+  <div class="article-category">
+      category.ejs
+    分類:
+    <a class="article-category-link" href="/categories/Unity/">Unity</a>
+  </div>
+
+
+    
+  TAG:
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Unity/">Unity</a></li></ul>
+
+
+  </div>
+  <div class="article-inner border">
+    <div class="article-entry border">
+      
+
+        
+        
+          <p>Unity 各平台檔案路徑 Path</p>
 <p>Application.dataPath<br>包含遊戲資料文件夾的路徑<br>只可讀，放置一些資源資料</p>
 <pre>OSX:       ProjectPath/Assets/
-Android:   /data/app/xxx.xxx.xxx-1.apk</div><p class="readmore"><a href="/2014/02/unity-platform-file-path.html/">Read More</a></p></div><nav class="page-navigator"><a class="extend prev" rel="prev" href="/">Previous</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/3/">Next</a></nav></div></div><div class="pure-u-1-4 hidden_mid_and_down"><div id="sidebar"><div class="widget"><form action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank" class="search-form"><input type="text" name="q" maxlength="20" placeholder="Search"/><input type="hidden" name="sitesearch" value="http://blog.gorendo.org"/></form></div><div class="widget"><div class="widget-title"><i class="fa fa-folder-o"> Categories</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/">Android</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/C/">C#</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/C-C/">C/C++</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Cocos2D/">Cocos2D</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/DATABASE/">DATABASE</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Facebook/">Facebook</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Game-Dev/">Game Dev</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JAVA/">JAVA</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Javascript/">Javascript</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Lua/">Lua</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Mac/">Mac</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/PHP/">PHP</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Software/">Software</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Unity/">Unity</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Unity/AssetBundle/">AssetBundle</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/WEB/">WEB</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/WEB/CSS/">CSS</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/iOS/">iOS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery/">jQuery</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/programming/">programming</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/大學專題/">大學專題</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/攝影/">攝影</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/敗家/">敗家</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/程式語言/">程式語言</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-star-o"> Tags</i></div><div class="tagcloud"><a href="/tags/PHP/" style="font-size: 15px;">PHP</a> <a href="/tags/Unity/" style="font-size: 15px;">Unity</a> <a href="/tags/Game-Dev/" style="font-size: 15px;">Game Dev</a> <a href="/tags/JAVA/" style="font-size: 15px;">JAVA</a> <a href="/tags/OpenGL/" style="font-size: 15px;">OpenGL</a> <a href="/tags/Google-API/" style="font-size: 15px;">Google API</a> <a href="/tags/C-C/" style="font-size: 15px;">C/C++</a> <a href="/tags/Cocos2D/" style="font-size: 15px;">Cocos2D</a> <a href="/tags/DATABASE/" style="font-size: 15px;">DATABASE</a> <a href="/tags/MySQL/" style="font-size: 15px;">MySQL</a> <a href="/tags/iOS/" style="font-size: 15px;">iOS</a> <a href="/tags/Xcode/" style="font-size: 15px;">Xcode</a> <a href="/tags/Mac/" style="font-size: 15px;">Mac</a> <a href="/tags/Software/" style="font-size: 15px;">Software</a> <a href="/tags/Lua/" style="font-size: 15px;">Lua</a> <a href="/tags/敗家/" style="font-size: 15px;">敗家</a> <a href="/tags/Android/" style="font-size: 15px;">Android</a> <a href="/tags/ATOM/" style="font-size: 15px;">ATOM</a> <a href="/tags/SEO/" style="font-size: 15px;">SEO</a> <a href="/tags/資訊安全/" style="font-size: 15px;">資訊安全</a> <a href="/tags/opensource/" style="font-size: 15px;">opensource</a> <a href="/tags/程式語言/" style="font-size: 15px;">程式語言</a> <a href="/tags/Facebook/" style="font-size: 15px;">Facebook</a> <a href="/tags/programming/" style="font-size: 15px;">programming</a> <a href="/tags/攝影/" style="font-size: 15px;">攝影</a> <a href="/tags/C/" style="font-size: 15px;">C#</a> <a href="/tags/WINDOWS/" style="font-size: 15px;">WINDOWS</a> <a href="/tags/WEB/" style="font-size: 15px;">WEB</a> <a href="/tags/Javascript/" style="font-size: 15px;">Javascript</a> <a href="/tags/Node-JS/" style="font-size: 15px;">Node.JS</a> <a href="/tags/jQuery/" style="font-size: 15px;">jQuery</a> <a href="/tags/CSS/" style="font-size: 15px;">CSS</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-file-o"> Recent</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/10/php-mac-atom-visual-studio-code-php.html/">[php] 在 Mac 用ATOM / Visual Studio Code 為 php debug</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/mac-xxx.html/">[Mac] 解決 您要讓應用程式 XXX 接受傳入的網路連接嗎 一直跳出</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/10/php-callback.html/">[php] 實作callback</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/06/android-setclicklistener-in-custom-view.html/">[Android] setClickListener in custom view</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/06/errorexecution-failed-for-task.html/">解決 Error:Execution failed for task 'preDexDebug'. > com.android.ide.common.process.ProcessException: org.gradle.process.internal.ExecException: Process 'command  finished with non-zero exit value 1</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/05/android-wiperefreshlayout.html/">[Android] 下拉更新 SwipeRefreshLayout</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/04/android-cant-create-handler-inside.html/">[Android] 處理 Can't create handler inside thread that has not called Looper.prepare()</a></li><li class="post-list-item"><a class="post-list-link" href="/2014/08/unity-ugui-46-eventsystem.html/">[Unity] uGUI (4.6) EventSystem 事件系統 快速上手</a></li><li class="post-list-item"><a class="post-list-link" href="/2014/08/unity-ugui-46-eventsystem.html/">[Unity] uGUI (4.6) EventSystem 事件系統 快速上手</a></li><li class="post-list-item"><a class="post-list-link" href="/2014/06/cocos2d-x-install-mac.html/">[Cocos2d-x] 在 Mac 上設置 Cocos2d-x (Cocos2d-x 3 .x)</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-external-link"> Links</i></div><ul></ul><a href="http://www.example1.com/" title="site-name1" target="_blank">site-name1</a><ul></ul><a href="http://www.example2.com/" title="site-name2" target="_blank">site-name2</a><ul></ul><a href="http://www.example3.com/" title="site-name3" target="_blank">site-name3</a></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">Copyright © 2017 <a href="/." rel="nofollow">小伍手札.</a> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a><a rel="nofollow" target="_blank" href="https://github.com/tufu9441/maupassant-hexo"> Theme</a> by<a rel="nofollow" target="_blank" href="https://github.com/pagecho"> Cho.</a></div></div></div><a id="rocket" href="#top" class="show"></a><script type="text/javascript" src="/js/totop.js?v=0.0.0" async></script><script type="text/javascript" src="//cdn.bootcss.com/fancybox/3.1.20/jquery.fancybox.min.js" async></script><script type="text/javascript" src="/js/fancybox.js?v=0.0.0" async></script><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/fancybox/3.1.20/jquery.fancybox.min.css"><script type="text/javascript" src="/js/codeblock-resizer.js?v=0.0.0"></script><script type="text/javascript" src="/js/smartresize.js?v=0.0.0"></script></div></body></html>
+Android:   /data/app/xxx.xxx.xxx-1.apk
+iOS:       Application/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/xxx.app/Data<a name="more"></a></pre>
+Application.persistentDataPath
+包含一個永久資料目錄的路徑
+可讀可寫，可以放一些存檔文件
+<pre>OSX:        /Users/username/Library/Caches/com/projcetname
+Android:    /data/app/packagename/files
+Android外部: /storage/sdcard0/Android/data/app/packagename/files
+iOS:        Application/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/Documents</pre>
+Application.streamingAssetsPath
+<pre>OSX:         ProjectPath/Assets/StreamingAssets
+Android:     jar:/file:///data/app/xxx.xxx.xxx-1.apk!/assets
+iOS:         Application/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/xxx.app/Data/Raw</pre>
+
+<p>Application.temporaryCachePath</p>
+<pre>OSX:         /var/folders/bv/swq_XXXXXXXXX_XXXXXXXXXXXXXXXX/T/com/projcetname
+Android:     /data/data/xxx.xxx.xxx/cache
+iOS:         Application/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/Library/Caches</pre>
+
+        
+      
+    </div>
+
+    
+      
+
+    
+
+    <footer class="article-footer border">
+      <a data-url="http://blog.gorendo.org/2014/02/unity-platform-file-path.html/" data-id="cjm64u1060020g6xuhohe7ut8" class="article-share-link">
+        <i class="fa fa-share"></i> Share
+      </a>
+      
+        <a href="http://blog.gorendo.org/2014/02/unity-platform-file-path.html/#disqus_thread" class="article-comment-link">
+          <i class="fa fa-comment"></i> Comments
+        </a>
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+<!-- article.ejs end -->
+  
+
+
+  <div id="page-nav">
+    page-nav TODO
+  </div>
+
+<!-- end _partial/archive -->
+
+<!-- end index.ejs  -->
+      </div>
+      <aside id="aside" class="aside col-10 col-lg-3 border">
+        aside
+        <div class="card bg-primary d-none">
+          <div class="card-header">
+            ABOUT
+          </div>
+          <img class="card-img rounded w-50 mx-auto" src="https://www.gravatar.com/avatar/46c6cc40826824204a70f22ee75c3752?s=240"
+            alt="Card image cap">
+
+          <div class="card-body">
+            <h4 class="card-title">Special title treatment</h4>
+            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+        </div>
+
+
+        
+        <div class="card">
+          <div class="card-header">
+            最新文章
+          </div>
+          <div class="card-body">
+            
+            <li>
+              <a href="/2016/10/php-mac-atom-visual-studio-code-php.html/">
+                [php] 在 Mac 用ATOM / Visual Studio Code 為 php debug</a>
+            </li>
+            
+            <li>
+              <a href="/2015/12/mac-xxx.html/">
+                [Mac] 解決 您要讓應用程式 XXX 接受傳入的網路連接嗎 一直跳出</a>
+            </li>
+            
+            <li>
+              <a href="/2015/10/php-callback.html/">
+                [php] 實作callback</a>
+            </li>
+            
+            <li>
+              <a href="/2015/06/android-setclicklistener-in-custom-view.html/">
+                [Android] setClickListener in custom view</a>
+            </li>
+            
+            <li>
+              <a href="/2015/06/errorexecution-failed-for-task.html/">
+                解決 Error:Execution failed for task &#39;preDexDebug&#39;. &gt; com.android.ide.common.process.ProcessException: org.gradle.process.internal.ExecException: Process &#39;command  finished with non-zero exit value 1</a>
+            </li>
+            
+
+          </div>
+        </div>
+        
+
+        
+
+        <div class="card">
+          <div class="card-header">
+            標籤
+          </div>
+          <div class="card-body">
+
+            
+            <a class="badge badge-primary" href="/tags/PHP/">
+              PHP <span class="badge badge-light">
+                20</span></a>
+            
+            <a class="badge badge-primary" href="/tags/Android/">
+              Android <span class="badge badge-light">
+                17</span></a>
+            
+            <a class="badge badge-primary" href="/tags/WEB/">
+              WEB <span class="badge badge-light">
+                10</span></a>
+            
+            <a class="badge badge-primary" href="/tags/JAVA/">
+              JAVA <span class="badge badge-light">
+                9</span></a>
+            
+            <a class="badge badge-primary" href="/tags/Game-Dev/">
+              Game Dev <span class="badge badge-light">
+                9</span></a>
+            
+            <a class="badge badge-primary" href="/tags/Unity/">
+              Unity <span class="badge badge-light">
+                8</span></a>
+            
+            <a class="badge badge-primary" href="/tags/攝影/">
+              攝影 <span class="badge badge-light">
+                7</span></a>
+            
+            <a class="badge badge-primary" href="/tags/Software/">
+              Software <span class="badge badge-light">
+                4</span></a>
+            
+            <a class="badge badge-primary" href="/tags/C-C/">
+              C/C++ <span class="badge badge-light">
+                3</span></a>
+            
+            <a class="badge badge-primary" href="/tags/Mac/">
+              Mac <span class="badge badge-light">
+                3</span></a>
+            
+            <a class="badge badge-primary" href="/tags/DATABASE/">
+              DATABASE <span class="badge badge-light">
+                3</span></a>
+            
+            <a class="badge badge-primary" href="/tags/MySQL/">
+              MySQL <span class="badge badge-light">
+                3</span></a>
+            
+            <a class="badge badge-primary" href="/tags/jQuery/">
+              jQuery <span class="badge badge-light">
+                3</span></a>
+            
+            <a class="badge badge-primary" href="/tags/程式語言/">
+              程式語言 <span class="badge badge-light">
+                2</span></a>
+            
+            <a class="badge badge-primary" href="/tags/Xcode/">
+              Xcode <span class="badge badge-light">
+                2</span></a>
+            
+            <a class="badge badge-primary" href="/tags/C/">
+              C# <span class="badge badge-light">
+                2</span></a>
+            
+            <a class="badge badge-primary" href="/tags/iOS/">
+              iOS <span class="badge badge-light">
+                2</span></a>
+            
+            <a class="badge badge-primary" href="/tags/Cocos2D/">
+              Cocos2D <span class="badge badge-light">
+                2</span></a>
+            
+            <a class="badge badge-primary" href="/tags/Google-API/">
+              Google API <span class="badge badge-light">
+                2</span></a>
+            
+            <a class="badge badge-primary" href="/tags/Javascript/">
+              Javascript <span class="badge badge-light">
+                2</span></a>
+            
+            <a class="badge badge-primary" href="/tags/opensource/">
+              opensource <span class="badge badge-light">
+                1</span></a>
+            
+            <a class="badge badge-primary" href="/tags/敗家/">
+              敗家 <span class="badge badge-light">
+                1</span></a>
+            
+            <a class="badge badge-primary" href="/tags/programming/">
+              programming <span class="badge badge-light">
+                1</span></a>
+            
+            <a class="badge badge-primary" href="/tags/SEO/">
+              SEO <span class="badge badge-light">
+                1</span></a>
+            
+            <a class="badge badge-primary" href="/tags/CSS/">
+              CSS <span class="badge badge-light">
+                1</span></a>
+            
+            <a class="badge badge-primary" href="/tags/WINDOWS/">
+              WINDOWS <span class="badge badge-light">
+                1</span></a>
+            
+            <a class="badge badge-primary" href="/tags/資訊安全/">
+              資訊安全 <span class="badge badge-light">
+                1</span></a>
+            
+            <a class="badge badge-primary" href="/tags/Facebook/">
+              Facebook <span class="badge badge-light">
+                1</span></a>
+            
+            <a class="badge badge-primary" href="/tags/Lua/">
+              Lua <span class="badge badge-light">
+                1</span></a>
+            
+            <a class="badge badge-primary" href="/tags/Node-JS/">
+              Node.JS <span class="badge badge-light">
+                1</span></a>
+            
+            <a class="badge badge-primary" href="/tags/OpenGL/">
+              OpenGL <span class="badge badge-light">
+                1</span></a>
+            
+            <a class="badge badge-primary" href="/tags/ATOM/">
+              ATOM <span class="badge badge-light">
+                1</span></a>
+            
+          </div>
+        </div>
+        
+
+
+      </aside>
+    </div>
+  </section>
+
+  <footer class="blog-footer">
+    <div class="container">
+      <div id="footer-info" class="inner">
+        &copy;
+        2018
+        gonex45<br>
+        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- end layout.ejs  -->
+</body>
+
+</html>

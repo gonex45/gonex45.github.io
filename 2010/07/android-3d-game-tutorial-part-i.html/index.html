@@ -1,11 +1,118 @@
-<!DOCTYPE html><html lang="en"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description"><title>[Android] 3D game tutorial – Part I | 小伍手札</title><link rel="stylesheet" type="text/css" href="/css/style.css?v=0.0.0"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/normalize/7.0.0/normalize.min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/1.0.0/pure-min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/1.0.0/grids-responsive-min.css"><link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"><link rel="alternate" type="application/atom+xml" href="/atom.xml"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">[Android] 3D game tutorial – Part I</h1><a id="logo" href="/.">小伍手札</a><p class="description">某RD的開發筆記</p></div><div id="nav-menu"><a href="/." class="current"><i class="fa fa-home"> Home</i></a><a href="/archives/"><i class="fa fa-archive"> Archive</i></a><a href="/about/"><i class="fa fa-user"> About</i></a><a href="/atom.xml"><i class="fa fa-rss"> RSS</i></a></div></div><div id="layout" class="pure-g"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title">[Android] 3D game tutorial – Part I</h1><div class="post-meta">Jul 12, 2010<span> | </span><span class="category"><a href="/categories/Android/">Android</a></span></div><div class="post-content"><div style="margin: 5pt 0cm;"><em><span lang="RU" style="font-family: 新細明體, serif;">更新為</span><span lang="RU"> Android2.0.1</span></em></div><br><div style="margin: 5pt 0cm;"><span lang="RU" style="font-family: 新細明體, serif;">本系列第一部分將給你一個簡短的開場，術語和</span><span lang="RU">OpenGL</span><span lang="RU" style="font-family: 新細明體, serif;">的第一步，您的</span><span lang="RU">3D</span><span lang="RU" style="font-family: 新細明體, serif;">編程。</span></div><br><div style="margin: 5pt 0cm;"><span lang="RU" style="font-family: 新細明體, serif;">該系列本身將是對所謂的</span><span lang="RU">3D</span><span lang="RU" style="font-family: 新細明體, serif;">遊戲的</span><span lang="RU"> <a href="http://www.apple.com/games/ipod/vortex/" target="_blank" rel="external"><span style="color: blue;">Vortex</span></a> </span><span lang="RU" style="font-family: 新細明體, serif;">。</span><span lang="RU"><br></span><span lang="RU" style="font-family: 新細明體, serif;">本教程將側重於</span><span lang="RU"> 3D</span><span lang="RU" style="font-family: 新細明體, serif;">編程，東西像菜單或生命週期可能是部分的代碼，但不會推出。</span></div><br><span lang="RU" style="font-family: 新細明體, serif; font-size: 12pt;">讓我們先從</span><span lang="RU" style="font-family: 'Times New Roman', serif; font-size: 12pt;"> OpenGL</span><span lang="RU" style="font-family: 新細明體, serif; font-size: 12pt;">的術語。</span><span lang="RU" style="font-family: 'Times New Roman', serif; font-size: 12pt;"><br></span><br><br><a name="more"></a><br><br><div style="margin: 5pt 0cm;"><strong><span lang="RU">Vertex - </span>**</strong><span lang="RU" style="font-family: 新細明體, serif;">頂點</span><strong><span lang="RU"><br></span><span lang="RU" style="font-family: 新細明體, serif;">一個頂點是在三維空間中的一點，可以建出許多物件。在</span><span lang="RU">OpenGL</span><span lang="RU" style="font-family: 新細明體, serif;">可指定最少兩個坐標</span><span lang="RU">[coordinates]</span><span lang="RU" style="font-family: 新細明體, serif;">（</span><span lang="RU">X</span><span lang="RU" style="font-family: 新細明體, serif;">，</span><span lang="RU">Y</span><span lang="RU" style="font-family: 新細明體, serif;">）和最多</span><span lang="RU">4</span><span lang="RU" style="font-family: 新細明體, serif;">個（的</span><span lang="RU">X</span><span lang="RU" style="font-family: 新細明體, serif;">，</span><span lang="RU">Y</span><span lang="RU" style="font-family: 新細明體, serif;">，</span><span lang="RU">Z</span><span lang="RU" style="font-family: 新細明體, serif;">，</span><span lang="RU">W</span><span lang="RU" style="font-family: 新細明體, serif;">）。在</span><span lang="RU">W -</span><span lang="RU" style="font-family: 新細明體, serif;">軸是可選的，默認值設置為</span><span lang="RU"> 1.0</span><span lang="RU" style="font-family: 新細明體, serif;">。</span><span lang="RU">Z</span><span lang="RU" style="font-family: 新細明體, serif;">軸也是可選的，默認值設置為</span><span lang="RU"> 0</span><span lang="RU" style="font-family: 新細明體, serif;">。在這個系列中，我們將使用三個主要坐標</span><span lang="RU"> X</span><span lang="RU" style="font-family: 新細明體, serif;">，</span><span lang="RU">Y</span><span lang="RU" style="font-family: 新細明體, serif;">和</span><span lang="RU">Z</span><span lang="RU" style="font-family: 新細明體, serif;">，</span><span lang="RU">W</span><span lang="RU" style="font-family: 新細明體, serif;">是因為通常用作一個佔位符</span><span lang="RU">(placeholder)</span><span lang="RU" style="font-family: 新細明體, serif;">。複數的</span><span lang="RU">vertex</span><span lang="RU" style="font-family: 新細明體, serif;">稱</span><span lang="RU">vertices</span><span lang="RU" style="font-family: 新細明體, serif;">。所有的對象都是使用</span><span lang="RU">vertices</span><span lang="RU" style="font-family: 新細明體, serif;">繪製作為他們的</span><span lang="RU">points</span><span lang="RU" style="font-family: 新細明體, serif;">，所以</span><span lang="RU">point</span><span lang="RU" style="font-family: 新細明體, serif;">會提到一個</span><span lang="RU">vertex</span><span lang="RU" style="font-family: 新細明體, serif;">。</span></strong></div><br><div style="margin: 5pt 0cm;"><span lang="RU">Triangle - </span><strong>**<span lang="RU" style="font-family: 新細明體, serif;">三角形</span></strong><span lang="RU"><br></span><span lang="RU" style="font-family: 新細明體, serif;">一個三角形需要被</span><span lang="RU">3</span><span lang="RU" style="font-family: 新細明體, serif;">點創建。因此，在</span><span lang="RU">OpenGL</span><span lang="RU" style="font-family: 新細明體, serif;">中，我們使用三個頂點創建一個。</span></div><br><div style="margin: 5pt 0cm;"><strong><span lang="RU">Polygon - </span>**</strong><span lang="RU" style="font-family: 新細明體, serif;">多邊形</span><strong><span lang="RU"><br></span><span lang="RU" style="font-family: 新細明體, serif;">一個多邊形是一個對象，它至少有三個連接點。為此三角形也是一個多邊形。</span></strong></div><br><div style="margin: 5pt 0cm;"><span lang="RU">Polygon - </span><strong>**<span lang="RU" style="font-family: 新細明體, serif;">基元</span></strong><span lang="RU"><br></span><span lang="RU" style="font-family: 新細明體, serif;">一個基元是使用或三角形或多邊形創建的一個</span><span lang="RU">3D</span><span lang="RU" style="font-family: 新細明體, serif;">物件。有點諷刺意味：</span><span lang="RU">50.000</span><span lang="RU" style="font-family: 新細明體, serif;">詳細模型的頂點，也是一種原始的詳細模型就像一個低</span><span lang="RU">500</span><span lang="RU" style="font-family: 新細明體, serif;">頂點。</span></div><br><div style="margin: 5pt 0cm;"><span lang="RU" style="font-family: 新細明體, serif;">現在我們可以開始編程。</span><span lang="RU"><br></span><span lang="RU" style="font-family: 新細明體, serif;">我們創建了一個新的</span><span lang="RU">project</span><span lang="RU" style="font-family: 新細明體, serif;">，稱為</span><span lang="RU">Vortex</span><span lang="RU" style="font-family: 新細明體, serif;">。</span><span lang="RU"><br></span><span lang="RU" style="font-family: 新細明體, serif;">我們的活動會很熟悉：</span></div>
+<!DOCTYPE html>
+<!-- layout.ejs -->
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+  <title>
+    
+    [Android] 3D game tutorial – Part I |
+    
+    小伍手札
+  </title>
+
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+    crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+    crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="/css/styles.css">
+  <script src="/js/script.js"></script>
+</head>
+
+<body>
+
+  <button type="button" id="asidebtn" class="btn btn-primary btn-sm" data-toggle="offcanvas"></button>
+  <script>
+  </script>
+  <section class="border">
+    <header>
+
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/">
+          <img src="https://www.gravatar.com/avatar/46c6cc40826824204a70f22ee75c3752?s=50" alt="">
+        </a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li id="blog-title" class="nav-item active">
+              <a class="nav-link" href="/">
+                <h1>
+                  小伍手札 <span class="sr-only">(current)</span>
+              </a>
+              </h1>
+            </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0" action="https://google.com/search" method="get" onSubmit="Gsitesearch(this)"
+            target="_blank">
+            <input name="q" type="hidden" />
+            <input name="qfront" class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+        </div>
+      </nav>
+    </header>
+
+    <div class="row border">
+      <div class="col col-lg-9 border">
+        <!-- article.ejs -->
+<article id="post-android-3d-game-tutorial-part-i.html" class="border post">
+    
+    <h2>
+      <a class="article-title" href="/2010/07/android-3d-game-tutorial-part-i.html/">[Android] 3D game tutorial – Part I</a>
+    </h2>
+
+
+
+  <div class="article-meta">
+    <!-- date.ejs -->
+<div class="article-datetime">
+  date.ejs
+  <a href="/2010/07/android-3d-game-tutorial-part-i.html/" class="article-date"><time datetime="2010-07-11T21:42:00.000Z" itemprop="datePublished">2010-07-12</time></a>
+</div>
+
+    <!-- category.ejs -->
+
+  <div class="article-category">
+      category.ejs
+    分類:
+    <a class="article-category-link" href="/categories/Android/">Android</a>
+  </div>
+
+
+    
+  TAG:
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Game-Dev/">Game Dev</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JAVA/">JAVA</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/OpenGL/">OpenGL</a></li></ul>
+
+
+  </div>
+  <div class="article-inner border">
+    <div class="article-entry border">
+      
+
+        
+        
+          <div style="margin: 5pt 0cm;"><em><span lang="RU" style="font-family: 新細明體, serif;">更新為</span><span lang="RU"> Android2.0.1</span></em></div><br><div style="margin: 5pt 0cm;"><span lang="RU" style="font-family: 新細明體, serif;">本系列第一部分將給你一個簡短的開場，術語和</span><span lang="RU">OpenGL</span><span lang="RU" style="font-family: 新細明體, serif;">的第一步，您的</span><span lang="RU">3D</span><span lang="RU" style="font-family: 新細明體, serif;">編程。</span></div><br><div style="margin: 5pt 0cm;"><span lang="RU" style="font-family: 新細明體, serif;">該系列本身將是對所謂的</span><span lang="RU">3D</span><span lang="RU" style="font-family: 新細明體, serif;">遊戲的</span><span lang="RU"> <a href="http://www.apple.com/games/ipod/vortex/" target="_blank" rel="noopener"><span style="color: blue;">Vortex</span></a> </span><span lang="RU" style="font-family: 新細明體, serif;">。</span><span lang="RU"><br></span><span lang="RU" style="font-family: 新細明體, serif;">本教程將側重於</span><span lang="RU"> 3D</span><span lang="RU" style="font-family: 新細明體, serif;">編程，東西像菜單或生命週期可能是部分的代碼，但不會推出。</span></div><br><span lang="RU" style="font-family: 新細明體, serif; font-size: 12pt;">讓我們先從</span><span lang="RU" style="font-family: 'Times New Roman', serif; font-size: 12pt;"> OpenGL</span><span lang="RU" style="font-family: 新細明體, serif; font-size: 12pt;">的術語。</span><span lang="RU" style="font-family: 'Times New Roman', serif; font-size: 12pt;"><br></span><br><br><a name="more"></a><br><br><div style="margin: 5pt 0cm;"><strong><span lang="RU">Vertex - </span>**</strong><span lang="RU" style="font-family: 新細明體, serif;">頂點</span><strong><span lang="RU"><br></span><span lang="RU" style="font-family: 新細明體, serif;">一個頂點是在三維空間中的一點，可以建出許多物件。在</span><span lang="RU">OpenGL</span><span lang="RU" style="font-family: 新細明體, serif;">可指定最少兩個坐標</span><span lang="RU">[coordinates]</span><span lang="RU" style="font-family: 新細明體, serif;">（</span><span lang="RU">X</span><span lang="RU" style="font-family: 新細明體, serif;">，</span><span lang="RU">Y</span><span lang="RU" style="font-family: 新細明體, serif;">）和最多</span><span lang="RU">4</span><span lang="RU" style="font-family: 新細明體, serif;">個（的</span><span lang="RU">X</span><span lang="RU" style="font-family: 新細明體, serif;">，</span><span lang="RU">Y</span><span lang="RU" style="font-family: 新細明體, serif;">，</span><span lang="RU">Z</span><span lang="RU" style="font-family: 新細明體, serif;">，</span><span lang="RU">W</span><span lang="RU" style="font-family: 新細明體, serif;">）。在</span><span lang="RU">W -</span><span lang="RU" style="font-family: 新細明體, serif;">軸是可選的，默認值設置為</span><span lang="RU"> 1.0</span><span lang="RU" style="font-family: 新細明體, serif;">。</span><span lang="RU">Z</span><span lang="RU" style="font-family: 新細明體, serif;">軸也是可選的，默認值設置為</span><span lang="RU"> 0</span><span lang="RU" style="font-family: 新細明體, serif;">。在這個系列中，我們將使用三個主要坐標</span><span lang="RU"> X</span><span lang="RU" style="font-family: 新細明體, serif;">，</span><span lang="RU">Y</span><span lang="RU" style="font-family: 新細明體, serif;">和</span><span lang="RU">Z</span><span lang="RU" style="font-family: 新細明體, serif;">，</span><span lang="RU">W</span><span lang="RU" style="font-family: 新細明體, serif;">是因為通常用作一個佔位符</span><span lang="RU">(placeholder)</span><span lang="RU" style="font-family: 新細明體, serif;">。複數的</span><span lang="RU">vertex</span><span lang="RU" style="font-family: 新細明體, serif;">稱</span><span lang="RU">vertices</span><span lang="RU" style="font-family: 新細明體, serif;">。所有的對象都是使用</span><span lang="RU">vertices</span><span lang="RU" style="font-family: 新細明體, serif;">繪製作為他們的</span><span lang="RU">points</span><span lang="RU" style="font-family: 新細明體, serif;">，所以</span><span lang="RU">point</span><span lang="RU" style="font-family: 新細明體, serif;">會提到一個</span><span lang="RU">vertex</span><span lang="RU" style="font-family: 新細明體, serif;">。</span></strong></div><br><div style="margin: 5pt 0cm;"><span lang="RU">Triangle - </span><strong>**<span lang="RU" style="font-family: 新細明體, serif;">三角形</span></strong><span lang="RU"><br></span><span lang="RU" style="font-family: 新細明體, serif;">一個三角形需要被</span><span lang="RU">3</span><span lang="RU" style="font-family: 新細明體, serif;">點創建。因此，在</span><span lang="RU">OpenGL</span><span lang="RU" style="font-family: 新細明體, serif;">中，我們使用三個頂點創建一個。</span></div><br><div style="margin: 5pt 0cm;"><strong><span lang="RU">Polygon - </span>**</strong><span lang="RU" style="font-family: 新細明體, serif;">多邊形</span><strong><span lang="RU"><br></span><span lang="RU" style="font-family: 新細明體, serif;">一個多邊形是一個對象，它至少有三個連接點。為此三角形也是一個多邊形。</span></strong></div><br><div style="margin: 5pt 0cm;"><span lang="RU">Polygon - </span><strong>**<span lang="RU" style="font-family: 新細明體, serif;">基元</span></strong><span lang="RU"><br></span><span lang="RU" style="font-family: 新細明體, serif;">一個基元是使用或三角形或多邊形創建的一個</span><span lang="RU">3D</span><span lang="RU" style="font-family: 新細明體, serif;">物件。有點諷刺意味：</span><span lang="RU">50.000</span><span lang="RU" style="font-family: 新細明體, serif;">詳細模型的頂點，也是一種原始的詳細模型就像一個低</span><span lang="RU">500</span><span lang="RU" style="font-family: 新細明體, serif;">頂點。</span></div><br><div style="margin: 5pt 0cm;"><span lang="RU" style="font-family: 新細明體, serif;">現在我們可以開始編程。</span><span lang="RU"><br></span><span lang="RU" style="font-family: 新細明體, serif;">我們創建了一個新的</span><span lang="RU">project</span><span lang="RU" style="font-family: 新細明體, serif;">，稱為</span><span lang="RU">Vortex</span><span lang="RU" style="font-family: 新細明體, serif;">。</span><span lang="RU"><br></span><span lang="RU" style="font-family: 新細明體, serif;">我們的活動會很熟悉：</span></div>
 
 <p>[java]<br>package com.droidnova.android.games.vortex;</p>
 <p>import android.app.Activity;<br>import android.os.Bundle;</p>
 <p>public class Vortex extends Activity {<br>private static final String LOG_TAG = Vortex.class.getSimpleName();<br>private VortexView _vortexView;</p>
 <p>@Override<br>protected void onCreate(Bundle savedInstanceState) {<br>super.onCreate(savedInstanceState);<br>_vortexView = new VortexView(this);<br>setContentView(_vortexView);<br>}<br>}<br>[/java]</p>
 <p>正如您所見，我們已經將自己的看法。讓我們看一看我們的權利</p>
-<div style="margin: 5pt 0cm;"><span lang="RU"> VortexView</span><span lang="RU" style="font-family: 新細明體, serif;">類。</span></div><br><div style="margin: 5pt 0cm;"><span lang="RU" style="font-family: 新細明體, serif;">正如你看到的，我們繼承</span><span lang="RU"> GLSurfaceView</span><span lang="RU" style="font-family: 新細明體, serif;">因為它會幫助我們管理的繪圖。接下來的事情你應該看到的是我們的</span><span lang="RU">VortexRenderer</span><span lang="RU" style="font-family: 新細明體, serif;">類。</span><span lang="RU"><br></span><span lang="RU" style="font-family: 新細明體, serif;">一個渲染器有什麼那執行任務需要畫一個框架。引用</span><span lang="RU"> <span style="text-decoration: underline;"><span style="color: blue;"><a href="http://developer.android.com/intl/de/reference/android/opengl/GLSurfaceView.Renderer.html" target="_blank" rel="external"><span style="color: blue; font-family: 新細明體, serif;">引用</span></a></span></span> </span><span lang="RU" style="font-family: 新細明體, serif;">：</span></div><br><div><span lang="RU" style="font-family: 新細明體, serif;">渲染器是負責制定</span><span lang="RU">OpenGL</span><span lang="RU" style="font-family: 新細明體, serif;">調用來呈現一個框架。</span></div><br><div style="margin: 5pt 0cm;"><span lang="RU" style="font-family: 新細明體, serif;">因此，讓看看這個類：</span></div>
+<div style="margin: 5pt 0cm;"><span lang="RU"> VortexView</span><span lang="RU" style="font-family: 新細明體, serif;">類。</span></div><br><div style="margin: 5pt 0cm;"><span lang="RU" style="font-family: 新細明體, serif;">正如你看到的，我們繼承</span><span lang="RU"> GLSurfaceView</span><span lang="RU" style="font-family: 新細明體, serif;">因為它會幫助我們管理的繪圖。接下來的事情你應該看到的是我們的</span><span lang="RU">VortexRenderer</span><span lang="RU" style="font-family: 新細明體, serif;">類。</span><span lang="RU"><br></span><span lang="RU" style="font-family: 新細明體, serif;">一個渲染器有什麼那執行任務需要畫一個框架。引用</span><span lang="RU"> <span style="text-decoration: underline;"><span style="color: blue;"><a href="http://developer.android.com/intl/de/reference/android/opengl/GLSurfaceView.Renderer.html" target="_blank" rel="noopener"><span style="color: blue; font-family: 新細明體, serif;">引用</span></a></span></span> </span><span lang="RU" style="font-family: 新細明體, serif;">：</span></div><br><div><span lang="RU" style="font-family: 新細明體, serif;">渲染器是負責制定</span><span lang="RU">OpenGL</span><span lang="RU" style="font-family: 新細明體, serif;">調用來呈現一個框架。</span></div><br><div style="margin: 5pt 0cm;"><span lang="RU" style="font-family: 新細明體, serif;">因此，讓看看這個類：</span></div>
 
 <p>[java]<br>package com.droidnova.android.games.vortex;</p>
 <p>import javax.microedition.khronos.egl.EGLConfig;<br>import javax.microedition.khronos.opengles.GL10;</p>
@@ -20,4 +127,265 @@
 <p>gl.glClear(GL10.GL_COLOR_BUFFER_BIT);<br>}<br>}<br>[/java]</p>
 <p>好吧，我們在這裡做什麼？</p>
 <div style="margin: 5pt 0cm;"><span lang="RU" style="font-family: 新細明體, serif;">首先，我們實作了</span><span lang="RU">interface GLSurfaceView</span><span lang="RU" style="font-family: 新細明體, serif;">。它迫使我們實作渲染的</span><span lang="RU"> 3</span><span lang="RU" style="font-family: 新細明體, serif;">種</span><span lang="RU">methods</span><span lang="RU" style="font-family: 新細明體, serif;">：</span><span lang="RU">onSurfaceCreated(), onSurfaceChanged() , onDrawFrame()</span><span lang="RU" style="font-family: 新細明體, serif;">這些方法很容易理解，第一個被稱為後表面產生，第二，如果面變化，如您切換從縱向到橫向，最後一個，隨時繪圖要求。</span><span lang="RU"><br></span><span lang="RU" style="font-family: 新細明體, serif;">從第</span><span lang="RU">11</span><span lang="RU" style="font-family: 新細明體, serif;">行至</span><span lang="RU">13</span><span lang="RU" style="font-family: 新細明體, serif;">行，我們有</span><span lang="RU">floats</span><span lang="RU" style="font-family: 新細明體, serif;">定義每個顏色的</span><span lang="RU">RGB</span><span lang="RU" style="font-family: 新細明體, serif;">色彩系統。</span><span lang="RU"><br></span><span lang="RU" style="font-family: 新細明體, serif;">第</span><span lang="RU">28</span><span lang="RU" style="font-family: 新細明體, serif;">行我們定義的顏色我們的</span><span lang="RU">“clipping wall”</span><span lang="RU" style="font-family: 新細明體, serif;">的方法</span><span lang="RU">glClearColor()</span><span lang="RU" style="font-family: 新細明體, serif;">。該</span><span lang="RU">“clipping wall”</span><span lang="RU" style="font-family: 新細明體, serif;">涵蓋一切，是背後的距離，我們可以看到，所以每一個物件背後的</span><span lang="RU">“wall”</span><span lang="RU" style="font-family: 新細明體, serif;">是無形的。想像一下，壁類似霧。後來我們將設置距離以顯示它是如何工作。目前，它是絕對足夠的，你知道它的存在。</span><span lang="RU"><br></span><span lang="RU" style="font-family: 新細明體, serif;">為了使我們的顏</span></div>
-</div><div class="tags"><a href="/tags/Android/">Android</a><a href="/tags/Game-Dev/">Game Dev</a><a href="/tags/JAVA/">JAVA</a><a href="/tags/OpenGL/">OpenGL</a></div><div class="post-nav"><a href="/2011/01/creport-viewer.html/" class="pre">[C#]Report Viewer</a><a href="/2010/05/blog-post.html/" class="next">轉：「路徑」「貝茲曲線」超詳細教學</a></div></div></div></div><div class="pure-u-1-4 hidden_mid_and_down"><div id="sidebar"><div class="widget"><form action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank" class="search-form"><input type="text" name="q" maxlength="20" placeholder="Search"/><input type="hidden" name="sitesearch" value="http://blog.gorendo.org"/></form></div><div class="widget"><div class="widget-title"><i class="fa fa-folder-o"> Categories</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/">Android</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/C/">C#</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/C-C/">C/C++</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Cocos2D/">Cocos2D</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/DATABASE/">DATABASE</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Facebook/">Facebook</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Game-Dev/">Game Dev</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JAVA/">JAVA</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Javascript/">Javascript</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Lua/">Lua</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Mac/">Mac</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/PHP/">PHP</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Software/">Software</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Unity/">Unity</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Unity/AssetBundle/">AssetBundle</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/WEB/">WEB</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/WEB/CSS/">CSS</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/iOS/">iOS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery/">jQuery</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/programming/">programming</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/大學專題/">大學專題</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/攝影/">攝影</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/敗家/">敗家</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/程式語言/">程式語言</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-star-o"> Tags</i></div><div class="tagcloud"><a href="/tags/PHP/" style="font-size: 15px;">PHP</a> <a href="/tags/Unity/" style="font-size: 15px;">Unity</a> <a href="/tags/Game-Dev/" style="font-size: 15px;">Game Dev</a> <a href="/tags/JAVA/" style="font-size: 15px;">JAVA</a> <a href="/tags/OpenGL/" style="font-size: 15px;">OpenGL</a> <a href="/tags/Google-API/" style="font-size: 15px;">Google API</a> <a href="/tags/C-C/" style="font-size: 15px;">C/C++</a> <a href="/tags/Cocos2D/" style="font-size: 15px;">Cocos2D</a> <a href="/tags/DATABASE/" style="font-size: 15px;">DATABASE</a> <a href="/tags/MySQL/" style="font-size: 15px;">MySQL</a> <a href="/tags/iOS/" style="font-size: 15px;">iOS</a> <a href="/tags/Xcode/" style="font-size: 15px;">Xcode</a> <a href="/tags/Mac/" style="font-size: 15px;">Mac</a> <a href="/tags/Software/" style="font-size: 15px;">Software</a> <a href="/tags/Lua/" style="font-size: 15px;">Lua</a> <a href="/tags/敗家/" style="font-size: 15px;">敗家</a> <a href="/tags/Android/" style="font-size: 15px;">Android</a> <a href="/tags/ATOM/" style="font-size: 15px;">ATOM</a> <a href="/tags/SEO/" style="font-size: 15px;">SEO</a> <a href="/tags/資訊安全/" style="font-size: 15px;">資訊安全</a> <a href="/tags/opensource/" style="font-size: 15px;">opensource</a> <a href="/tags/程式語言/" style="font-size: 15px;">程式語言</a> <a href="/tags/Facebook/" style="font-size: 15px;">Facebook</a> <a href="/tags/programming/" style="font-size: 15px;">programming</a> <a href="/tags/攝影/" style="font-size: 15px;">攝影</a> <a href="/tags/C/" style="font-size: 15px;">C#</a> <a href="/tags/WINDOWS/" style="font-size: 15px;">WINDOWS</a> <a href="/tags/WEB/" style="font-size: 15px;">WEB</a> <a href="/tags/Javascript/" style="font-size: 15px;">Javascript</a> <a href="/tags/Node-JS/" style="font-size: 15px;">Node.JS</a> <a href="/tags/jQuery/" style="font-size: 15px;">jQuery</a> <a href="/tags/CSS/" style="font-size: 15px;">CSS</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-file-o"> Recent</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/10/php-mac-atom-visual-studio-code-php.html/">[php] 在 Mac 用ATOM / Visual Studio Code 為 php debug</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/mac-xxx.html/">[Mac] 解決 您要讓應用程式 XXX 接受傳入的網路連接嗎 一直跳出</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/10/php-callback.html/">[php] 實作callback</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/06/android-setclicklistener-in-custom-view.html/">[Android] setClickListener in custom view</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/06/errorexecution-failed-for-task.html/">解決 Error:Execution failed for task 'preDexDebug'. > com.android.ide.common.process.ProcessException: org.gradle.process.internal.ExecException: Process 'command  finished with non-zero exit value 1</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/05/android-wiperefreshlayout.html/">[Android] 下拉更新 SwipeRefreshLayout</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/04/android-cant-create-handler-inside.html/">[Android] 處理 Can't create handler inside thread that has not called Looper.prepare()</a></li><li class="post-list-item"><a class="post-list-link" href="/2014/08/unity-ugui-46-eventsystem.html/">[Unity] uGUI (4.6) EventSystem 事件系統 快速上手</a></li><li class="post-list-item"><a class="post-list-link" href="/2014/08/unity-ugui-46-eventsystem.html/">[Unity] uGUI (4.6) EventSystem 事件系統 快速上手</a></li><li class="post-list-item"><a class="post-list-link" href="/2014/06/cocos2d-x-install-mac.html/">[Cocos2d-x] 在 Mac 上設置 Cocos2d-x (Cocos2d-x 3 .x)</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-external-link"> Links</i></div><ul></ul><a href="http://www.example1.com/" title="site-name1" target="_blank">site-name1</a><ul></ul><a href="http://www.example2.com/" title="site-name2" target="_blank">site-name2</a><ul></ul><a href="http://www.example3.com/" title="site-name3" target="_blank">site-name3</a></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">Copyright © 2017 <a href="/." rel="nofollow">小伍手札.</a> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a><a rel="nofollow" target="_blank" href="https://github.com/tufu9441/maupassant-hexo"> Theme</a> by<a rel="nofollow" target="_blank" href="https://github.com/pagecho"> Cho.</a></div></div></div><a id="rocket" href="#top" class="show"></a><script type="text/javascript" src="/js/totop.js?v=0.0.0" async></script><script type="text/javascript" src="//cdn.bootcss.com/fancybox/3.1.20/jquery.fancybox.min.js" async></script><script type="text/javascript" src="/js/fancybox.js?v=0.0.0" async></script><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/fancybox/3.1.20/jquery.fancybox.min.css"><script type="text/javascript" src="/js/codeblock-resizer.js?v=0.0.0"></script><script type="text/javascript" src="/js/smartresize.js?v=0.0.0"></script></div></body></html>
+
+        
+      
+    </div>
+
+    
+      
+
+    
+
+    <footer class="article-footer border">
+      <a data-url="http://blog.gorendo.org/2010/07/android-3d-game-tutorial-part-i.html/" data-id="cjm64u15200dvg6xuec6qnzos" class="article-share-link">
+        <i class="fa fa-share"></i> Share
+      </a>
+      
+        <a href="http://blog.gorendo.org/2010/07/android-3d-game-tutorial-part-i.html/#disqus_thread" class="article-comment-link">
+          <i class="fa fa-comment"></i> Comments
+        </a>
+      
+    </footer>
+  </div>
+  
+    
+  
+    Next:<a href="/2010/05/blog-post.html/">
+      轉：「路徑」「貝茲曲線」超詳細教學
+    </a>
+  
+  
+    Prev:<a href="/2011/01/creport-viewer.html/">
+      [C#]Report Viewer
+    </a>
+  
+
+
+  
+</article>
+
+
+<section id="comments">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+
+<!-- article.ejs end -->
+      </div>
+      <aside id="aside" class="aside col-10 col-lg-3 border">
+        aside
+        <div class="card bg-primary d-none">
+          <div class="card-header">
+            ABOUT
+          </div>
+          <img class="card-img rounded w-50 mx-auto" src="https://www.gravatar.com/avatar/46c6cc40826824204a70f22ee75c3752?s=240"
+            alt="Card image cap">
+
+          <div class="card-body">
+            <h4 class="card-title">Special title treatment</h4>
+            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+        </div>
+
+
+        
+        <div class="card">
+          <div class="card-header">
+            最新文章
+          </div>
+          <div class="card-body">
+            
+            <li>
+              <a href="/2016/10/php-mac-atom-visual-studio-code-php.html/">
+                [php] 在 Mac 用ATOM / Visual Studio Code 為 php debug</a>
+            </li>
+            
+            <li>
+              <a href="/2015/12/mac-xxx.html/">
+                [Mac] 解決 您要讓應用程式 XXX 接受傳入的網路連接嗎 一直跳出</a>
+            </li>
+            
+            <li>
+              <a href="/2015/10/php-callback.html/">
+                [php] 實作callback</a>
+            </li>
+            
+            <li>
+              <a href="/2015/06/android-setclicklistener-in-custom-view.html/">
+                [Android] setClickListener in custom view</a>
+            </li>
+            
+            <li>
+              <a href="/2015/06/errorexecution-failed-for-task.html/">
+                解決 Error:Execution failed for task &#39;preDexDebug&#39;. &gt; com.android.ide.common.process.ProcessException: org.gradle.process.internal.ExecException: Process &#39;command  finished with non-zero exit value 1</a>
+            </li>
+            
+
+          </div>
+        </div>
+        
+
+        
+
+        <div class="card">
+          <div class="card-header">
+            標籤
+          </div>
+          <div class="card-body">
+
+            
+            <a class="badge badge-primary" href="/tags/PHP/">
+              PHP <span class="badge badge-light">
+                20</span></a>
+            
+            <a class="badge badge-primary" href="/tags/Android/">
+              Android <span class="badge badge-light">
+                17</span></a>
+            
+            <a class="badge badge-primary" href="/tags/WEB/">
+              WEB <span class="badge badge-light">
+                10</span></a>
+            
+            <a class="badge badge-primary" href="/tags/JAVA/">
+              JAVA <span class="badge badge-light">
+                9</span></a>
+            
+            <a class="badge badge-primary" href="/tags/Game-Dev/">
+              Game Dev <span class="badge badge-light">
+                9</span></a>
+            
+            <a class="badge badge-primary" href="/tags/Unity/">
+              Unity <span class="badge badge-light">
+                8</span></a>
+            
+            <a class="badge badge-primary" href="/tags/攝影/">
+              攝影 <span class="badge badge-light">
+                7</span></a>
+            
+            <a class="badge badge-primary" href="/tags/Software/">
+              Software <span class="badge badge-light">
+                4</span></a>
+            
+            <a class="badge badge-primary" href="/tags/C-C/">
+              C/C++ <span class="badge badge-light">
+                3</span></a>
+            
+            <a class="badge badge-primary" href="/tags/Mac/">
+              Mac <span class="badge badge-light">
+                3</span></a>
+            
+            <a class="badge badge-primary" href="/tags/DATABASE/">
+              DATABASE <span class="badge badge-light">
+                3</span></a>
+            
+            <a class="badge badge-primary" href="/tags/MySQL/">
+              MySQL <span class="badge badge-light">
+                3</span></a>
+            
+            <a class="badge badge-primary" href="/tags/jQuery/">
+              jQuery <span class="badge badge-light">
+                3</span></a>
+            
+            <a class="badge badge-primary" href="/tags/程式語言/">
+              程式語言 <span class="badge badge-light">
+                2</span></a>
+            
+            <a class="badge badge-primary" href="/tags/Xcode/">
+              Xcode <span class="badge badge-light">
+                2</span></a>
+            
+            <a class="badge badge-primary" href="/tags/C/">
+              C# <span class="badge badge-light">
+                2</span></a>
+            
+            <a class="badge badge-primary" href="/tags/iOS/">
+              iOS <span class="badge badge-light">
+                2</span></a>
+            
+            <a class="badge badge-primary" href="/tags/Cocos2D/">
+              Cocos2D <span class="badge badge-light">
+                2</span></a>
+            
+            <a class="badge badge-primary" href="/tags/Google-API/">
+              Google API <span class="badge badge-light">
+                2</span></a>
+            
+            <a class="badge badge-primary" href="/tags/Javascript/">
+              Javascript <span class="badge badge-light">
+                2</span></a>
+            
+            <a class="badge badge-primary" href="/tags/opensource/">
+              opensource <span class="badge badge-light">
+                1</span></a>
+            
+            <a class="badge badge-primary" href="/tags/敗家/">
+              敗家 <span class="badge badge-light">
+                1</span></a>
+            
+            <a class="badge badge-primary" href="/tags/programming/">
+              programming <span class="badge badge-light">
+                1</span></a>
+            
+            <a class="badge badge-primary" href="/tags/SEO/">
+              SEO <span class="badge badge-light">
+                1</span></a>
+            
+            <a class="badge badge-primary" href="/tags/CSS/">
+              CSS <span class="badge badge-light">
+                1</span></a>
+            
+            <a class="badge badge-primary" href="/tags/WINDOWS/">
+              WINDOWS <span class="badge badge-light">
+                1</span></a>
+            
+            <a class="badge badge-primary" href="/tags/資訊安全/">
+              資訊安全 <span class="badge badge-light">
+                1</span></a>
+            
+            <a class="badge badge-primary" href="/tags/Facebook/">
+              Facebook <span class="badge badge-light">
+                1</span></a>
+            
+            <a class="badge badge-primary" href="/tags/Lua/">
+              Lua <span class="badge badge-light">
+                1</span></a>
+            
+            <a class="badge badge-primary" href="/tags/Node-JS/">
+              Node.JS <span class="badge badge-light">
+                1</span></a>
+            
+            <a class="badge badge-primary" href="/tags/OpenGL/">
+              OpenGL <span class="badge badge-light">
+                1</span></a>
+            
+            <a class="badge badge-primary" href="/tags/ATOM/">
+              ATOM <span class="badge badge-light">
+                1</span></a>
+            
+          </div>
+        </div>
+        
+
+
+      </aside>
+    </div>
+  </section>
+
+  <footer class="blog-footer">
+    <div class="container">
+      <div id="footer-info" class="inner">
+        &copy;
+        2018
+        gonex45<br>
+        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- end layout.ejs  -->
+</body>
+
+</html>
