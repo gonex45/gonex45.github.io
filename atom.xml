@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.gorendo.org/"/>
-  <updated>2018-09-17T10:56:08.331Z</updated>
+  <updated>2018-09-20T06:06:17.597Z</updated>
   <id>https://blog.gorendo.org/</id>
   
   <author>
@@ -21,13 +21,13 @@
     <link href="https://blog.gorendo.org/2016/10/php-mac-atom-visual-studio-code-php.html/"/>
     <id>https://blog.gorendo.org/2016/10/php-mac-atom-visual-studio-code-php.html/</id>
     <published>2016-10-26T02:24:00.000Z</published>
-    <updated>2018-09-17T10:56:08.331Z</updated>
+    <updated>2018-09-20T06:06:17.597Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;依php版本安裝 xdebug&lt;/p&gt;
-&lt;p&gt;&lt;pre&gt;brew install homebrew/php/phpXX-xdebug&lt;br&gt;&lt;/pre&gt;&lt;br&gt;在 /usr/local/etc/php/{x.y}/conf.d/ext-xdebug.ini) 內加上&lt;/p&gt;
-&lt;p&gt;&lt;pre&gt;xdebug.remote_enable=1&lt;br&gt;xdebug.remote_host=127.0.0.1&lt;br&gt;xdebug.remote_connect_back=1    # Not safe for production servers&lt;br&gt;xdebug.remote_port=9000&lt;br&gt;xdebug.remote_handler=dbgp&lt;br&gt;xdebug.remote_mode=req&lt;br&gt;xdebug.remote_autostart=true&lt;br&gt;&lt;/pre&gt;&lt;br&gt;
+      &lt;h3 id=&quot;依php版本安裝-xdebug&quot;&gt;&lt;a href=&quot;#依php版本安裝-xdebug&quot; class=&quot;headerlink&quot; title=&quot;依php版本安裝 xdebug&quot;&gt;&lt;/a&gt;依php版本安裝 xdebug&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;brew install homebrew/php/phpXX-xdebug&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;在 /usr/local/etc/php/{x.y}/conf.d/ext-xdebug.ini) 內加上&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;xdebug.remote_enable=1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;xdebug.remote_host=127.0.0.1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;xdebug.remote_connect_back=1    # Not safe for production servers&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;xdebug.remote_port=9000&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;xdebug.remote_handler=dbgp&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;xdebug.remote_mode=req&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;xdebug.remote_autostart=true&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
     
     </summary>
     
@@ -275,7 +275,7 @@ run1(&#39;by run1&#39;);//funA:by run
     <link href="https://blog.gorendo.org/2014/04/unity-assetbundle-shader-lost.html/"/>
     <id>https://blog.gorendo.org/2014/04/unity-assetbundle-shader-lost.html/</id>
     <published>2014-04-29T01:54:00.000Z</published>
-    <updated>2017-08-13T14:22:02.000Z</updated>
+    <updated>2017-08-13T14:07:37.000Z</updated>
     
     <summary type="html">
     
@@ -302,7 +302,7 @@ gameObject.renderer.material.shader =  Shader.Find(
     <link href="https://blog.gorendo.org/2014/04/unity-assetbundle-shader-lost.html/"/>
     <id>https://blog.gorendo.org/2014/04/unity-assetbundle-shader-lost.html/</id>
     <published>2014-04-29T01:54:00.000Z</published>
-    <updated>2017-08-13T14:07:37.000Z</updated>
+    <updated>2017-08-13T14:22:02.000Z</updated>
     
     <summary type="html">
     

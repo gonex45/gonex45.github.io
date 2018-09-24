@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blog.gorendo.org/2016/10/php-mac-atom-visual-studio-code-php.html/</loc>
+    
+    <lastmod>2018-09-20T06:06:17.597Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://blog.gorendo.org/2008/08/dll.html/</loc>
     
     <lastmod>2018-09-18T02:12:14.848Z</lastmod>
@@ -12,13 +19,6 @@
     <loc>https://blog.gorendo.org/2011/08/libgdx-androiddesktop-game-development.html/</loc>
     
     <lastmod>2018-09-18T01:39:09.411Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.gorendo.org/2016/10/php-mac-atom-visual-studio-code-php.html/</loc>
-    
-    <lastmod>2018-09-17T10:56:08.331Z</lastmod>
     
   </url>
   

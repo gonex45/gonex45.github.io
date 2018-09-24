@@ -302,45 +302,16 @@
 }
 
 body {
-  /*font-family: Georgia, "Times New Roman", Times, serif;*/
+  /* font-family: "SF Pro TC","SF Pro Text","SF Pro Icons","PingFang TC","Helvetica Neue","Helvetica","Arial",sans-serif; */
   color: #212121;
+  /* background-color: #f2f2f2; */
   overflow-x: hidden;
 }
 
-@media screen and (max-width:991px) {
-
-
-  #aside.active {
-    right: 0%;
-    position: absolute;
-  }
-
-  #aside {
-    right: -100%;
-    position: absolute;
-  }
-
-  #blog-title {
-    font-size:14px;
-  }
-
-  #asidebtn {
-
-    width: 50px;
-    right: 15px;
-    bottom: 20px;
-    z-index: 888;
-    position: fixed;
-  }
-
-  #asidebtn:after {
-    content: "<<";
-  }
-
-  #asidebtn.active:after {
-    content: ">>";
-  }
+li {
+  list-style-type: none;
 }
+
 
 article.post {
   padding: 16px;
@@ -360,23 +331,81 @@ pre {
   border: 1px solid #e6e6e6;
 }
 
-@media screen and (min-width:992px) {
-
-
-  #asidebtn {
-    display: none;
-    content: "<<";
-  }
-
-  #asidebtn::after {
-    content: "<<";
-  }
-}
-
-
-
 
 .article-meta {
   color: #666;
   font-size: 14px;
+}
+
+/* mobile mode */
+@media screen and (min-width:992px) {
+  #asidebtn {
+    display:none;
+  }
+}
+
+/* mobile mode */
+@media screen and (max-width:991px) {
+
+  @keyframes aside-fade-in {
+    0% {
+      right: -100%;
+    }
+
+    100% {
+      right: 0%;
+    }
+  }
+
+  @keyframes aside-fade-out {
+    0% {
+      right: 0%;
+    }
+
+    100% {
+      right: -100%;
+    }
+  }
+
+  #aside.active {
+    right: 0%;
+    position: absolute;
+
+    animation-name: aside-fade-in;
+    animation-duration: 0.2s;
+    display: inline;
+  }
+
+  #aside {
+    right: -100%;
+    position: absolute;
+
+    animation-name: aside-fade-out;
+    animation-duration: 0.2s;
+
+  }
+  #aside.noactived {
+    display: none;
+  }
+
+  #blog-title {
+    font-size: 14px;
+  }
+
+  #asidebtn {
+
+    width: 50px;
+    right: 15px;
+    bottom: 20px;
+    z-index: 888;
+    position: fixed;
+  }
+
+  #asidebtn:after {
+    content: "<<";
+  }
+
+  #asidebtn.active:after {
+    content: ">>";
+  }
 }

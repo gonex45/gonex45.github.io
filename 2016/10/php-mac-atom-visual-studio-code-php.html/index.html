@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <!-- layout.ejs -->
-
 <head>
   <!-- Required meta tags -->
   <meta charset="utf-8">
@@ -68,7 +67,9 @@
 
     <div class="row border">
       <div class="col col-lg-9 border">
-        <!-- article.ejs -->
+        <!--body-->
+        <!--page.ejs-->
+<!-- article.ejs -->
 <article id="post-php-mac-atom-visual-studio-code-php.html" class="border post">
     
     <h2>
@@ -80,14 +81,12 @@
   <div class="article-meta">
     <!-- date.ejs -->
 <div class="article-datetime">
-  date.ejs
   <a href="/2016/10/php-mac-atom-visual-studio-code-php.html/" class="article-date"><time datetime="2016-10-26T02:24:00.000Z" itemprop="datePublished">2016-10-26</time></a>
 </div>
 
     <!-- category.ejs -->
 
   <div class="article-category">
-      category.ejs
     分類:
     <a class="article-category-link" href="/categories/PHP/">PHP</a>
   </div>
@@ -105,17 +104,14 @@
 
         
         
-          <p>依php版本安裝 xdebug</p>
-<p><pre>brew install homebrew/php/phpXX-xdebug<br></pre><br>在 /usr/local/etc/php/{x.y}/conf.d/ext-xdebug.ini) 內加上</p>
-<p><pre>xdebug.remote_enable=1<br>xdebug.remote_host=127.0.0.1<br>xdebug.remote_connect_back=1    # Not safe for production servers<br>xdebug.remote_port=9000<br>xdebug.remote_handler=dbgp<br>xdebug.remote_mode=req<br>xdebug.remote_autostart=true<br></pre><br><a id="more"></a></p>
-<ul>
-<li>ATOM<br>安裝 php-debug package<br><a href="https://atom.io/packages/php-debug" target="_blank" rel="noopener">https://atom.io/packages/php-debug</a></li>
-</ul>
+          <h3 id="依php版本安裝-xdebug"><a href="#依php版本安裝-xdebug" class="headerlink" title="依php版本安裝 xdebug"></a>依php版本安裝 xdebug</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install homebrew/php/phpXX-xdebug</span><br></pre></td></tr></table></figure>
+<p>在 /usr/local/etc/php/{x.y}/conf.d/ext-xdebug.ini) 內加上</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">xdebug.remote_enable=1</span><br><span class="line">xdebug.remote_host=127.0.0.1</span><br><span class="line">xdebug.remote_connect_back=1    # Not safe for production servers</span><br><span class="line">xdebug.remote_port=9000</span><br><span class="line">xdebug.remote_handler=dbgp</span><br><span class="line">xdebug.remote_mode=req</span><br><span class="line">xdebug.remote_autostart=true</span><br></pre></td></tr></table></figure>
+<a id="more"></a> 
+<h3 id="ATOM"><a href="#ATOM" class="headerlink" title="ATOM"></a>ATOM</h3><p>安裝 php-debug package<br><a href="https://atom.io/packages/php-debug" target="_blank" rel="noopener">https://atom.io/packages/php-debug</a></p>
 <p>用 Atom 打開 php 檔案後插入中斷點，接著選功能表 Packages &gt; PHP-Debug &gt; Toggle Debugging(ctrl + option + D)<br>執行到中斷行就可以了</p>
-<ul>
-<li>VS Code<br>安裝 PHP Debug<br><a href="https://marketplace.visualstudio.com/items?itemName=felixfbecker.php-debug" target="_blank" rel="noopener">https://marketplace.visualstudio.com/items?itemName=felixfbecker.php-debug</a></li>
-</ul>
-<p>用&nbsp;VS Code&nbsp;打開 php 檔案後插入中斷點，接著在畫面左邊選擇debug圖示<br>執行到中斷行就可以了</p>
+<h3 id="VS-Code"><a href="#VS-Code" class="headerlink" title="VS Code"></a>VS Code</h3><p>安裝 PHP Debug<br><a href="https://marketplace.visualstudio.com/items?itemName=felixfbecker.php-debug" target="_blank" rel="noopener">https://marketplace.visualstudio.com/items?itemName=felixfbecker.php-debug</a></p>
+<p>用 <code>VS Code</code> 打開 php 檔案後插入中斷點，接著在畫面左邊選擇debug圖示<br>執行到中斷行就可以了</p>
 
         
       
@@ -126,16 +122,13 @@
 
     
 
+    
     <footer class="article-footer border">
-      <a data-url="https://blog.gorendo.org/2016/10/php-mac-atom-visual-studio-code-php.html/" data-id="cjm7cjf4i0069wmxuyu8vbh84" class="article-share-link">
+      <a data-url="https://blog.gorendo.org/2016/10/php-mac-atom-visual-studio-code-php.html/" data-id="cjm64u12b0068g6xumf0wdh9n" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
-      
-        <a href="https://blog.gorendo.org/2016/10/php-mac-atom-visual-studio-code-php.html/#disqus_thread" class="article-comment-link">
-          <i class="fa fa-comment"></i> Comments
-        </a>
-      
     </footer>
+    
   </div>
   
     
@@ -151,25 +144,9 @@
 </article>
 
 
-<section id="comments">
-  <div id="disqus_thread">
-    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-  </div>
-</section>
-<script>
-    var disqus_config = function () {
-        // Replace PAGE_URL with your page's canonical URL variable
-        this.page.url = "https://blog.gorendo.org/2016/10/php-mac-atom-visual-studio-code-php.html/";
-
-        // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-        this.page.identifier = "php-mac-atom-visual-studio-code-php.html";
-    };
-</script>
-
 <!-- article.ejs end -->
       </div>
-      <aside id="aside" class="aside col-10 col-lg-3 border">
-        aside
+      <aside id="aside" class="aside col-10 col-lg-3 border noactived">
         <div class="card bg-primary d-none">
           <div class="card-header">
             ABOUT
@@ -263,8 +240,12 @@
               Software <span class="badge badge-light">
                 4</span></a>
             
-            <a class="badge badge-primary" href="/tags/jQuery/">
-              jQuery <span class="badge badge-light">
+            <a class="badge badge-primary" href="/tags/C-C/">
+              C/C++ <span class="badge badge-light">
+                3</span></a>
+            
+            <a class="badge badge-primary" href="/tags/Mac/">
+              Mac <span class="badge badge-light">
                 3</span></a>
             
             <a class="badge badge-primary" href="/tags/DATABASE/">
@@ -275,28 +256,24 @@
               MySQL <span class="badge badge-light">
                 3</span></a>
             
-            <a class="badge badge-primary" href="/tags/C-C/">
-              C/C++ <span class="badge badge-light">
+            <a class="badge badge-primary" href="/tags/jQuery/">
+              jQuery <span class="badge badge-light">
                 3</span></a>
-            
-            <a class="badge badge-primary" href="/tags/Mac/">
-              Mac <span class="badge badge-light">
-                3</span></a>
-            
-            <a class="badge badge-primary" href="/tags/Xcode/">
-              Xcode <span class="badge badge-light">
-                2</span></a>
             
             <a class="badge badge-primary" href="/tags/程式語言/">
               程式語言 <span class="badge badge-light">
                 2</span></a>
             
-            <a class="badge badge-primary" href="/tags/iOS/">
-              iOS <span class="badge badge-light">
+            <a class="badge badge-primary" href="/tags/Xcode/">
+              Xcode <span class="badge badge-light">
                 2</span></a>
             
             <a class="badge badge-primary" href="/tags/C/">
               C# <span class="badge badge-light">
+                2</span></a>
+            
+            <a class="badge badge-primary" href="/tags/iOS/">
+              iOS <span class="badge badge-light">
                 2</span></a>
             
             <a class="badge badge-primary" href="/tags/Cocos2D/">
@@ -311,8 +288,8 @@
               Javascript <span class="badge badge-light">
                 2</span></a>
             
-            <a class="badge badge-primary" href="/tags/Facebook/">
-              Facebook <span class="badge badge-light">
+            <a class="badge badge-primary" href="/tags/opensource/">
+              opensource <span class="badge badge-light">
                 1</span></a>
             
             <a class="badge badge-primary" href="/tags/敗家/">
@@ -339,16 +316,16 @@
               資訊安全 <span class="badge badge-light">
                 1</span></a>
             
+            <a class="badge badge-primary" href="/tags/Facebook/">
+              Facebook <span class="badge badge-light">
+                1</span></a>
+            
             <a class="badge badge-primary" href="/tags/Lua/">
               Lua <span class="badge badge-light">
                 1</span></a>
             
             <a class="badge badge-primary" href="/tags/Node-JS/">
               Node.JS <span class="badge badge-light">
-                1</span></a>
-            
-            <a class="badge badge-primary" href="/tags/opensource/">
-              opensource <span class="badge badge-light">
                 1</span></a>
             
             <a class="badge badge-primary" href="/tags/OpenGL/">
