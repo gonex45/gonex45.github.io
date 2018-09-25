@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blog.gorendo.org/2018/09/mac-move-menubar-icon.html/</loc>
+    
+    <lastmod>2018-09-25T15:51:23.897Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.gorendo.org/2014/02/mac-f8f11.html/</loc>
+    
+    <lastmod>2018-09-25T15:45:12.575Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://blog.gorendo.org/2016/10/php-mac-atom-visual-studio-code-php.html/</loc>
     
     <lastmod>2018-09-20T06:06:17.597Z</lastmod>
@@ -355,13 +369,6 @@
     <loc>https://blog.gorendo.org/2008/10/mysql.html/</loc>
     
     <lastmod>2017-08-13T09:10:59.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.gorendo.org/2014/02/mac-f8f11.html/</loc>
-    
-    <lastmod>2017-08-13T09:10:08.000Z</lastmod>
     
   </url>
   

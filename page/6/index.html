@@ -91,6 +91,63 @@
 
   
     <!-- article.ejs -->
+<article id="post-android-game-engine.html" class="border post">
+    
+    <h2>
+      <a class="article-title" href="/2011/10/android-game-engine.html/">[Android] Game Engine 遊戲引擎整理</a>
+    </h2>
+
+
+
+  <div class="article-meta">
+    <!-- date.ejs -->
+<div class="article-datetime">
+  <a href="/2011/10/android-game-engine.html/" class="article-date"><time datetime="2011-10-12T13:00:00.000Z" itemprop="datePublished">2011-10-12</time></a>
+</div>
+
+    <!-- category.ejs -->
+
+
+    
+  TAG:
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Game-Dev/">Game Dev</a></li></ul>
+
+
+  </div>
+  <div class="article-inner border">
+    <div class="article-entry border">
+      
+
+        
+        
+          <p>目前主流：<a href="http://code.google.com/p/libGDX/" target="_blank" rel="noopener">libgdx</a> 和 <a href="http://code.google.com/p/andengine/" target="_blank" rel="noopener">andengine</a><br>速度效能比較&nbsp;<a href="http://code.google.com/p/libgdx/" target="_blank" rel="noopener">libgdx</a>&nbsp;&gt;&nbsp;<a href="http://code.google.com/p/andengine/" target="_blank" rel="noopener">andengine</a>&nbsp;(因為libgdx使用JNI)<br>上手容易比較&nbsp;&nbsp;<a href="http://code.google.com/p/andengine/" target="_blank" rel="noopener">andengine</a>&nbsp;&gt;&nbsp;<a href="http://code.google.com/p/libgdx/" target="_blank" rel="noopener">libgdx</a></p>
+<p><a href="http://youtu.be/RBiq2SGs93U" target="_blank" rel="noopener">此影片</a>在Huawei 8230手機上測試</p>
+<p><table><tbody><tr><td>EngineFPSsprites</td><td>50</td><td>150</td><td>300</td><td>500</td></tr><tr><td>AndroidSDK(SurfaceView)</td><td>29</td><td>25</td><td>11</td><td>4</td></tr><tr><td>AndEngine</td><td>29</td><td>27</td><td>16</td><td>10</td></tr><tr><td>libGDX</td><td>30</td><td>29</td><td>29</td><td>24</td></tr></tbody></table><br><a href="http://getmoai.com/" target="_blank" rel="noopener">http://getmoai.com/</a></p>
+<p><a href="http://onscripter.sourceforge.jp/" target="_blank" rel="noopener">ONScripter</a><br>AVG遊戲用(吉里吉里)</p>
+<p><a href="http://slick.cokeandcode.com/" target="_blank" rel="noopener">Slick for Android</a> - 暫未完善<br>授權：BSD<br>呈現：</p>
+<p>LGame for Android<br>最後更新：2011/2/15</p>
+<p>Rokon &nbsp;已腰斬</p>
+<p><a href="http://libsdl-android.sourceforge.net/" target="_blank" rel="noopener">libsdl-android</a></p>
+<p><a href="http://www.stonetrip.com/" target="_blank" rel="noopener">ShiVa3D</a></p>
+
+        
+      
+    </div>
+
+    
+      
+
+    
+
+    
+  </div>
+  
+</article>
+
+
+<!-- article.ejs end -->
+  
+    <!-- article.ejs -->
 <article id="post-razer.html" class="border post">
     
     <h2>
@@ -961,103 +1018,6 @@ if( $_FILES['UploadFile']['error'] == UPLOAD_ERROR_OK ){
 
 <!-- article.ejs end -->
   
-    <!-- article.ejs -->
-<article id="post-php-mysql.html" class="border post">
-    
-    <h2>
-      <a class="article-title" href="/2011/08/php-mysql.html/">[php] 存取 MySQL 資料庫</a>
-    </h2>
-
-
-
-  <div class="article-meta">
-    <!-- date.ejs -->
-<div class="article-datetime">
-  <a href="/2011/08/php-mysql.html/" class="article-date"><time datetime="2011-08-08T02:35:00.000Z" itemprop="datePublished">2011-08-08</time></a>
-</div>
-
-    <!-- category.ejs -->
-
-
-    
-  TAG:
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MySQL/">MySQL</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PHP/">PHP</a></li></ul>
-
-
-  </div>
-  <div class="article-inner border">
-    <div class="article-entry border">
-      
-
-        
-        
-          <p>php對資料庫的基本操作流程：</p>
-<ol>
-<li>建立連線： mysql_connect()</li>
-<li>選擇資料庫：mysql_select_db</li>
-<li>對資料庫查詢/修改/新增/刪除：mysql_query()</li>
-<li>取回查詢資料(resource)</li>
-<li>讀取記錄(row)：mysql_fetch_array()<a name="more"></a><span style="font-size: 19px; font-weight: bold;">連線 MySQL 資料庫</span><br><span style="font-family: monospace; white-space: pre;">打開非持久的MySQL連結</span><br><pre>mysql_connect(伺服器位址,帳號,密碼)<br>//將之後的連線設定成utf8編碼的sql指令<br>mysql_query(‘SET NAMES UTF8’);<br>//選擇資料庫<br>mysql_select_db(DBName);</pre></li>
-</ol>
-<p>完整例子</p>
-<pre>class DB {
-    function DB() {
-        $this-&gt;host = "localhost"; // your host
-        $this-&gt;db = "myDatabase"; // your database
-        $this-&gt;user = "root"; // your username
-        $this-&gt;pass = "mysql"; // your password
-
-        $this-&gt;link = mysql_connect($this-&gt;host, $this-&gt;user,
-$this-&gt;pass);
-
-        mysql_select_db($this-&gt;db);
-    }
-}
-// 在你需要開始使用資料庫的地方(記得先include起來)
-$db = new DB();
-</pre>
-
-<h3 id="查詢資料"><a href="#查詢資料" class="headerlink" title="查詢資料"></a>查詢資料</h3><pre>//執行查詢資料的 SQL，會回傳資源代碼
-$result = mysql_query("SELECT * FROM `talbe_name`");&nbsp;
-//讀取查詢的結果
-while ($row = mysql_fetch_array($result)) {
-  echo "查詢出來的名字是$row['name']";  //或$row[0],$row[1],...
-}
-//取得查詢筆數
-mysql_num_rows($result);</pre><pre>
-</pre>
-
-<h3 id="新增、刪除、修改資料"><a href="#新增、刪除、修改資料" class="headerlink" title="新增、刪除、修改資料"></a>新增、刪除、修改資料</h3><pre>//新增
-mysql_query("INSERT INTO `TableName` (`id`,`name`) VALUES ('1', '伍')");
-//取得前次因 auto_increment 自動編號所新增的id&nbsp;
-$newID = mysql_insert_id();&nbsp;
-//刪除
-mysql_query("DELETE FROM `TableName` WHERE `name` = '伍'");
-//修改
-mysql_query("UPDATE `TableName` SET NAME = 'hippo' WHERE `id` = '1'");
-
-//取得前次更動了幾筆資料
-mysql_affected_rows();</pre>
-
-<h3 id="安全處理"><a href="#安全處理" class="headerlink" title="安全處理"></a>安全處理</h3><p>//如果string中有SQL用的特殊字元，會加上反斜線 mysql_real_escape_string(string) <div>接收表單文字時<br>function myStripslashes($value){<br>// 若&nbsp;get_magic_quotes_gpc 功能已經開啟，就刪掉反斜線<br>if (get_magic_quotes_gpc())</div><div>&nbsp; &nbsp; &nbsp; &nbsp; $value = stripslashes($value);</div><div>&nbsp; &nbsp; return $value;<br>}</div><div>寫入資料庫時</div><div>mysql_real_escape_string($_POST[xxx]);</div></p>
-
-        
-      
-    </div>
-
-    
-      
-
-    
-
-    
-  </div>
-  
-</article>
-
-
-<!-- article.ejs end -->
-  
 
 
   <div id="page-nav">
@@ -1092,6 +1052,11 @@ mysql_affected_rows();</pre>
           <div class="card-body">
             
             <li>
+              <a href="/2018/09/mac-move-menubar-icon.html/">
+                [Mac] 移動排列選單列圖示</a>
+            </li>
+            
+            <li>
               <a href="/2016/10/php-mac-atom-visual-studio-code-php.html/">
                 [php] 在 Mac 用ATOM / Visual Studio Code 為 php debug</a>
             </li>
@@ -1109,11 +1074,6 @@ mysql_affected_rows();</pre>
             <li>
               <a href="/2015/06/android-setclicklistener-in-custom-view.html/">
                 [Android] setClickListener in custom view</a>
-            </li>
-            
-            <li>
-              <a href="/2015/06/errorexecution-failed-for-task.html/">
-                解決 Error:Execution failed for task &#39;preDexDebug&#39;. &gt; com.android.ide.common.process.ProcessException: org.gradle.process.internal.ExecException: Process &#39;command  finished with non-zero exit value 1</a>
             </li>
             
 
@@ -1142,12 +1102,12 @@ mysql_affected_rows();</pre>
               WEB <span class="badge badge-light">
                 10</span></a>
             
-            <a class="badge badge-primary" href="/tags/JAVA/">
-              JAVA <span class="badge badge-light">
-                9</span></a>
-            
             <a class="badge badge-primary" href="/tags/Game-Dev/">
               Game Dev <span class="badge badge-light">
+                9</span></a>
+            
+            <a class="badge badge-primary" href="/tags/JAVA/">
+              JAVA <span class="badge badge-light">
                 9</span></a>
             
             <a class="badge badge-primary" href="/tags/Unity/">
@@ -1162,44 +1122,40 @@ mysql_affected_rows();</pre>
               Software <span class="badge badge-light">
                 4</span></a>
             
+            <a class="badge badge-primary" href="/tags/Mac/">
+              Mac <span class="badge badge-light">
+                4</span></a>
+            
             <a class="badge badge-primary" href="/tags/jQuery/">
               jQuery <span class="badge badge-light">
-                3</span></a>
-            
-            <a class="badge badge-primary" href="/tags/DATABASE/">
-              DATABASE <span class="badge badge-light">
                 3</span></a>
             
             <a class="badge badge-primary" href="/tags/MySQL/">
               MySQL <span class="badge badge-light">
                 3</span></a>
             
+            <a class="badge badge-primary" href="/tags/DATABASE/">
+              DATABASE <span class="badge badge-light">
+                3</span></a>
+            
             <a class="badge badge-primary" href="/tags/C-C/">
               C/C++ <span class="badge badge-light">
                 3</span></a>
             
-            <a class="badge badge-primary" href="/tags/Mac/">
-              Mac <span class="badge badge-light">
-                3</span></a>
-            
-            <a class="badge badge-primary" href="/tags/Xcode/">
-              Xcode <span class="badge badge-light">
+            <a class="badge badge-primary" href="/tags/程式語言/">
+              程式語言 <span class="badge badge-light">
                 2</span></a>
             
             <a class="badge badge-primary" href="/tags/iOS/">
               iOS <span class="badge badge-light">
                 2</span></a>
             
-            <a class="badge badge-primary" href="/tags/程式語言/">
-              程式語言 <span class="badge badge-light">
-                2</span></a>
-            
-            <a class="badge badge-primary" href="/tags/Cocos2D/">
-              Cocos2D <span class="badge badge-light">
-                2</span></a>
-            
             <a class="badge badge-primary" href="/tags/C/">
               C# <span class="badge badge-light">
+                2</span></a>
+            
+            <a class="badge badge-primary" href="/tags/Xcode/">
+              Xcode <span class="badge badge-light">
                 2</span></a>
             
             <a class="badge badge-primary" href="/tags/Google-API/">
@@ -1210,20 +1166,20 @@ mysql_affected_rows();</pre>
               Javascript <span class="badge badge-light">
                 2</span></a>
             
-            <a class="badge badge-primary" href="/tags/Facebook/">
-              Facebook <span class="badge badge-light">
-                1</span></a>
+            <a class="badge badge-primary" href="/tags/Cocos2D/">
+              Cocos2D <span class="badge badge-light">
+                2</span></a>
             
-            <a class="badge badge-primary" href="/tags/opensource/">
-              opensource <span class="badge badge-light">
-                1</span></a>
-            
-            <a class="badge badge-primary" href="/tags/敗家/">
-              敗家 <span class="badge badge-light">
+            <a class="badge badge-primary" href="/tags/Lua/">
+              Lua <span class="badge badge-light">
                 1</span></a>
             
             <a class="badge badge-primary" href="/tags/programming/">
               programming <span class="badge badge-light">
+                1</span></a>
+            
+            <a class="badge badge-primary" href="/tags/敗家/">
+              敗家 <span class="badge badge-light">
                 1</span></a>
             
             <a class="badge badge-primary" href="/tags/SEO/">
@@ -1242,16 +1198,20 @@ mysql_affected_rows();</pre>
               資訊安全 <span class="badge badge-light">
                 1</span></a>
             
-            <a class="badge badge-primary" href="/tags/OpenGL/">
-              OpenGL <span class="badge badge-light">
+            <a class="badge badge-primary" href="/tags/Facebook/">
+              Facebook <span class="badge badge-light">
                 1</span></a>
             
             <a class="badge badge-primary" href="/tags/Node-JS/">
               Node.JS <span class="badge badge-light">
                 1</span></a>
             
-            <a class="badge badge-primary" href="/tags/Lua/">
-              Lua <span class="badge badge-light">
+            <a class="badge badge-primary" href="/tags/opensource/">
+              opensource <span class="badge badge-light">
+                1</span></a>
+            
+            <a class="badge badge-primary" href="/tags/OpenGL/">
+              OpenGL <span class="badge badge-light">
                 1</span></a>
             
             <a class="badge badge-primary" href="/tags/ATOM/">

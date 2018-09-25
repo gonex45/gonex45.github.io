@@ -91,6 +91,237 @@
 
   
     <!-- article.ejs -->
+<article id="post-uploadify-jqueryphp.html" class="border post">
+    
+    <h2>
+      <a class="article-title" href="/2011/07/uploadify-jqueryphp.html/">uploadify jQuery+php 多檔上傳套件</a>
+    </h2>
+
+
+
+  <div class="article-meta">
+    <!-- date.ejs -->
+<div class="article-datetime">
+  <a href="/2011/07/uploadify-jqueryphp.html/" class="article-date"><time datetime="2011-07-25T22:28:00.000Z" itemprop="datePublished">2011-07-26</time></a>
+</div>
+
+    <!-- category.ejs -->
+
+
+    
+  TAG:
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PHP/">PHP</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/WEB/">WEB</a></li></ul>
+
+
+  </div>
+  <div class="article-inner border">
+    <div class="article-entry border">
+      
+
+        
+        
+          <p>uploadify<br><a href="http://www.uploadify.com/" target="_blank" rel="noopener">http://www.uploadify.com</a><br>uploadify 是一個jQuery+php 多檔上傳套件</p>
+<h3 id="基本安裝"><a href="#基本安裝" class="headerlink" title="基本安裝"></a>基本安裝</h3><p><a name="more"></a></p>
+<p>[html language=””]<br>&lt;link href=&quot;/uploadify/uploadify.css&quot; type=&quot;text/css&quot; rel=&quot;stylesheet&quot; /&gt;<br>&lt;script type=&quot;text/javascript&quot; src=&quot;/uploadify/jquery-1.4.2.min.js&quot;&gt;&lt;/script&gt;<br>&lt;script type=&quot;text/javascript&quot; src=&quot;/uploadify/swfobject.js&quot;&gt;&lt;/script&gt;<br>&lt;script type=&quot;text/javascript&quot; src=&quot;/uploadify/jquery.uploadify.v2.1.4.min.js&quot;&gt;&lt;/script&gt;<br>&lt;script type=&quot;text/javascript&quot;&gt;<br>$(document).ready(function() {<br>$(‘#file_upload’).uploadify({<br>‘uploader’ : ‘/uploadify/uploadify.swf’,<br>‘script’ : ‘/uploadify/uploadify.php’,<br>‘cancelImg’ : ‘/uploadify/cancel.png’,<br>‘folder’ : ‘/uploads’,<br>‘auto’ : true<br>});<br>});<br>&lt;/script&gt;<br>[/html]</p>
+<p>[html title=”body”]&lt;input id=’file_upload’ name=’file_upload’ type=’file’ /&gt;[/html]</p>
+<h3 id="OPTION"><a href="#OPTION" class="headerlink" title="OPTION"></a>OPTION</h3><pre>(boolean) auto 啟用自動選項會自動開始上傳文件時添加到文件上傳隊列 'auto'        : true (string)
+buttonImg
+設定上傳按鈕圖片
+'buttonImg'   : '/uploadify/button.jpg'
+
+(string)
+buttonText
+顯示在按鈕上的文字
+
+(string)
+cancelImg
+The path to an image you would like to use as the cancel button.
+
+(string)
+checkScript
+檢查檔案是否已在伺服器上的腳本的路徑
+
+(string)
+displayData
+顯示百分比或每秒幾k
+'percentage' / 'speed' 
+
+(string)
+expressInstall
+The path to the expressInstall.swf file.
+提示安裝flashplayer的樣子 
+
+(string)
+fileDataName
+指定上傳後要傳進哪個變數
+'fileDataName' : 'myuploadify' 後會在php傳進 $_FILES['myuploadify']
+
+(string)
+fileDesc
+顯示檔案類型的描述在"瀏覽"
+'fileDesc'    : '網頁圖片 (.JPG, .GIF, .PNG)' 
+
+<span style="color: #ff0000;">(string) fileExt 限制上傳的附檔名或檔名 'fileExt'     : '*.jpg;*.gif;*.png'</span>
+
+<span style="color: #ff0000;">(string) folder 上傳後存放的資料夾</span>
+
+(integer)
+height
+"瀏覽"按鈕的高度
+
+(boolean)
+hideButton
+隱藏按鈕，主要是之後利用 DIV + css 符合你的顯示風格
+
+(string)
+method
+傳值類型， 'POST' or 'GET' 預設是 'POST'
+
+<span style="color: #ff0000;">(boolean) multi 允許多檔上傳</span>
+
+(string)
+queueID
+設置顯示隊列的DIV之類的容器 ID ，未設置時會在瀏覽按鈕下方產生一個
+
+<span style="color: #ff0000;">(integer) queueSizeLimit 同時可以存在幾個任務(檔案)</span>
+
+(boolean)
+removeCompleted
+自動移動已上傳完的檔案列表，預設true
+(boolean)
+rollover
+顯示按鈕的滑鼠事件，如於按鈕上'HOVER' 未於按鈕上'OFF' 按下'PRESSED'
+
+(string)
+script
+後台處理程序的相對路徑。默認值：uploadify.php
+
+(string)
+scriptAccess
+swf檔的連接方式 預設和正式時用'sameDomain' 最好只在測試時 'always' 或不設(和FLASH不熟…)
+
+(JSON object with mixed types)
+scriptData
+夾帶JSON資料傳送…沒研究
+An object containing name/value pairs with additional information that should be sent to the back-end script when processing a file upload.
+
+(integer)
+simUploadLimit
+同時上傳的檔案數，超過可以排在隊列
+
+<span style="color: #ff0000;">(integer) sizeLimit </span><span style="color: #ff0000;">限制每一個上傳檔案的 bytes 數</span>(string)
+uploader
+uploadify.swf 文件的路徑
+
+(integer)
+width
+瀏覽按鈕的寬度
+
+(string)
+wmode
+設'transparent'可使FLASH的背景變透明
+
+EVENTS 事件
+(function)
+onAllComplete
+隊列所有檔案完成上傳時
+data.
+[filesUploaded] - 總上傳檔案
+[errors] - 錯誤數
+[allBytesLoaded] - 總上傳Bytes
+[speed] - 速度， KB/s
+[html]$(#file_upload).uploadify({
+  'uploader'      : '/uploadify/uploadify.swf',
+  'script'        : '/uploadify/uploadify.php',
+  'cancelImg'     : '/uploadify/cancel.png',
+  'folder'        : '/uploads',
+  'onAllComplete' : function(event,data) {
+      alert(data.filesUploaded + ' 個檔案上傳完成!');
+    }
+});[/html]
+(function)
+onCancel
+有檔案被取消時
+'onCancel'    : function(event,ID,fileObj,data) {
+    alert('The upload of ' + fileObj.name + ' has been canceled!');
+}
+(function)
+onCheck
+任務開始前確認檔案名是否存在，存在時會確認覆蓋
+要搭配'checkScript' : '/uploadify/check.php'
+
+(function)
+onClearQueue
+呼叫 uploadifyClearQueue() 清除任務時
+
+(function)
+onComplete
+單個檔案完成時
+
+(function)
+onError
+發生錯誤時
+
+(function)
+onInit
+Uploadify 讀進來時
+
+(function)
+onOpen
+檔案開始上傳前
+
+(function)
+onProgress
+每次進度條變化時
+
+(function)
+onQueueFull
+任務數量達到 queueSizeLimit 最大上傳數時
+
+(function)
+onSelect
+檔案加入任務時(每個檔案觸發)
+
+(function)
+onSelectOnce
+檔案加入任務時(加入一次觸發一次)
+
+(function)
+onSWFReady
+swf物件讀入時
+
+.uploadify()
+實作一個 Uploadify uploader.
+.uploadifyCancel()
+取消移除上傳中檔案
+
+.uploadifyClearQueue()
+取消移除上傳中任務(所有檔案)
+
+.uploadifySettings()
+修改 目前Uploadify 設定
+
+.uploadifyUpload()
+開始上傳</pre>
+
+        
+      
+    </div>
+
+    
+      
+
+    
+
+    
+  </div>
+  
+</article>
+
+
+<!-- article.ejs end -->
+  
+    <!-- article.ejs -->
 <article id="post-wordpress.html" class="border post">
     
     <h2>
@@ -703,55 +934,6 @@ config.toolbar_Basic =
 
 <!-- article.ejs end -->
   
-    <!-- article.ejs -->
-<article id="post-316.html" class="border post">
-    
-    <h2>
-      <a class="article-title" href="/2011/03/316.html/">3/16 看日出</a>
-    </h2>
-
-
-
-  <div class="article-meta">
-    <!-- date.ejs -->
-<div class="article-datetime">
-  <a href="/2011/03/316.html/" class="article-date"><time datetime="2011-03-30T08:53:00.000Z" itemprop="datePublished">2011-03-30</time></a>
-</div>
-
-    <!-- category.ejs -->
-
-
-    
-  TAG:
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/攝影/">攝影</a></li></ul>
-
-
-  </div>
-  <div class="article-inner border">
-    <div class="article-entry border">
-      
-
-        
-        
-          <div>日出其實是體院的舞蹈系劇團的團名</div><div>今天老師帶我們去看表演，同時實戰快門時間、ISO、光圈的演練</div><div>不過出門的時間抓的太剛好…結果從豐原到中技的路人走小路的時候居然在修路，到學校的時候人都已經在會館外集合了，差點就這麼進不去</div><div><br></div><div>一開始就是很有氣勢的鞭子+舞蹈表演</div><div>這邊一開始忘記有ISO可以調，拼命的調整快門時間結果亮度算是及格了，但是動作有糊掉…</div><div>這張左右邊人物對稱的動作覺得還不錯</div><div><a href="http://1.bp.blogspot.com/-43Pgg5HYVNU/TZL2HBf8otI/AAAAAAAAALk/EZCmh6K6rds/s1600/DSC00476.JPG" target="_blank" rel="noopener"><img src="" alt=""></a></div><div>ISO400 1/30s F/4.5</div><div><br></div><div><br></div><div>這張的色調、穿著以及動作有著上古時代的王的感覺</div><div><a href="http://4.bp.blogspot.com/-EZIuM7NVVUg/TZL2HXVqvBI/AAAAAAAAALs/S1yZ2azKD7c/s1600/DSC00480.JPG" target="_blank" rel="noopener"><img src="" alt=""></a></div><div>ISO400 1/60s F/4.5</div><div><br></div><div>之後這段看不是很懂</div><div>不過有著於社會黑暗邊緣的人的感覺</div><div><a href="http://4.bp.blogspot.com/-8X8Hso7PZmA/TZL2HlIlcKI/AAAAAAAAAL0/gIC4d8Pt7G0/s1600/DSC00493.JPG" target="_blank" rel="noopener"><img src="" alt=""></a></div><div>ISO400 1/30s F/5.5</div><div><br></div><div>硬是把全黑的照片弄亮…還滿像鬼片的= =(嚴重曝光不足..放個失敗品讓自已記得要注意)</div><div><a href="http://2.bp.blogspot.com/-UulqpuvIEBU/TZL2IENZ8WI/AAAAAAAAAL8/1m-sm9rX1Vk/s1600/DSC00494.JPG" target="_blank" rel="noopener"><img src="" alt=""></a></div><div>ISO400 1/30s F/4.5</div><div><br></div><div><br></div><div>很有氣氛的一張，雖然說不上來…不過光影照在皮膚上的感覺很棒</div><div><a href="http://2.bp.blogspot.com/-JUNja5UZ0yM/TZL2IY4oREI/AAAAAAAAAME/jQ38Ix75DoQ/s1600/DSC00512.JPG" target="_blank" rel="noopener"><img src="" alt=""></a></div><div>ISO400 1/15s  F/5.0</div><div><br></div><div>很炫的LED衣+舞，LED會隨著音樂的時間亮或滅，不知道如何控制的，而且每個舞者的時間都不一樣。這邊開始記得有ISO這玩意兒可以調了</div><div><a href="http://2.bp.blogspot.com/-LWUzDbZMQRA/TZL39KENe8I/AAAAAAAAAMU/KzDlBOB97E0/s1600/DSC00531.JPG" target="_blank" rel="noopener"><img src="" alt=""></a></div><div>ISO800   1/40s  F/4.5 </div><div><br></div><div><br></div><div>因為有LED燈，突然想到有人拿手電燈玩寫字的照片，刻意把快門時間設成5秒拍拍看</div><div><a href="http://3.bp.blogspot.com/-5ksKdiNBSig/TZMCl6h-5KI/AAAAAAAAANU/i4QqE9UvE_M/s1600/DSC00525.JPG" target="_blank" rel="noopener"><img src="" alt=""></a></div><div>ISO200   8s   F/9</div><div><br></div><div>好不容易抓到的躍起動作…</div><div>其它不是糊掉就是之前先拍了一張，後來對焦來不及對就跳完了</div><div><a href="http://4.bp.blogspot.com/-gzMfPgmdZgU/TZL39U4SG2I/AAAAAAAAAMc/dHa1akkHis4/s1600/DSC00538.JPG" target="_blank" rel="noopener"><img src="" alt=""></a></div><div><br></div><div><br></div><div>駭客任務海報?</div><a href="http://1.bp.blogspot.com/-mWDeo0riVck/TZL86sBeHpI/AAAAAAAAANM/nPMh8WHFCxA/s1600/DSC00772.JPG" target="_blank" rel="noopener"><img src="" alt=""></a><div><br></div><div><br></div><div><a href="http://1.bp.blogspot.com/-mWDeo0riVck/TZL86sBeHpI/AAAAAAAAANM/nPMh8WHFCxA/s1600/DSC00772.JPG" target="_blank" rel="noopener"></a>剪影?，滿適合當插圖的<br><a href="http://2.bp.blogspot.com/-tcGhfaHqALk/TZL86Y0AxdI/AAAAAAAAANE/0b3YeMLD8vg/s1600/DSC00727.JPG" target="_blank" rel="noopener"><img src="" alt=""></a></div><div><br></div><div><a href="http://2.bp.blogspot.com/-tcGhfaHqALk/TZL86Y0AxdI/AAAAAAAAANE/0b3YeMLD8vg/s1600/DSC00727.JPG" target="_blank" rel="noopener"></a>銀球閃閃發光的感覺很棒，不過前面有快速跑步的動作…手都糊的<br><a href="http://3.bp.blogspot.com/-deH9s4HGuJg/TZL86GfacKI/AAAAAAAAAM8/2nKa8Z5QFIw/s1600/DSC00722.JPG" target="_blank" rel="noopener"><img src="" alt=""></a></div><div><br></div><div><br></div><div><a href="http://3.bp.blogspot.com/-deH9s4HGuJg/TZL86GfacKI/AAAAAAAAAM8/2nKa8Z5QFIw/s1600/DSC00722.JPG" target="_blank" rel="noopener"></a>非常的有氣勢<br><a href="http://2.bp.blogspot.com/-I3QJ4kH_EPg/TZL85zjO-dI/AAAAAAAAAM0/f5AuUcso-uw/s1600/DSC00700.JPG" target="_blank" rel="noopener"><img src="" alt=""></a></div><div><br></div><div><br></div><div><a href="http://2.bp.blogspot.com/-I3QJ4kH_EPg/TZL85zjO-dI/AAAAAAAAAM0/f5AuUcso-uw/s1600/DSC00700.JPG" target="_blank" rel="noopener"></a>這張的構圖是我最滿意的一張，有著情侶飛在空中相會的感覺<br><a href="http://3.bp.blogspot.com/-ySumxh-IR5s/TZL3-Vbpg1I/AAAAAAAAAMs/ab2pjUglYe4/s1600/DSC00682.JPG" target="_blank" rel="noopener"><img src="" alt=""></a></div><div><br></div><div><br></div><div><a href="http://3.bp.blogspot.com/-ySumxh-IR5s/TZL3-Vbpg1I/AAAAAAAAAMs/ab2pjUglYe4/s1600/DSC00682.JPG" target="_blank" rel="noopener"></a>這張大概是動態舞蹈中抓的最清楚的一張<br><a href="http://3.bp.blogspot.com/-wSw2YotGiCU/TZL391sTKPI/AAAAAAAAAMk/dRDeH4Zyz9M/s1600/DSC00622.JPG" target="_blank" rel="noopener"><img src="" alt=""></a></div><div><a href="http://3.bp.blogspot.com/-wSw2YotGiCU/TZL391sTKPI/AAAAAAAAAMk/dRDeH4Zyz9M/s1600/DSC00622.JPG" target="_blank" rel="noopener"></a>ISO800   1/125s   F/5<br><br>今天的外拍在光線不足與高速動作上吃了不少苦頭</div><div>不過經過這次教訓，之後的拍照一定更能如魚得水<br><div><br></div><div><br></div><div><br></div><div><br></div><div><br></div><div><br></div></div>
-
-        
-      
-    </div>
-
-    
-      
-
-    
-
-    
-  </div>
-  
-</article>
-
-
-<!-- article.ejs end -->
-  
 
 
   <div id="page-nav">
@@ -786,6 +968,11 @@ config.toolbar_Basic =
           <div class="card-body">
             
             <li>
+              <a href="/2018/09/mac-move-menubar-icon.html/">
+                [Mac] 移動排列選單列圖示</a>
+            </li>
+            
+            <li>
               <a href="/2016/10/php-mac-atom-visual-studio-code-php.html/">
                 [php] 在 Mac 用ATOM / Visual Studio Code 為 php debug</a>
             </li>
@@ -803,11 +990,6 @@ config.toolbar_Basic =
             <li>
               <a href="/2015/06/android-setclicklistener-in-custom-view.html/">
                 [Android] setClickListener in custom view</a>
-            </li>
-            
-            <li>
-              <a href="/2015/06/errorexecution-failed-for-task.html/">
-                解決 Error:Execution failed for task &#39;preDexDebug&#39;. &gt; com.android.ide.common.process.ProcessException: org.gradle.process.internal.ExecException: Process &#39;command  finished with non-zero exit value 1</a>
             </li>
             
 
@@ -836,12 +1018,12 @@ config.toolbar_Basic =
               WEB <span class="badge badge-light">
                 10</span></a>
             
-            <a class="badge badge-primary" href="/tags/JAVA/">
-              JAVA <span class="badge badge-light">
-                9</span></a>
-            
             <a class="badge badge-primary" href="/tags/Game-Dev/">
               Game Dev <span class="badge badge-light">
+                9</span></a>
+            
+            <a class="badge badge-primary" href="/tags/JAVA/">
+              JAVA <span class="badge badge-light">
                 9</span></a>
             
             <a class="badge badge-primary" href="/tags/Unity/">
@@ -856,44 +1038,40 @@ config.toolbar_Basic =
               Software <span class="badge badge-light">
                 4</span></a>
             
+            <a class="badge badge-primary" href="/tags/Mac/">
+              Mac <span class="badge badge-light">
+                4</span></a>
+            
             <a class="badge badge-primary" href="/tags/jQuery/">
               jQuery <span class="badge badge-light">
-                3</span></a>
-            
-            <a class="badge badge-primary" href="/tags/DATABASE/">
-              DATABASE <span class="badge badge-light">
                 3</span></a>
             
             <a class="badge badge-primary" href="/tags/MySQL/">
               MySQL <span class="badge badge-light">
                 3</span></a>
             
+            <a class="badge badge-primary" href="/tags/DATABASE/">
+              DATABASE <span class="badge badge-light">
+                3</span></a>
+            
             <a class="badge badge-primary" href="/tags/C-C/">
               C/C++ <span class="badge badge-light">
                 3</span></a>
             
-            <a class="badge badge-primary" href="/tags/Mac/">
-              Mac <span class="badge badge-light">
-                3</span></a>
-            
-            <a class="badge badge-primary" href="/tags/Xcode/">
-              Xcode <span class="badge badge-light">
+            <a class="badge badge-primary" href="/tags/程式語言/">
+              程式語言 <span class="badge badge-light">
                 2</span></a>
             
             <a class="badge badge-primary" href="/tags/iOS/">
               iOS <span class="badge badge-light">
                 2</span></a>
             
-            <a class="badge badge-primary" href="/tags/程式語言/">
-              程式語言 <span class="badge badge-light">
-                2</span></a>
-            
-            <a class="badge badge-primary" href="/tags/Cocos2D/">
-              Cocos2D <span class="badge badge-light">
-                2</span></a>
-            
             <a class="badge badge-primary" href="/tags/C/">
               C# <span class="badge badge-light">
+                2</span></a>
+            
+            <a class="badge badge-primary" href="/tags/Xcode/">
+              Xcode <span class="badge badge-light">
                 2</span></a>
             
             <a class="badge badge-primary" href="/tags/Google-API/">
@@ -904,20 +1082,20 @@ config.toolbar_Basic =
               Javascript <span class="badge badge-light">
                 2</span></a>
             
-            <a class="badge badge-primary" href="/tags/Facebook/">
-              Facebook <span class="badge badge-light">
-                1</span></a>
+            <a class="badge badge-primary" href="/tags/Cocos2D/">
+              Cocos2D <span class="badge badge-light">
+                2</span></a>
             
-            <a class="badge badge-primary" href="/tags/opensource/">
-              opensource <span class="badge badge-light">
-                1</span></a>
-            
-            <a class="badge badge-primary" href="/tags/敗家/">
-              敗家 <span class="badge badge-light">
+            <a class="badge badge-primary" href="/tags/Lua/">
+              Lua <span class="badge badge-light">
                 1</span></a>
             
             <a class="badge badge-primary" href="/tags/programming/">
               programming <span class="badge badge-light">
+                1</span></a>
+            
+            <a class="badge badge-primary" href="/tags/敗家/">
+              敗家 <span class="badge badge-light">
                 1</span></a>
             
             <a class="badge badge-primary" href="/tags/SEO/">
@@ -936,16 +1114,20 @@ config.toolbar_Basic =
               資訊安全 <span class="badge badge-light">
                 1</span></a>
             
-            <a class="badge badge-primary" href="/tags/OpenGL/">
-              OpenGL <span class="badge badge-light">
+            <a class="badge badge-primary" href="/tags/Facebook/">
+              Facebook <span class="badge badge-light">
                 1</span></a>
             
             <a class="badge badge-primary" href="/tags/Node-JS/">
               Node.JS <span class="badge badge-light">
                 1</span></a>
             
-            <a class="badge badge-primary" href="/tags/Lua/">
-              Lua <span class="badge badge-light">
+            <a class="badge badge-primary" href="/tags/opensource/">
+              opensource <span class="badge badge-light">
+                1</span></a>
+            
+            <a class="badge badge-primary" href="/tags/OpenGL/">
+              OpenGL <span class="badge badge-light">
                 1</span></a>
             
             <a class="badge badge-primary" href="/tags/ATOM/">

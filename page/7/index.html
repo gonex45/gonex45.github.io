@@ -91,6 +91,103 @@
 
   
     <!-- article.ejs -->
+<article id="post-php-mysql.html" class="border post">
+    
+    <h2>
+      <a class="article-title" href="/2011/08/php-mysql.html/">[php] 存取 MySQL 資料庫</a>
+    </h2>
+
+
+
+  <div class="article-meta">
+    <!-- date.ejs -->
+<div class="article-datetime">
+  <a href="/2011/08/php-mysql.html/" class="article-date"><time datetime="2011-08-08T02:35:00.000Z" itemprop="datePublished">2011-08-08</time></a>
+</div>
+
+    <!-- category.ejs -->
+
+
+    
+  TAG:
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MySQL/">MySQL</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PHP/">PHP</a></li></ul>
+
+
+  </div>
+  <div class="article-inner border">
+    <div class="article-entry border">
+      
+
+        
+        
+          <p>php對資料庫的基本操作流程：</p>
+<ol>
+<li>建立連線： mysql_connect()</li>
+<li>選擇資料庫：mysql_select_db</li>
+<li>對資料庫查詢/修改/新增/刪除：mysql_query()</li>
+<li>取回查詢資料(resource)</li>
+<li>讀取記錄(row)：mysql_fetch_array()<a name="more"></a><span style="font-size: 19px; font-weight: bold;">連線 MySQL 資料庫</span><br><span style="font-family: monospace; white-space: pre;">打開非持久的MySQL連結</span><br><pre>mysql_connect(伺服器位址,帳號,密碼)<br>//將之後的連線設定成utf8編碼的sql指令<br>mysql_query(‘SET NAMES UTF8’);<br>//選擇資料庫<br>mysql_select_db(DBName);</pre></li>
+</ol>
+<p>完整例子</p>
+<pre>class DB {
+    function DB() {
+        $this-&gt;host = "localhost"; // your host
+        $this-&gt;db = "myDatabase"; // your database
+        $this-&gt;user = "root"; // your username
+        $this-&gt;pass = "mysql"; // your password
+
+        $this-&gt;link = mysql_connect($this-&gt;host, $this-&gt;user,
+$this-&gt;pass);
+
+        mysql_select_db($this-&gt;db);
+    }
+}
+// 在你需要開始使用資料庫的地方(記得先include起來)
+$db = new DB();
+</pre>
+
+<h3 id="查詢資料"><a href="#查詢資料" class="headerlink" title="查詢資料"></a>查詢資料</h3><pre>//執行查詢資料的 SQL，會回傳資源代碼
+$result = mysql_query("SELECT * FROM `talbe_name`");&nbsp;
+//讀取查詢的結果
+while ($row = mysql_fetch_array($result)) {
+  echo "查詢出來的名字是$row['name']";  //或$row[0],$row[1],...
+}
+//取得查詢筆數
+mysql_num_rows($result);</pre><pre>
+</pre>
+
+<h3 id="新增、刪除、修改資料"><a href="#新增、刪除、修改資料" class="headerlink" title="新增、刪除、修改資料"></a>新增、刪除、修改資料</h3><pre>//新增
+mysql_query("INSERT INTO `TableName` (`id`,`name`) VALUES ('1', '伍')");
+//取得前次因 auto_increment 自動編號所新增的id&nbsp;
+$newID = mysql_insert_id();&nbsp;
+//刪除
+mysql_query("DELETE FROM `TableName` WHERE `name` = '伍'");
+//修改
+mysql_query("UPDATE `TableName` SET NAME = 'hippo' WHERE `id` = '1'");
+
+//取得前次更動了幾筆資料
+mysql_affected_rows();</pre>
+
+<h3 id="安全處理"><a href="#安全處理" class="headerlink" title="安全處理"></a>安全處理</h3><p>//如果string中有SQL用的特殊字元，會加上反斜線 mysql_real_escape_string(string) <div>接收表單文字時<br>function myStripslashes($value){<br>// 若&nbsp;get_magic_quotes_gpc 功能已經開啟，就刪掉反斜線<br>if (get_magic_quotes_gpc())</div><div>&nbsp; &nbsp; &nbsp; &nbsp; $value = stripslashes($value);</div><div>&nbsp; &nbsp; return $value;<br>}</div><div>寫入資料庫時</div><div>mysql_real_escape_string($_POST[xxx]);</div></p>
+
+        
+      
+    </div>
+
+    
+      
+
+    
+
+    
+  </div>
+  
+</article>
+
+
+<!-- article.ejs end -->
+  
+    <!-- article.ejs -->
 <article id="post-php-class-and-object.html" class="border post">
     
     <h2>
@@ -667,237 +764,6 @@ Particle Editor
 
 <!-- article.ejs end -->
   
-    <!-- article.ejs -->
-<article id="post-uploadify-jqueryphp.html" class="border post">
-    
-    <h2>
-      <a class="article-title" href="/2011/07/uploadify-jqueryphp.html/">uploadify jQuery+php 多檔上傳套件</a>
-    </h2>
-
-
-
-  <div class="article-meta">
-    <!-- date.ejs -->
-<div class="article-datetime">
-  <a href="/2011/07/uploadify-jqueryphp.html/" class="article-date"><time datetime="2011-07-25T22:28:00.000Z" itemprop="datePublished">2011-07-26</time></a>
-</div>
-
-    <!-- category.ejs -->
-
-
-    
-  TAG:
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PHP/">PHP</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/WEB/">WEB</a></li></ul>
-
-
-  </div>
-  <div class="article-inner border">
-    <div class="article-entry border">
-      
-
-        
-        
-          <p>uploadify<br><a href="http://www.uploadify.com/" target="_blank" rel="noopener">http://www.uploadify.com</a><br>uploadify 是一個jQuery+php 多檔上傳套件</p>
-<h3 id="基本安裝"><a href="#基本安裝" class="headerlink" title="基本安裝"></a>基本安裝</h3><p><a name="more"></a></p>
-<p>[html language=””]<br>&lt;link href=&quot;/uploadify/uploadify.css&quot; type=&quot;text/css&quot; rel=&quot;stylesheet&quot; /&gt;<br>&lt;script type=&quot;text/javascript&quot; src=&quot;/uploadify/jquery-1.4.2.min.js&quot;&gt;&lt;/script&gt;<br>&lt;script type=&quot;text/javascript&quot; src=&quot;/uploadify/swfobject.js&quot;&gt;&lt;/script&gt;<br>&lt;script type=&quot;text/javascript&quot; src=&quot;/uploadify/jquery.uploadify.v2.1.4.min.js&quot;&gt;&lt;/script&gt;<br>&lt;script type=&quot;text/javascript&quot;&gt;<br>$(document).ready(function() {<br>$(‘#file_upload’).uploadify({<br>‘uploader’ : ‘/uploadify/uploadify.swf’,<br>‘script’ : ‘/uploadify/uploadify.php’,<br>‘cancelImg’ : ‘/uploadify/cancel.png’,<br>‘folder’ : ‘/uploads’,<br>‘auto’ : true<br>});<br>});<br>&lt;/script&gt;<br>[/html]</p>
-<p>[html title=”body”]&lt;input id=’file_upload’ name=’file_upload’ type=’file’ /&gt;[/html]</p>
-<h3 id="OPTION"><a href="#OPTION" class="headerlink" title="OPTION"></a>OPTION</h3><pre>(boolean) auto 啟用自動選項會自動開始上傳文件時添加到文件上傳隊列 'auto'        : true (string)
-buttonImg
-設定上傳按鈕圖片
-'buttonImg'   : '/uploadify/button.jpg'
-
-(string)
-buttonText
-顯示在按鈕上的文字
-
-(string)
-cancelImg
-The path to an image you would like to use as the cancel button.
-
-(string)
-checkScript
-檢查檔案是否已在伺服器上的腳本的路徑
-
-(string)
-displayData
-顯示百分比或每秒幾k
-'percentage' / 'speed' 
-
-(string)
-expressInstall
-The path to the expressInstall.swf file.
-提示安裝flashplayer的樣子 
-
-(string)
-fileDataName
-指定上傳後要傳進哪個變數
-'fileDataName' : 'myuploadify' 後會在php傳進 $_FILES['myuploadify']
-
-(string)
-fileDesc
-顯示檔案類型的描述在"瀏覽"
-'fileDesc'    : '網頁圖片 (.JPG, .GIF, .PNG)' 
-
-<span style="color: #ff0000;">(string) fileExt 限制上傳的附檔名或檔名 'fileExt'     : '*.jpg;*.gif;*.png'</span>
-
-<span style="color: #ff0000;">(string) folder 上傳後存放的資料夾</span>
-
-(integer)
-height
-"瀏覽"按鈕的高度
-
-(boolean)
-hideButton
-隱藏按鈕，主要是之後利用 DIV + css 符合你的顯示風格
-
-(string)
-method
-傳值類型， 'POST' or 'GET' 預設是 'POST'
-
-<span style="color: #ff0000;">(boolean) multi 允許多檔上傳</span>
-
-(string)
-queueID
-設置顯示隊列的DIV之類的容器 ID ，未設置時會在瀏覽按鈕下方產生一個
-
-<span style="color: #ff0000;">(integer) queueSizeLimit 同時可以存在幾個任務(檔案)</span>
-
-(boolean)
-removeCompleted
-自動移動已上傳完的檔案列表，預設true
-(boolean)
-rollover
-顯示按鈕的滑鼠事件，如於按鈕上'HOVER' 未於按鈕上'OFF' 按下'PRESSED'
-
-(string)
-script
-後台處理程序的相對路徑。默認值：uploadify.php
-
-(string)
-scriptAccess
-swf檔的連接方式 預設和正式時用'sameDomain' 最好只在測試時 'always' 或不設(和FLASH不熟…)
-
-(JSON object with mixed types)
-scriptData
-夾帶JSON資料傳送…沒研究
-An object containing name/value pairs with additional information that should be sent to the back-end script when processing a file upload.
-
-(integer)
-simUploadLimit
-同時上傳的檔案數，超過可以排在隊列
-
-<span style="color: #ff0000;">(integer) sizeLimit </span><span style="color: #ff0000;">限制每一個上傳檔案的 bytes 數</span>(string)
-uploader
-uploadify.swf 文件的路徑
-
-(integer)
-width
-瀏覽按鈕的寬度
-
-(string)
-wmode
-設'transparent'可使FLASH的背景變透明
-
-EVENTS 事件
-(function)
-onAllComplete
-隊列所有檔案完成上傳時
-data.
-[filesUploaded] - 總上傳檔案
-[errors] - 錯誤數
-[allBytesLoaded] - 總上傳Bytes
-[speed] - 速度， KB/s
-[html]$(#file_upload).uploadify({
-  'uploader'      : '/uploadify/uploadify.swf',
-  'script'        : '/uploadify/uploadify.php',
-  'cancelImg'     : '/uploadify/cancel.png',
-  'folder'        : '/uploads',
-  'onAllComplete' : function(event,data) {
-      alert(data.filesUploaded + ' 個檔案上傳完成!');
-    }
-});[/html]
-(function)
-onCancel
-有檔案被取消時
-'onCancel'    : function(event,ID,fileObj,data) {
-    alert('The upload of ' + fileObj.name + ' has been canceled!');
-}
-(function)
-onCheck
-任務開始前確認檔案名是否存在，存在時會確認覆蓋
-要搭配'checkScript' : '/uploadify/check.php'
-
-(function)
-onClearQueue
-呼叫 uploadifyClearQueue() 清除任務時
-
-(function)
-onComplete
-單個檔案完成時
-
-(function)
-onError
-發生錯誤時
-
-(function)
-onInit
-Uploadify 讀進來時
-
-(function)
-onOpen
-檔案開始上傳前
-
-(function)
-onProgress
-每次進度條變化時
-
-(function)
-onQueueFull
-任務數量達到 queueSizeLimit 最大上傳數時
-
-(function)
-onSelect
-檔案加入任務時(每個檔案觸發)
-
-(function)
-onSelectOnce
-檔案加入任務時(加入一次觸發一次)
-
-(function)
-onSWFReady
-swf物件讀入時
-
-.uploadify()
-實作一個 Uploadify uploader.
-.uploadifyCancel()
-取消移除上傳中檔案
-
-.uploadifyClearQueue()
-取消移除上傳中任務(所有檔案)
-
-.uploadifySettings()
-修改 目前Uploadify 設定
-
-.uploadifyUpload()
-開始上傳</pre>
-
-        
-      
-    </div>
-
-    
-      
-
-    
-
-    
-  </div>
-  
-</article>
-
-
-<!-- article.ejs end -->
-  
 
 
   <div id="page-nav">
@@ -932,6 +798,11 @@ swf物件讀入時
           <div class="card-body">
             
             <li>
+              <a href="/2018/09/mac-move-menubar-icon.html/">
+                [Mac] 移動排列選單列圖示</a>
+            </li>
+            
+            <li>
               <a href="/2016/10/php-mac-atom-visual-studio-code-php.html/">
                 [php] 在 Mac 用ATOM / Visual Studio Code 為 php debug</a>
             </li>
@@ -949,11 +820,6 @@ swf物件讀入時
             <li>
               <a href="/2015/06/android-setclicklistener-in-custom-view.html/">
                 [Android] setClickListener in custom view</a>
-            </li>
-            
-            <li>
-              <a href="/2015/06/errorexecution-failed-for-task.html/">
-                解決 Error:Execution failed for task &#39;preDexDebug&#39;. &gt; com.android.ide.common.process.ProcessException: org.gradle.process.internal.ExecException: Process &#39;command  finished with non-zero exit value 1</a>
             </li>
             
 
@@ -982,12 +848,12 @@ swf物件讀入時
               WEB <span class="badge badge-light">
                 10</span></a>
             
-            <a class="badge badge-primary" href="/tags/JAVA/">
-              JAVA <span class="badge badge-light">
-                9</span></a>
-            
             <a class="badge badge-primary" href="/tags/Game-Dev/">
               Game Dev <span class="badge badge-light">
+                9</span></a>
+            
+            <a class="badge badge-primary" href="/tags/JAVA/">
+              JAVA <span class="badge badge-light">
                 9</span></a>
             
             <a class="badge badge-primary" href="/tags/Unity/">
@@ -1002,44 +868,40 @@ swf物件讀入時
               Software <span class="badge badge-light">
                 4</span></a>
             
+            <a class="badge badge-primary" href="/tags/Mac/">
+              Mac <span class="badge badge-light">
+                4</span></a>
+            
             <a class="badge badge-primary" href="/tags/jQuery/">
               jQuery <span class="badge badge-light">
-                3</span></a>
-            
-            <a class="badge badge-primary" href="/tags/DATABASE/">
-              DATABASE <span class="badge badge-light">
                 3</span></a>
             
             <a class="badge badge-primary" href="/tags/MySQL/">
               MySQL <span class="badge badge-light">
                 3</span></a>
             
+            <a class="badge badge-primary" href="/tags/DATABASE/">
+              DATABASE <span class="badge badge-light">
+                3</span></a>
+            
             <a class="badge badge-primary" href="/tags/C-C/">
               C/C++ <span class="badge badge-light">
                 3</span></a>
             
-            <a class="badge badge-primary" href="/tags/Mac/">
-              Mac <span class="badge badge-light">
-                3</span></a>
-            
-            <a class="badge badge-primary" href="/tags/Xcode/">
-              Xcode <span class="badge badge-light">
+            <a class="badge badge-primary" href="/tags/程式語言/">
+              程式語言 <span class="badge badge-light">
                 2</span></a>
             
             <a class="badge badge-primary" href="/tags/iOS/">
               iOS <span class="badge badge-light">
                 2</span></a>
             
-            <a class="badge badge-primary" href="/tags/程式語言/">
-              程式語言 <span class="badge badge-light">
-                2</span></a>
-            
-            <a class="badge badge-primary" href="/tags/Cocos2D/">
-              Cocos2D <span class="badge badge-light">
-                2</span></a>
-            
             <a class="badge badge-primary" href="/tags/C/">
               C# <span class="badge badge-light">
+                2</span></a>
+            
+            <a class="badge badge-primary" href="/tags/Xcode/">
+              Xcode <span class="badge badge-light">
                 2</span></a>
             
             <a class="badge badge-primary" href="/tags/Google-API/">
@@ -1050,20 +912,20 @@ swf物件讀入時
               Javascript <span class="badge badge-light">
                 2</span></a>
             
-            <a class="badge badge-primary" href="/tags/Facebook/">
-              Facebook <span class="badge badge-light">
-                1</span></a>
+            <a class="badge badge-primary" href="/tags/Cocos2D/">
+              Cocos2D <span class="badge badge-light">
+                2</span></a>
             
-            <a class="badge badge-primary" href="/tags/opensource/">
-              opensource <span class="badge badge-light">
-                1</span></a>
-            
-            <a class="badge badge-primary" href="/tags/敗家/">
-              敗家 <span class="badge badge-light">
+            <a class="badge badge-primary" href="/tags/Lua/">
+              Lua <span class="badge badge-light">
                 1</span></a>
             
             <a class="badge badge-primary" href="/tags/programming/">
               programming <span class="badge badge-light">
+                1</span></a>
+            
+            <a class="badge badge-primary" href="/tags/敗家/">
+              敗家 <span class="badge badge-light">
                 1</span></a>
             
             <a class="badge badge-primary" href="/tags/SEO/">
@@ -1082,16 +944,20 @@ swf物件讀入時
               資訊安全 <span class="badge badge-light">
                 1</span></a>
             
-            <a class="badge badge-primary" href="/tags/OpenGL/">
-              OpenGL <span class="badge badge-light">
+            <a class="badge badge-primary" href="/tags/Facebook/">
+              Facebook <span class="badge badge-light">
                 1</span></a>
             
             <a class="badge badge-primary" href="/tags/Node-JS/">
               Node.JS <span class="badge badge-light">
                 1</span></a>
             
-            <a class="badge badge-primary" href="/tags/Lua/">
-              Lua <span class="badge badge-light">
+            <a class="badge badge-primary" href="/tags/opensource/">
+              opensource <span class="badge badge-light">
+                1</span></a>
+            
+            <a class="badge badge-primary" href="/tags/OpenGL/">
+              OpenGL <span class="badge badge-light">
                 1</span></a>
             
             <a class="badge badge-primary" href="/tags/ATOM/">

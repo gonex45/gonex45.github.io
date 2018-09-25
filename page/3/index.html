@@ -160,6 +160,75 @@ iOS:         Application/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/Library/Caches</pr
 <!-- article.ejs end -->
   
     <!-- article.ejs -->
+<article id="post-unity-platform-file-path.html" class="border post">
+    
+    <h2>
+      <a class="article-title" href="/2014/02/unity-platform-file-path.html/">[Unity] 各平台檔案路徑 Path</a>
+    </h2>
+
+
+
+  <div class="article-meta">
+    <!-- date.ejs -->
+<div class="article-datetime">
+  <a href="/2014/02/unity-platform-file-path.html/" class="article-date"><time datetime="2014-02-06T16:52:00.000Z" itemprop="datePublished">2014-02-07</time></a>
+</div>
+
+    <!-- category.ejs -->
+
+
+    
+  TAG:
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Unity/">Unity</a></li></ul>
+
+
+  </div>
+  <div class="article-inner border">
+    <div class="article-entry border">
+      
+
+        
+        
+          <p>Unity 各平台檔案路徑 Path</p>
+<p>Application.dataPath<br>包含遊戲資料文件夾的路徑<br>只可讀，放置一些資源資料</p>
+<pre>OSX:       ProjectPath/Assets/
+Android:   /data/app/xxx.xxx.xxx-1.apk
+iOS:       Application/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/xxx.app/Data<a name="more"></a></pre>
+Application.persistentDataPath
+包含一個永久資料目錄的路徑
+可讀可寫，可以放一些存檔文件
+<pre>OSX:        /Users/username/Library/Caches/com/projcetname
+Android:    /data/app/packagename/files
+Android外部: /storage/sdcard0/Android/data/app/packagename/files
+iOS:        Application/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/Documents</pre>
+Application.streamingAssetsPath
+<pre>OSX:         ProjectPath/Assets/StreamingAssets
+Android:     jar:/file:///data/app/xxx.xxx.xxx-1.apk!/assets
+iOS:         Application/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/xxx.app/Data/Raw</pre>
+
+<p>Application.temporaryCachePath</p>
+<pre>OSX:         /var/folders/bv/swq_XXXXXXXXX_XXXXXXXXXXXXXXXX/T/com/projcetname
+Android:     /data/data/xxx.xxx.xxx/cache
+iOS:         Application/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/Library/Caches</pre>
+
+        
+      
+    </div>
+
+    
+      
+
+    
+
+    
+  </div>
+  
+</article>
+
+
+<!-- article.ejs end -->
+  
+    <!-- article.ejs -->
 <article id="post-php-array.html" class="border post">
     
     <h2>
@@ -571,55 +640,6 @@ iOS:         Application/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/Library/Caches</pr
 
 <!-- article.ejs end -->
   
-    <!-- article.ejs -->
-<article id="post-html-button-do-not-submit.html" class="border post">
-    
-    <h2>
-      <a class="article-title" href="/2012/07/html-button-do-not-submit.html/">[WEB] button 不要觸發 submit()</a>
-    </h2>
-
-
-
-  <div class="article-meta">
-    <!-- date.ejs -->
-<div class="article-datetime">
-  <a href="/2012/07/html-button-do-not-submit.html/" class="article-date"><time datetime="2012-07-27T09:46:00.000Z" itemprop="datePublished">2012-07-27</time></a>
-</div>
-
-    <!-- category.ejs -->
-
-
-    
-  TAG:
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/WEB/">WEB</a></li></ul>
-
-
-  </div>
-  <div class="article-inner border">
-    <div class="article-entry border">
-      
-
-        
-        
-          <p>加上<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">onclick=&quot;return false;&quot;</span><br></pre></td></tr></table></figure></p>
-
-        
-      
-    </div>
-
-    
-      
-
-    
-
-    
-  </div>
-  
-</article>
-
-
-<!-- article.ejs end -->
-  
 
 
   <div id="page-nav">
@@ -654,6 +674,11 @@ iOS:         Application/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/Library/Caches</pr
           <div class="card-body">
             
             <li>
+              <a href="/2018/09/mac-move-menubar-icon.html/">
+                [Mac] 移動排列選單列圖示</a>
+            </li>
+            
+            <li>
               <a href="/2016/10/php-mac-atom-visual-studio-code-php.html/">
                 [php] 在 Mac 用ATOM / Visual Studio Code 為 php debug</a>
             </li>
@@ -671,11 +696,6 @@ iOS:         Application/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/Library/Caches</pr
             <li>
               <a href="/2015/06/android-setclicklistener-in-custom-view.html/">
                 [Android] setClickListener in custom view</a>
-            </li>
-            
-            <li>
-              <a href="/2015/06/errorexecution-failed-for-task.html/">
-                解決 Error:Execution failed for task &#39;preDexDebug&#39;. &gt; com.android.ide.common.process.ProcessException: org.gradle.process.internal.ExecException: Process &#39;command  finished with non-zero exit value 1</a>
             </li>
             
 
@@ -704,12 +724,12 @@ iOS:         Application/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/Library/Caches</pr
               WEB <span class="badge badge-light">
                 10</span></a>
             
-            <a class="badge badge-primary" href="/tags/JAVA/">
-              JAVA <span class="badge badge-light">
-                9</span></a>
-            
             <a class="badge badge-primary" href="/tags/Game-Dev/">
               Game Dev <span class="badge badge-light">
+                9</span></a>
+            
+            <a class="badge badge-primary" href="/tags/JAVA/">
+              JAVA <span class="badge badge-light">
                 9</span></a>
             
             <a class="badge badge-primary" href="/tags/Unity/">
@@ -724,44 +744,40 @@ iOS:         Application/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/Library/Caches</pr
               Software <span class="badge badge-light">
                 4</span></a>
             
+            <a class="badge badge-primary" href="/tags/Mac/">
+              Mac <span class="badge badge-light">
+                4</span></a>
+            
             <a class="badge badge-primary" href="/tags/jQuery/">
               jQuery <span class="badge badge-light">
-                3</span></a>
-            
-            <a class="badge badge-primary" href="/tags/DATABASE/">
-              DATABASE <span class="badge badge-light">
                 3</span></a>
             
             <a class="badge badge-primary" href="/tags/MySQL/">
               MySQL <span class="badge badge-light">
                 3</span></a>
             
+            <a class="badge badge-primary" href="/tags/DATABASE/">
+              DATABASE <span class="badge badge-light">
+                3</span></a>
+            
             <a class="badge badge-primary" href="/tags/C-C/">
               C/C++ <span class="badge badge-light">
                 3</span></a>
             
-            <a class="badge badge-primary" href="/tags/Mac/">
-              Mac <span class="badge badge-light">
-                3</span></a>
-            
-            <a class="badge badge-primary" href="/tags/Xcode/">
-              Xcode <span class="badge badge-light">
+            <a class="badge badge-primary" href="/tags/程式語言/">
+              程式語言 <span class="badge badge-light">
                 2</span></a>
             
             <a class="badge badge-primary" href="/tags/iOS/">
               iOS <span class="badge badge-light">
                 2</span></a>
             
-            <a class="badge badge-primary" href="/tags/程式語言/">
-              程式語言 <span class="badge badge-light">
-                2</span></a>
-            
-            <a class="badge badge-primary" href="/tags/Cocos2D/">
-              Cocos2D <span class="badge badge-light">
-                2</span></a>
-            
             <a class="badge badge-primary" href="/tags/C/">
               C# <span class="badge badge-light">
+                2</span></a>
+            
+            <a class="badge badge-primary" href="/tags/Xcode/">
+              Xcode <span class="badge badge-light">
                 2</span></a>
             
             <a class="badge badge-primary" href="/tags/Google-API/">
@@ -772,20 +788,20 @@ iOS:         Application/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/Library/Caches</pr
               Javascript <span class="badge badge-light">
                 2</span></a>
             
-            <a class="badge badge-primary" href="/tags/Facebook/">
-              Facebook <span class="badge badge-light">
-                1</span></a>
+            <a class="badge badge-primary" href="/tags/Cocos2D/">
+              Cocos2D <span class="badge badge-light">
+                2</span></a>
             
-            <a class="badge badge-primary" href="/tags/opensource/">
-              opensource <span class="badge badge-light">
-                1</span></a>
-            
-            <a class="badge badge-primary" href="/tags/敗家/">
-              敗家 <span class="badge badge-light">
+            <a class="badge badge-primary" href="/tags/Lua/">
+              Lua <span class="badge badge-light">
                 1</span></a>
             
             <a class="badge badge-primary" href="/tags/programming/">
               programming <span class="badge badge-light">
+                1</span></a>
+            
+            <a class="badge badge-primary" href="/tags/敗家/">
+              敗家 <span class="badge badge-light">
                 1</span></a>
             
             <a class="badge badge-primary" href="/tags/SEO/">
@@ -804,16 +820,20 @@ iOS:         Application/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/Library/Caches</pr
               資訊安全 <span class="badge badge-light">
                 1</span></a>
             
-            <a class="badge badge-primary" href="/tags/OpenGL/">
-              OpenGL <span class="badge badge-light">
+            <a class="badge badge-primary" href="/tags/Facebook/">
+              Facebook <span class="badge badge-light">
                 1</span></a>
             
             <a class="badge badge-primary" href="/tags/Node-JS/">
               Node.JS <span class="badge badge-light">
                 1</span></a>
             
-            <a class="badge badge-primary" href="/tags/Lua/">
-              Lua <span class="badge badge-light">
+            <a class="badge badge-primary" href="/tags/opensource/">
+              opensource <span class="badge badge-light">
+                1</span></a>
+            
+            <a class="badge badge-primary" href="/tags/OpenGL/">
+              OpenGL <span class="badge badge-light">
                 1</span></a>
             
             <a class="badge badge-primary" href="/tags/ATOM/">
